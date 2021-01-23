@@ -4,7 +4,7 @@
 
 ## Couchdb
 
-```
+```bash
 0. Download latest CouchDb Image
     * docker pull couchdb
 1. Make sure jubo-box/server contains couch.env
@@ -18,7 +18,7 @@
 
 
 
-```
+```bash
 $ docker run -d --name my-couchdb -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -p 5984:5984 couchdb:latest
 ```
 
@@ -30,7 +30,7 @@ $ docker run --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=jello -e MONGO_INIT
 
 ### Connect Mongodb through docker compose network
 
-```
+```bash
 $ docker run -it --network some-network --rm mongo mongo --host some-mongo test
 ```
 
@@ -39,6 +39,23 @@ $ docker run -it --network some-network --rm mongo mongo --host some-mongo test
 ```
 mongo -u jello
 //enter password
+```
+
+### Create Admin User
+
+```bash
+// create admin user
+
+db.createUser({
+  user: "admin",
+  pwd: "some-password",
+  roles: [
+    {
+      role: "clusterAdmin",
+      db: "admin"
+    }
+  ]
+})
 ```
 
 ### Create user with R/RW rights 

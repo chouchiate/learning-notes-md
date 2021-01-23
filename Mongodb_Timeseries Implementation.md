@@ -6,7 +6,7 @@ Mongodb_Timeseries Implementation
 
    * as name described
 
-     ```
+     ```json
      {
        "_id" : ObjectId("5b4690e047f49a04be523cbd"),
        "p" : 56.56,
@@ -28,7 +28,7 @@ Mongodb_Timeseries Implementation
 
    * One document per minute
 
-     ```
+     ```json
      {
          "_id" : ObjectId("5b5279d1e303d394db6ea0f8"), 
          "p" : {
@@ -64,7 +64,7 @@ Mongodb_Timeseries Implementation
 
    * Schema Example
 
-     ```
+     ```json
      {
          _id: ObjectId(),
          deviceid: 1234,
@@ -81,6 +81,7 @@ Mongodb_Timeseries Implementation
             { val: 56, time: 1535530432}
         ]
      }
+     
      ```
 
      
