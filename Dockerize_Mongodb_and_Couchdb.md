@@ -25,7 +25,7 @@ $ docker run -d --name my-couchdb -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=pass
 ## Mongodb
 
 ```bash
-$ docker run --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=jello -e MONGO_INITDB_ROOT_PASSWORD=world -e MONGO_INITDB_DATABASE=testdb -d -p 27017:27017 mongo:latest --auth
+$ docker run --name test-mongo --restart -e MONGO_INITDB_ROOT_USERNAME=jello -e MONGO_INITDB_ROOT_PASSWORD=world -e MONGO_INITDB_DATABASE=testdb -d -p 27017:27017 mongo:latest --auth
 ```
 
 ### Connect Mongodb through docker compose network
@@ -33,6 +33,26 @@ $ docker run --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=jello -e MONGO_INIT
 ```bash
 $ docker run -it --network some-network --rm mongo mongo --host some-mongo test
 ```
+
+### List all Mongodb
+
+```
+$ launchctl list | grep mongo
+```
+
+### Unload from Lanuch Agent
+
+```
+launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+rm -f ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+launchctl remove homebrew.mxcl.mongodb
+```
+
+
+
+
+
+
 
 ### Login mongo shell with admin role 
 
@@ -63,11 +83,11 @@ db.createUser({
 ```bash
 > use admin
 > db.createUser({
-  user: 'user-name',
-  pwd: 'some-password',
+  user: 'super',
+  pwd: 'derick',
   roles: [{
     role: 'readWrite',
-    db: 'db-name'
+    db: 'db-test'
   }]
 })
 ```
