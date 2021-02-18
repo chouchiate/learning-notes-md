@@ -145,6 +145,48 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
 ```
 
+### OSX: Check if any mongo service is running
+
+```bash
+$ launchctl list | grep mongo	
+```
+
+### OSX: Unload from LaunchAgent
+
+```bash
+$ launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+
+```
+
+```bash
+$ rm -f ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+# OR
+$ rm -f ~/Library/LaunchAgents/homebrew.mxcl.mongodb-community.plist
+```
+
+```bash
+$ launchctl remove homebrew.mxcl.mongodb
+```
+
+### OSX: Kill all processes related to mongod
+
+```bash
+$ pkill -f mongod	
+```
+
+### OSX: Uninstall mongodb (homebrew)
+
+```bash
+$ brew uninstall mongodb 
+```
+
+### OSX: Re-confirming if mongo related file still exists
+
+```bash
+$ ls -al /usr/local/bin/mong*
+$ ls -al ~/Library/LaunchAgents
+```
+
 
 
 
