@@ -16,7 +16,31 @@
 4. Use docker-compose up to deploy
 ```
 
+### CouchDb (Docker) Production Deployment
 
+0. Download latest Couchdb Image
+
+   ```bash
+   $ docker pull couchdb
+   ```
+
+1. Make sure jubox/server contains .env at ~/app
+
+2. Check if couched already in machine
+
+   ```bash
+   $ sudo dpkg -l | grep couchdb
+   ```
+
+3. Uninstall it !
+
+   ```bash
+   $ sudo apt-get autoremove --purge couchdb
+   ```
+
+4. Use docker-compose.yml to deploy
+
+### Test Server Docker Run Container from Image
 
 ```bash
 $ docker run -d --name my-couchdb -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -p 5984:5984 couchdb:latest
