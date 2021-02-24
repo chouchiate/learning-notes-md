@@ -43,10 +43,20 @@ $ docker rm <container Id>
 $ docker exec -it <container_name> bash
 ```
 
+### Create Volume
+
+```bash
+$ docker volume create --name <volume_name>
+# List volumes
+$ docker volume ls
+# List docker volume with mounting point
+$ docker volume inspect --format '{{ .Mountpoint }}' volumeNameHere
+```
+
 ### Start container from image -- share volume from host
 
 ```bash
-$ docker run -it --name <container_name> -p <container_port>:<host_port> -v $(pwd)/directory <image_name>
+$ docker run -it --name <container_name> -p <host_port>:<container_port> -v $(pwd)/directory:/docker_directory/ <image_name>
 ```
 
 ### Dockerfile build
@@ -55,7 +65,14 @@ $ docker run -it --name <container_name> -p <container_port>:<host_port> -v $(pw
 $ docker build --tag <image_tag_name> .
 ```
 
+### Docker Create Network Bridge
 
+```bash
+# Check if jubo-net is created
+$ sudo docker network ls
+# create new bridge with 1.
+$ sudo docker network create -d bridge <network_name>
+```
 
 ### Create Couchdb container with admin login
 
@@ -63,7 +80,7 @@ $ docker build --tag <image_tag_name> .
 $ docker run -d --name my-couchdb -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -p 5984:5984 couchdb:latest
 ```
 
-
+ 
 
 
 

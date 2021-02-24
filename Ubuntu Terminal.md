@@ -1,3 +1,11 @@
+### Restore Ownership of HOME and subfolders to USER
+
+```bash
+$ sudo chown -R $USER: $HOME
+```
+
+
+
 ### Ubuntu Terminal Commands:
 
 * remove folder

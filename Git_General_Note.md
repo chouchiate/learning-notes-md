@@ -8,3 +8,34 @@ $ git fetch --all
 $ git reset --hard origin/<branch_name>
 ```
 
+### Rebase Remote Change and Merge with Local Update 
+```bash
+$ git stash
+$ git pull --rebase
+$ git stash pop
+## If No Conflict
+$ git push -u origin <branch_name>
+
+## If Conflict
+$ git status
+### Fix Conflict and update
+$ git add --all
+## continue rebase
+$ git rebase --continue
+## push to remote
+
+```
+
+### Branch Develop then Merge to Main
+
+```bash
+# switch to new-branch
+$ git checkout new-branch
+# .. develop some code
+$ git add -A
+$ git commit -m "commit message"
+$ git checkout master
+$ git merge new-branch
+	
+```
+

@@ -26,7 +26,7 @@
 
 ### Exiting Vi
 
-* <Esc> --> Enter Command Mode
+* <Esc> or <ctrl> + <c> --> Enter Command Mode
 
 * : <Return> --> Exit Mode
 * ZZ <Enter> --> Write, then quit
