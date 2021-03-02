@@ -45,5 +45,21 @@ $ sudo ps -faux
 $ ls -la ./
 ```
 
+### Verify Process Bound to Port
 
+* -t:
+
+* -u:
+
+* -l:
+
+* -p:
+
+* -n
+
+  ```
+  $ sudo netstat -tulpn | grep :1883
+  ```
+
+  
 

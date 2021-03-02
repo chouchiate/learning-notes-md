@@ -2,6 +2,16 @@
 
 
 
+Resources
+
+* http://www.steves-internet-guide.com/mosquitto-tls/
+* https://www.onetransistor.eu/2019/05/mosquitto-mqtt-tls-certificate.html
+* http://www.steves-internet-guide.com/creating-and-using-client-certificates-with-mqtt-and-mosquitto/
+* https://openest.io/en/2020/01/03/mqtts-how-to-use-mqtt-with-tls/
+* https://blog.feabhas.com/2020/02/running-the-eclipse-mosquitto-mqtt-broker-in-a-docker-container/
+* https://hackaday.io/project/12482-garage-door-opener/log/43367-using-a-username-and-password-for-mqtt
+* https://blog.feabhas.com/2020/02/running-the-eclipse-mosquitto-mqtt-broker-in-a-docker-container/
+
 
 
 * Enable require_certificate setting

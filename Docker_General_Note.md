@@ -80,7 +80,13 @@ $ sudo docker network create -d bridge <network_name>
 $ docker run -d --name my-couchdb -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -p 5984:5984 couchdb:latest
 ```
 
- 
+ ### Get Container IP within network
+
+```
+$ docker inspect -f '{{ range.NetworkSettings.Networks }}{{ .IPAddress }}{{ end }}' <container_id>
+```
+
+
 
 
 

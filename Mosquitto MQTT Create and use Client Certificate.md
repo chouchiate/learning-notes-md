@@ -43,3 +43,14 @@
 
   
 
+## Testing
+
+### mosquitto_sub 
+
+* Sub with username / password
+
+  ```bash
+  $ mosquitto_sub -p 1883 -t '#' --username <name> --pw <password>
+  ```
+
+  
