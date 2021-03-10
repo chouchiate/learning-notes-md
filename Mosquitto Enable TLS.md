@@ -99,10 +99,6 @@ mongo --ssl --sslCAFile CAroot.pem --sslPEMKeyFile client.pem --authenticationDa
 
 ```
 
-
-
-
-
 ### Create username & password
 
 ```bash

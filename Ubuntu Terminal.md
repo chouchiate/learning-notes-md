@@ -4,8 +4,6 @@
 $ sudo chown -R $USER: $HOME
 ```
 
-
-
 ### Ubuntu Terminal Commands:
 
 * remove folder

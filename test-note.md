@@ -43,10 +43,10 @@ mosquitto_pub -t 'mwg/restart' -m "{\"mattressMac\": \"01BA4C1A\"}" -p 1883
 ```
 ### Mwg 
 
-### MWG events/config
+### MWG Remove Registered Bed
 ```
 
-
+mosquitto_pub -t 'mwg/MwgDeleteRegisteredBedApi' -m "{\"mattressMac\":\"\"}" -p 1883
 
 
 ```
@@ -106,4 +106,7 @@ docker run -dit -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=50868012 --restart alw
 # - Mosquitto broker Setup
 ```
 sudo docker run -d -p 1883:1883 eclipse-mosquitto:latest
+
+```
+
 ```
