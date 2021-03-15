@@ -93,14 +93,6 @@ $ docker build --tag <image_tag_name> .
 
 
 
-### Dockerfile build Outside of current context
-
-```bash
-$ docker build -f <file location> --tag <tag name> .
-```
-
-
-
 ### Docker Create Network Bridge
 
 ```bash

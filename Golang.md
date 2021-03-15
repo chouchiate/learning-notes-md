@@ -25,10 +25,7 @@
 3. Install air
 
    ```bash
-   # install
    $ go get -u github.com/cosmtrek/air
-   # use at project where main.go resides
-   $ air
    ```
 
    
