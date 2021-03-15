@@ -8,7 +8,18 @@ $ git fetch --all
 $ git reset --hard origin/<branch_name>
 ```
 
+### Revert One Commit
+
+```bash
+$ git revert HEAD -m 1
+```
+
+
+
+
+
 ### Rebase Remote Change and Merge with Local Update 
+
 ```bash
 $ git stash
 $ git pull --rebase
