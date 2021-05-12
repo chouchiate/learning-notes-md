@@ -14,10 +14,6 @@ $ git reset --hard origin/<branch_name>
 $ git revert HEAD -m 1
 ```
 
-
-
-
-
 ### Rebase Remote Change and Merge with Local Update 
 
 ```bash
@@ -48,5 +44,14 @@ $ git commit -m "commit message"
 $ git checkout master
 $ git merge new-branch
 	
+```
+
+### Compare difference between Stash and Branch Demo
+
+```bash
+# exclude file
+$ git diff stash@{0} demo -- . ':(exclude)server/package-lock.json'
+# include files in path
+$ git diff stash@{0} demo server/src/
 ```
 
