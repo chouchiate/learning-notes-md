@@ -14,6 +14,14 @@ $ git reset --hard origin/<branch_name>
 $ git revert HEAD -m 1
 ```
 
+### Undo git add
+```bash
+## all files
+$ git reset
+## one file
+$ git reset <file>
+```
+
 ### Rebase Remote Change and Merge with Local Update 
 
 ```bash
