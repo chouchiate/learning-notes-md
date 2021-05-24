@@ -21,6 +21,15 @@ git config --global --add user.email "derel33t@gmail.com"
 
 
 
+#### git remote - Set a new Remote
+
+```bash
+# Set a new Remote
+$ git remote add origin <remote_path> # git@gitlab.com:username/projectpath.git
+# Verify New Remote, view remote repo
+$ git remote -v
+```
+
 
 
 #### git diff - 檢視差異
@@ -44,6 +53,9 @@ git diff [first-branch] [second-branch]		#
 #### git checkout - 移動 HEAD
 
 ```bash
+# Create a branch
+$ git checkout -b <name_of_new_branch>
+#
 git checkout [FileName]
 git checkout .
 git checkout [commit-hash]
@@ -64,6 +76,8 @@ $ git reset --hard origin/<branch_name>
 
 ```bash
 $ git revert HEAD -m 1
+# Undo most recent commit
+$ git reset HEAD-1
 ```
 
 ### Undo git add

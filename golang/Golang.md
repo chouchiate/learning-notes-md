@@ -20,9 +20,15 @@
    $ source ~/.bash_profile
    ```
 
+3. Check Go version
+
+   ```bash
+   $ go version
+   ```
+
    
 
-3. Install air
+4. Install air
 
    ```bash
    $ go get -u github.com/cosmtrek/air
@@ -30,7 +36,7 @@
 
    
 
-4. Install Postgresql
+5. Install Postgresql
 
    ```bash
    # install postgresql with homebrew
@@ -48,7 +54,7 @@
 
    
 
-5. 透過 SQL 建立名為 `postgres` 的 superuser（預設的 superuser 會是系統的使用者）：
+6. 透過 SQL 建立名為 `postgres` 的 superuser（預設的 superuser 會是系統的使用者）：
 
    ```sql
    -- create superuser of "postgres"
@@ -63,7 +69,7 @@
    
    ```
 
-5. **建立 Database**
+7. **建立 Database**
 
    
 
@@ -72,13 +78,13 @@
    $ createdb jubo_space -O postgres -E utf8
    ```
 
-6. **Check Database is created**
+8. **Check Database is created**
 
    ```bash
    postgres=# \l
    ```
 
-7. Seed Database
+9. Seed Database
 
    ```bash
    $ make db-seed
