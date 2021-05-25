@@ -1,6 +1,8 @@
-## Lesson URL
+## [postgreSql] Lesson URL
 
-```
+#### 學習連結
+
+```url
 https://youtu.be/qw--VYLpxG4
 ```
 
@@ -8,7 +10,7 @@ https://youtu.be/qw--VYLpxG4
 
 ## Create Table
 
-```
+```sql
 CREATE TABLE person (
 
 	id INT,
@@ -24,7 +26,7 @@ CREATE TABLE person (
 
 ## Insert data example
 
-```
+```sql
 INSERT INTO person (first_name, last_name, gender, date_of_birth)
 VALUES ('Anne', 'Smith', 'FEMALE', DATE '1988-01-09');
 ```
@@ -33,7 +35,7 @@ VALUES ('Anne', 'Smith', 'FEMALE', DATE '1988-01-09');
 
 ## Create Table with Bigserial Id
 
-```
+```sql
 CREATE TABLE person (
 	id BIGSERIAL NOT NULL PRIMARY KEY,
 	first_name VARCHAR(50) NOT NULL,
@@ -48,7 +50,7 @@ CREATE TABLE person (
 
 ## Insert data example
 
-```
+```sql
 INSERT INTO person (
 	first_name,
 	last_name,
@@ -78,7 +80,7 @@ https://www.mockaroo.com/
 
 
 
-# Select data
+#### Select Data
 
 ```SQL
 LSELECT * FROM person;
@@ -89,7 +91,7 @@ SELECT first_name, last_name FROM person;
 
 ## Sort Data: Order By
 
-```
+```sql
 SELECT * FROM person ORDER BY coutry_of_birth ACS;		//ascending
 SELECT * FROM person ORDER BY coutry_of_birth DESC;		//descending
 SELECT * FROM person ORDER BY id DESC;
@@ -100,7 +102,7 @@ SELECT * FROM person ORDER BY id, email;
 
 ## List Distinct
 
-```
+```sql
 SELECT country_of_birth FROM person;
 SELECT country_of_birth FROM person ORDER BY country_of_birth;
 SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth;
@@ -113,7 +115,7 @@ SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth DESC;
 
 ### Filter data base on condition
 
-```
+```sql
 SELECT * FROM person WHERE gender = 'Female';
 SELECT * FROM person WHERE gender = 'Male' AND (country_of_birth = 'Poland' OR country_of_birth = 'France');
 ```
@@ -122,7 +124,7 @@ SELECT * FROM person WHERE gender = 'Male' AND (country_of_birth = 'Poland' OR c
 
 ## Conditional
 
-```
+```sql
 SELECT 1 <= 2;
 ?column? | t
 SELECT 1 <> 1;
@@ -134,7 +136,7 @@ SELECT 1 <> 1;
 
 ## Limit
 
-```
+```sql
 SELECT * FROM person LIMIT 10;
 ```
 
@@ -142,7 +144,7 @@ SELECT * FROM person LIMIT 10;
 
 ## Offset
 
-```
+```sql
 SELECT * FROM person OFFSET 5 LIMIT 5;
 ```
 
@@ -150,7 +152,7 @@ SELECT * FROM person OFFSET 5 LIMIT 5;
 
 ## Fetch Keyword
 
-```
+```sql
 SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
 ```
 
@@ -158,7 +160,7 @@ SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
 
 ## In Keyword
 
-```
+```sql
 SELECT * FROM person WHERE country_of_birth = 'China'
 OR country_of_birth = 'France' OR country_of_birth = 'Brazil';
 
@@ -170,7 +172,7 @@ ORDER BY country_of_birth ASC;
 
 ## Between Keyword
 
-```
+```sql
 SELECT * FROM person
 WHERE date_of_birth
 BETWEEN DATE '2000-01-01' AND '2015-01-01';
@@ -180,7 +182,7 @@ BETWEEN DATE '2000-01-01' AND '2015-01-01';
 
 ## Like & ILike Operator
 
-```
+```sql
 SELECT * FROM person WHERE email LIKE '%.com';
 SELECT * FROM person WHERE email LIKE '%@microsoft.com';
 SELECT * FROM person WHERE email LIKE '%@google.%';
