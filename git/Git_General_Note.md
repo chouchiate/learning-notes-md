@@ -110,6 +110,10 @@ $ git rebase --continue
 ### Branch Develop then Merge to Main
 
 ```bash
+# Move/rename a branch 
+$ git branch --move --force <new_name> # or 
+# -f, --force: Reset <branchname> to <startpoint>
+$ git branch -M <new_name>
 # switch to new-branch
 $ git checkout new-branch
 # .. develop some code
