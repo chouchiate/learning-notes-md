@@ -3,8 +3,11 @@
 #### 安裝 postgreSQL
 
 ```bash
+# macOS Homebrew
 $ brew install postgresql
 $ brew services start postgresql
+
+
 ```
 
 
@@ -35,5 +38,15 @@ createdb db_name -0 postgres -E utf8
 
 
 
+### 安裝 Docker PostgreSql
 
+#### Environment Variables
+
+- POSTGRES_PASSWORD
+- POSTGRES_USER
+- POSTGRES_DB
+- POSTGRES_INITDB_ARGS
+- POSTGRES_HOST_AUTH_METHOD
+- PGDATA
+- 
 

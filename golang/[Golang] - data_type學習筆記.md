@@ -57,10 +57,6 @@ type Password struct {
 
 
 
-
-
-
-
 ### Type - Slice
 
 
@@ -148,6 +144,32 @@ func main() {
 ```
 
 
+
+## Pointer Receiver
+
+* Function with pointer receiver can modify value to which receiver points
+* Function must have pointer receiver to change value pointed to where the function is called
+* Use value.function syntax to call 
+
+```go
+type Vertex struct {
+  X, Y float64
+}
+func (v Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+func (v *Vertex) Scale (f float64) {			// <-- change 
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+func main() {
+  v := Vertex{3,4}
+  v.Scale(10)
+  fmt.Println(v.Abs())	// print 50
+  
+  //print 5 if change to func(v Vertex) Scale (f flaot64) {
+}
+```
 
 
 
