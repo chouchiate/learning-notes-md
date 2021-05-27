@@ -30,6 +30,15 @@ $ git remote add origin <remote_path> # git@gitlab.com:username/projectpath.git
 $ git remote -v
 ```
 
+#### git push to Github under a different user.name
+```bash
+# ie remote: Permission to <remote_git>.git denied to <another_user>.
+$ git config --local credential.helper ""
+# then push again
+$ git push origin <branch>
+
+```
+
 
 
 #### git diff - 檢視差異
