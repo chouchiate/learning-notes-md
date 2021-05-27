@@ -48,7 +48,8 @@ $ git push origin <branch>
 git diff																	#
 git diff --staged													#
 git diff [first-branch] [second-branch]		#
-
+# check difference: current and stash 
+git diff stash@{0} master
 ```
 
 #### git log - 檢視紀錄
@@ -140,6 +141,12 @@ $ git merge new-branch
 $ git diff stash@{0} demo -- . ':(exclude)server/package-lock.json'
 # include files in path
 $ git diff stash@{0} demo server/src/
+```
+
+#### Pop Specific stash
+
+```bash
+$ git stash pop stash@{2}
 ```
 
 
