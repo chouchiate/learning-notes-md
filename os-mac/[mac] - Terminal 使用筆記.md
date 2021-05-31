@@ -1,4 +1,4 @@
-## OSX_Terminal
+## [Mac] - Terminal 使用筆記
 
 ### Live PID List
 
