@@ -45,11 +45,14 @@ $ git push origin <branch>
 
 ```bash
 # 
-git diff																	#
-git diff --staged													#
+git diff			#
+git diff --staged	 #
 git diff [first-branch] [second-branch]		#
 # check difference: current and stash 
 git diff stash@{0} master
+
+# 輸出差異到檔案 diff.txt
+git diff master..branch1 > diff.txt
 ```
 
 #### git log - 檢視紀錄
