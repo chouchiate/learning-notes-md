@@ -6,6 +6,14 @@
 $ go get -u github.com/cosmtrek/air
 ```
 
+#### Add Air to Bashrc or 
+```bash
+$ code /.bashrc
+## add this line
+alias air='~/.air'
+$ source /.bashrc
+```
+
 #### First Program
 
 * Choose Module Path

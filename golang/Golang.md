@@ -32,6 +32,12 @@
 
    ```bash
    $ go get -u github.com/cosmtrek/air
+   
+   # add to /.bashrc
+   $ which air
+   # /Users/xxx/go/bin/air
+   $ code ~/.bashrc
+   $ alias air=$HOME/go/bin/air
    ```
 
    

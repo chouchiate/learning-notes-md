@@ -50,3 +50,24 @@ createdb db_name -0 postgres -E utf8
 - PGDATA
 - 
 
+
+
+
+
+###  安裝 Postico
+
+* https://eggerapps.at/postico/
+* 
+
+### Connect Through Cloud Sql Proxy
+
+```bash
+# Download for Mac Os
+$ curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.amd64
+# make it executable
+$ chmod +x cloud_sql_proxy
+# run it (google-cloud-sdk must setup properly first)
+$ cloud_sql_proxy -instances=<project>:<location>:<db_name>=tcp:5432
+
+```
+
