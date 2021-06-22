@@ -26,10 +26,22 @@ $ brew update && brew install golang
 #### Setup Workspace
 
 ```bash
+### Start Go Project
+
+$ mkdir -p some/directory
+$ cd some/directory
+$ go mod init myApp.go
+
+# Format your source code
+$ go fmt myApp.go
+
+# Run static analysis tool
+$ golint myApp.go
+
+# Build project to binary
+$ go build myApp.go
 
 ```
-
-
 
 #### Setup Environment
 

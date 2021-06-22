@@ -57,6 +57,67 @@ type Password struct {
 
 
 
+### Type - Interfaces
+
+* Interfaces are named collections of "method signatures"
+* Defined as a set of method signatures
+* Value of interface type can hold any value that implements those methods
+
+```go
+package main
+
+import (
+	"fmt"
+  "math"
+)
+// geometry interface
+type geometry interface {
+  area() float64
+  perim() float64
+}
+
+type rect struct {
+  width, height float64
+}
+
+type circle struct {
+  radius float64
+}
+
+// implement all methods in the interface.
+// implement geometry on rects
+func (r rect) area() float64 {
+  return r.width
+}
+func (r rect) perim() float64 {
+  return 2*r.width + 2*r.height
+}
+// implement geometry on circle
+func (c circle) area() float64 {
+  return math.Pi * c.radius * c.radius
+}
+func (c circle) perim() float64 {
+  return 2 * math.Pi * c.radius
+}
+
+func measure(g geometry) {
+  fmt.Println(g)
+  fmt.Println(g.area())
+  fmt.Println(g.perim())
+}
+
+func main() {
+  r := rect{width: 3, height: 4}
+  c := circle{radius: 5}
+  
+  measure(r)
+  measure(c)
+}
+
+```
+
+
+
 ### Type - Slice
 
 
