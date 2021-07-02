@@ -1,4 +1,4 @@
-## Variable Length Arrays in C
+## [Clang] - Variable Length Arrays
 
 * Example
 

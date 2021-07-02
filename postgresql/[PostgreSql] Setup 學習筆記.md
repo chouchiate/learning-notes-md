@@ -7,11 +7,7 @@
 $ brew install postgresql
 $ brew services start postgresql
 
-
 ```
-
-
-
 #### 建立使用者
 
 ```bash

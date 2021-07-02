@@ -1,4 +1,4 @@
-## [Gin] - MIddleware, validator, and Binding
+## [Gin] - Middleware, validator, and Binding
 
 #### Middleware
 使用 gin.Default()時，會預載 Recovery and Logger 兩個 middleware
