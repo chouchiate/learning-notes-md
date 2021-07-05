@@ -1,4 +1,4 @@
-#[mongodb] - Installation
+# [mongodb] - Installation
 
 #### MacOS - Homebrew
 ```bash
