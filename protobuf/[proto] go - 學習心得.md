@@ -21,7 +21,7 @@ $ protoc-gen-go --version      # 檢視版本
 
 ```bash
 # 進到有 proto 檔的資料夾
-$ cd internal/grpc/proto/jubox
+$ cd internal/grpc/proto/
 
 # compile 出 .pb.go 檔
 $ protoc --go_out=plugins=grpc:. *.proto --go_opt=paths=source_relative

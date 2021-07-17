@@ -54,6 +54,23 @@ type Password struct {
 }
 
 ```
+### Struct Tags
+**Golang Wiki - [連結](https://github.com/golang/go/wiki/Well-known-struct-tags)**
+
+* 處理 XML, JSON and other encoding package 資料使用
+* Well known struct tags List:
+
+| Tag | Documentation |
+| --- | ------------- |
+| xml | https://godoc.org/encoding/xml |
+| json | https://godoc.org/encoding/json | 
+| bson | https://godoc.org/labix.org/v2/mgo/bson, https://godoc.org/go.mongodb.org/mongo-driver/bson/bsoncodec |
+| bigquery | https://godoc.org/cloud.google.com/go/bigquery |
+
+
+
+
+
 
 
 

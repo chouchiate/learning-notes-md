@@ -5,8 +5,10 @@
 ```bash
 # macOS Homebrew
 $ brew install postgresql
+# start service
 $ brew services start postgresql
-
+# stop servie
+$ brew services stop postgresql
 ```
 #### 建立使用者
 
