@@ -120,6 +120,13 @@ $ git rebase --continue
 
 ```
 
+### Update Local List of Remote Branches 
+```bash
+$ git remote update origin --prune
+## Show all local and remote branches
+$ git branch -a
+```
+
 ### Branch Develop then Merge to Main
 
 ```bash
