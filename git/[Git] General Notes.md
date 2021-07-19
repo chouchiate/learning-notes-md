@@ -127,6 +127,13 @@ $ git remote update origin --prune
 $ git branch -a
 ```
 
+### How to Refresh gitignore
+```bash
+# clear git cache
+$ git rm -r --cached .
+```
+
+
 ### Branch Develop then Merge to Main
 
 ```bash
