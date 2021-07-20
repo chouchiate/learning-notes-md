@@ -1,5 +1,11 @@
 ## [gForth] - 學習筆記
 
+### macOS Homebrew
+```bash
+$ brew install gforth
+
+```
+https://formulae.brew.sh/formula/gforth
 
 ## Web Manual
 ** link[manual](https://www.complang.tuwien.ac.at/forth/gforth/Docs-html/)**
