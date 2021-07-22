@@ -112,6 +112,28 @@ http_url		-- http server url
 project_id	-- project name
 mqtt_uri		-- mqtt broker url
 mqtt_port		-- mqtt port
+
+```
+
+### change cloud type to 0 for customized server (ie. jubox)
+```json
+    json_cfg = {
+        "version": 3,
+        "wifi_ssid": 'xxx_LTE',
+        "wifi_pass": 'xxxxxxx',
+        "mqtt_uri": 'mqtt://mqtt.xxxx.yyy',
+        "mqtt_port": 1883,
+        "ntp_url": 'pool.ntp.org',
+        "mqtt_client_id": 'demo',
+        "mqtt_username": 'username',
+        "mqtt_password": 'password',
+        "cloud_type":  0,
+        "cloud_region": 'us-central1',
+        "project_id": 'walabot-home',
+        "http_url": 'https://xxx.yyy.zzzzz',
+        "cloud_registry": 'walabothome-app-cloud',
+        "package_name": 'com.walabot.home.esp.client',  
+    }
 ```
 
 ### flash_provision_config.py
