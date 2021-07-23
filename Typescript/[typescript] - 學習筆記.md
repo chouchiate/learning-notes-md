@@ -1,7 +1,46 @@
 # [Typescript] - Utility Types 學習筆記
 
+### Extend Express Request Object using Typescript
+* Use Declaration Merge **[[dcos]](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)**
 
-
+* Create custom type folder
+  1. <project_root>/types/@types/express/custom.request.d.ts
+  2. edit tsconfig.json at <project_root>
+  ```json
+  {
+    "compilerOptions": {
+      "module": "commonjs",
+      "allowJs": true,
+      "declaration": true,
+      "typeRoots": [
+        ...,
+        "src/types/@types/*",
+        "node_modules/@types",
+      ],
+    },
+    "files": [
+      "src/types/types/express/custom.request.d.ts"
+    ],
+  }
+  ```
+  3. add following in custom.express.d.ts
+  ```ts
+    declare global {
+      namespace Express {
+        interface Request {
+          customContext: custom_context
+        }
+      }
+    }
+  ```
+  4. Compile and Use it !!
+  ```ts
+  router.use((req:Request,res,next)=>{
+    console.log(req.customContext);
+    ...
+    next();
+  });
+  ```
 ### Utility Types 
 
 API Reference: https://www.typescriptlang.org/docs/handbook/utility-types.html
