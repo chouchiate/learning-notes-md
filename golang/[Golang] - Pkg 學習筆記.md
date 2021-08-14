@@ -1,10 +1,40 @@
 ## [Golang] - Pkg 學習筆記
 
+### **Package - fmt**
+- [API Doc](https://pkg.go.dev/fmt)
+---
+#### Printing Verbs
+| Type | Verb | Description |
+| ---- | ---- | ------------ |
+| general | %v | the value in a default format when printing structs, the plus flag (%+v) adds field names |
+| general | %#v | a Go-syntax representation of the value |
+| general | %T | a Go-syntax representation of the type of the value |
+| general | %% | a literal percent sign; consumes no value |
+
+##### ***Boolean***
 
 
+#### Example: Print Slice of struct
+```go
+var projects []Project  
+// try %v, %+v or %#v verbs of fmt
+fmt.Printf("%v", projects)
+```
+* %v  the value in a default format.
+    when printing structs, the plus flag (%+v) adds field names
+* %#v a Go-syntax representation of the value
+---
+#### func Errorf
+> Errorf formats according to a format specifier and returns the string as a value that satisfies error.
+```go
+func Errorf (
+    format string, 
+    intf ...interface{}
+) error
+```
 ### Package - strconv
 
-- API - https://golang.org/pkg/strconv/
+- [API Doc](https://golang.org/pkg/strconv/)
 
 ```go
 // string to int
@@ -37,7 +67,7 @@ fmt.Println(i,s,b,f,c,u,z,y,x,v)
 
 ### Package - time
 
-- API - https://golang.org/pkg/time/
+- [API Doc](https://golang.org/pkg/time/)
 
 ```go
 // Format
@@ -66,7 +96,7 @@ const (
 
 ### Package - encoding/json
 
-- API - https://golang.org/pkg/encoding/json/
+- [API Doc](https://golang.org/pkg/encoding/json/)
 
 
 

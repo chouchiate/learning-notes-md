@@ -68,12 +68,6 @@ type Password struct {
 | bigquery | https://godoc.org/cloud.google.com/go/bigquery |
 
 
-
-
-
-
-
-
 ### Type - Interfaces
 
 * Interfaces are named collections of "method signatures"
@@ -136,20 +130,34 @@ func main() {
 
 
 ### Type - Slice
+> The slice type is an abstraction built on top of Go's array type
+
+* The type specification for a slice is []T, where T is the type of the elements of the slice
+* slice type has no specified length
 
 
 
 ### Slice Operation
+> slice literal:
+```go
+letters := []string{"a", "b", "c", "d"}
+```
+> create slice with built-in function **Make**
+```go
+func make([]T, len, cap) []T
 
+```
+* T stands for the element type of the slice to be created. 
+* The make function takes a ***type***, a ***length***, and an ***optional capacity***. 
+* When called, make allocates an array and returns a slice that refers to that array.
+* A slice is a descriptor of an array segment. It consists of a pointer to the array, the length of the segment, and its capacity (the maximum length of the segment).
+* Slicing does not copy the slice's data. It creates a new slice value that points to the original array.
 
-
-
-
+[Slice Intro](https://blog.golang.org/slices-intro)
 #### Remove Elements from a slice
 
 ```go
 ```
-
 
 
 ## Byte Slice to String (and vice versa)
@@ -172,9 +180,28 @@ func string2ByteSlice ( s string ) [] byte {
 }
 ```
 
+### Type - Array
+An array type definition specifies a length 
+and an element type. An array's size is fixed; 
+```go
+var a [4]int
+a[0] = 1
+i := a[0]
+// i == 1
+```
+* Go's arrays are values. 
+* An array variable denotes the entire array; 
+* ***it is not a pointer*** to the first array element (as would be the case in C).
 
+> An array literal can be specified as
+```go
+b := [2]string{"Penn", "Teller"}
+```
+> Or, can have the compiler count the array elements
+```go
+b := [...]string{"Penn", "Teller"}
 
-
+```
 
 ### Type - Map 
 
