@@ -5,21 +5,21 @@
 * 2013 (v4.1) - First smartphone support
 * 2014 (v4.2) - IP connectivity, increased speed
 * 2016 (v5) - 4x range, 2x speed
-
+---
 
 ### **Bluetooth Device Types**
 * Bluetooth Smart: Single Mode (BLE Only)
 * Bluetooth Smart Ready: Dual Mode (BLE and Bluetooth Classic)
 * Bluetooth Classic (BR/EBR)
 
-
+---
 
 
 ### **BLE Wireless characteristics**
 * 2.4Ghz ISM band, (industrial, scientific, medical band)
 * Typical Range: 10-30 meters
 * Peak Current Consumption by chip during Tx < 15mA typ.
-
+---
 ### **BLE vs Classic**
 | BLE        | Classic    |
 |------------|------------|
@@ -27,8 +27,7 @@
 |40 RF Channels | 79 RF Channels |
 | 3 Discovery Chs | 32 Discovery Chs |
 
-
-
+---
 
 ### **BLE 與其他通訊技術比較**
 
@@ -253,15 +252,90 @@
 - Segmentation / Reassebly of packets (when larger than radio can deliver)
 
 ### **Attribute Protocol (ATT)**
+> Defines how a server exposes its data to a client.
+* Server: The device that exposes data.
+  - Beacon act as server, exposing battery level, transmit power, etc.
+  - Server sends 
+    * reponses,
+    * notifications, and 
+    * indications
+* Client: The device that consumes data.
+  - Mobile phone app act as client consuming data.
+  
+> Attribute is a generic name for any data exposed by the server.
+* Data is labelled and addressable.
+* Attribute made up of:
+  - handle
+    * 16 bit identifier for each attribute on server
+    * make attribute addressable
+    * not to change in transactions
+  - type
+    * 16 bit uuid (SIG Attributes)
+    * 128 bit uuid (custom)
+
+```
+// Bluetooth Base Address: 00000000 - 0000 - 1000 - 8000 - 00805F 9B34F B
+// Short UUID: 0x2A01
+// Final 128-bit uuid:
+00002A01 - 0000 - 1000 - 8000 - 00805F 9B34F B
+```
+
+  - value
+  - permissions
+    * which can be execute with specific security requirement
+    * Determins attribute can be ***read*** or ***write***, can be ***notified*** or ***indicated***
+
 
 
 ### **Security Manager (SM)**
 
 
 ### **Generic Attribute Profile (GATT)**
+* GATT organize attributes in hierachy
+* Attributes in GATT server are grouped into ***services***, each with 0 or more characteristics
+* GATT defines how **services**, **characteristics**, and **descriptors** can be discovered and used.
 
+![](../assets/img/gatt-attribute-hierarchy.png)
+
+<u>Characteristics</u>
+  1. container for user data
+  2. Includes:
+    - Declaration
+      * metadata
+    - value
+      * user data
+    - descriptor
+      * expand metadata 
+
+#### <u>Characteristic Value</u>
+|Attribute Handle|Attribute Type|Attribute Value|Attribute Permission|
+|--|--|--|--|
+|0x0002|Characteristic(0x2803)|Properties|Rules for attribute interaction|
+|address / attribute table|16 or 128 bit value to identify the type of every attribute|Value Handle|Read-Only|
+|||Characteristic UUID||
+
+#### <u>Characteristic Descriptor Attribute</u> ####
+> Descriptor contains related information about the characteristic value.
+* unit of measurement
+* format of data
+
+#### <u>GATT Services</u> ####
+* Primary service expose what device does
+* Secondary service expose additional information user does not need to understand
+
+#### <u>GATT Profile Specification</u> ####
+* Define roles and relatioship between server and client
+* services needed
+* requirement services must meet
+* how services is need and characteristics are used.
 
 ### **Generic Access Profile (GAP)**
+
+> GAP services is a mandatory service required to implement on all GATT servers
+  * Device Name
+    - utf-8 string
+  * Apperance
+    - 16 bit value enum
 
 #### ***GAP Modes***
 * GAP Broadcaster mode
@@ -347,5 +421,9 @@
 * [STM32WB BLE Stack](https://www.st.com/resource/en/programming_manual/pm0271-stm32wb-ble-stack-programming-guidelines-stmicroelectronics.pdf)
 
 * [BlueNRG-1/2 BLE stack](https://www.st.com/resource/en/programming_manual/dm00294449-bluenrg1-bluenrg2-ble-stack-v2x-programming-guidelines-stmicroelectronics.pdf)
+
+* [Nordic nRF5 SDK](https://devzone.nordicsemi.com/nordic/short-range-guides/b/bluetooth-low-energy/posts/ble-characteristics-a-beginners-tutorial)
+
+* [GATT 16-bit UUID Numbers Document](https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf)
 
 * [Forward Error Correction Codes](https://onlinelibrary.wiley.com/doi/pdf/10.1002/0470841516.app6#:~:text=The%20basic%20principle%20of%20Forward,transmission%20of%20that%20user%20signal.&text=Block%20codes%20break%20up%20the,of%20k%20bits%20in%20length.)
