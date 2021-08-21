@@ -203,6 +203,12 @@ b := [...]string{"Penn", "Teller"}
 
 ```
 
+### Type - String
+
+> String Builder Go v1.10 or later
+
+
+
 ### Type - Map 
 
 * A map maps keys to values.
