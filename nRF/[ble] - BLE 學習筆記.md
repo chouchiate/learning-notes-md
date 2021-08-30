@@ -410,6 +410,8 @@
 
 * [BLE5](https://www.rfwireless-world.com/Terminology/BLE-Advertising-and-Data-Packet-Format.html)
 
+* [BLE GATT](https://www.bluetooth.com/specifications/assigned-numbers/)
+
 * [BLE5.2 Feats](https://www.bluetooth.com/wp-content/uploads/2020/01/Bluetooth_5.2_Feature_Overview.pdf)
 
 * [Microchip Dev Help](https://microchipdeveloper.com/wireless:ble-introduction)
