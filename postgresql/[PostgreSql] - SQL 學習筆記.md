@@ -33,23 +33,27 @@ https://www.postgresql.org/docs/9.1/sql-createextension.html
 
   #### **查找已移除設備心路歷程**
 
-  * 從 detections table JOIN materialized current_space_device table 篩選出已移動 space_id (與現在位置不符者清單)
-    ```sql
-      SELECT DISTINCT
-        detections.box_device_id,
-        detections.space_id
-      FROM 
-        public.detections
-      JOIN 
-        public.current_space_device
-      ON 
-        current_space_device.box_device_id = detections.box_device_id
-      AND 
-        current_space_device.space_id::text != detections.space_id;
-    ```
+  * 從 detections table JOIN materialized current_space_device table 中篩選出被移動過的設備清單和其 space_id (與當今設備位置 current_space_device 不符者清單)
+
+	[DISTINCT CLAUSE](https://www.postgresql.org/docs/9.5/sql-select.html#SQL-DISTINCT)
+
+	```sql
+		SELECT DISTINCT
+			detections.box_device_id,
+			detections.space_id
+		FROM 
+			public.detections
+		JOIN 
+			public.current_space_device
+		ON 
+			current_space_device.box_device_id = detections.box_device_id
+		AND 
+			current_space_device.space_id::text != detections.space_id;
+	```
 ![](../assets/img/sql_001.png)
 
   * 將上一個 subquery JOIN detections 篩選出已已移除設備的 detections
+	
   ```sql
 	SELECT *
 	FROM public.detections
@@ -69,8 +73,11 @@ https://www.postgresql.org/docs/9.1/sql-createextension.html
 
 ![](../assets/img/sql_002.png)
 
-* 使用 aggregate function MAX / GROUP BY 篩選出已移除設備的最後一筆 detection updates
+* 使用 aggregate function MAX / GROUP BY 篩選出
+	1. 已遷移設備位置
+	2. 已更換病人
 
+的最後一筆 detection
 ```sql
 
 SELECT
@@ -175,5 +182,8 @@ AND rl.last_updated_at <= dt.updated_at
 ```
 ![](../assets/img/sql_005.png)
 
-* 從 Query 結果可以看出移除設備的更換 Space & Patient 歷程
-![](../asserts/img/sql_006.png)
+* 從 Query 結果可以從 detections table 中篩選出已移除設備更換 Space & Patient 歷程
+
+![](../assets/img/sql_006.png)
+
+*
