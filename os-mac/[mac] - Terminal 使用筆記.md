@@ -13,9 +13,21 @@ ctrl+c
 lsof -n -i | grep LISTEN
 ```
 ### 查詢特定 port 的服務，以 80 port 為例
-```bash
-lsof -n -i:80 | grep LISTEN
-```
+  * Old
+
+  ```bash
+  $ lsof -n -i:80 | grep LISTEN
+  ```
+  * Better
+
+  ```bash
+  $ sudo lsof -nP -iTCP:$PORT | grep LISTEN
+  ```
+
+### Kill Process by PID
+  ```bash
+  $ sudo kill -9 <pid>
+  ```
 
 ### Handle - zsh compinit: insecure directories
 

@@ -1,2 +1,2 @@
-## [rust] - Cargo 筆記
+## [Rust] - Cargo 筆記
 
