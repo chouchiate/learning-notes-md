@@ -1,12 +1,7 @@
 ## [postgreSql] Lesson 學習筆記
 
 #### 學習連結
-
-```url
-https://youtu.be/qw--VYLpxG4
-```
-
-
+[yourube](https://youtu.be/qw--VYLpxG4)
 
 ## Create Table
 
@@ -131,17 +126,11 @@ SELECT 1 <> 1;
 ?column? | f
 
 ```
-
-
-
 ## Limit
 
 ```sql
 SELECT * FROM person LIMIT 10;
 ```
-
-
-
 ## Offset
 
 ```sql
