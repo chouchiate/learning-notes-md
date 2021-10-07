@@ -291,6 +291,17 @@ FROM public.detections
 WHERE occurred_at >= now() - INTERVAL '1 DAY';
 ```
 
+#### Create ***Materialized View*** for **One_Month_Detections**
+##### **Conditions**
+
+```sql
+CREATE MATERIALIZED VIEW detections_1M AS
+SELECT *
+FROM public.detections
+WHERE occurred_at >= now() - INTERVAL '1 MONTH';
+```
+
+
 #### Create ***Materialized View*** for **離床/跌倒**
 ##### **Conditions**
 
@@ -305,4 +316,25 @@ SELECT DISTINCT ON (box_device_id)
 ORDER BY box_device_id, occurred_at DESC
 ;
 
+```
+
+#### Create Index Using btree
+```sql
+  CREATE INDEX 
+    idx_occurred_time 
+  ON 
+    public.detections 
+  USING 
+    btree (occurred_at);
+```
+
+#### Show all indexes of a table 
+```sql
+SELECT
+	indexname,
+	indexdef
+FROM
+	pg_indexes
+WHERE
+	tablename = 'detections';
 ```
