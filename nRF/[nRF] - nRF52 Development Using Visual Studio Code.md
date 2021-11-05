@@ -1,6 +1,6 @@
 ## [nRF] - (macOS) nRF52 Development using Visual Studio Code 
 
-
+* [nRF5_sdk_thread](https://www.nordicsemi.com/Products/Development-software/nRF5-SDK-for-Thread-and-Zigbee/Download#infotabs)
 
 ### 下載與安裝
 

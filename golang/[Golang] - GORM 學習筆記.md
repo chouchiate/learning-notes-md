@@ -58,3 +58,18 @@ $ go get -u gorm.io/driver/posgres
 #### Raw & Exec
 
 
+
+#### Find Soft Deleted Record
+
+```go
+  db.Unscoped().Where("age = 20").Find(&users)
+// SELECT * FROM users WHERE age = 20;
+```
+
+#### Delete Permanently
+```go
+db.Unscoped().Delete(&order)
+// DELETE FROM orders WHERE id=10;
+```
+
+
