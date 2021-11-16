@@ -1,18 +1,90 @@
 ## [gorm] - 使用指南
 
 #### 安裝
+```bash
+$ go get -u github.com/jinzhu/gorm
+```
 
-#### 連接數據庫
+#### 快速開始
+```go
+package main
+
+import (
+    "github.com/jinzhu/gorm"
+    _ "github.com/jinzhu/gorm/dialects/sqlite"
+)
+
+type Product struct {
+  gorm.Model
+  Code string
+  Price uint
+}
+
+func main() {
+  db, err := gorm.Open("sqlite3", "test.db")
+  if err != nil {
+    panic("連接數據庫失敗")
+  }
+  defer db.Close()
+
+  // 自動遷移模式
+  db.AutoMigrate(&Product{})
+
+  // 創建
+  db.Create(&Product{Code: "L1212", Price: 1000})
+
+  // 讀取
+  var product Product
+  db.First(&product, 1) // 查詢id爲1的product
+  db.First(&product, "code = ?", "L1212") // 查詢code爲l1212的product
+
+  // 更新 - 更新product的price爲2000
+  db.Model(&product).Update("Price", 2000)
+
+  // 刪除 - 刪除product
+  db.Delete(&product)
+}
+```
+## **連接數據庫**
 
 MySql
+```go
+import (
+  "github.com/jinzhu/gorm"
+  _ "github.com/jinzhu/gorm/dialects/mysql"
+)
 
+func main() {
+  db, err := gorm.Open("mysql", "user:password@/dbname?charset=utf8&parseTime=True&loc=Local")
+  defer db.Close()
+}
+```
 PostgresSql
+```go
+import (
+  "github.com/jinzhu/gorm"
+  _ "github.com/jinzhu/gorm/dialects/postgres"
+)
 
+func main() {
+  db, err := gorm.Open("postgres", "host=myhost port=myport user=gorm dbname=gorm password=mypassword")
+  defer db.Close()
+}
+```
 Sqlite3
+```go
+import (
+  "github.com/jinzhu/gorm"
+  _ "github.com/jinzhu/gorm/dialects/sqlite"
+)
 
-不支持的數據庫
-
-模型
+func main() {
+  db, err := gorm.Open("sqlite3", "/tmp/gorm.db")
+  defer db.Close()
+}
+```
+## **不支持的數據庫**
+[gorm](https://github.com/jinzhu/gorm/blob/master/dialect.go)
 
 ## **模型定義**
 ```go
@@ -70,30 +142,175 @@ type User struct {
 
 ## **約定**
 
-
 gorm.Model
+> 結構gorm.Model包括一些基本字段ID，CreatedAt，UpdatedAt，DeletedAt，你可以將它嵌入你的模型，或者只寫你想要的字段
+```go
+// gorm.Model definition
+type Model struct {
+  ID        uint `gorm:"primary_key"`
+  CreatedAt time.Time
+  UpdatedAt time.Time
+  DeletedAt *time.Time
+}
+
+// Inject fields `ID`, `CreatedAt`, `UpdatedAt`, `DeletedAt` into model `User`
+type User struct {
+  gorm.Model
+  Name string
+}
+
+// Declaring model w/o gorm.Model
+type User struct {
+  ID   int
+  Name string
+}
+```
+
 ID 為默認的主鍵
+```go
+type User struct {
+  ID   string // field named `ID` will be used as primary field by default
+  Name string
+}
 
+// Set field `AnimalID` as primary field
+type Animal struct {
+  AnimalID int64 `gorm:"primary_key"`
+  Name     string
+  Age      int64
+}
+```
 多元化表名
+* 表名是結構體名稱的複數形式
+```go
+type User struct {} // default table name is `users`
 
+// Set User's table name to be `profiles`
+func (User) TableName() string {
+  return "profiles"
+}
+
+func (u User) TableName() string {
+  if u.Role == "admin" {
+    return "admin_users"
+  } else {
+    return "users"
+  }
+}
+
+// Disable table name's pluralization, if set to true, `User`'s table name will be `user`
+db.SingularTable(true)
+
+```
+> Using `table` field inside model struct
+
+```go
+type Product struct{
+  ID int
+  Name strig
+  Quantity int
+
+  // private field, ignored from gorm
+  table string `gorm:"-"`
+}
+
+func (p Product) TableName() string {
+  // double check here, make sure the table does exist!!
+  if p.table != "" {
+    return p.table
+  }
+  return "products" // default table name
+}
+
+// for the AutoMigrate
+db.AutoMigrate(&Product{table: "jeans"}, &Product{table: "skirts"}, &Product{})
+
+// to do the query
+prod := Product{table: "jeans"}
+db.Where("quantity > 0").First(&prod)
+```
+> Does not work directly with db.Find(); when query multiple records is required, workaround is to specify table before doing the query.
+```go
+prods := []*Product{}
+db.Table("jeans").Where("quantity > 0").Find(&prods)
+```
+## Method Chaining
+> methods 可以分成 chain methods、finisher methods、new session method。
+```go
+db.
+Table("table_name").         // Model(&model{})
+Select("select syntax").
+Group("field_names").
+Order("field_name").
+Find(&model{})     // Rows()
+```
 
 指定表名
+```go
+// Create `deleted_users` table with struct User's definition
+db.Table("deleted_users").CreateTable(&User{})
 
+var deleted_users []User
+db.Table("deleted_users").Find(&deleted_users)
+//// SELECT * FROM deleted_users;
+
+db.Table("deleted_users").Where("name = ?", "jinzhu").Delete()
+//// DELETE FROM deleted_users WHERE name = 'jinzhu';
+```
 
 修改默認表名
-
-
+> 通過定義 DefaultTableNameHandler 對默認表名應用任何規則
+```go
+gorm.DefaultTableNameHandler = func (db *gorm.DB, defaultTableName string) string  {
+  return "prefix_" + defaultTableName;
+}
+```
 列名是字段名的蛇型小寫
+```go
+type User struct {
+  ID        uint      // column name is `id`
+  Name      string    // column name is `name`
+  Birthday  time.Time // column name is `birthday`
+  CreatedAt time.Time // column name is `created_at`
+}
 
+// Overriding Column Name
+type Animal struct {
+  AnimalId    int64     `gorm:"column:beast_id"`         // set column name to `beast_id`
+  Birthday    time.Time `gorm:"column:day_of_the_beast"` // set column name to `day_of_the_beast`
+  Age         int64     `gorm:"column:age_of_the_beast"` // set column name to `age_of_the_beast`
+}
+```
 
-時間撮追蹤
-
-
+### **時間撮追蹤**
 CreatedAt
+> 當模型有CreatedAt字段，在記錄第一次創建的時候，它將被設置成當前時間
 
+```go
+db.Create(&user) // will set `CreatedAt` to current time
+// To change its value, you could use `Update`
+db.Model(&user).Update("CreatedAt", time.Now())
+```
 
 UpdatedAt
+>當模型有UpdatedAt字段，當記錄更新的時候，它將被設置成當前時間
+```go
+db.Save(&user) // will set `UpdatedAt` to current time
 
-
-
+db.Model(&user).Update("name", "jinzhu") // will set `UpdatedAt` to current time
+```
 DeletedAt
+>當模型有DeletedAt字段，當刪除它們的實例的時候，它們不會從數據庫中刪除，而是設置DeletedAt字段爲當前時間。
+
+
+### **增刪改查**
+* 創建記錄
+```go
+user := User{Name: "Jinzhu", Age: 18, Birthday: time.Now()}
+
+db.NewRecord(user) // => returns `true` as primary key is blank
+
+db.Create(&user)
+
+db.NewRecord(user) // => return `false` after `user` created
+```
