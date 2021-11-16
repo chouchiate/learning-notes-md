@@ -96,3 +96,42 @@
     - (維6) 維思 Setting - (維5)完成後開始
     - (維7) 維思 History - 尚未開始 (與歷4 同步)
 
+11-12-2021
+
+0. 硬體測試 
+  - 維思 
+    + 11/9 (二) 收到維思床墊樣品
+    + 11/10 測試 WIFI 連線
+    + 11/11 測試遠端 WIFI 設定 (透過 MQTT Pub) 
+    + 11/12 遠端切換兩組 WIFI 設定 確認設備可恢復連線
+    + 11/13 - 11/14 透過 Jubo-box 蒐集實際躺床資料存入資料庫內 
+    + 11/13 - 11/14 測試 POE + 乙太網路連線測試
+    + 11/15-11/19 將針對實際資料執行離床過久和久臥的事件判定
+
+1. Jubo-Box
+  維思 Humetrics
+    - (維1) 10/28 (五) 收到維思 Mqtt Broker/Client 測試資料和工具包
+    - (維2) 維思 x Jubo-box Mqtt - 11/5 完成 
+    - (維3) Mqtt adapter and logic to jubo-space grpc - 11/5 完成
+    - (維8) 廠商樣品測試 - 待廠商提供成品測試 wireless (先用工具包測封包 11/5 完成)
+    - (維9) 維思設備 WiFi 遠端設定 Mqtt Pub <- (前端介面規格需要定義, 後端 API -> MQTT 已完成)
+    - (維10) Device Management - 11/10 已開始 (Q4 OKR 目標)
+  
+2. Jubo-space-backend
+    - (歷2) Device Install/Uninstall record - 已完成
+    - (歷3) Patient-History-API with Device/Room Change - 本週暫停
+
+  維思 Humetrics
+    - (維4) 維思相關 Grpc to Postgres - 進行中 (Grpc 11/8-12 完成, postgres db 預計 11/15 完成)
+    - (維4.1) 分析 11/13 - 11/14 蒐集的實際躺床資料做久臥 以及離床過久的計算並完成事件 detection 的產生 (預計 11/19 前完成)
+
+3. Jubo-space-frontend
+  以 patient 為主的 history
+    - (歷4) 以 patient 為主的 history detail (monthly with pagination) - 本週暫停
+
+  維思 Humetrics
+    - (維5) 維思 Monitor - (進行中)
+    - (維6) 維思 Setting - (維5)完成後開始
+    - (維7) 維思 History - 尚未開始 (與歷4 同步)
+
+

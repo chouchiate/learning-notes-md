@@ -107,7 +107,7 @@ Security
   + FFD PAN (Personal Area Network) Coordinator mode
   + Any other MAC frame security options not allowed.
 
-Chaper 7 and Annexes of [IEEE802154]()
+Chapter 7 and Annexes of [IEEE802154]()
 N: Normative, S: Subset, M: Modified, Not Relevant
 
 ## table
