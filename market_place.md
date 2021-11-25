@@ -12,7 +12,7 @@ Apply, validate, sell
 工程 希望廠商 follow 細目
   * reboot / ota upgrade / setting
   * power / ups or battery backup
-  * connectivity / limits
+  * connectivity / limitations / risk
   * calibration
   * 廠商的 UI / HMI sync
   * source of noise / environmental

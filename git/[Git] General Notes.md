@@ -56,7 +56,10 @@ git diff master..branch1 > diff.txt
 ```
 
 #### git log - 檢視紀錄
-
+> 搜尋 local git log commit message with "keyword"
+```bash
+$ git log --all --oneline | grep "slack"
+```
 
 
 #### git blame - 檢視

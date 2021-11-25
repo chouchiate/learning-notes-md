@@ -207,7 +207,7 @@ db.SingularTable(true)
 ```go
 type Product struct{
   ID int
-  Name strig
+  Name string
   Quantity int
 
   // private field, ignored from gorm

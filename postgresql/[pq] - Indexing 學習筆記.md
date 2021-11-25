@@ -25,11 +25,33 @@ ORDER BY
     indexname;
 ```
 
+### 刪除 Table 的 Index
+```sql
+DROP INDEX title_idx;
+```
+
 ### 建立 composite index 在 detection table 的 device_id, box_device_id, patient_id 和 updated_at DESC 排序
 ```sql
 CREATE INDEX idx_composite ON detections (device_id, box_device_id, patient_id, updated_at DESC);
 ```
 
+### 建立 Random Series Test Table
+```sql
+DROP TABLE IF EXISTS test;
+CREATE TABLE IF NOT EXISTS test (
+	id integer,
+	group_id text,
+	ts float,
+	PRIMARY KEY (id)
+);
+---
+INSERT INTO test
+SELECT
+	id,
+	floor(random() * 21) + 1 as group_id,
+	random() * id as ts
+FROM generate_series(1, 100000) as id;
+```
 ### 使用 EXPLAIN 分析 Query 效能
 * [圖形顯示](https://explain.dalibo.com/plan/vaJ)
 ```sql
