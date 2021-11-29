@@ -143,20 +143,26 @@
 
 0. 硬體測試 
   - 維思 
-    + 與維思確認 respiratory & restless 訊號有雜訊干擾 11-22 ~11-26 廠商將安排人員來公司更新韌體
+    + 與維思確認 respiratory & restless 訊號有雜訊干擾 11-22 ~ 11-26 廠商將安排人員來公司更新韌體
 
 1. Jubo-Box
   維思 Humetrics
     - (維9) 維思設備 WiFi 遠端設定 Mqtt Pub <- (前端介面規格需要定義, 後端 API -> MQTT 已完成)
     - (維10) Device Management -  進行中
-      + Humetrics 上下線判定 & Event 通知 Jubo-space-backend (已完成待測試)
-      + Humetrics 設備異常 Event 通知 Jubo-space-backend (已完成待測試)    
+      + Humetrics 上下線 Event 通知 Jubo-space-backend (已完成)
+      + Humetrics 設備異常 Event 通知 Jubo-space-backend (已完成)
   
 2. Jubo-space-backend
-    - (歷3) Patient-History-API with Device/Room Change - (已完成定義)
+    - (歷3) Patient-History-API 
+      + Get History List API (已完成)
+      + Get Latest History (已完成)
+      + Get Patient Detail History By Date (已完成)
+      + Get Spatial Detail History By Date (進行中) (跌倒偵測設備類)
+    - (維10) 設備異常/上下線
+      + Humetrics 上下線 Event 寫入 Jubo-space-backend Db (已完成)
+      + Humetrics 設備異常 Event 寫入 Jubo-space-backend Db (已完成)
 
   維思 Humetrics
-    - (維4) 維思相關 Grpc to Postgres - 已完成
     - (維5) 離床過久的計算並完成事件 detection 的產生 (進行中)
     - (維6) 臥床過久的計算並完成事件 detection 的產生 (進行中)
 
@@ -169,5 +175,31 @@
     - (維6) 維思 Setting - (維5)完成後開始
     - (維7) 維思 History - 尚未開始 (與歷4 同步)
 
+11-26-2021
+
+0. 硬體測試
+  - 維思
+    + 與維思確認 respiratory & restless 訊號有雜訊干擾
+    + 廠商將安排人員來公司更新韌體
+1. Jubo-Box
+  維思 Humetrics
+    - (維10) Device Management
+      + Humetrics 上下線 Event 通知 Jubo-space-backend (已完成)
+      + Humetrics 設備異常 Event 通知 Jubo-space-backend (已完成)
+
+2. Jubo-space-backend
+    - (歷3) Patient-History-API 
+      + Get History List API (已完成 上dev)
+      + Get Latest History (已完成 上dev)
+      + Get Patient Detail History By Date (已完成 上dev)
+      + Get Spatial Detail History By Date (進行中) (跌倒偵測設備類)
+    - (維10) 設備異常/上下線
+      + Humetrics 上下線 Event 寫入 Jubo-space-backend Db (已完成 上dev)
+      + Humetrics 設備異常 Event 寫入 Jubo-space-backend Db (已完成 上dev)
+      + Humetrics 上下線/設備異常 前端 API (進行中)
+
+  維思 Humetrics
+    - (維5) 離床過久的計算並完成事件 detection 的產生 (進行中 預計12/3完成)
+    - (維6) 臥床過久的計算並完成事件 detection 的產生 (進行中 預計12/3完成)
 
 
