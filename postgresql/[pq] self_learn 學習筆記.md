@@ -137,15 +137,11 @@ SELECT * FROM person LIMIT 10;
 SELECT * FROM person OFFSET 5 LIMIT 5;
 ```
 
-
-
 ## Fetch Keyword
 
 ```sql
 SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
 ```
-
-
 
 ## In Keyword
 
@@ -178,8 +174,6 @@ SELECT * FROM person WHERE email LIKE '%@google.%';
 SELECT * FROM person WHERE email LIKE '_______@%';
 
 ```
-
-
 
 ## Group By Keyword
 

@@ -202,4 +202,7 @@
     - (維5) 離床過久的計算並完成事件 detection 的產生 (進行中 預計12/3完成)
     - (維6) 臥床過久的計算並完成事件 detection 的產生 (進行中 預計12/3完成)
 
+Meeting Minute
+- Time.Ticker for event count down add db load at Startup
+- Line Notify (free) only text
 

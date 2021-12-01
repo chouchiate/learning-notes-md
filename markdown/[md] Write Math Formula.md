@@ -72,18 +72,50 @@
 |$\iint$|\iint|
 |$\iiint$|\iiint|
 |$\int\limits_a^b$|\int\limits_a^b|
-|$a’$ $a^{\prime}$|
+|$a` a^{\prime}$|a` a^{\prime}|
+|$\hat{a}$|\hat{a}|
+|$\bar{a}$|\bar{a}|
+|$\grave{a}$|\grave{a}|
+|$\acute{a}$|\acute{a}|
+|$\dot{a}$|\dot{a}|
+|$\ddot{a}$|\ddot{a}|
+|$\not{a}$|\not{a}|
+|$\mathring{a}$|\mathring{a}|
+|$\overrightarrow{AB}$|\overrightarrow{AB}|
+|$\overleftarrow{AB}$|\overleftarrow{AB}|
+|$a'''$|a'''|
+|$\overline{aaa}$|\overline{aaa}|
+|$\check{a}$|\check{a}|
+|$\vec{a}$|\vec{a}|
+|$\underline{a}$|\underline{a}|
+|$\color{red}x$|\color{red}x|
+|$\pm$|\pm|
+|$\mp$|\mp|
+|$\int u\mathrm{d}x$|\int u\mathrm{d}x|
+|$,$|,|
+|$:$|:|
+|$;$|;|
+|$!$|!|
+|$\int y, \mathrm{d}x$|\int y, \mathrm{d}x|
+|$\dots$|\dots|
+|$\ldots$|\ldots|
+|$\cdots$|\cdots|
+|$\vdots$|\vdots|
+|$\ddots$|\ddots|
+
 #### Brackets etcs
 | Symbol | Script |
 | ------ | ------ |
-
-
-
-#### Sum and Integral
-| Symbol | Script |
-| ------ | ------ |
+|$(a)$|(a)|
+|$[a]$|[a]|
+|${a}$|{a}|
+|$\langle f \rangle$|\langle f \rangle|
+|$\lfloor f \rfloor$|\lfloor f \rfloor|
+|$\lceil f \rceil$|\lceil f \rceil|
+|$\ulcorner f \urcorner$|\ulcorner f \urcorner|
 
 
 
 #### Reference
 > [resource](https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/)
+> [katex](https://katex.org/docs/support_table.html)
