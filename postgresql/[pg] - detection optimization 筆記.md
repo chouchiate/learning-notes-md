@@ -1,5 +1,50 @@
 ** [pg] - optimization
 
+## Use Where / in / group by 結果
+
+```sql
+select * from public.detections
+where (box_device_id, occurred_at) in (
+	select box_device_id, max(occurred_at) from detections group by box_device_id
+)
+/*
+"Hash Join  (cost=247616.00..527190.63 rows=50 width=1064)"
+"  Hash Cond: ((detections.box_device_id = detections_1.box_device_id) AND (detections.occurred_at = (max(detections_1.occurred_at))))"
+"  ->  Seq Scan on detections  (cost=0.00..260344.94 rows=3662794 width=1064)"
+"  ->  Hash  (cost=247615.69..247615.69 rows=21 width=26)"
+"        ->  Finalize GroupAggregate  (cost=247610.16..247615.48 rows=21 width=26)"
+"              Group Key: detections_1.box_device_id"
+"              ->  Gather Merge  (cost=247610.16..247615.06 rows=42 width=26)"
+"                    Workers Planned: 2"
+"                    ->  Sort  (cost=246610.13..246610.19 rows=21 width=26)"
+"                          Sort Key: detections_1.box_device_id"
+"                          ->  Partial HashAggregate  (cost=246609.46..246609.67 rows=21 width=26)"
+"                                Group Key: detections_1.box_device_id"
+"                                ->  Parallel Seq Scan on detections detections_1  (cost=0.00..238978.64 rows=1526164 width=26)"
+
+*/
+
+```
+
+## 新增 idx_composite 之後
+> "CREATE INDEX idx_composite ON public.detections USING btree (box_device_id, occurred_at DESC)"
+```sql
+/*
+"Nested Loop  (cost=245550.48..245820.24 rows=45 width=1064)"
+"  ->  Finalize GroupAggregate  (cost=245549.92..245555.24 rows=21 width=26)"
+"        Group Key: detections_1.box_device_id"
+"        ->  Gather Merge  (cost=245549.92..245554.82 rows=42 width=26)"
+"              Workers Planned: 2"
+"              ->  Sort  (cost=244549.90..244549.95 rows=21 width=26)"
+"                    Sort Key: detections_1.box_device_id"
+"                    ->  Partial HashAggregate  (cost=244549.23..244549.44 rows=21 width=26)"
+"                          Group Key: detections_1.box_device_id"
+"                          ->  Parallel Seq Scan on detections detections_1  (cost=0.00..237624.15 rows=1385015 width=26)"
+"  ->  Index Scan using idx_composite on detections  (cost=0.56..12.59 rows=2 width=1064)"
+"        Index Cond: ((box_device_id = detections_1.box_device_id) AND (occurred_at = (max(detections_1.occurred_at))))"
+*/
+```
+
 ## TL;DR - 優化 mview `detections_latest` 中最慢的 SQL query part
 
 ```sql
@@ -25,6 +70,49 @@ WITH RECURSIVE res AS (
 SELECT *
 FROM   res
 ORDER BY occurred_at
+
+/*
+"Sort  (cost=27808403.36..27808403.61 rows=101 width=642)"
+"  Sort Key: res.occurred_at"
+"  CTE res"
+"    ->  Recursive Union  (cost=247610.59..27808397.97 rows=101 width=1064)"
+"          ->  Limit  (cost=247610.59..247610.70 rows=1 width=1064)"
+"                ->  Gather Merge  (cost=247610.59..603742.02 rows=3052342 width=1064)"
+"                      Workers Planned: 2"
+"                      ->  Sort  (cost=246610.56..250425.99 rows=1526171 width=1064)"
+"                            Sort Key: d.box_device_id, d.occurred_at DESC"
+"                            ->  Parallel Seq Scan on detections d  (cost=0.00..238979.71 rows=1526171 width=1064)"
+"          ->  Nested Loop  (cost=275607.81..2756078.53 rows=10 width=1064)"
+"                ->  WorkTable Scan on res res_1  (cost=0.00..0.20 rows=10 width=32)"
+"                ->  Limit  (cost=275607.81..275607.81 rows=1 width=1064)"
+"                      ->  Sort  (cost=275607.81..278660.15 rows=1220937 width=1064)"
+"                            Sort Key: d_1.box_device_id, d_1.occurred_at DESC"
+"                            ->  Seq Scan on detections d_1  (cost=0.00..269503.12 rows=1220937 width=1064)"
+"                                  Filter: (box_device_id > res_1.box_device_id)"
+"  ->  CTE Scan on res  (cost=0.00..2.02 rows=101 width=642)"
+
+*/
+
+```
+
+## 新增 idx_composite 之後
+> "CREATE INDEX idx_composite ON public.detections USING btree (box_device_id, occurred_at DESC)"
+```sql
+/*
+"Sort  (cost=152.61..152.86 rows=101 width=642)"
+"  Sort Key: res.occurred_at"
+"  CTE res"
+"    ->  Recursive Union  (cost=0.56..147.23 rows=101 width=1064)"
+"          ->  Limit  (cost=0.56..0.86 rows=1 width=1064)"
+"                ->  Index Scan using idx_composite on detections d  (cost=0.56..1024592.58 rows=3323993 width=1064)"
+"          ->  Nested Loop  (cost=0.56..14.43 rows=10 width=1064)"
+"                ->  WorkTable Scan on res res_1  (cost=0.00..0.20 rows=10 width=32)"
+"                ->  Limit  (cost=0.56..1.40 rows=1 width=1064)"
+"                      ->  Index Scan using idx_composite on detections d_1  (cost=0.56..940083.12 rows=1107998 width=1064)"
+"                            Index Cond: (box_device_id > res_1.box_device_id)"
+"  ->  CTE Scan on res  (cost=0.00..2.02 rows=101 width=642)"
+*/
+
 ```
 
 # 如何找出每一個組別中，最新/最大的那筆數據？

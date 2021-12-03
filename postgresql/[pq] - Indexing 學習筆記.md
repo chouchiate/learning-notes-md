@@ -34,6 +34,11 @@ DROP INDEX title_idx;
 ```sql
 CREATE INDEX idx_composite ON detections (device_id, box_device_id, patient_id, updated_at DESC);
 ```
+### Update composite index 
+> Create composite index to 
+```sql
+CREATE INDEX idx_composite ON detections (box_device_id ASC, occurred_at DESC);
+```
 
 ### 建立 Random Series Test Table
 ```sql
