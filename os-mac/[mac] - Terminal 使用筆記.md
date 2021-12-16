@@ -41,3 +41,18 @@ $ cd /usr/local/share/zsh
 $ sudo chmod -R 755 ./site-functions 
 ```
 
+### **List USB Ports**
+```bash
+$ ls /dev/tty.usb*
+/dev/tty.usbserial-DO02K4IH
+$ ls /dev/cu.*
+zsh: no matches found: /dev/cu.*
+```
+
+### **Connect With Screen**
+
+screen /dev/tty.usbserial-DO02K4IH **Baudrate**
+
+> To Quit: the screen app, type CTRL-A, then CTRL-\.
+
+

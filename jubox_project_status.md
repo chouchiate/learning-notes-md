@@ -206,3 +206,44 @@ Meeting Minute
 - Time.Ticker for event count down add db load at Startup
 - Line Notify (free) only text
 
+12-03-2021
+
+0. 硬體測試
+  - 維思
+    + 廠商已更新硬體韌體版本
+    + 週末實際測試
+1. Jubo-Box
+  維思 Humetrics (已完成)
+  + Jubo-Box Cache/Db Re-factoring
+
+2. Jubo-space-backend
+  + Jubo-Space-Backend Re-factoring
+    - (歷3) Patient-History-API (已完成)
+
+    - (維10) 設備異常/上下線 (已完成)
+
+  維思 Humetrics
+    - (維5) 離床過久的計算並完成事件 (已完成)
+
+12-06-2021 Meeting Minute
+- 3 or more timezone device configure (possible)
+
+12-10-2021
+
+0. 硬體測試
+  - 維思
+    + 實際測試於睡眠過程中無異常呼吸讀值 廠商對策確定有效
+    + 廠商的對策方式 - 檢查硬體發現有手工焊接 USB 和 Ethernet Socket 的外殼 (短路共地排除 60Hz 雜訊)
+    + USB 與 Ethernet Socket 短路為緊急對策 (絕緣失效 無法通過 IEEE 802.af3 絕緣要求 - 外銷可能會有安規問題), 需請廠商提出硬體改版的預計時程。
+
+1. Jubo-Box
+  + Deploy to Demo 環境
+  + 解決 Jubo-Box CPU Usage 問題
+  + Migrate / Refactor MongoDb, 新增 develop 環境
+  + Upgrade Mongoose to support timeseries model/schema
+  + 緯創呼吸心跳資料改採用 timeseries 方式儲存 log
+
+2. Jubo-space-backend
+  + Deploy to Demo 環境
+  + 與 Max 討論 backend refactor 方案計畫
+
