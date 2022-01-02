@@ -247,3 +247,39 @@ Meeting Minute
   + Deploy to Demo 環境
   + 與 Max 討論 backend refactor 方案計畫
 
+
+12-17-2021
+
+1. Jubo-Box
+  + 依照設計團隊定義床墊狀態大分類 - 重構 IOT 設備 State Machine 架構 和 Grpc Packet Definition
+
+
+2. Jubo-space-backend
+  + Bug Fixes
+  + Auth API refactor
+
+12-23-2021
+
+1. Jubo-Box
+  + 依照設計團隊定義床墊狀態大分類 - 重構 IOT 設備 State Machine 架構 和 Grpc Packet Definition
+    1. 已完成 世大重構
+    2. 進行中 維思, 美維, 緯創, 友拓, Vayyar
+  + 重構 jubo-box 與 jubo-space-backend gprc
+    1. 合併減少 message 數和資料量
+    2. 已完成 new grpc adapter
+    3. 進行中 與新的 State Machine 架構做連結
+  + Minor Bug fix
+
+12-30-2021
+
+1. Hardware
+  + Humetrics
+    + WIFI 無法連線 JUBO 2.4GHz 網域與廠商 debug (可連線 JUBO-Guest 2.4GHz)
+    + 廠商韌體更新 OTA 實作
+
+2. Jubo-Box
+  + 依照設計團隊定義床墊狀態大分類 - 重構 IOT 設備 State Machine 架構 和 Grpc Packet Definition
+    1. 完成 世大, 維思, 緯創 重構
+  + 依照新定義 Grpc 分類 Event, Status, 和 Measurement
+    1. 完成 緯創 Measurement
+
