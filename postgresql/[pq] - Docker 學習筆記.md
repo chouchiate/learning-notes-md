@@ -1,2 +1,0 @@
-## [PostgreSql] - Docker/Postgre
-
