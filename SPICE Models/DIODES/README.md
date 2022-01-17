@@ -1,0 +1,1 @@
+!![link](https://www.diodes.com/design/tools/spice-models/)
