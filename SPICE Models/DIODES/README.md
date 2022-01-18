@@ -1,1 +1,1 @@
-!![link](https://www.diodes.com/design/tools/spice-models/)
+[DIODES INC](https://www.diodes.com/design/tools/spice-models/)

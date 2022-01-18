@@ -1,0 +1,2000 @@
+=========================================================================================================
+
+[AP8803]
+*TITLE=AP8803 MACROMODEL
+*ORIGIN=DZSL_AG_GS
+*SIMULATOR=DIODES, SIMETRIX
+*DATE=6th Jan 2012
+*VERSION=1
+*PIN_ORDER   1:SW, 2:GND, 3:CTRL, 4:SET, 5:VIN
+*
+* SIMetrix macromodel for AL8803 Buck LED Driver
+
+* based on work by Tim Wilson
+
+.subckt AL8803_SIMETRIX 10  26  13   20  18
+* pins-------------------1---2---3----4---5 
+*names                  SW  GND CTRL SET VIN
+
+* Vref Generator *
+E2         19 26 18 26 1
+B111       14 26  V=Min(V(19), 1.25)    
+R3         14 19  20k  
+R4         14 13  200k  
+
+* CTRL input filter *
+* Faster (but unrealistic) startup can be
+* achieved by changing initial conditions
+* on C1 to C3 to match the settled value.
+* eg 1.25V if CTRL is floating in the application
+* or equal to the external DC voltage applied to CTRL
+* or equal to the average value of the PWM signal
+* applied to CTRL
+C1         15 26  5p IC=0 
+C2         16 26  5p IC=0 
+C3         17 26  5p IC=0 
+R5         13 15  7.7meg  
+R6         15 16  7.7meg  
+R7         16 17  7.7meg  
+E7         12 26 17 26 1
+
+* CTRL lockout with hysteresis *
+R8         12 adj_lockout  1000  
+I1         12 adj_lockout DC 50uA  
+C7         adj_lockout 12  1p IC=0 
+X_S4       adj_lockout 26 adj_lockout 12 AP_S4 
+X_S5       adj_lockout 26 23 26 AP_S5 
+
+* UV lockout *
+X_S6       18 26 23 26 AP_S6 
+
+* Main Function *
+G2         26 8 18 20 1m
+C4         26 20  20p  
+R9         26 9  3.832k  
+R10        9 8  10.859k  
+X_S7       23 26 9 26 AP_S7 
+G3         21 26 8 12 1000m
+R11        26 21  1meg  
+V3         24 26 700mV
+D8         24 21 Dclamp 
+V4         22 26 6V
+D9         21 22 Dclamp 
+
+* Comp Delay (Asymmetric) *
+E4         25 26 21 26 1
+C6         26 23  25p  
+R13        23 25  2k  
+
+* Output NMOS *
+X_S8       23 26 11 26 AP_S8 
+R12        11 10  0.4  
+C5         26 10  100p  
+
+* Supply Current *
+X_S3       adj_lockout 26 4 7 AP_S3 
+R1         26 7  1.58k 
+R2         26 4  67k  
+X_S2       18 26 6 4 AP_S2 
+V1         5 26 1V
+X_F1       6 5 18 26 AP_F1 
+
+
+* Timestep Control *
+* Only purpose is to force timestep without using a control card *
+V99        99 26 DC 0 AC 0 PULSE 0 0 0 100n 100n 500n 1u
+R99        99 26 100
+
+.model Dzener D Is=1e-8 N=10 bv=1.245 ibv=1e-12 Cjo=.1e-12 Rs=.1 TBV1=4e-5 nbv=.01 
+.model Dclamp  D Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Cjo=4p M=.3333 Vj=.5
+
+.subckt AP_F1 1 2 3 4  
+F_F1       3 4 VF_F1 1
+VF_F1      1 2 0V
+.ends AP_F1
+
+.subckt AP_S3 1 2 3 4  
+S_S3       3 4 1 2 S3
+RS_S3      1 2 1G
+.MODEL     S3 VSWITCH Roff=1e6 Ron=1.0 Voff=198mV Von=200mV
+.ends AP_S3
+
+.subckt AP_S2 1 2 3 4  
+S_S2       3 4 1 2 S2
+RS_S2      1 2 1G
+.MODEL     S2 VSWITCH Roff=1e6 Ron=1.0 Voff=1.248V Von=1.25V
+.ends AP_S2
+
+.subckt AP_S6 1 2 3 4  
+S_S6       3 4 1 2 S6
+RS_S6      1 2 1G
+.MODEL     S6 VSWITCH Roff=10e6 Ron=1.0 Voff=6.505V Von=6.495V
+.ends AP_S6
+
+.subckt AP_S7 1 2 3 4  
+S_S7       3 4 1 2 S7
+RS_S7      1 2 1G
+.MODEL     S7 VSWITCH Roff=10e6 Ron=1.0 Voff=2750mV Von=2755mV
+.ends AP_S7
+
+.subckt AP_S8 1 2 3 4  
+S_S8       3 4 1 2 S8
+RS_S8      1 2 1G
+.MODEL     S8 VSWITCH Roff=10e6 Ron=1.0 Voff=2750mV Von=2755mV
+.ends AP_S8
+
+.subckt AP_S4 1 2 3 4  
+S_S4       3 4 1 2 S4
+RS_S4      1 2 1G
+.MODEL     S4 VSWITCH Roff=10e6 Ron=1 Voff=255mV Von=245mV
+.ends AP_S4
+
+.subckt AP_S5 1 2 3 4  
+S_S5       3 4 1 2 S5
+RS_S5      1 2 1G
+.MODEL     S5 VSWITCH Roff=10e6 Ron=1.0 Voff=251mV Von=249mV
+.ends AP_S5
+
+.ends AP8803_SIMETRIX
+*
+*                (c)  2012 Diodes Inc
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Zetex ").  They  are  supplied
+*   free of charge by Zetex for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition  or warranty  as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Zetex Semiconductors Ltd, Zetex Technology Park, Chadderton,
+*   Oldham, United Kingdom, OL9 9LL
+
+=========================================================================================================
+
+[AL8806]
+*TITLE=AL8806 MACROMODEL
+*ORIGIN=DZSL_AG_GS
+*SIMULATOR=DIODES, SIMETRIX and PSPICE
+*DATE=22 Jul 2013
+*VERSION=3
+*PIN_ORDER   1:SET, 2:GND, 3:GND, 4:CTRL, 5:SW, 6:SW, 7: N/C, 8: VIN
+
+
+
+
+* This model is intended for feasibility study of application
+* design.  It is expected that it will not accurately represent
+* the device real performance.  However some important features
+* of the device are modelled approximately.
+* The model does not include effects of temperature or self-heating.
+* Testing of prototype hardware and optimisation on the bench
+* is always required before production build.
+
+
+* NOTE:  set RELTOL=1E-5 for clean switching waveform
+
+.subckt AL8806 1 2 3 4 5 6 7 8   
+
+Rsh1 2 3 1u
+Rsh2 5 6 1u
+
+*                   
+* Block 1: Vref Generator * input nodes 8 and 2, outputs 11 and 2
+.param  VIL1=0.8  VOL1=0  VIH1=3.45 VOH1=2.5  ;high and low limits of input and output  
+.param  MUH1=0.05  MUL1=0.1  ; high and low curve error
+.param SL1={(VOH1-VOL1)/(VIH1-VIL1)}  ; gain slope
+E11  11  2  value={min(max(VOL1+SL1*(V(8)-V(2)-VIL1+MUL1*(1-tanh((V(8)-V(2)-VIL1+MUL1)/MUL1))
++ -MUH1*(1+tanh((V(8)-V(2)-VIH1-MUH1)/MUH1))) ,VOL1),VOH1)}
+R11        11 4  50k  
+
+
+
+
+* Block 2: CTRL limiter  * input nodes  4 and 2, outputs 21 and 2
+.param  VIL2=0  VOL2=0  VIH2=2.5 VOH2=2.5  ;high and low limits of input and output  
+.param  MUH2=0.001  MUL2=0.2  ; high and low curve error
+.param SL2={(VOH2-VOL2)/(VIH2-VIL2)}  ; gain slope
+E21  21  2  value={min(max(VOL2+SL2*(V(4)-V(2)-VIL2+MUL2*(1-tanh((V(4)-V(2)-VIL2+MUL2)/MUL2))
++ -MUH2*(1+tanh((V(4)-V(2)-VIH2-MUH2)/MUH2))) ,VOL2),VOH2)}
+
+
+
+
+* Block 3: CTRL lockout with hysteresis *
+R32        21  31  1000  
+I31        21  31  100uA  
+R31        31  32  1k
+C31        32   2  10p
+S31        31  21 32  2  S_31          
+.model   S_31   VSWITCH Roff=10e6 Ron=1 Voff=505mV Von=495mV
+
+
+
+
+S32        53  2 32 2  S_32 
+.MODEL   S_32   VSWITCH Roff=10e6 Ron=100 Voff=501mV Von=499mV
+
+* Block 4: UVLO with hysteresis*
+E41       41 2  value={0.5*(1+tanh(1e3*(V(43)-V(8)+5.7)))}
+R41       41 42 1k
+C41       42 2  20p
+R42       42 43 800k
+R43       43 2  200k
+S41       53 2 42 2   S_41 
+.MODEL   S_41   VSWITCH Roff=1e6 Ron=100 Voff=0.4 Von=0.6
+
+
+
+
+* Block 5: Current Sense Comparator*
+G51        2 51 8 1 1m  ;  input amplifier
+C51        2  1  3p      ;  input capacitance
+
+
+
+* SET input current; asymptote input nodes 1 and 2, outputs 1 and 2
+.param  xx5=5  yy5=16u  nn5=32;input corner, output limit, asymptote power
+.param  aa5={xx5**nn5}
+G52  1  2  value={yy5*(V(1)-V(2))/(aa5+(V(1)-V(2))**nn5)**(1/nn5)}
+R51        2  52  10.417k  
+R52        52 51  20.833k  
+S51        52 2 66 2   S_51 
+.MODEL     S_51  VSWITCH Roff=10e6 Ron=1.0 Voff=2.5V Von=2.8V
+C52        51  2 0.5p
+G53        53  2 value={0.01*tanh(100*(V(51)-V(21)))} ;comparator
+C54        53  2 1f  
+V51        54  2 700mV
+D51        54 53 Dclamp
+V52        55  2 8V
+D52        53 55 Dclamp
+
+
+
+
+* Block 6: Comp Delay and gate driver*
+R64        53 63  10Meg    ;  input filter with C61 
+C61        63  2  0.0015p   ;  
+G61        61 65  Value={0.1*(max(V(63)-V(65)-0.5,0))**2*(V(61)-V(65))}
+G62        65 62  Value={0.1*(max(V(65)-V(63)-0.5,0))**2*(V(65)-V(62))}
+R66        61 65 10meg
+R67        65 62 10meg
+R61         8 61  1.2
+R62        62  2  1.2
+R63        65  2  10k
+
+R65        65 64  1        ;  driver current sense
+R68        66 64  49        ;  output resistance-1 ohm
+C62         2 66  25f  
+
+
+
+
+* Block 7: Output NMOS *
+S71        72 71 66 71 S_71 
+.MODEL     S_71 VSWITCH Roff=10e6 Ron=0.25 Voff=2.5V Von=2.8V
+R72        72  5  50m     ; on resistance = R72 + R73 + Ron(S71) 
+R73        71  2  50m
+C73        72 71  100p
+C71        66 71  40p
+C72        72 66  15p
+ 
+* Block 8: Supply Current *
+G81         8  2 Value={(300u*(V(11)-V(2))/VOH1)+0.6u*(V(8)-V(2))}
+
+* Block 9: Protection diodes
+D91   2  5  D_1     ;SW
+D92   2  8  D_1     ;VIN
+D93   2  4  D_2     ;CTRL
+D94   8  1  D_2    ;SET forward
+D95   1  8  D_2    ;SET reverse
+
+.model Dclamp  D Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Cjo=4p M=.3333 Vj=.5
+.model D_1  D  IS=1e-14 BV=40
+.model D_2  D  IS=1e-14 BV=6.5
+
+.ends AL8805
+
+
+*  =====================================================================
+*
+*                (c)  2013 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition or warranty as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 4949 Hedgcoxe Road, Suite 200, Plano, TX 75024, USA
+
+=========================================================================================================
+
+[AL8807]
+*TITLE=AL8807 MACROMODEL
+*ORIGIN=DZSL_AG_GS
+*SIMULATOR=DIODES, SIMETRIX and PSPICE
+*DATE=17th Jan 2013
+*VERSION=1
+*PIN_ORDER   1:SW, 2:GND, 3:CTRL, 4:SET, 5:VIN
+*
+* This model is intended for feasibility study of application
+* design.  It is expected that it will not accurately represent
+* the device real performance.  However some important features
+* of the device are modelled approximately.
+* The model does not include effects of temperature or self-heating.
+* Testing of prototype hardware and optimisation on the bench
+* is always required before production build.
+*
+* NOTE:  set RELTOL=1E-5 for clean switching waveform
+*
+.subckt AL8807   10   26   13  20   18  
+* Connections    SW  GND  CTRL SET  VIN
+* pins   SOT23   1   2    3    4    5
+*                   
+* Block 1: Vref Generator *  input is V(18)-V(26)
+*required input parameters
+.param  VIL1=0.7  VIH1=3.5  VOL1=0 VOH1=2.5  ; low and high limits of input and output  
+.param  MUL1=0.1  MUH1=0.05  ; low and high curve error
+*calculations
+.param KL1={MUL1*tanh((VIH1-VIL1)/MUL1)}  KH1={MUH1*tanh((VIH1-VIL1)/MUH1)}
+.param SL1={(VOH1-VOL1)/(VIH1-VIL1-KL1-KH1)}  ;gain slope
+E11 14 26 value={min(max(VOL1+SL1*(V(18)-V(26)-VIL1-MUL1*tanh((V(18)-V(26)-VIL1)/MUL1)
++ -MUH1*tanh((V(18)-V(26)-VIH1)/MUH1)-KH1),VOL1),VOH1)}
+R4         14 13  50k  
+
+* Block 2: CTRL limiter
+* tanh limiter, type 1, input nodes 13 and 26, outputs 12 and 26
+.param  VIH2=2.5  VOH2=2.5  ;high limits of input and output  
+.param  MU2=0.001  ; curve error
+.param SL2={VOH2/VIH2}  ;gain slope
+E21  12  26  value={SL2*min(V(13)-V(26)-MU2*(1+tanh((V(13)-V(26)-VIH2-MU2)/MU2)),VOH2)}
+
+* Block 3: CTRL lockout with hysteresis *
+R8         12 adj_lockout  1000  
+I1         12 adj_lockout 100uA  
+R31        adj_lockout 31  1k
+C31        31 26 10p
+S4   adj_lockout 12 31 26  S_4          
+.model   S_4   VSWITCH Roff=10e6 Ron=1 Voff=505mV Von=495mV
+
+S5       21 26 31 26  S_5 
+.MODEL  S_5   VSWITCH Roff=10e6 Ron=100 Voff=501mV Von=499mV
+
+* Block 4: UVLO with hysteresis*
+E41       41 26 value={0.5*(1+tanh(1e3*(V(43)-V(18)+5.7)))}
+R41       41 42 1k
+C41       42 26 20p
+R42       42 43 800k
+R43       43 26 200k
+S41       21 26 42 26   S_41 
+.MODEL   S_41   VSWITCH Roff=1e6 Ron=100 Voff=0.4 Von=0.6
+
+* Block 5: Current Sense Comparator*
+G51        26 8 18 20 1m  ;  input amplifier
+C51         26 20  3p      ;  input capacitance
+* SET input current; asymptote input nodes 20 and 26, outputs 20 and 26
+.param  xx5=5  yy5=16u  nn5=32;input corner, output limit, asymptote power
+.param  aa5={xx5**nn5}
+G52  20  26  value={yy5*(V(20)-V(26))/(aa5+(V(20)-V(26))**nn5)**(1/nn5)}
+R51        26 9  10.417k  
+R52        9 8  20.833k  
+S51        9 26 23 26   S_51 
+.MODEL     S_51  VSWITCH Roff=10e6 Ron=1.0 Voff=2.5V Von=2.8V
+C52        8  26 0.5p
+G53        21 26 value={0.01*tanh(100*(V(8)-V(12)))} ;comparator
+C54        21 26 1f  
+V3         24 26 700mV
+D8         24 21 Dclamp
+V4         22 26 8V
+D9         21 22 Dclamp
+
+* Block 6: Comp Delay and gate driver*
+R64        21 63  10Meg    ;  input filter with C61 
+C61        63 26  0.0015p   ;  
+G4         61 25  Value={0.1*(max(V(63)-V(25)-0.5,0))**2*(V(61)-V(25))}
+G5         25 62  Value={0.1*(max(V(25)-V(63)-0.5,0))**2*(V(25)-V(62))}
+R66        61 25 10meg
+R67        25 62 10meg
+R61        18 61  1.2
+R62        62 26  1.2
+R63        25 26  10k
+
+R65        25 64  1        ;  driver current sense
+R13        23 64  330        ;  output resistance-1 ohm
+C6         26 23  25f  
+
+* Block 7: Output NMOS *
+S8       11 71 23 71 S_8 
+.MODEL     S_8 VSWITCH Roff=10e6 Ron=0.25 Voff=2.5V Von=2.8V
+R72        11 10  50m     ; on resistance = R72 + R73 + Ron(S8) 
+R73        71 26  50m
+C5         11 71  100p
+C71        23 71  40p
+C72        11 23  15p
+ 
+* Block 8: Supply Current *
+G81         18 26 Value={(300u*(V(14)-V(26))/VOH1)+0.6u*(V(18)-V(26))}
+
+* Block 9: Protection diodes
+D91  26 10 D_1     ;SW
+D92  26 18 D_1     ;VIN
+D93  26 13 D_2     ;CTRL
+D94  18 20  D_2    ;SET forward
+D95  20 18  D_2    ;SET reverse
+
+.model Dclamp  D Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Cjo=4p M=.3333 Vj=.5
+.model D_1  D  IS=1e-14 BV=40
+.model D_2  D  IS=1e-14 BV=6.5
+
+.ends AL8807
+*  =====================================================================
+*
+*                (c)  2013 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition or warranty as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 4949 Hedgcoxe Road, Suite 200, Plano, TX 75024, USA
+*
+
+=========================================================================================================
+
+[AL8807A]
+*TITLE=AL8807A MACROMODEL
+*ORIGIN=DZSL_AG_GS
+*SIMULATOR=DIODES, SIMETRIX and PSPICE
+*DATE=1st Feb 2013
+*VERSION=1
+*PIN_ORDER   1:SW, 2:GND, 3:CTRL, 4:SET, 5:VIN
+*
+* This model is intended for feasibility study of application
+* design.  It is expected that it will not accurately represent
+* the device real performance.  However some important features
+* of the device are modelled approximately.
+* The model does not include effects of temperature or self-heating.
+* Testing of prototype hardware and optimisation on the bench
+* is always required before production build.
+*
+* NOTE:  set RELTOL=1E-5 for clean switching waveform
+*
+.subckt AL8807A  1   2    3    4     5  
+* Connections    SW  GND  CTRL SET  VIN
+* pins   SOT23   1   2    3    4     5
+*                   
+* Block 1: Vref Generator * input nodes 5 and 2, outputs 11 and 2
+.param  VIL1=0.8  VOL1=0  VIH1=3.45 VOH1=2.5  ;high and low limits of input and output  
+.param  MUH1=0.05  MUL1=0.1  ; high and low curve error
+.param SL1={(VOH1-VOL1)/(VIH1-VIL1)}  ; gain slope
+E11  11  2  value={min(max(VOL1+SL1*(V(5)-V(2)-VIL1+MUL1*(1-tanh((V(5)-V(2)-VIL1+MUL1)/MUL1))
++ -MUH1*(1+tanh((V(5)-V(2)-VIH1-MUH1)/MUH1))) ,VOL1),VOH1)}
+R11        11 3  50k  
+
+* Block 2: CTRL limiter  * input nodes  3 and 2, outputs 21 and 2
+.param  VIL2=0  VOL2=0  VIH2=2.5 VOH2=2.5  ;high and low limits of input and output  
+.param  MUH2=0.001  MUL2=0.2  ; high and low curve error
+.param SL2={(VOH2-VOL2)/(VIH2-VIL2)}  ; gain slope
+E21  21  2  value={min(max(VOL2+SL2*(V(3)-V(2)-VIL2+MUL2*(1-tanh((V(3)-V(2)-VIL2+MUL2)/MUL2))
++ -MUH2*(1+tanh((V(3)-V(2)-VIH2-MUH2)/MUH2))) ,VOL2),VOH2)}
+
+* Block 3: CTRL lockout with hysteresis *  not used
+
+* Block 4: UVLO with hysteresis*
+E41       41 2  value={0.5*(1+tanh(1e3*(V(43)-V(5)+5.7)))}
+R41       41 42 1k
+C41       42 2  20p
+R42       42 43 800k
+R43       43 2  200k
+S41       53 2 42 2   S_41 
+.MODEL   S_41   VSWITCH Roff=1e6 Ron=100 Voff=0.4 Von=0.6
+
+* Block 5: Current Sense Comparator*
+G51        2 51 5 4 1m  ;  input amplifier
+C51        2  4  3p      ;  input capacitance
+* SET input current; asymptote input nodes 4 and 2, outputs 4 and 2
+.param  xx5=5  yy5=16u  nn5=32;input corner, output limit, asymptote power
+.param  aa5={xx5**nn5}
+G52  4  2  value={yy5*(V(4)-V(2))/(aa5+(V(4)-V(2))**nn5)**(1/nn5)}
+R51        2  52  10.417k  
+R52        52 51  20.833k  
+S51        52 2 66 2   S_51 
+.MODEL     S_51  VSWITCH Roff=10e6 Ron=1.0 Voff=2.5V Von=2.8V
+C52        51  2 0.5p
+G53        53  2 value={0.01*tanh(100*(V(51)-V(21)))} ;comparator
+C54        53  2 1f  
+V51        54  2 700mV
+D51        54 53 Dclamp
+V52        55  2 8V
+D52        53 55 Dclamp
+
+* Block 6: Comp Delay and gate driver*
+R64        53 63  10Meg    ;  input filter with C61 
+C61        63  2  0.0015p   ;  
+G61        61 65  Value={0.1*(max(V(63)-V(65)-0.5,0))**2*(V(61)-V(65))}
+G62        65 62  Value={0.1*(max(V(65)-V(63)-0.5,0))**2*(V(65)-V(62))}
+R66        61 65 10meg
+R67        65 62 10meg
+R61         5 61  1.2
+R62        62  2  1.2
+R63        65  2  10k
+
+R65        65 64  1        ;  driver current sense
+R68        66 64  330        ;  output resistance-1 ohm
+C62         2 66  25f  
+
+* Block 7: Output NMOS *
+S71        72 71 66 71 S_71 
+.MODEL     S_71 VSWITCH Roff=10e6 Ron=0.25 Voff=2.5V Von=2.8V
+R72        72  1  50m     ; on resistance = R72 + R73 + Ron(S71) 
+R73        71  2  50m
+C73        72 71  100p
+C71        66 71  40p
+C72        72 66  15p
+ 
+* Block 8: Supply Current *
+G81         5  2 Value={(300u*(V(11)-V(2))/VOH1)+0.6u*(V(5)-V(2))}
+
+* Block 9: Protection diodes
+D91   2  1  D_1     ;SW
+D92   2  5  D_1     ;VIN
+D93   2  3  D_2     ;CTRL
+D94   5  4  D_2    ;SET forward
+D95   4  5  D_2    ;SET reverse
+
+.model Dclamp  D Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Cjo=4p M=.3333 Vj=.5
+.model D_1  D  IS=1e-14 BV=40
+.model D_2  D  IS=1e-14 BV=6.5
+
+.ends AL8807A
+*  =====================================================================
+*
+*                (c)  2013 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition or warranty as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 4949 Hedgcoxe Road, Suite 200, Plano, TX 75024, USA
+
+=========================================================================================================
+
+[ZXLD1371Q]
+**$ENCRYPTED_LIB
+**$INTERFACE
+*$
+.SUBCKT ZXLD1371_PSPICE GATE ADJ REF GI ISIM VIN PWM SGND STATUS
++ VAUX SHP PGND FLAG TADJ NC1 NC2
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+394197bedeb77a716f52d5ca6e23dacf5f77689faa8a663fbc39eed45909606b00d3e0b087c73744c9f6c53b093b66727f70dd368fa5728963912ffecb55b6d8
+04f5acd939422ec02fbfcc2b872ff9461d45c8eb53f8a29c749d13634498f34bc9322890ded6647b56be7388bb4ba8853543ca07c959008c54d5980f69aa986e
+5316fc9fe4e05facf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+ddf70eae3b592905ac73e51ea6171029b9eabc28f38b49586ae3f463f161071fbfd58a4b12fceb5d00d3e0b087c73744c9f6c53b093b6672f1b3224347ba154c
+e0bee0f3fadd67246f52d5ca6e23dacf6ae3f463f161071f2da085ac1302fd51478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+b0eb42ca922cce592fbfcc2b872ff94683aceacad20792c7749d13634498f34bc9322890ded6647b05ed049cabd059d7af34d43db6b6477cbc2933d56eb6c3c7
+af399d32d282acb6184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+8f10d309634521e5107192c97b3918a9c76dbc50c48fbbe7d0fb8f8ac09713ec478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+717cdf892ff6b6ff26c880f485e2ca3492ebc16da04e46be7de72266a8957c9762d766f77596a54bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+c6ada2f6665016dfac73e51ea6171029df13108db75bcac0ec8e4432708a2f10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+605b35877b85eee721377c54379bab5d239bdbe658d21d00044c5edbf77fecb6b03db27a4b23eea8387ddbd4b3ec85993c3ebf3aa31b5c39eb81723a9021625e
+2ca24c18cb27721d153e73797dd8d866a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+dff667fce1627b8f36b24b5db985d2d3ce28bcb138548355116fb2ef8f954fae37533a275f2c6d0eb5f1c17ee7956303f716375b8c71d2ca2a84cfa93f6086c1
+00575617ddd170c91068d23fb1a14817be00a2a37fc213af7f6778186477bbeb7826d86a24e0c932558ae2e6b93c4040672f752658a09f218d5c737683766352
+a147194f3a3bf6c0710f626c2faf14a6f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+f29d7d98ef0d8ffac4a17b59ca91381df45310c19b6b8ee57017057a427e6410b540685422c11ef9fceb72c6584bab533cf4807158e4909c9d6bedf9d0034ac8
+605b35877b85eee721377c54379bab5dcd9f9b0fe66d8ad1b5b85bc0d31aaef583bc4964f97c0bfb1e00d217525559aedad4bb70f534f24c16944157eaac9744
+a2faec34d68cdd2af13ee61e90b65ef18ce113ea01486d742446811279bcfdca7e4eff80f489c700d80f09fa99fcdc9f31ff87f86ef7d8025ac6c13a39cffff7
+64a2af3d08b8c3fbe71f71e187584171b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962dd61e0a440bad77e3138b871d3d163c946
+273ef0efd9cac693c295486b1819e032f45310c19b6b8ee57017057a427e6410b540685422c11ef9f78e3835f7dcf08337b2d2e15ad7f2468671325e6f4b6b25
+6422a9133f078ed399298f7cd44d061d706b807646b803717017057a427e6410b540685422c11ef93063c3bb852fe4d2fe14e8ed893f87905d43534984e52420
+2579318862ec410f5268f2b9f86a0eca858728efae680901a23477990359ea58c64639ef522b82dbe7eefa795927f22cb124fbdd29716cfbacdab751cbf202c2
+f29d7d98ef0d8ffab390595cafb1ab9635b229f6ed36cf79efe06c4f9b313c77dbc3554236bba2721c0530388a0d45f3f64c4168815a7f58b9ec58759fbaecf9
+44e335dab141105980b07acdfe1a6318184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+ecc3810338d4a815ec85f36e56eb5e07f45310c19b6b8ee57017057a427e6410ce3e74f18b11c63edea2f49989a93410184dc1300cea2a136b276ab17ad27652
+605b35877b85eee721377c54379bab5deb87848776396383b5b85bc0d31aaef5c78955b2f9a9a77ca7acfc5f2315b7c44c49b18e65b2012511d006434ff70a7c
+2579318862ec410f5268f2b9f86a0eca858728efae6809018683b141dcb3272b7ae82484816be00fb5f1c17ee7956303f716375b8c71d2ca2a84cfa93f6086c1
+605b35877b85eee721377c54379bab5dcc0121b5e20e20767e2db9a6f9c8f569a3453ba7982d296def7dd173ebafc8a5efe06c4f9b313c777a5f555c7f36bc06
+55f7ebc1844b945cc9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+dff667fce1627b8f36b24b5db985d2d3ca919d09a48d33e1b19c9f724420bb21024a2e9187f5d113e73070a45f1d549ca0c7a89b875d76a7668ff86ff0a77892
+273ef0efd9cac693699b83783a230135f45310c19b6b8ee57017057a427e6410b15a98c80c85bdd8834492d15d72f82c760b7acfc94bff32bd6e0240e530e0d3
+00575617ddd170c977da2069621c0870be00a2a37fc213af7f6778186477bbeb9b7fc6a7cb92def0ea7d4f030068283373d9dc50e4e85c45abb485c8ac7a39ac
+00575617ddd170c93a6d68c1db088061be00a2a37fc213af7f6778186477bbebe3abc915180b0fc75a90baf5cf07376f49bcb2e9b7241eb49d6bedf9d0034ac8
+5dde899679de79ab1b335ff66691221544e30ee031766bfac90827f4e9cf024b821d3ad19a17fc5962d766f77596a54bf588045849eceb90e1051d295f61418a
+317f1bcb1e5ac862ac73e51ea61710293497978ed7181356a099cec494ae8989f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+7b300a002f2d8ddd218ee09e41104590e28b1eaee7cc8472753c64a4a951701a9238c7ba345aa441c9f6c53b093b66727f70dd368fa5728963912ffecb55b6d8
+b9ed3e04d2a793293fe9a17f99afa94395e943ccd8868a6ae93c8c7b51168b14478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+f1b71296a16c9ee01b335ff66691221512ea7294e684b839f3c4e72344563a843b250a80e39602b5042f0c0c78bb0deb184dc1300cea2a136b276ab17ad27652
+23ee73d6065f3641d811871cc3622e4a019b8717068e3d443f21a179b2be58baef1d7357d3c4e2f3644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+2c7f46f84591bc12e2ad7048ed9193b1523b2604a68e8ef9fdf5f62657ccba9b2dc8ed9cc96ddaab24fdfd9bb2e10b07a0c7a89b875d76a7668ff86ff0a77892
+857620ce20ef86cb26c880f485e2ca3415329f00962841785a4c41089daca73e787784bc593e995d23b782b3d6a37df1e7eefa795927f22c7d5ecccba7838ea4
+8807bf206d8a4bf4da90698ba1ee0b1344e30ee031766bfa2eb33e7d0c66effdc4263047304fc101abbf8da1f96d2fb2492a61aa0d75bc53f41f2ac565d1fd58
+d36d26370afc449b1fc67ec68dbc352ea826917222a64646f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+f197831ab997cb511b335ff666912215962084b4cabaea50c0996ee0a6b29beec9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+71dbbe87e53e082f599bf13f0371d5b4fda72f5818c81bf49e91cddcc46315d65ed2fe27f6c34366691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+e8686e014b15db761b335ff6669122159c3be3c559456c162f7290d7f191b8ae23b782b3d6a37df1e7eefa795927f22cb124fbdd29716cfbacdab751cbf202c2
+c858d814c56a2bcc769be4ce041f188824046311950bf77c4ba887e5e5417704abbf8da1f96d2fb2492a61aa0d75bc5381d5360d0e44f50c5d43534984e52420
+48a94d11d238250f3e182210b1d9c2bc0dc94f7d1fc62090e213edf528fee6b2300b06d6b098e56a7a72378188149f25691018eed3b49c36df42c068afe98c8a
+9e5134779ded2111f45310c19b6b8ee512d693d8957db81b478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+e72ff3e7fc7190cdda90698ba1ee0b136ace929a007d96c44ba887e5e5417704abbf8da1f96d2fb2492a61aa0d75bc5363ed35b1266e36425d43534984e52420
+f58ffbed3f217484706b807646b80371895d05bc59882af8f1b8d790cb2e41c9faca85d0862a74fbfc528ba36843793b0fa984f27f78bccf7d4d396707233756
+4cf294edf7e0961f9b08e82f0908ea3a184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+4a2e92973c32fd12551cc969959c56b127056d71145457d5fa52237fdde26b44691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+6f23563494b56938706b807646b8037132122f815f7bf45c8e927edd2d745704be7b72e16c425c0c78974fa8c5970bd3128fa59261fa1a65f44496155f03ed4f
+2a76c18f665e8c270dbeca54fe4a6fa68c81757d6b17a69f9f7df7e1d853713719fc61b223c11fd91b03c3c8b1210eb1c9f6c53b093b6672f1b3224347ba154c
+1fcbc249eb94715326c880f485e2ca340639c092da8a0ddddc87d8f5e8e39da462d766f77596a54bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+52ba738fba12eb4a1b335ff6669122152ca8047c7957b30eae1e05fddac936fca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c2a9ba28f5e45e265
+f80a395284a571112fbfcc2b872ff94677ddc6f43cf11494749d13634498f34bc9322890ded6647b913601db0b53db113543ca07c959008c6f43b879c715b844
+0db7e72d6e369fe1691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+340902c1590d2246cbf62b4d3dcda7184aed8b565a5e13815c9e084edd7d2158f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+09a2b761cdd63986d58d21bd311ea6ba2716e67bb37c739248a22ba84875dab5e3e5946109ab96442be4d4793f1a270b2bdc2471723c531b74fb7cf2e7c9f235
+32cd76a2a36328a99aa9a9248f306fbf65cef533b34422d3d4b905c33e8bae272576175eff3c1c5ab5f1c17ee7956303f716375b8c71d2ca2a84cfa93f6086c1
+09a2b761cdd63986d58d21bd311ea6ba9f50c449b546348c48a22ba84875dab5e3e5946109ab9644d2f28a5c4bc363c766eaeb9fc4cc8ae125657ebd83de6526
+14d9ecaf67b8c94ac3322ae60df680c2b6cb8b57da5c237d3a9cdabdca00b010bdc21b64c436efa17cb5783fbf51f543f588045849eceb90e1051d295f61418a
+95216fad1e8e9329e73070a45f1d549ca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+09a2b761cdd63986d58d21bd311ea6ba0fa4ea595ab98ca05b6db4b5a524f0cfc24c449b5177ec438492e52ca9907137d45987aa526f7ebcaefc2cbd1904f036
+8ae1ad83327b81dec5446a5920f1d318aa11a96fd77a05cab74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+21cb6a29d4b0b30d21ba0642d7d35b3451ffdabf74bf3f4cf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+4cb05053dd12b0f521ba0642d7d35b340c9f3156902d2775f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+09a2b761cdd639868eee1ee26f081f21957037c396f796b5025af90ddce02ede557891869bc2e855803fff23a4e2a281ce5ec34e6f8ad1ca20e65e1717a0b297
+c35972971bda6cbfc2356fa0b0fe3ea9f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+09a2b761cdd639868eee1ee26f081f215fdb5cf0a0117bb6025af90ddce02ede557891869bc2e8553a1a9b7f4a1b1ea3ce5ec34e6f8ad1ca7f4fa8c50191d90c
+021132bb3fd82585f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+09a2b761cdd63986809e63d19e808c40706b807646b803719f37e7a110c0d30f8492e52ca9907137691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+05b5f1398a5d6f6906f29896cb00af16e3e5946109ab96448a6d0d3edb9c296d3b698759e0f6968715cde71e5a76569bc2356fa0b0fe3ea96004e157994bc9bf
+09a2b761cdd6398671d94cdb4243f500706b807646b80371aa3deeb51b78df108ae1ad83327b81ded2bbaa26aad6c6147f96a94c9a957a0c5d43534984e52420
+05b5f1398a5d6f6938e5202811de8b229aa9a9248f306fbfa019b886ca2946c45ec35ee69717b5a5974781ad152f7972184dc1300cea2a136b276ab17ad27652
+5c2e262d493b312ff73e0c5051b95e15e503df2c2a48623568d4c1b330b1e1fa62d766f77596a54bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+b090b65fdd16a27f1b335ff66691221511253b9116fca4b5cc818c2e64e2441d3c991a04052eba44644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+39b56735282d89731b335ff6669122156b74fd3a75af1db9b3eff0053075038b82b03c4529a3797d478a87bc5b8e6cf9691018eed3b49c36df42c068afe98c8a
+e513bba6d3228b87ac73e51ea6171029b9a376387dcea33ea1c0f782a9dccaf9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+b0fb847a3b385fda1b335ff66691221528bb17bf747c349a7bf91ca1a5006a10f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+a9174ed1bf108f9a0c5c216a3038c78c2ae141f64a46e45d8588cdf916f86d19e213edf528fee6b2300b06d6b098e56a3950d9f59cc9528fd38aff4e12555a5d
+282e8027f6fd021a744533db3bdc064cd7dfcfdb598aef9d554e6be04a5ec8e754cc636c47659e96faca85d0862a74fb4674009031596e3afd5baaf91a42e7d3
+ce28372646c1b72b8f8029c76dd5a72b644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+02673b7763e121d2184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+7c9acabd26c54e03f6a2b547dc976ba066c88eeb6c99df5da6f1ddb48cdca4178d1722fa3b58496691ecad6459b78f8ea076e3216a8b20ce62d766f77596a54b
+7c9acabd26c54e03bf230db17611f82f66c88eeb6c99df5dc0db4b7a44834d678d1722fa3b584966c1119d53e95a4af64ebedf1affe729adabb485c8ac7a39ac
+36beba41d0d291a4b1cc8ce9c0a7c4dbcd30ef1298e2828f2ca13e67bcc94ff2749d13634498f34b2228f4976daf1309c35972971bda6cbf82d021902886a9e0
+7c9acabd26c54e03b585b96681e0ca9b66c88eeb6c99df5d836ccb36c8e634738d1722fa3b584966e5cfc863a8a501d624be77f172ebdc51bd6e0240e530e0d3
+282e8027f6fd021a44f91394b9d9e846d7dfcfdb598aef9dd2820111558128219befd31f50da7206fe14e8ed893f8790c9f6c53b093b6672f1b3224347ba154c
+b895f158934e88384674009031596e3ae7b47cf3a9353d48d6c1365d95c11ec227a93decc2d57179c1fc488386db32b8e9fdfc8a753de111d38aff4e12555a5d
+9479dc5c320af2ec1aed393b8b55339421a9aca16c78487ddfb89fd4996a844c8d1722fa3b584966d11416a3e67abd4b6d94ac99831e831f122d19e668be3062
+547fa7df049edd5bd3ed529e2f03bd0da0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+7c9acabd26c54e03dca29065f7b4a684eac8453836f1167d9fa4c4bc97a88581e2bb5bfeace0dc4a209a5091d0afa22fbc9ba1249b27d252bd6e0240e530e0d3
+b4dba295799dbf1bb585b96681e0ca9b66c88eeb6c99df5ddfb89fd4996a844c9e4129bde4083afbf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+282e8027f6fd021a6263a80a123a82bfd7dfcfdb598aef9dd09f9d772f43ebef8492e52ca99071376cc173f11f5b8563f5ad3ad78240944d770dbf5b363fa50b
+52d178a251a6b6d5a778ba06ffb6481ca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+66848ab3646ea9277df90e6847038987295d7e616dd35350af399d32d282acb6184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+b4dba295799dbf1bcd9f9b0fe66d8ad166c88eeb6c99df5d74a45d3e091b7fad9dd87a2d3e5280a11de333fbd2e0f35df716375b8c71d2ca2a84cfa93f6086c1
+9479dc5c320af2ec5c89cd247067d79021a9aca16c78487d112a23f56123a9e48d1722fa3b584966fc8cbd0336a453d86d94ac99831e831f122d19e668be3062
+547fa7df049edd5b7c6a05e67fd634eea0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+da33f0d11a9f0f4ebf230db17611f82f66c88eeb6c99df5de7b47cf3a9353d4832a63025bcdcc99437b2d2e15ad7f246042f0c0c78bb0deb16944157eaac9744
+36beba41d0d291a4df9ebaf9f2a35d54cd30ef1298e2828f7df90e6847038987e4cdac1c8a1d1b266e3f0899c50425cf107598ff023e5e6fe2ebc0dd60167d43
+36258f891834800beb87848776396383ee894940744d7fd976fe71021a80bf2f2e23ba67bb505870b579c1d0cc3dc7d3644126c9831a96bde848d5f4c074f39d
+da33f0d11a9f0f4eeb8784877639638366c88eeb6c99df5d58ad1114986fcd033d34ea0a4263fbc88128d567d8fde99900d3e0b087c737445d43534984e52420
+9479dc5c320af2eccfee2d3418fdb57721a9aca16c78487d7bdec82a4b7b53f08d1722fa3b584966e34cb4739f0740126d94ac99831e831f122d19e668be3062
+547fa7df049edd5be96826b1b8137c4aa0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+9479dc5c320af2ecdd40236d4888ed8d21a9aca16c78487dba5bfaa11384a59f8d1722fa3b58496619783d2f8036fcd56d94ac99831e831f122d19e668be3062
+547fa7df049edd5bb41c954d84327076a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+282e8027f6fd021a05f06f9213ce83bad7dfcfdb598aef9d1257635b7fb4c541ce5ec34e6f8ad1cafb3114ec070b43c09abc853f63b3fb5a9aeb1dbca0cd0241
+7bd9089c90910d476111a6a2967a6c58691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913a1d65e1bf53966969
+9479dc5c320af2ec34d8be222b1876f721a9aca16c78487d4f7687ea86dbe3318d1722fa3b584966e34cb4739f0740126d94ac99831e831f122d19e668be3062
+547fa7df049edd5b27d9f7e5287cba2ca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+da33f0d11a9f0f4ec12e63f53fc8b6c766c88eeb6c99df5d112a23f56123a9e48d1722fa3b584966a75b4546146326223c3f33a379f0af8a62d766f77596a54b
+282e8027f6fd021af5687491f31f2924d7dfcfdb598aef9daea69d63dd36534320f664a3ff7b4a04faca85d0862a74fb4674009031596e3afd5baaf91a42e7d3
+ce28372646c1b72b743bf58d1db148a3644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+02673b7763e121d2184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+45bb615a0113a2d76295f13f271e3dd4f45310c19b6b8ee5602264da8f44928d4c49b18e65b20125e7eefa795927f22cb124fbdd29716cfbacdab751cbf202c2
+32cd76a2a36328a99889c62aee5fc834c6bc33b4ab296cf04d4c212f6c1abf84cf5d0219e0df7a9d7793c602b9feeb0dec7850cb5e2600ad9c7a4bc0de56f663
+36258f891834800bcd9f9b0fe66d8ad1ee894940744d7fd976fe71021a80bf2f87ba5971c1666c6321a9aca16c78487d836ccb36c8e63473789bb4c149c0f7d2
+36258f891834800b239bdbe658d21d0066c88eeb6c99df5d4f7687ea86dbe3318d1722fa3b58496619783d2f8036fcd59889c62aee5fc834ce6a500a0bc3e23b
+400e963555b1a2d2dad4b7980b83d60ce7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+53a47ce20eea766578777e4c883822d7496ee1101b7a39424ec484d93e85716ec50ef93b4e08741af588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+282e8027f6fd021a95a9d5006d1ac9c1d7dfcfdb598aef9d83676253d12347c501de569537f728dffaca85d0862a74fbf42a59751c2d9c74c8871d0203ef020b
+9c696fb13148990c8675a01b2db95be7c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+da33f0d11a9f0f4ebc27f931268b406166c88eeb6c99df5d250025f01b12eac228962c68c37beadeed013b7ba2d18b82478a87bc5b8e6cf9d38aff4e12555a5d
+da33f0d11a9f0f4eb585b96681e0ca9b66c88eeb6c99df5d209a5091d0afa22fd267191e106d0b0d8387f45e647e26ceef1d7357d3c4e2f39d6bedf9d0034ac8
+65f8ec3b931d45fecd9f9b0fe66d8ad166c88eeb6c99df5d836ccb36c8e634738d1722fa3b584966e5cfc863a8a501d66b895da7740b2625d38aff4e12555a5d
+da33f0d11a9f0f4ecc0121b5e20e207666c88eeb6c99df5d942409553266e8b316d68c73f74bc5565c8d68af7fe2e960609e19a3b1330370e89729e5d38ef58f
+9479dc5c320af2ece68811ece2528fc321a9aca16c78487d8b3909b9b1ee98c48d1722fa3b584966fc8cbd0336a453d86d94ac99831e831f122d19e668be3062
+547fa7df049edd5bd1e514cf9ee05ca5a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+81bc0cb7c12452441b335ff666912215062777163355bd154f60af2351f95502c051d21af37637adf716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+abea470061b4cf4674c94f93c383e2578803136c44fdf03c12ea7294e684b8397b9253cdb3e17e06644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+7aff1ed175018062cbf62b4d3dcda71850495b21047dc1007a2bb3bc46c04b4e478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+a16523cb4c600880ac73e51ea6171029725174985eb3b1d34d745b560a9864aa2eab8f59404e32fbbfc3976bee98b06d691018eed3b49c36df42c068afe98c8a
+900387b6be7bb99274c94f93c383e257d68ff0e069060e91ef1d7357d3c4e2f3644126c9831a96bdb74feb6ff8076c794d22c850cafe6d8869a81fde624533ad
+32c994efcc2d922e0abfc569c2f155647ea6ad46ecf15209bca66beeb277b1607b9253cdb3e17e06644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+d8f5a2ccd87b60eeac73e51ea6171029977c9ed6cdc69f7c55ee2ca7818ff4e6ffd414095be51912644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+0abb8c42c110d7c574c94f93c383e257b06f7b2a5221d6a1cdc50eb41b28b6da1d28299200febf22f32a46da3bd46a365d87510856e45788d06855f06d6f53fd
+75430035d97ed48aac73e51ea61710292f63ba7cec69a5ae92ebc16da04e46beffd414095be51912644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+98b5f0d56fa74586769be4ce041f18881b695623e8d2ec72fc7f201294a05a1d28b5c8cbdfe3537fd7059c8c42854956483cf72d1898804474fb7cf2e7c9f235
+f0141b5f35912e420abfc569c2f155647ea6ad46ecf15209cfcbccac057ce9367b9253cdb3e17e06644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+0382627c5bd012d40abfc569c2f1556449ab06bccf3c5e3aa52c5d0900251b18f29bae4b68f7bfb2a10c11dc3b762f9f6a55ec42853e357f743ff23adc1a84eb
+2a0dde369b0e03c9ac73e51ea6171029a294b4c9b4499e412f30647cd4a074f8cc0a4cfd13354a98646fb8d77d1a9bd0a0c7a89b875d76a7668ff86ff0a77892
+b052355e65d40bda6072bbb927e75d221f5a36c0cfa2e93a622e6bb14f828842d5842d53d11b6659a54dd50435f134f9bfe7aa56cbb7750016944157eaac9744
+8bf314ab8c0348996072bbb927e75d2233712e677bf821410e88ff585c7721b717db01c01a85b031d741aae16bf64f713db07fb45d793ed8809b758273603f84
+afe317ae10e98155dffad4255220698bbbd6848a4bed6ce75cdcae49952477491bbe45b2adb70fc37a5aaa106641e9738c2b08ff5cc148ae11d006434ff70a7c
+a34eb0be5ea600af74c94f93c383e257d0e476fa0d4f54a90aa9758bb879ff7eee09f8451cbe1231710f626c2faf14a6f716375b8c71d2ca2a84cfa93f6086c1
+e9dd452c4e6cfebeac73e51ea617102936c315db1f9d8b9bec8e4432708a2f10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+a3d26799f30d8e0d27881184d92232d68bb760bf7903e92ebb8309e553dbf02da9f8c600a5632a411d155fb90c9a9bd766eaeb9fc4cc8ae11a4ba722c03153cc
+747e4f2a6405d9546d2aa86b77a26c95691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913a1d65e1bf53966969
+3e2f6d3b6fa1f79ec9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+dcfdab3db4e32d43ede29d0f5869fc33706b807646b803717f4022ad17ec791a661a51fa4c6b374154a3c6ec78dbb3aba9f8c600a5632a41dda7d25602215933
+cc29c56aedd5408745b0476b0b2677a2450cb01944621787646fb8d77d1a9bd0a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c2a9ba28f5e45e265
+a3d26799f30d8e0d27881184d92232d6f5f9ed6312b8b794bb8309e553dbf02da9f8c600a5632a412ab53c80251d77034c49b18e65b2012511d006434ff70a7c
+32cd76a2a36328a970c06ad4469b5f94cebdfdad9ec516f4887ff07020def09bc1fb5ea162ffd514e71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+dcfdab3db4e32d433bf41dbcfedd1a73706b807646b803717f4022ad17ec791a962774806c3702bc70c06ad4469b5f94312fa97e331c1da84ae99547937d63c8
+661a51fa4c6b3741de4c8491ec5adb9e644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+a3d26799f30d8e0d27881184d92232d69555c9de400e3ff4bb8309e553dbf02d2552b09b2698b2f7faca85d0862a74fb691018eed3b49c36df42c068afe98c8a
+5481192eeae2d9bcb37e8d7bc524479260738008e3ec23e9bd64c1cf62f7de1ee9cecb35b9656da53c43768853245e2f3c7d75eb5aa570c18f03faff22254705
+6e8b426636593381d9cb531c84b2e78e691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913a1d65e1bf53966969
+94c296d774d16dc6029d261fdb11face706b807646b803717f4022ad17ec791a61c0f368e65895e727a7680140b18b02a9f8c600a5632a4124bb2947519915e1
+6b895da7740b2625691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a3d26799f30d8e0d27881184d92232d6f7a9cb3a3aa8fd3bbb8309e553dbf02da9f8c600a5632a41d43d8e2b52dc60dffaca85d0862a74fba0d09017c0a7e6e3
+cbac94568cb7ea80af399d32d282acb6184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+dcfdab3db4e32d43a33cd2cacf2a506c706b807646b803717f4022ad17ec791aad422042d90c20ff70c06ad4469b5f94e3916bcf3d4f3b094ae99547937d63c8
+661a51fa4c6b3741765675393dc7d125644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+dcfdab3db4e32d43bba88ce0a19c8c96bb8309e553dbf02da9f8c600a5632a411b4f7fa9a4b8e3535071025688454c9ccbea7112d78cac1e41a05de3116e9b24
+cfa43262ca04397ebba88ce0a19c8c96644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+dcfdab3db4e32d43ede07d0c58d4f032706b807646b803717f4022ad17ec791abca82e895767d0d27f4022ad17ec791ac2725da9eb2b53c3ea4f4ffe9d39f1af
+a9f8c600a5632a4193ad7f2331f679c039859341766fc92cb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+e8ac5e09ea758be7a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a039872532af236d9d172b57b6cedb7a9d79e
+dcfdab3db4e32d43f260bf685f02b461706b807646b803717f4022ad17ec791a42584466a0744c915286be7e40403390726a141610f9030fcebceff5d226dc59
+5ed2fe27f6c34366691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a3d26799f30d8e0d27881184d92232d6718e8ffade3a3c48bb8309e553dbf02da9f8c600a5632a41a2551ee6b7ec08c82bdc2471723c531b74fb7cf2e7c9f235
+32cd76a2a36328a970c06ad4469b5f94b06ce489a5ca8bc762c70e641415368ae382e6191d1e3e368490b79e7682309954c51e02474204001668843a96fba0b1
+70c06ad4469b5f94563cdd7e1d34ebd6233b9393f3163918e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a3323cc4f3a5d7e023
+aa3996e99201019ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+8b85e4e539255337f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+73f5336ad93df892b5f1c17ee7956303f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+a13c3ebdebf2dda89f946f657c75313a706b807646b80371f883903d081a702445b0476b0b2677a2835e233e602f4a1ea95eab34c46af31de89729e5d38ef58f
+1c21120900cc4a8e36396189a293dfcd706b807646b803717f4022ad17ec791a42584466a0744c91e12e7b2be99df4b145b0476b0b2677a2858904c65dd9fcbe
+ce133616d118868f7b4ac1d86b005a10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+0418cc75e3d7cf68710f626c2faf14a6f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+a3d26799f30d8e0d27881184d92232d6528864a47f84deb1bb8309e553dbf02da9f8c600a5632a415f733ff96338b1f2dad4bb70f534f24c16944157eaac9744
+32cd76a2a36328a970c06ad4469b5f942787d48592327eee7e9f11aea7261d3fc1fb5ea162ffd514e71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+94c296d774d16dc61a3f0583e1a3bd76706b807646b803717f4022ad17ec791a61c0f368e65895e764c58fec2fc42cd7a9f8c600a5632a41c4ca8063797fb61b
+6b895da7740b2625691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a3d26799f30d8e0d27881184d92232d674efa137fe2e0c89bb8309e553dbf02da9f8c600a5632a413741f88c4d16baa8ce5ec34e6f8ad1ca1cc1a996f7fda727
+3855efdebcb13ff95d7d82e5a16ed00f644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+be933631531f9659e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb937b7b413a3c0865e2daf092be8c923c4
+1c21120900cc4a8e19f3f50aa9dc900f706b807646b803717f4022ad17ec791a42584466a0744c915286be7e4040339045b0476b0b2677a2f7ba82e1f913d254
+ce133616d118868f7b4ac1d86b005a10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+0418cc75e3d7cf68710f626c2faf14a6f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+dcfdab3db4e32d43d10aca187e10ee8f706b807646b803717f4022ad17ec791a7fc190a94cff1584c4fe171c4aa376b5a9f8c600a5632a41d45c707ab17d8b3b
+2994a828cfcb8a945699c5db1d4fd476e847dda77d5f9443b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+d49c10eabba409d0691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a13c3ebdebf2dda881d04920058e3784706b807646b80371f883903d081a702445b0476b0b2677a2367114db4850319ea95eab34c46af31de89729e5d38ef58f
+a3d26799f30d8e0d27881184d92232d60fa4ea595ab98ca0deaba362d68b5afa8490b79e76823099b616acb3afc2463ed3b99b01fef3c64478e91940a8e16688
+7793f45490075ab3184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+2a6720d0591cca0540f05819e599c2c0f44496155f03ed4ff588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+a3d26799f30d8e0d27881184d92232d6b5c9d0c1558cfdd3bb8309e553dbf02da9f8c600a5632a41737375a8f10d4240faca85d0862a74fb1e10c57f3fa5c4ab
+c8fe38984326176d6d35d8485846d699e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+a13c3ebdebf2dda8dab4c24b55761cda706b807646b80371f883903d081a70248490b79e7682309988d781a019b79b2cf357d2495314aea2abb485c8ac7a39ac
+1c21120900cc4a8eb4ce929101f95640a665d0fac02ce03ed9e82c4170fcde6c7c9c7b2e8cc681a533f224eaf10e8b80b37e8d7bc52447928c38e2b886ad00f4
+2c671ee0eeadba6424fdfd9bb2e10b07a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+099a86bb88e9bfe31aabf11df8bc7d16d80baa145e5a06b5b0daf6fdf32567c9447da73140e1fc0c72d03a382a5bfff6644126c9831a96bde848d5f4c074f39d
+81a9746d786d11d6818d73f79dee5cb4f418b0d160a3681f3dd6b421a8a3725817181a2338ab2aebfaea4b98a48f84e01933952b4dcad44ce0c8f92b9e893480
+0805c9bc4a8c6e821b335ff666912215dfcb0cac625c1873016f27e7fe377c06dce40a334853b6026620d3f6c560089e644126c9831a96bde848d5f4c074f39d
+224fe9df4b4ef4f274c94f93c383e25734ea5a4105092647687fb7a3cd2ce4a4c841ee37f63fbd9f789bb4c149c0f7d2f588045849eceb90e1051d295f61418a
+a1642ab168aedbca706b807646b80371cff3aa4dfc172ba9fe8065cdb5f5f8ce9d8a6e2e9f780fbd77f292f81f948d5c30c576d2a5a01b7b87e4581c8c748cc7
+17cb17e37c3b5d6d55136b92d0559ec4e71f71e187584171b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+2dbdd1f19d21f2c6f45310c19b6b8ee5cdbea1dc33dbc9f7478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+e32412d8e97ecf0cf45310c19b6b8ee59a410bc651fe35dc62d766f77596a54bf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+dbf12f0360092c452fbfcc2b872ff946ed93a0256a6d844d749d13634498f34bc9322890ded6647b3e79fe16148a605c0bf1a37a93ab80b462b84e5bac7fe806
+012c1a3f018cd4280f4d3610e546ee8e184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+cc1384a8203fb2628cf29811b0e6da3536fb420f5a067a1ef588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+846dad09021724e51b335ff66691221555e91b4e96b9929fcffa2bb36a30977a184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+240cf6a83072ff1a38a199ba1268a68172d2a53fbeaf00843cafa1326cfe18744842ef87c436514df49fb174d085ee41608e5066341ff6bd6004e157994bc9bf
+c1dd9c389b868458e0c9cc74d563e9795556ffb9d7663e42817afbf1a1467aacfeff6bfa8393f3f8f8c60dfea3fcb448617d098114966bf404fdd277fd95ba23
+2b1f6b713203d99458b58148317651d2f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+42cad0d02e943b3cf45310c19b6b8ee547f0b089656f266e62d766f77596a54bf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+0d5aef5328a6b0bcac73e51ea6171029067f4902092fb36aa1b7be63766c6afbca844e5556e86be4a0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+2a3fd364408caf246f52d5ca6e23dacfc8fb14f6ca5b8e2bd388e23ae3aabe19e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a198671645a8a8b509
+$CDNENCFINISH
+.ENDS ZXLD1371_PSPICE
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S7 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+ca116cfd9f503f5a31820e631d1d1d74bc43870b2068c893691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+22fa704315324fee6f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44b8257e7c370c44b80ffb76e2ddf4497b2661590815226ffb5d0d2970852fcd9175a72dcf08b05ada72e8a5ba6eb8ba83
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S7
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S4 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+cca5ca7cd3bb954631820e631d1d1d743397604f987b60be691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+c89815736fd06a736f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44d3c3547c91af769e0ffb76e2ddf4497b658b10ab5642c9074b56e07cb2a0a4fbe2da13bf6ad1ec6e8a8fe36961566219
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S4
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S1 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+44f117741689d59131820e631d1d1d749e35700c7913e939691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+3c76beba9b808c126f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e447b3ba2fd65dbf9050ffb76e2ddf4497b2661590815226ffb5b32e22ee2762aa4de796a07e247501c3e91162e7d1bf20b
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S1
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S5 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+a41eff5afcadbe0431820e631d1d1d74cce714c3daebb9ef691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+0d00147a4ec8159a6f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e444ffca53f33c7306d0ffb76e2ddf4497b2661590815226ffb5b32e22ee2762aa4de796a07e247501c3e91162e7d1bf20b
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S5
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S9 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+0d4fba81348870d631820e631d1d1d74525a947d4222b598691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+7e9baaa9719bd1f96f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44ccbbb1088960694e0ffb76e2ddf4497b56602f79b0c467cddacf708331606702dd351453c45c7fd75065ec6d2c8c5479
+dc224b6b76a2bc94c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S9
+*$
+.subckt FREQ_HYS_CONTROL_freq_S5 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074bc27f931268b4061ffb40d9244a39c7b6a68ac505a5ecff2c88548d8e960e4b4f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd227765b42d27caeee0fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e449700bce0c7d12200b469a8d685c038374bf43f00b3546d6cc905474b9732df37ff411e42e94343f8a5ee8a3eda0c234c
+768e04b30687cfb2f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S5
+*$
+.subckt FREQ_HYS_CONTROL_freq_S4 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074cc0121b5e20e2076ffb40d9244a39c7b6a68ac505a5ecff253d628d3aa8f23f0f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd20eac5929827abc620fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e444bc03f093be0dc18b469a8d685c0383732325ad26af3c92db16935f5527df49e8f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S4
+*$
+.subckt FREQ_HYS_CONTROL_freq_S2 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074239bdbe658d21d00ffb40d9244a39c7b6a68ac505a5ecff2490cb4e483ee24adf716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd23a40f0eb405719560fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e440322e8d4ef436925b469a8d685c038370cf9f34ef7439c7d45316724feefc5c28f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S2
+*$
+.subckt FREQ_HYS_CONTROL_freq_S7 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074bf230db17611f82fffb40d9244a39c7b6a68ac505a5ecff233cad0128b74623ff716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd2fae8f259c6c39e8a0fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e44f29f1bd798b90240b469a8d685c038374bf43f00b3546d6cecd4cdb03700be1f0fce1330368f375ef1481883b3c827f1
+5fe9ab614b8532c6691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S7
+*$
+.subckt FREQ_HYS_CONTROL_freq_S6 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074c12e63f53fc8b6c7ffb40d9244a39c7b6a68ac505a5ecff27ac7164c6d09e590f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd23284dbb5b24063b50fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e4451f6f2e2c182f951b469a8d685c0383732325ad26af3c92db16935f5527df49e8f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S6
+*$
+.subckt FREQ_HYS_CONTROL_freq_S3 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074eb87848776396383ffb40d9244a39c7b6a68ac505a5ecff223ed7a9eec21b7f2f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd211ae75f02889d2920fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e443f4a0cd3d8ecd961b469a8d685c038370cf9f34ef7439c7d45316724feefc5c28f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S3
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S3 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+49437a5c2c000e5531820e631d1d1d7451c16968e1146dc5691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+196545b3a77859896f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e449fca2d09a1602b870ffb76e2ddf4497b2661590815226ffb5d0d2970852fcd91e7e145aac8e3e7699d637f5014d15567
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S3
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S2 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+c21144fd15b2c61331820e631d1d1d7423f284e2e346bfb8691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+e07b7a6acd4bf43c6f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44eff574bcdcb677aa0ffb76e2ddf4497b2661590815226ffb954d83117570d624bedd4f0e0429e49f7c4bbf5b95fbb5a2
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S2
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S8 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+48cad54cbc66f42d31820e631d1d1d740e2409c315f54dec691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+e65d04c3f5d7c4236f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44a0cccacb04419cb30ffb76e2ddf4497bde068206158253e41090d0879c58eb702947f67be37eddb2d38aff4e12555a5d
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S8
+*$
+.subckt FLAG_AND_STATUS_STATUS_FLAG_S1 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+cfa43262ca04397ebba88ce0a19c8c96706b807646b80371180f9852cfb962b0a383dc18dcb615b7bba88ce0a19c8c96691018eed3b49c36df42c068afe98c8a
+2075146148d4b5070b96a7f211b663c6cd9f9b0fe66d8ad19fdd4d3bdfe20cf0691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+1e7e75f62a07f7b1bbcb463bf6330e4470c06ad4469b5f947053772909f75e89fb3b1a8334015d62d1c429fd2f3b2883fd2de4c0061ef81a9adc56f03a8d243c
+56d61c3bc288fdfab3ae07e46b54f215a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+$CDNENCFINISH
+.ends FLAG_AND_STATUS_STATUS_FLAG_S1
+*$
+.SUBCKT COMPARATOR IN+ IN- OUT PARAMS: DELAY=10n
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f13695a267d63dfaeb5708e23ac33f007982c30b6978092afa172cac7b9698ef38691018eed3b49c36df42c068afe98c8a
+16288721619f9c8b73e70156d3cd9e32ba7f00f779fc266112e28b77a3176d96f3acf00b7a00a5d9a0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+6a7043c1c76bf8115801d29f353ff668c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+$CDNENCFINISH
+.ENDS COMPARATOR
+*$
+.SUBCKT AND_2 A B Y 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df167b1d69fd012a0368265dc80b7e0d46e0117c329126d1ef51031098785dc58b6c2356fa0b0fe3ea96004e157994bc9bf
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS AND_2
+*$
+.SUBCKT AND_3 A B C Y
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df15414ce0c3c28bd7f5b09636c3bdb66729bb98c81884b404e9ab688292ff1c0c1ccd6f3cde728099eb71d6b06b8085e19
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS AND_3
+*$
+.SUBCKT OR_2 A B Y
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df15414ce0c3c28bd7fe0ca60defdf7d1449bb98c81884b404e3e10a24a415fea9ce71f71e187584171e848d5f4c074f39d
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS OR_2
+*$
+.SUBCKT OR_3 A B C Y
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df15414ce0c3c28bd7fe0ca60defdf7d1449bb98c81884b404e540b35c06706fc31ccd6f3cde728099eb71d6b06b8085e19
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS OR_3
+*$
+.SUBCKT BUFFER IN OUT
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f1dbf0264b29e4cbf244656e81b84a3fc43e10a24a415fea9ce71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+16288721619f9c8b73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+6a7043c1c76bf811fa1447639072c48ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+$CDNENCFINISH
+.ENDS BUFFER
+*$
+.SUBCKT BUFFER_DELAY IN OUT PARAMS: DELAY=10n
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+f8547e868ffe926371707ca6c7cdc2c0db8456fb9fc0e60ca344273ac7c053539894c1140acaefeda0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+6a3db1adc01f2d0736806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962dd61e0a440bad77e3138b871d3d163c946
+d60bc892fb1b4da34d01e0f129090a713dfc58e2232c84d7e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a3323cc4f3a5d7e023
+f11d6a2c6927773428f84a1a2d7ca9633291f8ae48f5b6faccd6f3cde728099e8ee54616d1c590f4c9f6c53b093b66727f70dd368fa5728963912ffecb55b6d8
+$CDNENCFINISH
+.ENDS BUFFER_DELAY
+*$
+.SUBCKT INVERTER IN OUT
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f1dbf0264b29e4cbf244656e81b84a3fc40cf393e03c403d23e71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+16288721619f9c8b73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+6a7043c1c76bf811fa1447639072c48ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+$CDNENCFINISH
+.ENDS INVERTER
+*$
+.MODEL D_IDEAL D 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+75eac7fe7be88fbd8f93d26d6d7158edf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b287716165f3a5d711faa4
+$CDNENCFINISH
+*$
+.MODEL D_LED D 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+05b7e48834d14dc5a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a039872532af236d9d172b57b6cedb7a9d79e
+$CDNENCFINISH
+*$
+.SUBCKT COMP_HYS IN+ IN- OUT PARAMS: HYS=100m
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f1dbf0264b29e4cbf2ab2e0bc08da7b2652a0d293edc0e45fbf454f969ffd39687bf450df4c4e9e23df8d564b4b43d4a8b
+16288721619f9c8b73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+6a7043c1c76bf811ac64abca1fecc7e1e847dda77d5f9443b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+$CDNENCFINISH
+.ENDS COMP_HYS
+*$
+.MODEL symbol_name_d d 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+b6947b007d81578c2dfb58a8d563abc3f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b287716165f3a5d711faa4
+$CDNENCFINISH
+*$
+.model symbol_name_nmos nmos 
+*$
+.model symbol_name_bjt npn 
+*$
+.SUBCKT OPAMP IN+ IN- OUT PARAMS: POLE=100k VMAX=5 VMIN=0 GAIN=10000
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+3c22fc7bf920393e42980fba0f39412f3693428137f342bac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+d1d3a87084f277dc2fe9793711afa1c8e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+79f33636374221840efca1f16b0b0c4c3693428137f342bac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+4c899a551cd7061512a1677418d3eea3e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+d7072740a938f0e72752c8207c4277f84f9b01dedaec6f67c4b176bd7b03555bc9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+425c9b52d84437faed112ed3066b88085a8d2d705d2688894223460450a363bd9d521bfb0940593fa0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+1faea247e1a8c1555afff61ed7f1575cc9ea4b833c89b58ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+b211161c561aa8ac73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+ff2f30a0f5680561a8b2bab6b462538002e6d7b91a055bf47df3b84ad0c4ee9bc9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+$CDNENCFINISH
+.ENDS OPAMP
+*$
+.SUBCKT SR_LATCH S R Q Qb
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+3ff62270067d0a2acd275293805a1df15414ce0c3c28bd7fe83384dc37890adeef1c3670504e0551f3c5bb9f3f22721496d6f86ec564aabc82d021902886a9e0
+a7cbdf8ef8369f02abcd5bc418da0bde184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+b521439d911db4ae985fd30f1da54348f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+b9714e9f0185ebe0c3fa3d1e401a4503979added4bba322bd4f2da227571b4d2d5df8edfc52ef08bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+ff7b9cdb444d3489f5af95f73630db59f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b287716165f3a5d711faa4
+1054010ec6d491bee18a20b319ef4d27a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+$CDNENCFINISH
+.ENDS SR_LATCH
+*$
+
+
+=========================================================================================================
+
+[AL8807 (Chinese Version)]
+*TITLE=AL8807 MACROMODEL
+*ORIGIN=DZSL_AG_GS
+*SIMULATOR=DIODES, SIMETRIX and PSPICE
+*DATE=17th Jan 2013
+*VERSION=1
+*PIN_ORDER   1:SW, 2:GND, 3:CTRL, 4:SET, 5:VIN
+*
+* This model is intended for feasibility study of application
+* design.  It is expected that it will not accurately represent
+* the device real performance.  However some important features
+* of the device are modelled approximately.
+* The model does not include effects of temperature or self-heating.
+* Testing of prototype hardware and optimisation on the bench
+* is always required before production build.
+*
+* NOTE:  set RELTOL=1E-5 for clean switching waveform
+*
+.subckt AL8807   10   26   13  20   18  
+* Connections    SW  GND  CTRL SET  VIN
+* pins   SOT23   1   2    3    4    5
+*                   
+* Block 1: Vref Generator *  input is V(18)-V(26)
+*required input parameters
+.param  VIL1=0.7  VIH1=3.5  VOL1=0 VOH1=2.5  ; low and high limits of input and output  
+.param  MUL1=0.1  MUH1=0.05  ; low and high curve error
+*calculations
+.param KL1={MUL1*tanh((VIH1-VIL1)/MUL1)}  KH1={MUH1*tanh((VIH1-VIL1)/MUH1)}
+.param SL1={(VOH1-VOL1)/(VIH1-VIL1-KL1-KH1)}  ;gain slope
+E11 14 26 value={min(max(VOL1+SL1*(V(18)-V(26)-VIL1-MUL1*tanh((V(18)-V(26)-VIL1)/MUL1)
++ -MUH1*tanh((V(18)-V(26)-VIH1)/MUH1)-KH1),VOL1),VOH1)}
+R4         14 13  50k  
+
+* Block 2: CTRL limiter
+* tanh limiter, type 1, input nodes 13 and 26, outputs 12 and 26
+.param  VIH2=2.5  VOH2=2.5  ;high limits of input and output  
+.param  MU2=0.001  ; curve error
+.param SL2={VOH2/VIH2}  ;gain slope
+E21  12  26  value={SL2*min(V(13)-V(26)-MU2*(1+tanh((V(13)-V(26)-VIH2-MU2)/MU2)),VOH2)}
+
+* Block 3: CTRL lockout with hysteresis *
+R8         12 adj_lockout  1000  
+I1         12 adj_lockout 100uA  
+R31        adj_lockout 31  1k
+C31        31 26 10p
+S4   adj_lockout 12 31 26  S_4          
+.model   S_4   VSWITCH Roff=10e6 Ron=1 Voff=505mV Von=495mV
+
+S5       21 26 31 26  S_5 
+.MODEL  S_5   VSWITCH Roff=10e6 Ron=100 Voff=501mV Von=499mV
+
+* Block 4: UVLO with hysteresis*
+E41       41 26 value={0.5*(1+tanh(1e3*(V(43)-V(18)+5.7)))}
+R41       41 42 1k
+C41       42 26 20p
+R42       42 43 800k
+R43       43 26 200k
+S41       21 26 42 26   S_41 
+.MODEL   S_41   VSWITCH Roff=1e6 Ron=100 Voff=0.4 Von=0.6
+
+* Block 5: Current Sense Comparator*
+G51        26 8 18 20 1m  ;  input amplifier
+C51         26 20  3p      ;  input capacitance
+* SET input current; asymptote input nodes 20 and 26, outputs 20 and 26
+.param  xx5=5  yy5=16u  nn5=32;input corner, output limit, asymptote power
+.param  aa5={xx5**nn5}
+G52  20  26  value={yy5*(V(20)-V(26))/(aa5+(V(20)-V(26))**nn5)**(1/nn5)}
+R51        26 9  10.417k  
+R52        9 8  20.833k  
+S51        9 26 23 26   S_51 
+.MODEL     S_51  VSWITCH Roff=10e6 Ron=1.0 Voff=2.5V Von=2.8V
+C52        8  26 0.5p
+G53        21 26 value={0.01*tanh(100*(V(8)-V(12)))} ;comparator
+C54        21 26 1f  
+V3         24 26 700mV
+D8         24 21 Dclamp
+V4         22 26 8V
+D9         21 22 Dclamp
+
+* Block 6: Comp Delay and gate driver*
+R64        21 63  10Meg    ;  input filter with C61 
+C61        63 26  0.0015p   ;  
+G4         61 25  Value={0.1*(max(V(63)-V(25)-0.5,0))**2*(V(61)-V(25))}
+G5         25 62  Value={0.1*(max(V(25)-V(63)-0.5,0))**2*(V(25)-V(62))}
+R66        61 25 10meg
+R67        25 62 10meg
+R61        18 61  1.2
+R62        62 26  1.2
+R63        25 26  10k
+
+R65        25 64  1        ;  driver current sense
+R13        23 64  330        ;  output resistance-1 ohm
+C6         26 23  25f  
+
+* Block 7: Output NMOS *
+S8       11 71 23 71 S_8 
+.MODEL     S_8 VSWITCH Roff=10e6 Ron=0.25 Voff=2.5V Von=2.8V
+R72        11 10  50m     ; on resistance = R72 + R73 + Ron(S8) 
+R73        71 26  50m
+C5         11 71  100p
+C71        23 71  40p
+C72        11 23  15p
+ 
+* Block 8: Supply Current *
+G81         18 26 Value={(300u*(V(14)-V(26))/VOH1)+0.6u*(V(18)-V(26))}
+
+* Block 9: Protection diodes
+D91  26 10 D_1     ;SW
+D92  26 18 D_1     ;VIN
+D93  26 13 D_2     ;CTRL
+D94  18 20  D_2    ;SET forward
+D95  20 18  D_2    ;SET reverse
+
+.model Dclamp  D Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Cjo=4p M=.3333 Vj=.5
+.model D_1  D  IS=1e-14 BV=40
+.model D_2  D  IS=1e-14 BV=6.5
+
+.ends AL8807
+*  =====================================================================
+*
+*                (c)  2013 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition or warranty as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 4949 Hedgcoxe Road, Suite 200, Plano, TX 75024, USA
+*
+
+=========================================================================================================
+
+[AL8807A (Chinese Version)]
+*TITLE=AL8807A MACROMODEL
+*ORIGIN=DZSL_AG_GS
+*SIMULATOR=DIODES, SIMETRIX and PSPICE
+*DATE=1st Feb 2013
+*VERSION=1
+*PIN_ORDER   1:SW, 2:GND, 3:CTRL, 4:SET, 5:VIN
+*
+* This model is intended for feasibility study of application
+* design.  It is expected that it will not accurately represent
+* the device real performance.  However some important features
+* of the device are modelled approximately.
+* The model does not include effects of temperature or self-heating.
+* Testing of prototype hardware and optimisation on the bench
+* is always required before production build.
+*
+* NOTE:  set RELTOL=1E-5 for clean switching waveform
+*
+.subckt AL8807A  1   2    3    4     5  
+* Connections    SW  GND  CTRL SET  VIN
+* pins   SOT23   1   2    3    4     5
+*                   
+* Block 1: Vref Generator * input nodes 5 and 2, outputs 11 and 2
+.param  VIL1=0.8  VOL1=0  VIH1=3.45 VOH1=2.5  ;high and low limits of input and output  
+.param  MUH1=0.05  MUL1=0.1  ; high and low curve error
+.param SL1={(VOH1-VOL1)/(VIH1-VIL1)}  ; gain slope
+E11  11  2  value={min(max(VOL1+SL1*(V(5)-V(2)-VIL1+MUL1*(1-tanh((V(5)-V(2)-VIL1+MUL1)/MUL1))
++ -MUH1*(1+tanh((V(5)-V(2)-VIH1-MUH1)/MUH1))) ,VOL1),VOH1)}
+R11        11 3  50k  
+
+* Block 2: CTRL limiter  * input nodes  3 and 2, outputs 21 and 2
+.param  VIL2=0  VOL2=0  VIH2=2.5 VOH2=2.5  ;high and low limits of input and output  
+.param  MUH2=0.001  MUL2=0.2  ; high and low curve error
+.param SL2={(VOH2-VOL2)/(VIH2-VIL2)}  ; gain slope
+E21  21  2  value={min(max(VOL2+SL2*(V(3)-V(2)-VIL2+MUL2*(1-tanh((V(3)-V(2)-VIL2+MUL2)/MUL2))
++ -MUH2*(1+tanh((V(3)-V(2)-VIH2-MUH2)/MUH2))) ,VOL2),VOH2)}
+
+* Block 3: CTRL lockout with hysteresis *  not used
+
+* Block 4: UVLO with hysteresis*
+E41       41 2  value={0.5*(1+tanh(1e3*(V(43)-V(5)+5.7)))}
+R41       41 42 1k
+C41       42 2  20p
+R42       42 43 800k
+R43       43 2  200k
+S41       53 2 42 2   S_41 
+.MODEL   S_41   VSWITCH Roff=1e6 Ron=100 Voff=0.4 Von=0.6
+
+* Block 5: Current Sense Comparator*
+G51        2 51 5 4 1m  ;  input amplifier
+C51        2  4  3p      ;  input capacitance
+* SET input current; asymptote input nodes 4 and 2, outputs 4 and 2
+.param  xx5=5  yy5=16u  nn5=32;input corner, output limit, asymptote power
+.param  aa5={xx5**nn5}
+G52  4  2  value={yy5*(V(4)-V(2))/(aa5+(V(4)-V(2))**nn5)**(1/nn5)}
+R51        2  52  10.417k  
+R52        52 51  20.833k  
+S51        52 2 66 2   S_51 
+.MODEL     S_51  VSWITCH Roff=10e6 Ron=1.0 Voff=2.5V Von=2.8V
+C52        51  2 0.5p
+G53        53  2 value={0.01*tanh(100*(V(51)-V(21)))} ;comparator
+C54        53  2 1f  
+V51        54  2 700mV
+D51        54 53 Dclamp
+V52        55  2 8V
+D52        53 55 Dclamp
+
+* Block 6: Comp Delay and gate driver*
+R64        53 63  10Meg    ;  input filter with C61 
+C61        63  2  0.0015p   ;  
+G61        61 65  Value={0.1*(max(V(63)-V(65)-0.5,0))**2*(V(61)-V(65))}
+G62        65 62  Value={0.1*(max(V(65)-V(63)-0.5,0))**2*(V(65)-V(62))}
+R66        61 65 10meg
+R67        65 62 10meg
+R61         5 61  1.2
+R62        62  2  1.2
+R63        65  2  10k
+
+R65        65 64  1        ;  driver current sense
+R68        66 64  330        ;  output resistance-1 ohm
+C62         2 66  25f  
+
+* Block 7: Output NMOS *
+S71        72 71 66 71 S_71 
+.MODEL     S_71 VSWITCH Roff=10e6 Ron=0.25 Voff=2.5V Von=2.8V
+R72        72  1  50m     ; on resistance = R72 + R73 + Ron(S71) 
+R73        71  2  50m
+C73        72 71  100p
+C71        66 71  40p
+C72        72 66  15p
+ 
+* Block 8: Supply Current *
+G81         5  2 Value={(300u*(V(11)-V(2))/VOH1)+0.6u*(V(5)-V(2))}
+
+* Block 9: Protection diodes
+D91   2  1  D_1     ;SW
+D92   2  5  D_1     ;VIN
+D93   2  3  D_2     ;CTRL
+D94   5  4  D_2    ;SET forward
+D95   4  5  D_2    ;SET reverse
+
+.model Dclamp  D Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Cjo=4p M=.3333 Vj=.5
+.model D_1  D  IS=1e-14 BV=40
+.model D_2  D  IS=1e-14 BV=6.5
+
+.ends AL8807A
+*  =====================================================================
+*
+*                (c)  2013 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition or warranty as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 4949 Hedgcoxe Road, Suite 200, Plano, TX 75024, USA
+
+=========================================================================================================
+
+[ZXLD1371]
+**$ENCRYPTED_LIB
+**$INTERFACE
+*$
+.SUBCKT ZXLD1371_PSPICE GATE ADJ REF GI ISIM VIN PWM SGND STATUS
++ VAUX SHP PGND FLAG TADJ NC1 NC2
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+394197bedeb77a716f52d5ca6e23dacf5f77689faa8a663fbc39eed45909606b00d3e0b087c73744c9f6c53b093b66727f70dd368fa5728963912ffecb55b6d8
+04f5acd939422ec02fbfcc2b872ff9461d45c8eb53f8a29c749d13634498f34bc9322890ded6647b56be7388bb4ba8853543ca07c959008c54d5980f69aa986e
+5316fc9fe4e05facf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+ddf70eae3b592905ac73e51ea6171029b9eabc28f38b49586ae3f463f161071fbfd58a4b12fceb5d00d3e0b087c73744c9f6c53b093b6672f1b3224347ba154c
+e0bee0f3fadd67246f52d5ca6e23dacf6ae3f463f161071f2da085ac1302fd51478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+b0eb42ca922cce592fbfcc2b872ff94683aceacad20792c7749d13634498f34bc9322890ded6647b05ed049cabd059d7af34d43db6b6477cbc2933d56eb6c3c7
+af399d32d282acb6184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+8f10d309634521e5107192c97b3918a9c76dbc50c48fbbe7d0fb8f8ac09713ec478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+717cdf892ff6b6ff26c880f485e2ca3492ebc16da04e46be7de72266a8957c9762d766f77596a54bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+c6ada2f6665016dfac73e51ea6171029df13108db75bcac0ec8e4432708a2f10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+605b35877b85eee721377c54379bab5d239bdbe658d21d00044c5edbf77fecb6b03db27a4b23eea8387ddbd4b3ec85993c3ebf3aa31b5c39eb81723a9021625e
+2ca24c18cb27721d153e73797dd8d866a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+dff667fce1627b8f36b24b5db985d2d3ce28bcb138548355116fb2ef8f954fae37533a275f2c6d0eb5f1c17ee7956303f716375b8c71d2ca2a84cfa93f6086c1
+00575617ddd170c91068d23fb1a14817be00a2a37fc213af7f6778186477bbeb7826d86a24e0c932558ae2e6b93c4040672f752658a09f218d5c737683766352
+a147194f3a3bf6c0710f626c2faf14a6f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+f29d7d98ef0d8ffac4a17b59ca91381df45310c19b6b8ee57017057a427e6410b540685422c11ef9fceb72c6584bab533cf4807158e4909c9d6bedf9d0034ac8
+605b35877b85eee721377c54379bab5dcd9f9b0fe66d8ad1b5b85bc0d31aaef583bc4964f97c0bfb1e00d217525559aedad4bb70f534f24c16944157eaac9744
+a2faec34d68cdd2af13ee61e90b65ef18ce113ea01486d742446811279bcfdca7e4eff80f489c700d80f09fa99fcdc9f31ff87f86ef7d8025ac6c13a39cffff7
+64a2af3d08b8c3fbe71f71e187584171b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962dd61e0a440bad77e3138b871d3d163c946
+273ef0efd9cac693c295486b1819e032f45310c19b6b8ee57017057a427e6410b540685422c11ef9f78e3835f7dcf08337b2d2e15ad7f2468671325e6f4b6b25
+6422a9133f078ed399298f7cd44d061d706b807646b803717017057a427e6410b540685422c11ef93063c3bb852fe4d2fe14e8ed893f87905d43534984e52420
+2579318862ec410f5268f2b9f86a0eca858728efae680901a23477990359ea58c64639ef522b82dbe7eefa795927f22cb124fbdd29716cfbacdab751cbf202c2
+f29d7d98ef0d8ffab390595cafb1ab9635b229f6ed36cf79efe06c4f9b313c77dbc3554236bba2721c0530388a0d45f3f64c4168815a7f58b9ec58759fbaecf9
+44e335dab141105980b07acdfe1a6318184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+ecc3810338d4a815ec85f36e56eb5e07f45310c19b6b8ee57017057a427e6410ce3e74f18b11c63edea2f49989a93410184dc1300cea2a136b276ab17ad27652
+605b35877b85eee721377c54379bab5deb87848776396383b5b85bc0d31aaef5c78955b2f9a9a77ca7acfc5f2315b7c44c49b18e65b2012511d006434ff70a7c
+2579318862ec410f5268f2b9f86a0eca858728efae6809018683b141dcb3272b7ae82484816be00fb5f1c17ee7956303f716375b8c71d2ca2a84cfa93f6086c1
+605b35877b85eee721377c54379bab5dcc0121b5e20e20767e2db9a6f9c8f569a3453ba7982d296def7dd173ebafc8a5efe06c4f9b313c777a5f555c7f36bc06
+55f7ebc1844b945cc9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+dff667fce1627b8f36b24b5db985d2d3ca919d09a48d33e1b19c9f724420bb21024a2e9187f5d113e73070a45f1d549ca0c7a89b875d76a7668ff86ff0a77892
+273ef0efd9cac693699b83783a230135f45310c19b6b8ee57017057a427e6410b15a98c80c85bdd8834492d15d72f82c760b7acfc94bff32bd6e0240e530e0d3
+00575617ddd170c977da2069621c0870be00a2a37fc213af7f6778186477bbeb9b7fc6a7cb92def0ea7d4f030068283373d9dc50e4e85c45abb485c8ac7a39ac
+00575617ddd170c93a6d68c1db088061be00a2a37fc213af7f6778186477bbebe3abc915180b0fc75a90baf5cf07376f49bcb2e9b7241eb49d6bedf9d0034ac8
+5dde899679de79ab1b335ff66691221544e30ee031766bfac90827f4e9cf024b821d3ad19a17fc5962d766f77596a54bf588045849eceb90e1051d295f61418a
+317f1bcb1e5ac862ac73e51ea61710293497978ed7181356a099cec494ae8989f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+7b300a002f2d8ddd218ee09e41104590e28b1eaee7cc8472753c64a4a951701a9238c7ba345aa441c9f6c53b093b66727f70dd368fa5728963912ffecb55b6d8
+b9ed3e04d2a793293fe9a17f99afa94395e943ccd8868a6ae93c8c7b51168b14478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+f1b71296a16c9ee01b335ff66691221512ea7294e684b839f3c4e72344563a843b250a80e39602b5042f0c0c78bb0deb184dc1300cea2a136b276ab17ad27652
+23ee73d6065f3641d811871cc3622e4a019b8717068e3d443f21a179b2be58baef1d7357d3c4e2f3644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+2c7f46f84591bc12e2ad7048ed9193b1523b2604a68e8ef9fdf5f62657ccba9b2dc8ed9cc96ddaab24fdfd9bb2e10b07a0c7a89b875d76a7668ff86ff0a77892
+857620ce20ef86cb26c880f485e2ca3415329f00962841785a4c41089daca73e787784bc593e995d23b782b3d6a37df1e7eefa795927f22c7d5ecccba7838ea4
+8807bf206d8a4bf4da90698ba1ee0b1344e30ee031766bfa2eb33e7d0c66effdc4263047304fc101abbf8da1f96d2fb2492a61aa0d75bc53f41f2ac565d1fd58
+d36d26370afc449b1fc67ec68dbc352ea826917222a64646f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+f197831ab997cb511b335ff666912215962084b4cabaea50c0996ee0a6b29beec9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+71dbbe87e53e082f599bf13f0371d5b4fda72f5818c81bf49e91cddcc46315d65ed2fe27f6c34366691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+e8686e014b15db761b335ff6669122159c3be3c559456c162f7290d7f191b8ae23b782b3d6a37df1e7eefa795927f22cb124fbdd29716cfbacdab751cbf202c2
+c858d814c56a2bcc769be4ce041f188824046311950bf77c4ba887e5e5417704abbf8da1f96d2fb2492a61aa0d75bc5381d5360d0e44f50c5d43534984e52420
+48a94d11d238250f3e182210b1d9c2bc0dc94f7d1fc62090e213edf528fee6b2300b06d6b098e56a7a72378188149f25691018eed3b49c36df42c068afe98c8a
+9e5134779ded2111f45310c19b6b8ee512d693d8957db81b478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+e72ff3e7fc7190cdda90698ba1ee0b136ace929a007d96c44ba887e5e5417704abbf8da1f96d2fb2492a61aa0d75bc5363ed35b1266e36425d43534984e52420
+f58ffbed3f217484706b807646b80371895d05bc59882af8f1b8d790cb2e41c9faca85d0862a74fbfc528ba36843793b0fa984f27f78bccf7d4d396707233756
+4cf294edf7e0961f9b08e82f0908ea3a184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+4a2e92973c32fd12551cc969959c56b127056d71145457d5fa52237fdde26b44691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+6f23563494b56938706b807646b8037132122f815f7bf45c8e927edd2d745704be7b72e16c425c0c78974fa8c5970bd3128fa59261fa1a65f44496155f03ed4f
+2a76c18f665e8c270dbeca54fe4a6fa68c81757d6b17a69f9f7df7e1d853713719fc61b223c11fd91b03c3c8b1210eb1c9f6c53b093b6672f1b3224347ba154c
+1fcbc249eb94715326c880f485e2ca340639c092da8a0ddddc87d8f5e8e39da462d766f77596a54bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+52ba738fba12eb4a1b335ff6669122152ca8047c7957b30eae1e05fddac936fca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c2a9ba28f5e45e265
+f80a395284a571112fbfcc2b872ff94677ddc6f43cf11494749d13634498f34bc9322890ded6647b913601db0b53db113543ca07c959008c6f43b879c715b844
+0db7e72d6e369fe1691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+340902c1590d2246cbf62b4d3dcda7184aed8b565a5e13815c9e084edd7d2158f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+09a2b761cdd63986d58d21bd311ea6ba2716e67bb37c739248a22ba84875dab5e3e5946109ab96442be4d4793f1a270b2bdc2471723c531b74fb7cf2e7c9f235
+32cd76a2a36328a99aa9a9248f306fbf65cef533b34422d3d4b905c33e8bae272576175eff3c1c5ab5f1c17ee7956303f716375b8c71d2ca2a84cfa93f6086c1
+09a2b761cdd63986d58d21bd311ea6ba9f50c449b546348c48a22ba84875dab5e3e5946109ab9644d2f28a5c4bc363c766eaeb9fc4cc8ae125657ebd83de6526
+14d9ecaf67b8c94ac3322ae60df680c2b6cb8b57da5c237d3a9cdabdca00b010bdc21b64c436efa17cb5783fbf51f543f588045849eceb90e1051d295f61418a
+95216fad1e8e9329e73070a45f1d549ca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+09a2b761cdd63986d58d21bd311ea6ba0fa4ea595ab98ca05b6db4b5a524f0cfc24c449b5177ec438492e52ca9907137d45987aa526f7ebcaefc2cbd1904f036
+8ae1ad83327b81dec5446a5920f1d318aa11a96fd77a05cab74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+21cb6a29d4b0b30d21ba0642d7d35b3451ffdabf74bf3f4cf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+4cb05053dd12b0f521ba0642d7d35b340c9f3156902d2775f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+09a2b761cdd639868eee1ee26f081f21957037c396f796b5025af90ddce02ede557891869bc2e855803fff23a4e2a281ce5ec34e6f8ad1ca20e65e1717a0b297
+c35972971bda6cbfc2356fa0b0fe3ea9f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+09a2b761cdd639868eee1ee26f081f215fdb5cf0a0117bb6025af90ddce02ede557891869bc2e8553a1a9b7f4a1b1ea3ce5ec34e6f8ad1ca7f4fa8c50191d90c
+021132bb3fd82585f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+09a2b761cdd63986809e63d19e808c40706b807646b803719f37e7a110c0d30f8492e52ca9907137691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+05b5f1398a5d6f6906f29896cb00af16e3e5946109ab96448a6d0d3edb9c296d3b698759e0f6968715cde71e5a76569bc2356fa0b0fe3ea96004e157994bc9bf
+09a2b761cdd6398671d94cdb4243f500706b807646b80371aa3deeb51b78df108ae1ad83327b81ded2bbaa26aad6c6147f96a94c9a957a0c5d43534984e52420
+05b5f1398a5d6f6938e5202811de8b229aa9a9248f306fbfa019b886ca2946c45ec35ee69717b5a5974781ad152f7972184dc1300cea2a136b276ab17ad27652
+5c2e262d493b312ff73e0c5051b95e15e503df2c2a48623568d4c1b330b1e1fa62d766f77596a54bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+b090b65fdd16a27f1b335ff66691221511253b9116fca4b5cc818c2e64e2441d3c991a04052eba44644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+39b56735282d89731b335ff6669122156b74fd3a75af1db9b3eff0053075038b82b03c4529a3797d478a87bc5b8e6cf9691018eed3b49c36df42c068afe98c8a
+e513bba6d3228b87ac73e51ea6171029b9a376387dcea33ea1c0f782a9dccaf9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+b0fb847a3b385fda1b335ff66691221528bb17bf747c349a7bf91ca1a5006a10f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+a9174ed1bf108f9a0c5c216a3038c78c2ae141f64a46e45d8588cdf916f86d19e213edf528fee6b2300b06d6b098e56a3950d9f59cc9528fd38aff4e12555a5d
+282e8027f6fd021a744533db3bdc064cd7dfcfdb598aef9d554e6be04a5ec8e754cc636c47659e96faca85d0862a74fb4674009031596e3afd5baaf91a42e7d3
+ce28372646c1b72b8f8029c76dd5a72b644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+02673b7763e121d2184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+7c9acabd26c54e03f6a2b547dc976ba066c88eeb6c99df5da6f1ddb48cdca4178d1722fa3b58496691ecad6459b78f8ea076e3216a8b20ce62d766f77596a54b
+7c9acabd26c54e03bf230db17611f82f66c88eeb6c99df5dc0db4b7a44834d678d1722fa3b584966c1119d53e95a4af64ebedf1affe729adabb485c8ac7a39ac
+36beba41d0d291a4b1cc8ce9c0a7c4dbcd30ef1298e2828f2ca13e67bcc94ff2749d13634498f34b2228f4976daf1309c35972971bda6cbf82d021902886a9e0
+7c9acabd26c54e03b585b96681e0ca9b66c88eeb6c99df5d836ccb36c8e634738d1722fa3b584966e5cfc863a8a501d624be77f172ebdc51bd6e0240e530e0d3
+282e8027f6fd021a44f91394b9d9e846d7dfcfdb598aef9dd2820111558128219befd31f50da7206fe14e8ed893f8790c9f6c53b093b6672f1b3224347ba154c
+b895f158934e88384674009031596e3ae7b47cf3a9353d48d6c1365d95c11ec227a93decc2d57179c1fc488386db32b8e9fdfc8a753de111d38aff4e12555a5d
+9479dc5c320af2ec1aed393b8b55339421a9aca16c78487ddfb89fd4996a844c8d1722fa3b584966d11416a3e67abd4b6d94ac99831e831f122d19e668be3062
+547fa7df049edd5bd3ed529e2f03bd0da0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+7c9acabd26c54e03dca29065f7b4a684eac8453836f1167d9fa4c4bc97a88581e2bb5bfeace0dc4a209a5091d0afa22fbc9ba1249b27d252bd6e0240e530e0d3
+b4dba295799dbf1bb585b96681e0ca9b66c88eeb6c99df5ddfb89fd4996a844c9e4129bde4083afbf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+282e8027f6fd021a6263a80a123a82bfd7dfcfdb598aef9dd09f9d772f43ebef8492e52ca99071376cc173f11f5b8563f5ad3ad78240944d770dbf5b363fa50b
+52d178a251a6b6d5a778ba06ffb6481ca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+66848ab3646ea9277df90e6847038987295d7e616dd35350af399d32d282acb6184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+b4dba295799dbf1bcd9f9b0fe66d8ad166c88eeb6c99df5d74a45d3e091b7fad9dd87a2d3e5280a11de333fbd2e0f35df716375b8c71d2ca2a84cfa93f6086c1
+9479dc5c320af2ec5c89cd247067d79021a9aca16c78487d112a23f56123a9e48d1722fa3b584966fc8cbd0336a453d86d94ac99831e831f122d19e668be3062
+547fa7df049edd5b7c6a05e67fd634eea0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+da33f0d11a9f0f4ebf230db17611f82f66c88eeb6c99df5de7b47cf3a9353d4832a63025bcdcc99437b2d2e15ad7f246042f0c0c78bb0deb16944157eaac9744
+36beba41d0d291a4df9ebaf9f2a35d54cd30ef1298e2828f7df90e6847038987e4cdac1c8a1d1b266e3f0899c50425cf107598ff023e5e6fe2ebc0dd60167d43
+36258f891834800beb87848776396383ee894940744d7fd976fe71021a80bf2f2e23ba67bb505870b579c1d0cc3dc7d3644126c9831a96bde848d5f4c074f39d
+da33f0d11a9f0f4eeb8784877639638366c88eeb6c99df5d58ad1114986fcd033d34ea0a4263fbc88128d567d8fde99900d3e0b087c737445d43534984e52420
+9479dc5c320af2eccfee2d3418fdb57721a9aca16c78487d7bdec82a4b7b53f08d1722fa3b584966e34cb4739f0740126d94ac99831e831f122d19e668be3062
+547fa7df049edd5be96826b1b8137c4aa0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+9479dc5c320af2ecdd40236d4888ed8d21a9aca16c78487dba5bfaa11384a59f8d1722fa3b58496619783d2f8036fcd56d94ac99831e831f122d19e668be3062
+547fa7df049edd5bb41c954d84327076a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+282e8027f6fd021a05f06f9213ce83bad7dfcfdb598aef9d1257635b7fb4c541ce5ec34e6f8ad1cafb3114ec070b43c09abc853f63b3fb5a9aeb1dbca0cd0241
+7bd9089c90910d476111a6a2967a6c58691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913a1d65e1bf53966969
+9479dc5c320af2ec34d8be222b1876f721a9aca16c78487d4f7687ea86dbe3318d1722fa3b584966e34cb4739f0740126d94ac99831e831f122d19e668be3062
+547fa7df049edd5b27d9f7e5287cba2ca0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+da33f0d11a9f0f4ec12e63f53fc8b6c766c88eeb6c99df5d112a23f56123a9e48d1722fa3b584966a75b4546146326223c3f33a379f0af8a62d766f77596a54b
+282e8027f6fd021af5687491f31f2924d7dfcfdb598aef9daea69d63dd36534320f664a3ff7b4a04faca85d0862a74fb4674009031596e3afd5baaf91a42e7d3
+ce28372646c1b72b743bf58d1db148a3644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+02673b7763e121d2184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+45bb615a0113a2d76295f13f271e3dd4f45310c19b6b8ee5602264da8f44928d4c49b18e65b20125e7eefa795927f22cb124fbdd29716cfbacdab751cbf202c2
+32cd76a2a36328a99889c62aee5fc834c6bc33b4ab296cf04d4c212f6c1abf84cf5d0219e0df7a9d7793c602b9feeb0dec7850cb5e2600ad9c7a4bc0de56f663
+36258f891834800bcd9f9b0fe66d8ad1ee894940744d7fd976fe71021a80bf2f87ba5971c1666c6321a9aca16c78487d836ccb36c8e63473789bb4c149c0f7d2
+36258f891834800b239bdbe658d21d0066c88eeb6c99df5d4f7687ea86dbe3318d1722fa3b58496619783d2f8036fcd59889c62aee5fc834ce6a500a0bc3e23b
+400e963555b1a2d2dad4b7980b83d60ce7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+53a47ce20eea766578777e4c883822d7496ee1101b7a39424ec484d93e85716ec50ef93b4e08741af588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+282e8027f6fd021a95a9d5006d1ac9c1d7dfcfdb598aef9d83676253d12347c501de569537f728dffaca85d0862a74fbf42a59751c2d9c74c8871d0203ef020b
+9c696fb13148990c8675a01b2db95be7c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+da33f0d11a9f0f4ebc27f931268b406166c88eeb6c99df5d250025f01b12eac228962c68c37beadeed013b7ba2d18b82478a87bc5b8e6cf9d38aff4e12555a5d
+da33f0d11a9f0f4eb585b96681e0ca9b66c88eeb6c99df5d209a5091d0afa22fd267191e106d0b0d8387f45e647e26ceef1d7357d3c4e2f39d6bedf9d0034ac8
+65f8ec3b931d45fecd9f9b0fe66d8ad166c88eeb6c99df5d836ccb36c8e634738d1722fa3b584966e5cfc863a8a501d66b895da7740b2625d38aff4e12555a5d
+da33f0d11a9f0f4ecc0121b5e20e207666c88eeb6c99df5d942409553266e8b316d68c73f74bc5565c8d68af7fe2e960609e19a3b1330370e89729e5d38ef58f
+9479dc5c320af2ece68811ece2528fc321a9aca16c78487d8b3909b9b1ee98c48d1722fa3b584966fc8cbd0336a453d86d94ac99831e831f122d19e668be3062
+547fa7df049edd5bd1e514cf9ee05ca5a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+81bc0cb7c12452441b335ff666912215062777163355bd154f60af2351f95502c051d21af37637adf716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+abea470061b4cf4674c94f93c383e2578803136c44fdf03c12ea7294e684b8397b9253cdb3e17e06644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+7aff1ed175018062cbf62b4d3dcda71850495b21047dc1007a2bb3bc46c04b4e478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0e1734198eb2d5d30
+a16523cb4c600880ac73e51ea6171029725174985eb3b1d34d745b560a9864aa2eab8f59404e32fbbfc3976bee98b06d691018eed3b49c36df42c068afe98c8a
+900387b6be7bb99274c94f93c383e257d68ff0e069060e91ef1d7357d3c4e2f3644126c9831a96bdb74feb6ff8076c794d22c850cafe6d8869a81fde624533ad
+32c994efcc2d922e0abfc569c2f155647ea6ad46ecf15209bca66beeb277b1607b9253cdb3e17e06644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+d8f5a2ccd87b60eeac73e51ea6171029977c9ed6cdc69f7c55ee2ca7818ff4e6ffd414095be51912644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+0abb8c42c110d7c574c94f93c383e257b06f7b2a5221d6a1cdc50eb41b28b6da1d28299200febf22f32a46da3bd46a365d87510856e45788d06855f06d6f53fd
+75430035d97ed48aac73e51ea61710292f63ba7cec69a5ae92ebc16da04e46beffd414095be51912644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+98b5f0d56fa74586769be4ce041f18881b695623e8d2ec72fc7f201294a05a1d28b5c8cbdfe3537fd7059c8c42854956483cf72d1898804474fb7cf2e7c9f235
+f0141b5f35912e420abfc569c2f155647ea6ad46ecf15209cfcbccac057ce9367b9253cdb3e17e06644126c9831a96bdb74feb6ff8076c7955ab08ba49ed7650
+0382627c5bd012d40abfc569c2f1556449ab06bccf3c5e3aa52c5d0900251b18f29bae4b68f7bfb2a10c11dc3b762f9f6a55ec42853e357f743ff23adc1a84eb
+2a0dde369b0e03c9ac73e51ea6171029a294b4c9b4499e412f30647cd4a074f8cc0a4cfd13354a98646fb8d77d1a9bd0a0c7a89b875d76a7668ff86ff0a77892
+b052355e65d40bda6072bbb927e75d221f5a36c0cfa2e93a622e6bb14f828842d5842d53d11b6659a54dd50435f134f9bfe7aa56cbb7750016944157eaac9744
+8bf314ab8c0348996072bbb927e75d2233712e677bf821410e88ff585c7721b717db01c01a85b031d741aae16bf64f713db07fb45d793ed8809b758273603f84
+afe317ae10e98155dffad4255220698bbbd6848a4bed6ce75cdcae49952477491bbe45b2adb70fc37a5aaa106641e9738c2b08ff5cc148ae11d006434ff70a7c
+a34eb0be5ea600af74c94f93c383e257d0e476fa0d4f54a90aa9758bb879ff7eee09f8451cbe1231710f626c2faf14a6f716375b8c71d2ca2a84cfa93f6086c1
+e9dd452c4e6cfebeac73e51ea617102936c315db1f9d8b9bec8e4432708a2f10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+a3d26799f30d8e0d27881184d92232d68bb760bf7903e92ebb8309e553dbf02da9f8c600a5632a411d155fb90c9a9bd766eaeb9fc4cc8ae11a4ba722c03153cc
+747e4f2a6405d9546d2aa86b77a26c95691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913a1d65e1bf53966969
+3e2f6d3b6fa1f79ec9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+dcfdab3db4e32d43ede29d0f5869fc33706b807646b803717f4022ad17ec791a661a51fa4c6b374154a3c6ec78dbb3aba9f8c600a5632a41dda7d25602215933
+cc29c56aedd5408745b0476b0b2677a2450cb01944621787646fb8d77d1a9bd0a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c2a9ba28f5e45e265
+a3d26799f30d8e0d27881184d92232d6f5f9ed6312b8b794bb8309e553dbf02da9f8c600a5632a412ab53c80251d77034c49b18e65b2012511d006434ff70a7c
+32cd76a2a36328a970c06ad4469b5f94cebdfdad9ec516f4887ff07020def09bc1fb5ea162ffd514e71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+dcfdab3db4e32d433bf41dbcfedd1a73706b807646b803717f4022ad17ec791a962774806c3702bc70c06ad4469b5f94312fa97e331c1da84ae99547937d63c8
+661a51fa4c6b3741de4c8491ec5adb9e644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+a3d26799f30d8e0d27881184d92232d69555c9de400e3ff4bb8309e553dbf02d2552b09b2698b2f7faca85d0862a74fb691018eed3b49c36df42c068afe98c8a
+5481192eeae2d9bcb37e8d7bc524479260738008e3ec23e9bd64c1cf62f7de1ee9cecb35b9656da53c43768853245e2f3c7d75eb5aa570c18f03faff22254705
+6e8b426636593381d9cb531c84b2e78e691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913a1d65e1bf53966969
+94c296d774d16dc6029d261fdb11face706b807646b803717f4022ad17ec791a61c0f368e65895e727a7680140b18b02a9f8c600a5632a4124bb2947519915e1
+6b895da7740b2625691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a3d26799f30d8e0d27881184d92232d6f7a9cb3a3aa8fd3bbb8309e553dbf02da9f8c600a5632a41d43d8e2b52dc60dffaca85d0862a74fba0d09017c0a7e6e3
+cbac94568cb7ea80af399d32d282acb6184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+dcfdab3db4e32d43a33cd2cacf2a506c706b807646b803717f4022ad17ec791aad422042d90c20ff70c06ad4469b5f94e3916bcf3d4f3b094ae99547937d63c8
+661a51fa4c6b3741765675393dc7d125644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+dcfdab3db4e32d43bba88ce0a19c8c96bb8309e553dbf02da9f8c600a5632a411b4f7fa9a4b8e3535071025688454c9ccbea7112d78cac1e41a05de3116e9b24
+cfa43262ca04397ebba88ce0a19c8c96644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+dcfdab3db4e32d43ede07d0c58d4f032706b807646b803717f4022ad17ec791abca82e895767d0d27f4022ad17ec791ac2725da9eb2b53c3ea4f4ffe9d39f1af
+a9f8c600a5632a4193ad7f2331f679c039859341766fc92cb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+e8ac5e09ea758be7a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a039872532af236d9d172b57b6cedb7a9d79e
+dcfdab3db4e32d43f260bf685f02b461706b807646b803717f4022ad17ec791a42584466a0744c915286be7e40403390726a141610f9030fcebceff5d226dc59
+5ed2fe27f6c34366691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a3d26799f30d8e0d27881184d92232d6718e8ffade3a3c48bb8309e553dbf02da9f8c600a5632a41a2551ee6b7ec08c82bdc2471723c531b74fb7cf2e7c9f235
+32cd76a2a36328a970c06ad4469b5f94b06ce489a5ca8bc762c70e641415368ae382e6191d1e3e368490b79e7682309954c51e02474204001668843a96fba0b1
+70c06ad4469b5f94563cdd7e1d34ebd6233b9393f3163918e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a3323cc4f3a5d7e023
+aa3996e99201019ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+8b85e4e539255337f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+73f5336ad93df892b5f1c17ee7956303f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+a13c3ebdebf2dda89f946f657c75313a706b807646b80371f883903d081a702445b0476b0b2677a2835e233e602f4a1ea95eab34c46af31de89729e5d38ef58f
+1c21120900cc4a8e36396189a293dfcd706b807646b803717f4022ad17ec791a42584466a0744c91e12e7b2be99df4b145b0476b0b2677a2858904c65dd9fcbe
+ce133616d118868f7b4ac1d86b005a10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+0418cc75e3d7cf68710f626c2faf14a6f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+a3d26799f30d8e0d27881184d92232d6528864a47f84deb1bb8309e553dbf02da9f8c600a5632a415f733ff96338b1f2dad4bb70f534f24c16944157eaac9744
+32cd76a2a36328a970c06ad4469b5f942787d48592327eee7e9f11aea7261d3fc1fb5ea162ffd514e71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+94c296d774d16dc61a3f0583e1a3bd76706b807646b803717f4022ad17ec791a61c0f368e65895e764c58fec2fc42cd7a9f8c600a5632a41c4ca8063797fb61b
+6b895da7740b2625691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a3d26799f30d8e0d27881184d92232d674efa137fe2e0c89bb8309e553dbf02da9f8c600a5632a413741f88c4d16baa8ce5ec34e6f8ad1ca1cc1a996f7fda727
+3855efdebcb13ff95d7d82e5a16ed00f644126c9831a96bdb74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+be933631531f9659e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb937b7b413a3c0865e2daf092be8c923c4
+1c21120900cc4a8e19f3f50aa9dc900f706b807646b803717f4022ad17ec791a42584466a0744c915286be7e4040339045b0476b0b2677a2f7ba82e1f913d254
+ce133616d118868f7b4ac1d86b005a10184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+0418cc75e3d7cf68710f626c2faf14a6f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+dcfdab3db4e32d43d10aca187e10ee8f706b807646b803717f4022ad17ec791a7fc190a94cff1584c4fe171c4aa376b5a9f8c600a5632a41d45c707ab17d8b3b
+2994a828cfcb8a945699c5db1d4fd476e847dda77d5f9443b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+d49c10eabba409d0691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+a13c3ebdebf2dda881d04920058e3784706b807646b80371f883903d081a702445b0476b0b2677a2367114db4850319ea95eab34c46af31de89729e5d38ef58f
+a3d26799f30d8e0d27881184d92232d60fa4ea595ab98ca0deaba362d68b5afa8490b79e76823099b616acb3afc2463ed3b99b01fef3c64478e91940a8e16688
+7793f45490075ab3184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+2a6720d0591cca0540f05819e599c2c0f44496155f03ed4ff588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+a3d26799f30d8e0d27881184d92232d6b5c9d0c1558cfdd3bb8309e553dbf02da9f8c600a5632a41737375a8f10d4240faca85d0862a74fb1e10c57f3fa5c4ab
+c8fe38984326176d6d35d8485846d699e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+a13c3ebdebf2dda8dab4c24b55761cda706b807646b80371f883903d081a70248490b79e7682309988d781a019b79b2cf357d2495314aea2abb485c8ac7a39ac
+1c21120900cc4a8eb4ce929101f95640a665d0fac02ce03ed9e82c4170fcde6c7c9c7b2e8cc681a533f224eaf10e8b80b37e8d7bc52447928c38e2b886ad00f4
+2c671ee0eeadba6424fdfd9bb2e10b07a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+099a86bb88e9bfe31aabf11df8bc7d16d80baa145e5a06b5b0daf6fdf32567c9447da73140e1fc0c72d03a382a5bfff6644126c9831a96bde848d5f4c074f39d
+81a9746d786d11d6818d73f79dee5cb4f418b0d160a3681f3dd6b421a8a3725817181a2338ab2aebfaea4b98a48f84e01933952b4dcad44ce0c8f92b9e893480
+0805c9bc4a8c6e821b335ff666912215dfcb0cac625c1873016f27e7fe377c06dce40a334853b6026620d3f6c560089e644126c9831a96bde848d5f4c074f39d
+224fe9df4b4ef4f274c94f93c383e25734ea5a4105092647687fb7a3cd2ce4a4c841ee37f63fbd9f789bb4c149c0f7d2f588045849eceb90e1051d295f61418a
+a1642ab168aedbca706b807646b80371cff3aa4dfc172ba9fe8065cdb5f5f8ce9d8a6e2e9f780fbd77f292f81f948d5c30c576d2a5a01b7b87e4581c8c748cc7
+17cb17e37c3b5d6d55136b92d0559ec4e71f71e187584171b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+2dbdd1f19d21f2c6f45310c19b6b8ee5cdbea1dc33dbc9f7478a87bc5b8e6cf9691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+e32412d8e97ecf0cf45310c19b6b8ee59a410bc651fe35dc62d766f77596a54bf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+dbf12f0360092c452fbfcc2b872ff946ed93a0256a6d844d749d13634498f34bc9322890ded6647b3e79fe16148a605c0bf1a37a93ab80b462b84e5bac7fe806
+012c1a3f018cd4280f4d3610e546ee8e184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+cc1384a8203fb2628cf29811b0e6da3536fb420f5a067a1ef588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf8ea88232772e9185
+846dad09021724e51b335ff66691221555e91b4e96b9929fcffa2bb36a30977a184dc1300cea2a1333803012812e35a27bbf3a0197757d1a10e6517c4d5c1c74
+240cf6a83072ff1a38a199ba1268a68172d2a53fbeaf00843cafa1326cfe18744842ef87c436514df49fb174d085ee41608e5066341ff6bd6004e157994bc9bf
+c1dd9c389b868458e0c9cc74d563e9795556ffb9d7663e42817afbf1a1467aacfeff6bfa8393f3f8f8c60dfea3fcb448617d098114966bf404fdd277fd95ba23
+2b1f6b713203d99458b58148317651d2f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+42cad0d02e943b3cf45310c19b6b8ee547f0b089656f266e62d766f77596a54bf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c4fe6e5c7e47db8f7
+0d5aef5328a6b0bcac73e51ea6171029067f4902092fb36aa1b7be63766c6afbca844e5556e86be4a0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+2a3fd364408caf246f52d5ca6e23dacfc8fb14f6ca5b8e2bd388e23ae3aabe19e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a198671645a8a8b509
+$CDNENCFINISH
+.ENDS ZXLD1371_PSPICE
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S7 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+ca116cfd9f503f5a31820e631d1d1d74bc43870b2068c893691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+22fa704315324fee6f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44b8257e7c370c44b80ffb76e2ddf4497b2661590815226ffb5d0d2970852fcd9175a72dcf08b05ada72e8a5ba6eb8ba83
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S7
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S4 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+cca5ca7cd3bb954631820e631d1d1d743397604f987b60be691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+c89815736fd06a736f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44d3c3547c91af769e0ffb76e2ddf4497b658b10ab5642c9074b56e07cb2a0a4fbe2da13bf6ad1ec6e8a8fe36961566219
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S4
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S1 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+44f117741689d59131820e631d1d1d749e35700c7913e939691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+3c76beba9b808c126f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e447b3ba2fd65dbf9050ffb76e2ddf4497b2661590815226ffb5b32e22ee2762aa4de796a07e247501c3e91162e7d1bf20b
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S1
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S5 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+a41eff5afcadbe0431820e631d1d1d74cce714c3daebb9ef691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+0d00147a4ec8159a6f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e444ffca53f33c7306d0ffb76e2ddf4497b2661590815226ffb5b32e22ee2762aa4de796a07e247501c3e91162e7d1bf20b
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S5
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S9 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+0d4fba81348870d631820e631d1d1d74525a947d4222b598691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+7e9baaa9719bd1f96f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44ccbbb1088960694e0ffb76e2ddf4497b56602f79b0c467cddacf708331606702dd351453c45c7fd75065ec6d2c8c5479
+dc224b6b76a2bc94c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef60c1cb2f0da1ca881fcd6be7a2000af83
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S9
+*$
+.subckt FREQ_HYS_CONTROL_freq_S5 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074bc27f931268b4061ffb40d9244a39c7b6a68ac505a5ecff2c88548d8e960e4b4f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd227765b42d27caeee0fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e449700bce0c7d12200b469a8d685c038374bf43f00b3546d6cc905474b9732df37ff411e42e94343f8a5ee8a3eda0c234c
+768e04b30687cfb2f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b28771ef6559fc277d4b8d420df9a063adc751
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S5
+*$
+.subckt FREQ_HYS_CONTROL_freq_S4 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074cc0121b5e20e2076ffb40d9244a39c7b6a68ac505a5ecff253d628d3aa8f23f0f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd20eac5929827abc620fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e444bc03f093be0dc18b469a8d685c0383732325ad26af3c92db16935f5527df49e8f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S4
+*$
+.subckt FREQ_HYS_CONTROL_freq_S2 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074239bdbe658d21d00ffb40d9244a39c7b6a68ac505a5ecff2490cb4e483ee24adf716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd23a40f0eb405719560fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e440322e8d4ef436925b469a8d685c038370cf9f34ef7439c7d45316724feefc5c28f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S2
+*$
+.subckt FREQ_HYS_CONTROL_freq_S7 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074bf230db17611f82fffb40d9244a39c7b6a68ac505a5ecff233cad0128b74623ff716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd2fae8f259c6c39e8a0fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e44f29f1bd798b90240b469a8d685c038374bf43f00b3546d6cecd4cdb03700be1f0fce1330368f375ef1481883b3c827f1
+5fe9ab614b8532c6691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db1a4300bf221b913af248f4846b4e8d26c2c478990dc28ced
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S7
+*$
+.subckt FREQ_HYS_CONTROL_freq_S6 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074c12e63f53fc8b6c7ffb40d9244a39c7b6a68ac505a5ecff27ac7164c6d09e590f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd23284dbb5b24063b50fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e4451f6f2e2c182f951b469a8d685c0383732325ad26af3c92db16935f5527df49e8f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S6
+*$
+.subckt FREQ_HYS_CONTROL_freq_S3 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+725de3fcbb693074eb87848776396383ffb40d9244a39c7b6a68ac505a5ecff223ed7a9eec21b7f2f716375b8c71d2ca7447dc705bd2b9a6b32ab536d12dcb53
+2b807af9ad33acd211ae75f02889d2920fc456520f02d491ed53b4ce5c20ee27b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b673939e13ac51b349
+1e7e75f62a07f7b1bbcb463bf6330e443f4a0cd3d8ecd961b469a8d685c038370cf9f34ef7439c7d45316724feefc5c28f182a59499ce6406c15b30d8f543ada
+816422455737d21b184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8ca8e32446a12da7d50bd780059ff414f8
+$CDNENCFINISH
+.ends FREQ_HYS_CONTROL_freq_S3
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S3 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+49437a5c2c000e5531820e631d1d1d7451c16968e1146dc5691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+196545b3a77859896f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e449fca2d09a1602b870ffb76e2ddf4497b2661590815226ffb5d0d2970852fcd91e7e145aac8e3e7699d637f5014d15567
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S3
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S2 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+c21144fd15b2c61331820e631d1d1d7423f284e2e346bfb8691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+e07b7a6acd4bf43c6f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44eff574bcdcb677aa0ffb76e2ddf4497b2661590815226ffb954d83117570d624bedd4f0e0429e49f7c4bbf5b95fbb5a2
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S2
+*$
+.subckt ZXLD1371_FOR_HIERARCHY_S8 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+48cad54cbc66f42d31820e631d1d1d740e2409c315f54dec691018eed3b49c363b7ed36af94fd8d0b677be974a801593db8480f51879a1db99279120ce8e2a4f
+e65d04c3f5d7c4236f31076d2b37e96baa35006d782c6ce9c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+1e7e75f62a07f7b1bbcb463bf6330e44a0cccacb04419cb30ffb76e2ddf4497bde068206158253e41090d0879c58eb702947f67be37eddb2d38aff4e12555a5d
+$CDNENCFINISH
+.ends ZXLD1371_FOR_HIERARCHY_S8
+*$
+.subckt FLAG_AND_STATUS_STATUS_FLAG_S1 1 2 3 4  
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+cfa43262ca04397ebba88ce0a19c8c96706b807646b80371180f9852cfb962b0a383dc18dcb615b7bba88ce0a19c8c96691018eed3b49c36df42c068afe98c8a
+2075146148d4b5070b96a7f211b663c6cd9f9b0fe66d8ad19fdd4d3bdfe20cf0691018eed3b49c363b7ed36af94fd8d0b677be974a8015938337dc0ba5af8d26
+1e7e75f62a07f7b1bbcb463bf6330e4470c06ad4469b5f947053772909f75e89fb3b1a8334015d62d1c429fd2f3b2883fd2de4c0061ef81a9adc56f03a8d243c
+56d61c3bc288fdfab3ae07e46b54f215a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+$CDNENCFINISH
+.ends FLAG_AND_STATUS_STATUS_FLAG_S1
+*$
+.SUBCKT COMPARATOR IN+ IN- OUT PARAMS: DELAY=10n
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f13695a267d63dfaeb5708e23ac33f007982c30b6978092afa172cac7b9698ef38691018eed3b49c36df42c068afe98c8a
+16288721619f9c8b73e70156d3cd9e32ba7f00f779fc266112e28b77a3176d96f3acf00b7a00a5d9a0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+6a7043c1c76bf8115801d29f353ff668c9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+$CDNENCFINISH
+.ENDS COMPARATOR
+*$
+.SUBCKT AND_2 A B Y 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df167b1d69fd012a0368265dc80b7e0d46e0117c329126d1ef51031098785dc58b6c2356fa0b0fe3ea96004e157994bc9bf
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS AND_2
+*$
+.SUBCKT AND_3 A B C Y
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df15414ce0c3c28bd7f5b09636c3bdb66729bb98c81884b404e9ab688292ff1c0c1ccd6f3cde728099eb71d6b06b8085e19
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS AND_3
+*$
+.SUBCKT OR_2 A B Y
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df15414ce0c3c28bd7fe0ca60defdf7d1449bb98c81884b404e3e10a24a415fea9ce71f71e187584171e848d5f4c074f39d
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS OR_2
+*$
+.SUBCKT OR_3 A B C Y
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+10efb0b13c2f06ffcd275293805a1df15414ce0c3c28bd7fe0ca60defdf7d1449bb98c81884b404e540b35c06706fc31ccd6f3cde728099eb71d6b06b8085e19
+17e4597d7405ff3c2f248600004a4f45184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+fd08d4c148850df0085e1afd0064919bf716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+$CDNENCFINISH
+.ENDS OR_3
+*$
+.SUBCKT BUFFER IN OUT
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f1dbf0264b29e4cbf244656e81b84a3fc43e10a24a415fea9ce71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+16288721619f9c8b73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+6a7043c1c76bf811fa1447639072c48ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+$CDNENCFINISH
+.ENDS BUFFER
+*$
+.SUBCKT BUFFER_DELAY IN OUT PARAMS: DELAY=10n
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+f8547e868ffe926371707ca6c7cdc2c0db8456fb9fc0e60ca344273ac7c053539894c1140acaefeda0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+6a3db1adc01f2d0736806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962dd61e0a440bad77e3138b871d3d163c946
+d60bc892fb1b4da34d01e0f129090a713dfc58e2232c84d7e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a3323cc4f3a5d7e023
+f11d6a2c6927773428f84a1a2d7ca9633291f8ae48f5b6faccd6f3cde728099e8ee54616d1c590f4c9f6c53b093b66727f70dd368fa5728963912ffecb55b6d8
+$CDNENCFINISH
+.ENDS BUFFER_DELAY
+*$
+.SUBCKT INVERTER IN OUT
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f1dbf0264b29e4cbf244656e81b84a3fc40cf393e03c403d23e71f71e187584171b74feb6ff8076c7955ab08ba49ed7650
+16288721619f9c8b73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+6a7043c1c76bf811fa1447639072c48ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1dfa360badf382ef6a094882e5275efb6
+$CDNENCFINISH
+.ENDS INVERTER
+*$
+.MODEL D_IDEAL D 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+75eac7fe7be88fbd8f93d26d6d7158edf588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b287716165f3a5d711faa4
+$CDNENCFINISH
+*$
+.MODEL D_LED D 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+05b7e48834d14dc5a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a039872532af236d9d172b57b6cedb7a9d79e
+$CDNENCFINISH
+*$
+.SUBCKT COMP_HYS IN+ IN- OUT PARAMS: HYS=100m
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+66905336f9365357c6cd6456b373c3f1dbf0264b29e4cbf2ab2e0bc08da7b2652a0d293edc0e45fbf454f969ffd39687bf450df4c4e9e23df8d564b4b43d4a8b
+16288721619f9c8b73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+6a7043c1c76bf811ac64abca1fecc7e1e847dda77d5f9443b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+$CDNENCFINISH
+.ENDS COMP_HYS
+*$
+.MODEL symbol_name_d d 
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+b6947b007d81578c2dfb58a8d563abc3f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b287716165f3a5d711faa4
+$CDNENCFINISH
+*$
+.model symbol_name_nmos nmos 
+*$
+.model symbol_name_bjt npn 
+*$
+.SUBCKT OPAMP IN+ IN- OUT PARAMS: POLE=100k VMAX=5 VMIN=0 GAIN=10000
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+3c22fc7bf920393e42980fba0f39412f3693428137f342bac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+d1d3a87084f277dc2fe9793711afa1c8e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+79f33636374221840efca1f16b0b0c4c3693428137f342bac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+4c899a551cd7061512a1677418d3eea3e7eefa795927f22cb124fbdd29716cfb2046728deb55b4a1950e8d6edabe13a34d2d6dc53bce5cb95aa5b7dadcd53e5b
+d7072740a938f0e72752c8207c4277f84f9b01dedaec6f67c4b176bd7b03555bc9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+425c9b52d84437faed112ed3066b88085a8d2d705d2688894223460450a363bd9d521bfb0940593fa0c7a89b875d76a7b0718e2bf61f10a79c4d3d62406ead54
+1faea247e1a8c1555afff61ed7f1575cc9ea4b833c89b58ac9f6c53b093b66727f70dd368fa57289ba6003231ac0493b63635097c559ebe1683daeb2b137fd4d
+b211161c561aa8ac73e70156d3cd9e3236806a8e381bf9a0b74feb6ff8076c794d22c850cafe6d88de6b5e23e32a61b6bd761caf95d962ddf56ff53d81d427bd
+ff2f30a0f5680561a8b2bab6b462538002e6d7b91a055bf47df3b84ad0c4ee9bc9f6c53b093b66727f70dd368fa57289ba6003231ac0493b0801900bb0d2ae74
+$CDNENCFINISH
+.ENDS OPAMP
+*$
+.SUBCKT SR_LATCH S R Q Qb
+$CDNENCSTART
+eee8c5c7a2bc4b01f045f303678664e7916da0bae22e8cb0bba041dd67c69ce448ea70148a9ac1670c8926c1ac5057c8ccfcd77bf87ca9dc6004e157994bc9bf
+3ff62270067d0a2acd275293805a1df15414ce0c3c28bd7fe83384dc37890adeef1c3670504e0551f3c5bb9f3f22721496d6f86ec564aabc82d021902886a9e0
+a7cbdf8ef8369f02abcd5bc418da0bde184dc1300cea2a1333803012812e35a27bbf3a0197757d1a6ff4dc351624cea4964c77ba3214ca8c9d716709579b3adb
+b521439d911db4ae985fd30f1da54348f716375b8c71d2ca7447dc705bd2b9a632f1f96ca76f178f24a8b58514063cc5773cfc1bd26698df56a4048f1e4ff032
+b9714e9f0185ebe0c3fa3d1e401a4503979added4bba322bd4f2da227571b4d2d5df8edfc52ef08bf588045849eceb90e6626fc5bfd508b1d776614f460f1ceb
+ff7b9cdb444d3489f5af95f73630db59f588045849eceb90e6626fc5bfd508b16334dff5a8e8736c568101f0eaa845cf3900116365b287716165f3a5d711faa4
+1054010ec6d491bee18a20b319ef4d27a0c7a89b875d76a7b0718e2bf61f10a7ff08e5ba163dd43c18663872d39f019dc350cbfaf73a0398017aa9b2faa6789e
+$CDNENCFINISH
+.ENDS SR_LATCH
+*$
+
+
+=========================================================================================================
+
+[AL8805]
+*TITLE=AL8805 MACROMODEL
+*ORIGIN=DZSL_AG_GS
+*SIMULATOR=DIODES, SIMETRIX and PSPICE
+*DATE=1st Feb 2013
+*VERSION=2
+*PIN_ORDER   1:SW, 2:GND, 3:CTRL, 4:SET, 5:VIN
+*
+* This model is intended for feasibility study of application
+* design.  It is expected that it will not accurately represent
+* the device real performance.  However some important features
+* of the device are modelled approximately.
+* The model does not include effects of temperature or self-heating.
+* Testing of prototype hardware and optimisation on the bench
+* is always required before production build.
+*
+* NOTE:  set RELTOL=1E-5 for clean switching waveform
+*
+.subckt AL8805  1   2    3    4     5  
+* Connections    SW  GND  CTRL SET  VIN
+* pins   SOT23   1   2    3    4     5
+*                   
+* Block 1: Vref Generator * input nodes 5 and 2, outputs 11 and 2
+.param  VIL1=0.8  VOL1=0  VIH1=3.45 VOH1=2.5  ;high and low limits of input and output  
+.param  MUH1=0.05  MUL1=0.1  ; high and low curve error
+.param SL1={(VOH1-VOL1)/(VIH1-VIL1)}  ; gain slope
+E11  11  2  value={min(max(VOL1+SL1*(V(5)-V(2)-VIL1+MUL1*(1-tanh((V(5)-V(2)-VIL1+MUL1)/MUL1))
++ -MUH1*(1+tanh((V(5)-V(2)-VIH1-MUH1)/MUH1))) ,VOL1),VOH1)}
+R11        11 3  50k  
+
+* Block 2: CTRL limiter  * input nodes  3 and 2, outputs 21 and 2
+.param  VIL2=0  VOL2=0  VIH2=2.5 VOH2=2.5  ;high and low limits of input and output  
+.param  MUH2=0.001  MUL2=0.2  ; high and low curve error
+.param SL2={(VOH2-VOL2)/(VIH2-VIL2)}  ; gain slope
+E21  21  2  value={min(max(VOL2+SL2*(V(3)-V(2)-VIL2+MUL2*(1-tanh((V(3)-V(2)-VIL2+MUL2)/MUL2))
++ -MUH2*(1+tanh((V(3)-V(2)-VIH2-MUH2)/MUH2))) ,VOL2),VOH2)}
+
+* Block 3: CTRL lockout with hysteresis *
+R32        21  31  1000  
+I31        21  31  100uA  
+R31        31  32  1k
+C31        32   2  10p
+S31        31  21 32  2  S_31          
+.model   S_31   VSWITCH Roff=10e6 Ron=1 Voff=505mV Von=495mV
+
+S32        53  2 32 2  S_32 
+.MODEL   S_32   VSWITCH Roff=10e6 Ron=100 Voff=501mV Von=499mV
+
+* Block 4: UVLO with hysteresis*
+E41       41 2  value={0.5*(1+tanh(1e3*(V(43)-V(5)+5.7)))}
+R41       41 42 1k
+C41       42 2  20p
+R42       42 43 800k
+R43       43 2  200k
+S41       53 2 42 2   S_41 
+.MODEL   S_41   VSWITCH Roff=1e6 Ron=100 Voff=0.4 Von=0.6
+
+* Block 5: Current Sense Comparator*
+G51        2 51 5 4 1m  ;  input amplifier
+C51        2  4  3p      ;  input capacitance
+* SET input current; asymptote input nodes 4 and 2, outputs 4 and 2
+.param  xx5=5  yy5=16u  nn5=32;input corner, output limit, asymptote power
+.param  aa5={xx5**nn5}
+G52  4  2  value={yy5*(V(4)-V(2))/(aa5+(V(4)-V(2))**nn5)**(1/nn5)}
+R51        2  52  10.417k  
+R52        52 51  20.833k  
+S51        52 2 66 2   S_51 
+.MODEL     S_51  VSWITCH Roff=10e6 Ron=1.0 Voff=2.5V Von=2.8V
+C52        51  2 0.5p
+G53        53  2 value={0.01*tanh(100*(V(51)-V(21)))} ;comparator
+C54        53  2 1f  
+V51        54  2 700mV
+D51        54 53 Dclamp
+V52        55  2 8V
+D52        53 55 Dclamp
+
+* Block 6: Comp Delay and gate driver*
+R64        53 63  10Meg    ;  input filter with C61 
+C61        63  2  0.0015p   ;  
+G61        61 65  Value={0.1*(max(V(63)-V(65)-0.5,0))**2*(V(61)-V(65))}
+G62        65 62  Value={0.1*(max(V(65)-V(63)-0.5,0))**2*(V(65)-V(62))}
+R66        61 65 10meg
+R67        65 62 10meg
+R61         5 61  1.2
+R62        62  2  1.2
+R63        65  2  10k
+
+R65        65 64  1        ;  driver current sense
+R68        66 64  49        ;  output resistance-1 ohm
+C62         2 66  25f  
+
+* Block 7: Output NMOS *
+S71        72 71 66 71 S_71 
+.MODEL     S_71 VSWITCH Roff=10e6 Ron=0.25 Voff=2.5V Von=2.8V
+R72        72  1  50m     ; on resistance = R72 + R73 + Ron(S71) 
+R73        71  2  50m
+C73        72 71  100p
+C71        66 71  40p
+C72        72 66  15p
+ 
+* Block 8: Supply Current *
+G81         5  2 Value={(300u*(V(11)-V(2))/VOH1)+0.6u*(V(5)-V(2))}
+
+* Block 9: Protection diodes
+D91   2  1  D_1     ;SW
+D92   2  5  D_1     ;VIN
+D93   2  3  D_2     ;CTRL
+D94   5  4  D_2    ;SET forward
+D95   4  5  D_2    ;SET reverse
+
+.model Dclamp  D Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Cjo=4p M=.3333 Vj=.5
+.model D_1  D  IS=1e-14 BV=40
+.model D_2  D  IS=1e-14 BV=6.5
+
+.ends AL8805
+*  =====================================================================
+*
+*                (c)  2013 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved.  The models
+*   are believed accurate but no condition or warranty as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 4949 Hedgcoxe Road, Suite 200, Plano, TX 75024, USA
+
+=========================================================================================================
