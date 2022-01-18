@@ -1,0 +1,13 @@
+* LED: Chip LED 0805 LO R976
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.00 V and If(binning) = 20.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+.MODEL LO_R976_typ D
++ IS=1.315281522499921e-21
++ N=1.692301953159999
++ RS=4.149006372848751
++ Tnom=25
++ mfg=OSRAM_OS
+

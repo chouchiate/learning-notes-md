@@ -1,14 +1,5 @@
 ## [Mac] - Terminal 使用筆記
 
-### Output log to File in a Screen Session
-```bash
-script -a -t 0 out.txt screen /dev/ttyUSB0 115200
-```
-* script: A built-in application to "make a typescript of terminal session"
-* -a: Append to output file
-* -t 0: Time between writing to output file is 0 seconds, so out.txt is updated for every new character
-* out.txt: Output file name
-* screen /dev/ttyUSB0 115200: Command connecting to an external device via TTY
 ### Live PID List
 
 ```bash
@@ -65,3 +56,12 @@ screen /dev/tty.usbserial-DO02K4IH **Baudrate**
 > To Quit: the screen app, type CTRL-A, then CTRL-\.
 
 
+### Output log to File in a Screen Session
+```bash
+script -a -t 0 out.txt screen /dev/tty.usbserial-DO02K4IH 115200
+```
+* script: A built-in application to "make a typescript of terminal session"
+* -a: Append to output file
+* -t 0: Time between writing to output file is 0 seconds, so out.txt is updated for every new character
+* out.txt: Output file name
+* screen /dev/ttyUSB0 115200: Command connecting to an external device via TTY

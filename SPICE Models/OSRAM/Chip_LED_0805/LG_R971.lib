@@ -1,0 +1,13 @@
+* LED: Chip LED 0805 LG R971
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.20 V and If(binning) = 20.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 3
+.MODEL LG_R971_typ D
++ IS=4.705820817550895e-18
++ N=2.152904156923346
++ RS=10.54571677850105
++ Tnom=25
++ mfg=OSRAM_OS
+
