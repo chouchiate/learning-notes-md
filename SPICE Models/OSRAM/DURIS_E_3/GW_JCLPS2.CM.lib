@@ -1,0 +1,93 @@
+* LED: DURIS E 3 GW JCLPS2.CM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.95 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_typ D
++ IS=2.945007071941128e-23
++ N=2.166132286960872
++ RS=3.289252165775832
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.75 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_K2-mid D
++ IS=2.94500707194002e-23
++ N=2.166132286960855
++ RS=0.2285232262549385
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.80 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_K2-max D
++ IS=2.945007071939876e-23
++ N=2.166132286960852
++ RS=0.9977539954857211
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.80 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_L1-min D
++ IS=2.945007071939876e-23
++ N=2.166132286960852
++ RS=0.9977539954857211
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.85 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_L1-mid D
++ IS=2.945007071946236e-23
++ N=2.166132286960951
++ RS=1.766984764716433
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.90 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_L1-max D
++ IS=2.945007071934768e-23
++ N=2.166132286960773
++ RS=2.536215533947287
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 2.90 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_L2-min D
++ IS=2.945007071934768e-23
++ N=2.166132286960773
++ RS=2.536215533947287
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 2.95 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_L2-mid D
++ IS=2.945007071939587e-23
++ N=2.166132286960847
++ RS=3.305446303178046
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 3.00 V and If(binning) = 65.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 11
+.MODEL GW_JCLPS2.CM_L2-max D
++ IS=2.94500707194532e-23
++ N=2.166132286960937
++ RS=4.074677072408766
++ Tnom=25
++ mfg=OSRAM_OS
+

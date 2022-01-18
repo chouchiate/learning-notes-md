@@ -1,0 +1,13 @@
+* LED: DURIS S 5 GW PSLR32.EM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.85 V and If(binning) = 120 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+.MODEL GW_PSLR32.EM_typ D
++ IS=5.677434665423075e-23
++ N=2.137160101159187
++ RS=1.314172002585783
++ Tnom=25
++ mfg=OSRAM_OS
+

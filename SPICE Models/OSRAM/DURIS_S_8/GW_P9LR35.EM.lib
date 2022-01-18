@@ -1,0 +1,235 @@
+* LED: DURIS S 8 GW P9LR35.EM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.77 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_typ D
++ IS=5.579101564096151e-32
++ N=1.518893069243011
++ RS=1.999777631719635
++ Tnom=25
++ EG=3.307366033025968
++ XTI=1.0000000000000000
++ TRS1=-0.002243661667081317
++ TRS2=2.706354998585832e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'A' with Vf(binning) = 2.70 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_A-min D
++ IS=5.579101564090674e-32
++ N=1.518893069242989
++ RS=0.2819424134295923
++ Tnom=25
++ EG=3.307365998126603
++ XTI=1.0000000000000000
++ TRS1=-0.01591397512147572
++ TRS2=0.0001919578329702741
++ mfg=OSRAM_OS
+
+* Valid for bin 'A' with Vf(binning) = 2.75 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_A-mid D
++ IS=5.579101564096562e-32
++ N=1.518893069243012
++ RS=1.393053524540694
++ Tnom=25
++ EG=3.307365986690608
++ XTI=1.0000000000000000
++ TRS1=-0.003220855915218207
++ TRS2=3.885067040103445e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'A' with Vf(binning) = 2.80 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_A-max D
++ IS=5.579101564096927e-32
++ N=1.518893069243014
++ RS=2.504164635651801
++ Tnom=25
++ EG=3.307365963904128
++ XTI=1.0000000000000000
++ TRS1=-0.001791745319758058
++ TRS2=2.161242141881289e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.80 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_B-min D
++ IS=5.579101564096927e-32
++ N=1.518893069243014
++ RS=2.504164635651801
++ Tnom=25
++ EG=3.307365963904128
++ XTI=1.0000000000000000
++ TRS1=-0.001791745319758058
++ TRS2=2.161242141881289e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.85 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_B-mid D
++ IS=5.57910156409145e-32
++ N=1.518893069242992
++ RS=3.615275746762911
++ Tnom=25
++ EG=3.307366013781209
++ XTI=1.0000000000000000
++ TRS1=-0.001241073708833434
++ TRS2=1.497010526101557e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.90 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_B-max D
++ IS=5.579101564093094e-32
++ N=1.518893069242999
++ RS=4.726386857874031
++ Tnom=25
++ EG=3.307365992239608
++ XTI=1.0000000000000000
++ TRS1=-0.0009493138303621314
++ TRS2=1.145083081386842e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'Z' with Vf(binning) = 2.70 V and If(binning) = 45.0 mA
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_Z-max D
++ IS=5.579101564090674e-32
++ N=1.518893069242989
++ RS=0.2819424134295923
++ Tnom=25
++ EG=3.307365998126603
++ XTI=1.0000000000000000
++ TRS1=-0.01591397512147572
++ TRS2=0.0001919578329702741
++ mfg=OSRAM_OS
+
+* Valid for Vf(binning) = 2.77 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_typ D
++ IS=8.76857050393826e-30
++ N=1.637991622242041
++ RS=2.111462509839016
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'A' with Vf(binning) = 2.70 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_A-min D
++ IS=8.768570503946151e-30
++ N=1.637991622242064
++ RS=0.3289913938586111
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'A' with Vf(binning) = 2.75 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_A-mid D
++ IS=8.76857050395275e-30
++ N=1.637991622242084
++ RS=1.440102504969712
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'A' with Vf(binning) = 2.80 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_A-max D
++ IS=8.768570503945719e-30
++ N=1.637991622242063
++ RS=2.551213616080833
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.80 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_B-min D
++ IS=8.768570503945719e-30
++ N=1.637991622242063
++ RS=2.551213616080833
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.85 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_B-mid D
++ IS=8.768570503937399e-30
++ N=1.637991622242038
++ RS=3.662324727191946
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.90 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_B-max D
++ IS=8.768570503947442e-30
++ N=1.637991622242068
++ RS=4.773435838303053
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'Z' with Vf(binning) = 2.70 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: model describes a single chip. To simulate the device,
+*              4 strings have to be connected in parallel,
+*              each string containing 2 chip models in series.
+.MODEL GW_P9LR35.EM_Z-max D
++ IS=8.768570503946151e-30
++ N=1.637991622242064
++ RS=0.3289913938586111
++ Tnom=25
++ mfg=OSRAM_OS
+

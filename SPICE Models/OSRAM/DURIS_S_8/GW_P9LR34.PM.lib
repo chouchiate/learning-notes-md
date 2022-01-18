@@ -1,0 +1,23 @@
+* LED: DURIS S 8 GW P9LR34.PM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 22.1 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+.MODEL GW_P9LR34.PM_typ D
++ IS=2.415714262237472e-29
++ N=13.30530878233871
++ RS=15.39983656240106
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for Vf(binning) = 22.2 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+.MODEL GW_P9LR34.PM_typ D
++ IS=5.021599703957241e-29
++ N=13.50551374267968
++ RS=15.26408199623562
++ Tnom=25
++ mfg=OSRAM_OS
+

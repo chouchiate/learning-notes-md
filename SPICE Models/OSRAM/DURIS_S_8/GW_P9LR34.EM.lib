@@ -1,0 +1,91 @@
+* LED: DURIS S 8 GW P9LR34.EM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.77 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_typ D
++ IS=2.935950954736007e-29
++ N=1.659801209831569
++ RS=2.469392408429611
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin '28' with Vf(binning) = 2.80 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_28-min D
++ IS=2.935950954736728e-29
++ N=1.659801209831576
++ RS=2.901893041976399
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin '28' with Vf(binning) = 2.85 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_28-mid D
++ IS=2.935950954736391e-29
++ N=1.659801209831572
++ RS=4.013004153087509
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin '28' with Vf(binning) = 2.90 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_28-max D
++ IS=2.935950954732188e-29
++ N=1.659801209831535
++ RS=5.124115264198631
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'K8' with Vf(binning) = 2.70 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_K8-max D
++ IS=2.935950954737496e-29
++ N=1.659801209831583
++ RS=0.679670819754181
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'T8' with Vf(binning) = 2.70 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_T8-min D
++ IS=2.935950954737496e-29
++ N=1.659801209831583
++ RS=0.679670819754181
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'T8' with Vf(binning) = 2.75 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_T8-mid D
++ IS=2.935950954739417e-29
++ N=1.6598012098316
++ RS=1.790781930865287
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'T8' with Vf(binning) = 2.80 V and If(binning) = 45.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 1
+* INFORMATION: to simulate the 8-chip device, 8 models have to be connected in series
+.MODEL GW_P9LR34.EM_T8-max D
++ IS=2.935950954736728e-29
++ N=1.659801209831576
++ RS=2.901893041976399
++ Tnom=25
++ mfg=OSRAM_OS
+

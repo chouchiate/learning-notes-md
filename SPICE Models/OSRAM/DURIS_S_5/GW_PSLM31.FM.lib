@@ -1,0 +1,179 @@
+* LED: DURIS S 5 GW PSLM31.FM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.75 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_typ D
++ IS=8.229572314357041e-27
++ N=1.837365898279034
++ RS=2.515643940765902
++ Tnom=25
++ EG=3.039789388881653
++ XTI=1.0000000000000000
++ TRS1=-0.002675473045044379
++ TRS2=2.888270297317047e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K1' with Vf(binning) = 2.70 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_K1-max D
++ IS=8.229572314324996e-27
++ N=1.837365898278906
++ RS=0.8130874626326501
++ Tnom=25
++ EG=3.03978941821322
++ XTI=1.0000000000000000
++ TRS1=-0.008277752060367669
++ TRS2=8.936135829543675e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.70 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_K2-min D
++ IS=8.229572314324996e-27
++ N=1.837365898278906
++ RS=0.8130874626326501
++ Tnom=25
++ EG=3.03978941821322
++ XTI=1.0000000000000000
++ TRS1=-0.008277752060367669
++ TRS2=8.936135829543675e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.75 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_K2-mid D
++ IS=8.22957231436539e-27
++ N=1.837365898279068
++ RS=2.351549001094116
++ Tnom=25
++ EG=3.03978938446966
++ XTI=1.0000000000000000
++ TRS1=-0.002862171926113673
++ TRS2=3.089818312059953e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.80 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_K2-max D
++ IS=8.22957231435004e-27
++ N=1.837365898279006
++ RS=3.890010539555689
++ Tnom=25
++ EG=3.03978939433041
++ XTI=1.0000000000000000
++ TRS1=-0.001730210499759246
++ TRS2=1.867825102090762e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.80 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_L1-min D
++ IS=8.22957231435004e-27
++ N=1.837365898279006
++ RS=3.890010539555689
++ Tnom=25
++ EG=3.03978939433041
++ XTI=1.0000000000000000
++ TRS1=-0.001730210499759246
++ TRS2=1.867825102090762e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.85 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_L1-mid D
++ IS=8.229572314357041e-27
++ N=1.837365898279033
++ RS=5.428472078017217
++ Tnom=25
++ EG=3.039789389445484
++ XTI=1.0000000000000018
++ TRS1=-0.001239858602309982
++ TRS2=1.338472381929832e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.90 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_L1-max D
++ IS=8.229572314353272e-27
++ N=1.837365898279019
++ RS=6.966933616478748
++ Tnom=25
++ EG=3.039789399641306
++ XTI=1.0000000000000000
++ TRS1=-0.0009660688628810233
++ TRS2=1.042906390940414e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 2.90 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_L2-min D
++ IS=8.229572314353272e-27
++ N=1.837365898279019
++ RS=6.966933616478748
++ Tnom=25
++ EG=3.039789399641306
++ XTI=1.0000000000000000
++ TRS1=-0.0009660688628810233
++ TRS2=1.042906390940414e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 2.95 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_L2-mid D
++ IS=8.229572314356906e-27
++ N=1.837365898279034
++ RS=8.505395154940286
++ Tnom=25
++ EG=3.039789398305389
++ XTI=1.0000000000000000
++ TRS1=-0.0007913256263360535
++ TRS2=8.54264798342501e-06
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 3.00 V and If(binning) = 32.5 mA
+* VERSION: 13
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_PSLM31.FM_L2-max D
++ IS=8.229572314362629e-27
++ N=1.837365898279057
++ RS=10.04385669340182
++ Tnom=25
++ EG=3.039789426138161
++ XTI=1.0000000000000000
++ TRS1=-0.0006701146832241994
++ TRS2=7.234132828398462e-06
++ mfg=OSRAM_OS
+

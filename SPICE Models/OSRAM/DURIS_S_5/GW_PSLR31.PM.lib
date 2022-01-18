@@ -1,0 +1,179 @@
+* LED: DURIS S 5 GW PSLR31.PM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 3.10 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_typ D
++ IS=2.862903725211126e-24
++ N=2.061709524888006
++ RS=2.175703272728629
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.80 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_B-min D
++ IS=2.862903725210423e-24
++ N=2.061709524887995
++ RS=0.1929570632721404
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.85 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_B-mid D
++ IS=2.862903725212766e-24
++ N=2.061709524888029
++ RS=0.5262903966054548
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'B' with Vf(binning) = 2.90 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_B-max D
++ IS=2.862903725210611e-24
++ N=2.061709524887998
++ RS=0.8596237299388051
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'C' with Vf(binning) = 2.90 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_C-min D
++ IS=2.862903725210611e-24
++ N=2.061709524887998
++ RS=0.8596237299388051
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'C' with Vf(binning) = 2.95 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_C-mid D
++ IS=2.862903725210798e-24
++ N=2.061709524888
++ RS=1.192957063272143
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'C' with Vf(binning) = 3.00 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_C-max D
++ IS=2.86290372520677e-24
++ N=2.061709524887944
++ RS=1.52629039660547
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'D' with Vf(binning) = 3.00 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_D-min D
++ IS=2.86290372520677e-24
++ N=2.061709524887944
++ RS=1.52629039660547
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'D' with Vf(binning) = 3.05 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_D-mid D
++ IS=2.862903725210236e-24
++ N=2.061709524887992
++ RS=1.859623729938809
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'D' with Vf(binning) = 3.10 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_D-max D
++ IS=2.862903725207098e-24
++ N=2.061709524887947
++ RS=2.192957063272165
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'E' with Vf(binning) = 3.10 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_E-min D
++ IS=2.862903725207098e-24
++ N=2.061709524887947
++ RS=2.192957063272165
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'E' with Vf(binning) = 3.15 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_E-mid D
++ IS=2.862903725211313e-24
++ N=2.061709524888009
++ RS=2.526290396605472
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'E' with Vf(binning) = 3.20 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_E-max D
++ IS=2.862903725203772e-24
++ N=2.0617095248879
++ RS=2.859623729938844
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'F' with Vf(binning) = 3.20 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_F-min D
++ IS=2.862903725203772e-24
++ N=2.0617095248879
++ RS=2.859623729938844
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'F' with Vf(binning) = 3.25 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_F-mid D
++ IS=2.862903725208644e-24
++ N=2.06170952488797
++ RS=3.192957063272148
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'F' with Vf(binning) = 3.30 V and If(binning) = 150 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 4
+* INFORMATION: to simulate the 2-chip device, 2 models have to be connected in series
+.MODEL GW_PSLR31.PM_F-max D
++ IS=2.862903725210634e-24
++ N=2.061709524887999
++ RS=3.526290396605467
++ Tnom=25
++ mfg=OSRAM_OS
+

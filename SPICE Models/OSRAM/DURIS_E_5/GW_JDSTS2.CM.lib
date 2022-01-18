@@ -1,0 +1,251 @@
+* LED: DURIS E 5 GW JDSTS2.CM
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.75 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_typ D
++ IS=1.033115276062255e-35
++ N=1.331375845684611
++ RS=3.41568164366014
++ Tnom=25
++ EG=2.927994649821196
++ XTI=1.0000000000000000
++ TRS1=-0.002083590229962562
++ TRS2=2.639073437942032e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K1' with Vf(binning) = 2.65 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_K1-mid D
++ IS=1.033115276062374e-35
++ N=1.331375845684613
++ RS=0.3571630453206525
++ Tnom=25
++ EG=2.927994617983364
++ XTI=1.0000000000000000
++ TRS1=-0.01992613882634946
++ TRS2=0.0002523842467265099
++ mfg=OSRAM_OS
+
+* Valid for bin 'K1' with Vf(binning) = 2.70 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_K1-max D
++ IS=1.033115276061579e-35
++ N=1.331375845684599
++ RS=1.895624583782207
++ Tnom=25
++ EG=2.927994632397357
++ XTI=1.0000000000000000
++ TRS1=-0.003754372934112737
++ TRS2=4.755283900622561e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.70 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_K2-min D
++ IS=1.033115276061579e-35
++ N=1.331375845684599
++ RS=1.895624583782207
++ Tnom=25
++ EG=2.927994632397357
++ XTI=1.0000000000000000
++ TRS1=-0.003754372934112737
++ TRS2=4.755283900622561e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.75 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_K2-mid D
++ IS=1.033115276062272e-35
++ N=1.331375845684611
++ RS=3.434086122243729
++ Tnom=25
++ EG=2.927994604388202
++ XTI=1.0000000000000000
++ TRS1=-0.002072423820656357
++ TRS2=2.624929363351023e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.80 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_K2-max D
++ IS=1.033115276061377e-35
++ N=1.331375845684596
++ RS=4.972547660705262
++ Tnom=25
++ EG=2.927994610849978
++ XTI=1.0000000000000002
++ TRS1=-0.001431234428009993
++ TRS2=1.812799682005652e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.80 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_L1-min D
++ IS=1.033115276061377e-35
++ N=1.331375845684596
++ RS=4.972547660705262
++ Tnom=25
++ EG=2.927994610849978
++ XTI=1.0000000000000002
++ TRS1=-0.001431234428009993
++ TRS2=1.812799682005652e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.85 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_L1-mid D
++ IS=1.033115276063118e-35
++ N=1.331375845684625
++ RS=6.511009199166771
++ Tnom=25
++ EG=2.927994566419917
++ XTI=1.0000000000000000
++ TRS1=-0.001093053979891216
++ TRS2=1.384460265633918e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.90 V and If(binning) = 32.5 mA
+* VERSION: 7
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GW_JDSTS2.CM_(G2)_4000K_L1-max D
++ IS=1.033115276063253e-35
++ N=1.331375845684628
++ RS=8.049470737628313
++ Tnom=25
++ EG=2.927994584633641
++ XTI=1.0000000000000000
++ TRS1=-0.0008841430801634845
++ TRS2=1.119854155280915e-05
++ mfg=OSRAM_OS
+
+* Valid for Vf(binning) = 2.79 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_typ D
++ IS=1.995762775777748e-33
++ N=1.42553303129027
++ RS=2.032326645312224
++ Tnom=25
++ EG=3.018671844105568
++ XTI=1.0000000000000000
++ TRS1=-0.001976181938631503
++ TRS2=2.626359788999197e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K1' with Vf(binning) = 2.70 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_K1-max D
++ IS=1.995762775776606e-33
++ N=1.425533031290259
++ RS=0.652498990303398
++ Tnom=25
++ EG=3.018671832461846
++ XTI=1.0000000000000000
++ TRS1=-0.006155177802811888
++ TRS2=8.180273565538172e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.70 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_K2-min D
++ IS=1.995762775776606e-33
++ N=1.425533031290259
++ RS=0.652498990303398
++ Tnom=25
++ EG=3.018671832461846
++ XTI=1.0000000000000000
++ TRS1=-0.006155177802811888
++ TRS2=8.180273565538172e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.75 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_K2-mid D
++ IS=1.995762775781732e-33
++ N=1.425533031290311
++ RS=1.421729759534146
++ Tnom=25
++ EG=3.018671836435757
++ XTI=1.0000000000000155
++ TRS1=-0.002824902725349578
++ TRS2=3.754314709558823e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.80 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_K2-max D
++ IS=1.995762775780328e-33
++ N=1.425533031290297
++ RS=2.190960528764912
++ Tnom=25
++ EG=3.018671846905265
++ XTI=1.0000000000000000
++ TRS1=-0.001833098705312349
++ TRS2=2.436201149992573e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.80 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_L1-min D
++ IS=1.995762775780328e-33
++ N=1.425533031290297
++ RS=2.190960528764912
++ Tnom=25
++ EG=3.018671846905265
++ XTI=1.0000000000000000
++ TRS1=-0.001833098705312349
++ TRS2=2.436201149992573e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.85 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_L1-mid D
++ IS=1.995762775778336e-33
++ N=1.425533031290276
++ RS=2.960191297995696
++ Tnom=25
++ EG=3.018671812204399
++ XTI=1.0000000000000000
++ TRS1=-0.001356752925563788
++ TRS2=1.803133692206902e-05
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.90 V and If(binning) = 65.0 mA
+* VERSION: 6
+.MODEL GW_JDSTS2.CM_3000K_L1-max D
++ IS=1.99576277578281e-33
++ N=1.425533031290321
++ RS=3.729422067226446
++ Tnom=25
++ EG=3.01867180458279
++ XTI=1.0000000000000000
++ TRS1=-0.001076909098652974
++ TRS2=1.431219363721403e-05
++ mfg=OSRAM_OS
+

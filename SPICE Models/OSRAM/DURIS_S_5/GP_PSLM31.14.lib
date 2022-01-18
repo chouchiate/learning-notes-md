@@ -1,0 +1,146 @@
+* LED: DURIS S 5 GP PSLM31.14
+* (c) 2022, OSRAM Opto Semiconductors GmbH. All rights reserved.
+
+* Valid for Vf(binning) = 2.81 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_typ D
++ IS=7.633369289488315e-27
++ N=1.83159581643135
++ RS=2.514883645296025
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'K1' with Vf(binning) = 2.70 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_K1-max D
++ IS=7.633369289494122e-27
++ N=1.831595816431375
++ RS=0.2202098397583377
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.70 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_K2-min D
++ IS=7.633369289494122e-27
++ N=1.831595816431375
++ RS=0.2202098397583377
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.75 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_K2-mid D
++ IS=7.633369289492561e-27
++ N=1.831595816431368
++ RS=1.220209839758333
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'K2' with Vf(binning) = 2.80 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_K2-max D
++ IS=7.633369289481321e-27
++ N=1.831595816431319
++ RS=2.220209839758357
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.80 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_L1-min D
++ IS=7.633369289481321e-27
++ N=1.831595816431319
++ RS=2.220209839758357
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.85 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_L1-mid D
++ IS=7.633369289485317e-27
++ N=1.831595816431337
++ RS=3.220209839758341
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L1' with Vf(binning) = 2.90 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_L1-max D
++ IS=7.633369289492186e-27
++ N=1.831595816431366
++ RS=4.220209839758349
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 2.90 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_L2-min D
++ IS=7.633369289492186e-27
++ N=1.831595816431366
++ RS=4.220209839758349
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 2.95 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_L2-mid D
++ IS=7.633369289484568e-27
++ N=1.831595816431335
++ RS=5.220209839758347
++ Tnom=25
++ mfg=OSRAM_OS
+
+* Valid for bin 'L2' with Vf(binning) = 3.00 V and If(binning) = 50.0 mA
+* Model is valid for junction temperature Tj=25 C only.
+* VERSION: 9
+* INFORMATION: model describes a single chip. To simulate the device,
+*              2 strings have to be connected in parallel,
+*              each string containing 1 chip model in series.
+.MODEL GP_PSLM31.14_L2-max D
++ IS=7.633369289493559e-27
++ N=1.831595816431372
++ RS=6.220209839758333
++ Tnom=25
++ mfg=OSRAM_OS
+
