@@ -184,23 +184,65 @@ Lname N+ N- Value <IC=Initial Condition>
   .model Q2N222A NPN (IS=14.34F XTI=3 EG=1.11 VAF=74.03 BF=255.9 NE=1.307 ISE=14.34F IKF=.2847 XTB=1.5 BR=6.092 NC=2 ISC=0 IKR=0 RC=1 CJC=7.306P MJC=.3416 VJC=.75 FC=.5 CJE=22.01P MJE=.377 VJE=.75 TR=46.91N TF=411.1P ITF=.6 VTF=1.7 XTF=3 RB=10)
 ```
 #### **Modified Gummel-Poon BJT Parmeters**
-> [wiki](http://ltwiki.org/index.php?title=Q_Bipolar_transistor#:~:text=The%20DC%20model%20is%20defined,for%20forward%20and%20reverse%20regions.)
+> [wiki](https://en.wikipedia.org/wiki/Gummel%E2%80%93Poon_model)
 
 | Name | Description | Unit | Default |
 |-----|-------|------|--------|
 |Is|Transient Saturation current|A|1e-16|
-|Bf|Ideal maximum forward beta|--|100|
+|Bf|Common Emitter Current Gain $\beta$ |--|100|
+|Nf|Forward current emission coefficient|--|1.|
+|Vaf|Forward Early voltage|V|Infin.|
+|Ikf|Corner for forward $\beta$ high current roll-off|A|Infin.|
+
+
 
 
 #### ***MOSFET***
+```
+# Element
+  Mname ND NG NS <NB> ModName <L=VAL> <W=VAL>
 
-#### ***Ideal OpAmp***
+# Model Statement
+  .MODEL ModName NMOS (<LEVEL=VAL> <KEYNAME=VAL> ...)
+    .MODEL ModName PMOS (<LEVEL=VAL> <KEYNAME=VAL> ...)
+```
+> [parameters](https://www.seas.upenn.edu/~jan/spice/spice.MOSparamlist.html)
 
 
+#### ***Subcircuits***
+```
+# Defining Subcircuit
+  .SUBCKT SUBNAME N1 N2 N3 ...
+  Element statements
+  .
+  .
+  .
+  .END SUBNAME
+```
+
+## **Control Statements**
+
+### **.OP Statement**
+
+### **.DC Statement**
+
+### **.AC Statement**
+
+### **.TRAN Statement**
+
+### **.IC Statement**
+
+### **.TF Statement**
+
+## **Output Statements**
+
+### **.PRINT**
 
 
+### **.PLOT**
 
 
+### **.MEAS**
 
 
 
