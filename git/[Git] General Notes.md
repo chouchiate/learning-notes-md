@@ -30,6 +30,37 @@ $ git remote add origin <remote_path> # git@gitlab.com:username/projectpath.git
 $ git remote -v
 ```
 
+#### Edit git config
+```bash
+git config --global --edit
+```
+
+#### List git config
+```bash
+git config --global --list
+```
+
+### Config Remote Path Replace `git://` with `https://`
+```bash
+git config --global url.git@gitlab.xxx.com:.insteadOf https://gitlab.xxx.com/
+```
+
+### More on Replace `git://` with `https://`
+Rewrite any `git://` urls to be `https://` but, it won't touch `ssh`urls (`git@github.com:`)
+
+```sh
+git config --global url."https://github".insteadOf git://github
+```
+ ### or replace with `ssh`
+ Use `ssh` instead of `https://`
+ 
+ ```sh
+ git config --global url."git@github.com:".insteadOf "https://github.com/"
+ ```
+
+---
+**sauce:** _https://gist.github.com/grawity/4392747_ & [@hansdg1](https://github.com/hansdg1)
+
 #### git push to Github under a different user.name
 ```bash
 # ie remote: Permission to <remote_git>.git denied to <another_user>.
