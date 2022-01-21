@@ -66,14 +66,56 @@ Rname N+ N- Value
 * N-: Negative Terminal
 * Value: Resistance Value
 
-#### ***Inductor and Capacitor***
+#### ***Inductor***
+![](../../assets/img/inductor_spice_model.png)
 ```
-Cname N+ N- Value <IC=Initial Condition>
-Lname N+ N- Value <IC=Initial Condition>
+# Symbol
+  IND, IND2
+
+# Syntax
+Lname N+ N- <inductance> <IC=Initial current>
++ [Rser=<value>] [Rpar=<value>]
++ [Cpar=<value>] [m=<value>] [temp=<value>]
 
 ```
 * IC: Initial Condition (DC Voltage for C, DC Current for I)
-* <>: Optional. Zero if not specify.
+
+|Name|Description|
+|---|---|
+|Rser|Equivalent series resistance|
+|Rpar|Equivalent parallel resistance|
+|Cpar|Equivalent parallel capacitance|
+|m|Number of parallel units|
+|ic|Initial current(used if uic flagged on .tran)|
+|tcl|Linear Inductance temperature coeff.|
+|Tcl|Quadratic inducance temperature coeff.|
+|temp|Instance temp|
+
+[LTspice](http://ltwiki.org/LTspiceHelp/LTspiceHelp/L_Inductor.htm)
+
+#### ***Hysteretic Core Model***
+|Name|Description|Units|
+|---|---|---|
+|Hc|Coercive force|Amp-turns/meter|
+|Br|Remnant flux density| Tesla|
+|Bs|Saturation flux density|Tesla|
+
+* Upper branch of Hysteresis:
+
+  $B_{up}(H) = Bs * \frac{H+Hc}{|H +Hc| + Hc * (Bs/Br-1)}*\mu_0*H$
+
+* Lower Branch of Hysteresis
+
+    $B_{dn}(H) = Bs * \frac{H-Hc}{|H -Hc| + Hc * (Bs/Br-1)}*\mu_0*H$
+    
+![](../../assets/img/inductor_hysteresis.png)
+
+#### ***Capacitor***
+```
+Cname N+ N- Value <IC=Initial Condition>
+
+```
+
 
 ### **Voltage and Current Source**
 #### ***Independent DC Source***

@@ -1,4 +1,4 @@
-## [md] - **Write Math Formula**
+## [md] - **Write Math Formula in markdown**
 
 ### **Greek Letter**
 | Symbol | Script |
@@ -107,6 +107,7 @@
 | Symbol | Script |
 | ------ | ------ |
 |$(a)$|(a)|
+|$\|a\|$|\|a\||
 |$[a]$|[a]|
 |${a}$|{a}|
 |$\langle f \rangle$|\langle f \rangle|
