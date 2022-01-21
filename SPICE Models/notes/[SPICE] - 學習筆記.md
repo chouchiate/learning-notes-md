@@ -102,11 +102,11 @@ Lname N+ N- <inductance> <IC=Initial current>
 
 * Upper branch of Hysteresis:
 
-  $B_{up}(H) = Bs * \frac{H+Hc}{|H +Hc| + Hc * (Bs/Br-1)}*\mu_0*H$
+  $B_{up}(H) = B_s * \frac{H+H_c}{|H +H_c| + H_c * (B_s/B_r-1)}*\mu_0*H$
 
 * Lower Branch of Hysteresis
 
-    $B_{dn}(H) = Bs * \frac{H-Hc}{|H -Hc| + Hc * (Bs/Br-1)}*\mu_0*H$
+    $B_{dn}(H) = B_s * \frac{H-Hc}{|H -H_c| + H_c * (B_s/B_r-1)}*\mu_0*H$
     
 ![](../../assets/img/inductor_hysteresis.png)
 
