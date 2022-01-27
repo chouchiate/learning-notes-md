@@ -1,4 +1,4 @@
-## [Golang] - Pkg 學習筆記
+## [Golang] - Std-Pkg 學習筆記
 
 ### **Package - fmt**
 - [API Doc](https://pkg.go.dev/fmt)
