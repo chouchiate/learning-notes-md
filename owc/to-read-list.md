@@ -43,7 +43,7 @@ CneXE67dg)
 
 
 * [Fundamental analysis for visible-light communication system using LED lights](https://ieeexplore.ieee.org/document/1277847)
-  keywords:
+  keynotes:
   * FOV: field of view
   * InGaN based Blue and Green LED
   * OOK: On-Off keying
@@ -54,6 +54,12 @@ CneXE67dg)
   * Intersymbol Interference
   * AWGN - Additive White Gaussian Noise
 
+* [Signal Demodulation With Machine Learning
+Methods for Physical Layer Visible Light
+Communications: Prototype Platform,
+Open Dataset, and Algorithms](https://ieeexplore.ieee.org/document/8661606)
+  keynotes:
+    *
 
 * [Integrated system of white LED visible-light communication and power-line communication](https://ieeexplore.ieee.org/document/1205458)
 
