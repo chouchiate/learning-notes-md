@@ -14,6 +14,7 @@
 | $\phi$ | \phi |
 | $\Phi$ | \Phi |
 | $\varphi$ | \varphi |
+| $\tau$ | \tau |
 | $\theta$ | \theta |
 
 ### **Operators**
