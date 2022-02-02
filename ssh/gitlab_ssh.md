@@ -1,7 +1,5 @@
 ## Gitlab ssh setup Instructions
 
-[instruction](https://github.com/chouchiate/learning-notes-md.git)
-
 ### Copy Key to Clipboard
 ```bash
   tr -d '\n' < ~/.ssh/id_ed25519.pub | pbcopy
