@@ -115,7 +115,7 @@ debug3: authmethod_lookup publickey
 debug3: remaining preferred: keyboard-interactive,password
 debug3: authmethod_is_enabled publickey
 debug1: Next authentication method: publickey
-debug1: Offering public key: derick@jubo.health RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
+debug1: Offering public key: derick@xxxxx.zzz RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
 debug3: send packet: type 50
 debug2: we sent a publickey packet, wait for reply
 debug3: receive packet: type 60
