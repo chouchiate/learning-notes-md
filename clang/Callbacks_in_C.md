@@ -35,7 +35,7 @@ int main()
 
 ### Example Code
 
-```
+```c
 #include<stdio.h>
 void my_function() {
    printf("This is a normal function.");
