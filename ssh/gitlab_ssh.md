@@ -11,7 +11,7 @@
 ```
 ### Debug message
 ```bash
-Dericks-MacBook-Pro:.ssh derickchou$ ssh -Tvvv git@gitlab.smart-aging.tech
+Dericks-MacBook-Pro:.ssh derickchou$ ssh -Tvvv git@gitlab.xxx-yyy.zzzz
 OpenSSH_7.9p1, LibreSSL 2.7.3
 debug1: Reading configuration data /Users/derickchou/.ssh/config
 debug1: Reading configuration data /etc/ssh/ssh_config
@@ -92,7 +92,7 @@ debug3: receive packet: type 21
 debug1: SSH2_MSG_NEWKEYS received
 debug2: set_newkeys: mode 0
 debug1: rekey after 134217728 blocks
-debug1: Will attempt key: derick@jubo.health RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
+debug1: Will attempt key: derick@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
 debug1: Will attempt key: /Users/derickchou/.ssh/id_rsa 
 debug1: Will attempt key: /Users/derickchou/.ssh/id_dsa 
 debug1: Will attempt key: /Users/derickchou/.ssh/id_ecdsa 
@@ -119,7 +119,7 @@ debug1: Offering public key: derick@jubo.health RSA SHA256:VLf6RzDpqglgFGwNYH8gW
 debug3: send packet: type 50
 debug2: we sent a publickey packet, wait for reply
 debug3: receive packet: type 60
-debug1: Server accepts key: derick@jubo.health RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
+debug1: Server accepts key: derick@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
 debug3: sign_and_send_pubkey: RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s
 debug3: sign_and_send_pubkey: signing using rsa-sha2-512
 debug3: send packet: type 50
