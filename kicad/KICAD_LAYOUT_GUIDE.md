@@ -1,3 +1,7 @@
+
+* [pcb-new-part1](https://www.pcbway.com/blog/PCB_Design_Layout/Layout_In_Pcbnew.html)
+* [pcb-new-part2](https://www.pcbway.com/blog/PCB_Design_Layout/Layout_In_Pcbnew_____part_2.html)
+
 ## Footprint Creation
 
 ```
