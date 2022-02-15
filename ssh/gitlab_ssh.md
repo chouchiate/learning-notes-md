@@ -1,5 +1,30 @@
 ## Gitlab ssh setup Instructions
 
+### Create rsa ssh key
+```bash
+$ ssh-keygen -t rsa -C "yourEmail@example.com
+
+```
+
+* –t 指定金鑰型別，預設是 rsa ，可以省略。
+* -C 設定註釋文字，如mail，這邊的mail需要是註冊Gitlab的那個mail。
+* -f 指定金鑰檔案儲存檔名 (檔名可以不輸入)
+
+### Enter passphrase
+```bash
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again: 
+```
+
+### Create ssh successfully
+```bash
+Your identification has been saved in /Users/dbit/.ssh/id_rsa.
+Your public key has been saved in /Users/dbit/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256: ----
+The key's randomart image is:-----
+```
+
 ### Copy Key to Clipboard
 ```bash
   tr -d '\n' < ~/.ssh/id_ed25519.pub | pbcopy
@@ -80,7 +105,7 @@ debug3: record_hostkey: found key type ECDSA in file /Users/derickchou/.ssh/know
 debug3: load_hostkeys: loaded 1 keys from gitlab.smart-aging.tech
 debug3: hostkeys_foreach: reading file "/Users/derickchou/.ssh/known_hosts"
 debug3: record_hostkey: found key type ECDSA in file /Users/derickchou/.ssh/known_hosts:1
-debug3: load_hostkeys: loaded 1 keys from 211.22.123.212
+debug3: load_hostkeys: loaded 1 keys from 211.222.123.212
 debug1: Host 'gitlab.smart-aging.tech' is known and matches the ECDSA host key.
 debug1: Found key in /Users/derickchou/.ssh/known_hosts:1
 debug3: send packet: type 21
@@ -125,7 +150,7 @@ debug3: sign_and_send_pubkey: signing using rsa-sha2-512
 debug3: send packet: type 50
 debug3: receive packet: type 52
 debug1: Authentication succeeded (publickey).
-Authenticated to gitlab.smart-aging.tech ([211.22.123.212]:22).
+Authenticated to gitlab.smart-aging.tech ([211.222.123.212]:22).
 debug1: channel 0: new [client-session]
 debug3: ssh_session2_open: channel_new: 0
 debug2: channel 0: send open

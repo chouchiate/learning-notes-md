@@ -144,6 +144,15 @@ $ git stash pop
 ## If No Conflict
 $ git push -u origin <branch_name>
 
+## List the stashes:
+git stash list
+## Show the files in the most recent stash:
+git stash show
+## Show the changes of the most recent stash:
+git stash show -p
+## Show the changes of the named stash:
+git stash show -p stash@{1}
+
 ## If Conflict
 $ git status
 ### Fix Conflict and update
@@ -226,4 +235,21 @@ get push -f origin 'HEAD^:master'
 
 ```
 
-`
+## **Squash**
+
+## **為何 sync master to demo 常常發生奇怪的衝突？**
+做了一下實驗，終於確認了正確的操作應該怎麼做：
+feat-branch 進 master 時，使用 squash commits
+master 進 demo 時，就不用 squash 了，否則會因此產生 master 沒有的 commit，造成下次衝突
+又有關 Merge method 如何影響 git graph 的觀感:
+Fast-forward merge
+No merge commits are created.
+Fast-forward merges only.
+When there is a merge conflict, the user is given the option to rebase.
+git graph 上可以看到: master/demo 會在同一條線上 (demo 追著 master 跑)
+Merge commit
+Every merge creates a merge commit.
+git graph 上可以看到: master/demo 會在兩條平行線上
+---
+根據上述結果，目前將三個 repo 的 merge method 都調整成 Fast-forward merge
+然後 squash commit 調成 Allow，需要自己開  MR 時打勾才會去做 squash
