@@ -34,10 +34,10 @@
     * [doc](https://docs.lvgl.io/master/get-started/quick-overview.html)
 
 11. [EasyLogger](https://github.com/armink/EasyLogger)
-    * 超轻量级(ROM<1.6K, RAM<0.3K)、高性能的 C/C++ 日志库
+    * 超輕量級(ROM<1.6K, RAM<0.3K)、高性能的 C/C++ 日制庫
 
 12. [MultiTimer](https://github.com/0x1abin/MultiTimer)
-    * 软件定时器扩展模块
+    * 軟件定時器擴展模塊
 
 13. [OpenBLT](https://github.com/feaser/openblt)
     * [sourceforge](https://sourceforge.net/projects/openblt/files/)

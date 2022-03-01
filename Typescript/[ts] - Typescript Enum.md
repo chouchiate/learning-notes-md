@@ -10,6 +10,7 @@
 * How to get value by key name
 * How to handle when an enum contains both number and string
 * Is it possible to use generic function for enum?
+* Compare Enum
 
 #### Basic Usage
 
@@ -278,5 +279,17 @@ console.log(valueList);
 ```typescript
 function getValueByKey<T extends enum>(value: string) {
     return Object.entries(T).find(([key, val]) => key === value)?.[1];
+}
+```
+
+#### Compare Enums
+
+```typescript
+let e1: E = E.A
+let e2: E = E.B
+
+
+if (e1 as E === e2 as E) {
+  console.log("equal")
 }
 ```
