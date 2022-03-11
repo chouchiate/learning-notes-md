@@ -13,28 +13,28 @@ int add(int a, int b)
 {
 	LED_R = 0;
 	LED_G = 1;
-	LED_B = 1;		
+	LED_B = 1;
 	return a + b;
 }
 int minus(int a, int b)
 {
-	LED_R = 1; 
+	LED_R = 1;
 	LED_G = 0;
-	LED_B = 1;	
+	LED_B = 1;
 	return a - b;
 }
 int multiply(int a, int b)
 {
-	LED_R = 1; 
-	LED_G = 1; 
-	LED_B = 0;	
+	LED_R = 1;
+	LED_G = 1;
+	LED_B = 0;
 	return a * b;
 }
 int divide(int a, int b)
 {
-	LED_R = 0; 
-	LED_G = 0; 
-	LED_B = 0;	
+	LED_R = 0;
+	LED_G = 0;
+	LED_B = 0;
 	return a / b;
 }
 
@@ -48,16 +48,16 @@ int main(void)
   init_SYS();
 
   // Implement
-	fPtrOperations[ADD] = add;     
-	fPtrOperations[MINUS] = minus;   
-	fPtrOperations[MULTIPLY] = multiply; 
+	fPtrOperations[ADD] = add;
+	fPtrOperations[MINUS] = minus;
+	fPtrOperations[MULTIPLY] = multiply;
 	fPtrOperations[DIVIDE] = divide;
 
   // Usage
 	val = (*fPtrOperations[ADD])(4, 2);
 	val = (*fPtrOperations[MINUS])(4, 2);
 	val = (*fPtrOperations[MULTIPLY])(4, 2);
-	val = (*fPtrOperations[DIVIDE])(4, 2);      
+	val = (*fPtrOperations[DIVIDE])(4, 2);
   while (1) {}
 }
 ```
