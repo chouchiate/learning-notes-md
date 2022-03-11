@@ -40,3 +40,20 @@ db.getCollection("mwg-time-series").find({
    .count()
 
 ```
+
+## Query resporitory rate
+```js
+db.getCollection("hum-time-series").find({
+    "metadata.vendorId": "SPS2021PA000163",
+    "rr": {$gte: 0}
+})
+   .projection({
+       "rr": 1,
+       "metadata.vendorId": 2,
+       "restless": 3,
+       "timestamp": 4,
+       "status":5,
+   })
+   .sort({_id:-1})
+   .limit(100)
+```

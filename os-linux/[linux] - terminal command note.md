@@ -1,21 +1,37 @@
-## 
+## [Linux] - Terminal Command (Personal Notes)
+
+```bash
+$ tarball
 
 ```
-ls
+
+
+```bash
+# 
+$ wget
 ```
 
 
-
-
-
-```
-cd
+```bash
+$ ls
 ```
 
 
+### change directory
+
+
+```bash
+#
+$ cd
+#
+$ cd ..
 
 ```
-sudo su
+
+
+### grant super user
+```bash
+$ sudo su
 ```
 
 
