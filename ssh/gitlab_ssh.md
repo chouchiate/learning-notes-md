@@ -36,31 +36,31 @@ The key's randomart image is:-----
 ```
 ### Debug message
 ```bash
-Dericks-MacBook-Pro:.ssh derickchou$ ssh -Tvvv git@gitlab.xxx-yyy.zzzz
+wakabas-MacBook-Pro:.ssh wakabapubbu$ ssh -Tvvv git@gitlab.xxx-yyy.zzzz
 OpenSSH_7.9p1, LibreSSL 2.7.3
-debug1: Reading configuration data /Users/derickchou/.ssh/config
+debug1: Reading configuration data /Users/wakabapubbu/.ssh/config
 debug1: Reading configuration data /etc/ssh/ssh_config
 debug1: /etc/ssh/ssh_config line 48: Applying options for *
-debug1: Connecting to gitlab.smart-aging.tech port 22.
+debug1: Connecting to gitlab.remote-crawler.tech port 22.
 debug1: Connection established.
-debug1: identity file /Users/derickchou/.ssh/id_rsa type -1
-debug1: identity file /Users/derickchou/.ssh/id_rsa-cert type -1
-debug1: identity file /Users/derickchou/.ssh/id_dsa type -1
-debug1: identity file /Users/derickchou/.ssh/id_dsa-cert type -1
-debug1: identity file /Users/derickchou/.ssh/id_ecdsa type -1
-debug1: identity file /Users/derickchou/.ssh/id_ecdsa-cert type -1
-debug1: identity file /Users/derickchou/.ssh/id_ed25519 type -1
-debug1: identity file /Users/derickchou/.ssh/id_ed25519-cert type -1
-debug1: identity file /Users/derickchou/.ssh/id_xmss type -1
-debug1: identity file /Users/derickchou/.ssh/id_xmss-cert type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_rsa type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_rsa-cert type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_dsa type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_dsa-cert type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_ecdsa type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_ecdsa-cert type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_ed25519 type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_ed25519-cert type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_xmss type -1
+debug1: identity file /Users/wakabapubbu/.ssh/id_xmss-cert type -1
 debug1: Local version string SSH-2.0-OpenSSH_7.9
 debug1: Remote protocol version 2.0, remote software version OpenSSH_8.2p1 Ubuntu-4ubuntu0.2
 debug1: match: OpenSSH_8.2p1 Ubuntu-4ubuntu0.2 pat OpenSSH* compat 0x04000000
 debug3: fd 5 is O_NONBLOCK
-debug1: Authenticating to gitlab.smart-aging.tech:22 as 'git'
-debug3: hostkeys_foreach: reading file "/Users/derickchou/.ssh/known_hosts"
-debug3: record_hostkey: found key type ECDSA in file /Users/derickchou/.ssh/known_hosts:1
-debug3: load_hostkeys: loaded 1 keys from gitlab.smart-aging.tech
+debug1: Authenticating to gitlab.remote-crawler.tech:22 as 'git'
+debug3: hostkeys_foreach: reading file "/Users/wakabapubbu/.ssh/known_hosts"
+debug3: record_hostkey: found key type ECDSA in file /Users/wakabapubbu/.ssh/known_hosts:1
+debug3: load_hostkeys: loaded 1 keys from gitlab.remote-crawler.tech
 debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
 debug3: send packet: type 20
 debug1: SSH2_MSG_KEXINIT sent
@@ -100,14 +100,14 @@ debug3: send packet: type 30
 debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
 debug3: receive packet: type 31
 debug1: Server host key: ecdsa-sha2-nistp256 SHA256:33NxW1pCutaNH0lNAHl6nsgxXrALsg8O/0sr4USmips
-debug3: hostkeys_foreach: reading file "/Users/derickchou/.ssh/known_hosts"
-debug3: record_hostkey: found key type ECDSA in file /Users/derickchou/.ssh/known_hosts:1
-debug3: load_hostkeys: loaded 1 keys from gitlab.smart-aging.tech
-debug3: hostkeys_foreach: reading file "/Users/derickchou/.ssh/known_hosts"
-debug3: record_hostkey: found key type ECDSA in file /Users/derickchou/.ssh/known_hosts:1
+debug3: hostkeys_foreach: reading file "/Users/wakabapubbu/.ssh/known_hosts"
+debug3: record_hostkey: found key type ECDSA in file /Users/wakabapubbu/.ssh/known_hosts:1
+debug3: load_hostkeys: loaded 1 keys from gitlab.remote-crawler.tech
+debug3: hostkeys_foreach: reading file "/Users/wakabapubbu/.ssh/known_hosts"
+debug3: record_hostkey: found key type ECDSA in file /Users/wakabapubbu/.ssh/known_hosts:1
 debug3: load_hostkeys: loaded 1 keys from 211.222.123.212
-debug1: Host 'gitlab.smart-aging.tech' is known and matches the ECDSA host key.
-debug1: Found key in /Users/derickchou/.ssh/known_hosts:1
+debug1: Host 'gitlab.remote-crawler.tech' is known and matches the ECDSA host key.
+debug1: Found key in /Users/wakabapubbu/.ssh/known_hosts:1
 debug3: send packet: type 21
 debug2: set_newkeys: mode 1
 debug1: rekey after 134217728 blocks
@@ -117,12 +117,12 @@ debug3: receive packet: type 21
 debug1: SSH2_MSG_NEWKEYS received
 debug2: set_newkeys: mode 0
 debug1: rekey after 134217728 blocks
-debug1: Will attempt key: derick@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
-debug1: Will attempt key: /Users/derickchou/.ssh/id_rsa 
-debug1: Will attempt key: /Users/derickchou/.ssh/id_dsa 
-debug1: Will attempt key: /Users/derickchou/.ssh/id_ecdsa 
-debug1: Will attempt key: /Users/derickchou/.ssh/id_ed25519 
-debug1: Will attempt key: /Users/derickchou/.ssh/id_xmss 
+debug1: Will attempt key: wakaba@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_rsa 
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_dsa 
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ecdsa 
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ed25519 
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_xmss 
 debug2: pubkey_prepare: done
 debug3: send packet: type 5
 debug3: receive packet: type 7
@@ -140,17 +140,17 @@ debug3: authmethod_lookup publickey
 debug3: remaining preferred: keyboard-interactive,password
 debug3: authmethod_is_enabled publickey
 debug1: Next authentication method: publickey
-debug1: Offering public key: derick@xxxxx.zzz RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
+debug1: Offering public key: wakaba@xxxxx.zzz RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
 debug3: send packet: type 50
 debug2: we sent a publickey packet, wait for reply
 debug3: receive packet: type 60
-debug1: Server accepts key: derick@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
+debug1: Server accepts key: wakaba@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
 debug3: sign_and_send_pubkey: RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s
 debug3: sign_and_send_pubkey: signing using rsa-sha2-512
 debug3: send packet: type 50
 debug3: receive packet: type 52
 debug1: Authentication succeeded (publickey).
-Authenticated to gitlab.smart-aging.tech ([211.222.123.212]:22).
+Authenticated to gitlab.remote-crawler.tech ([211.222.123.212]:22).
 debug1: channel 0: new [client-session]
 debug3: ssh_session2_open: channel_new: 0
 debug2: channel 0: send open
@@ -214,7 +214,7 @@ debug2: channel 0: rcvd adjust 2097152
 debug3: receive packet: type 99
 debug2: channel_input_status_confirm: type 99 id 0
 debug2: shell request accepted on channel 0
-Welcome to GitLab, @derick.chou!
+Welcome to GitLab, @wakaba.pubbu!
 debug3: receive packet: type 98
 debug1: client_input_channel_req: channel 0 rtype exit-status reply 0
 debug3: receive packet: type 98
@@ -247,7 +247,7 @@ debug3: fd 1 is not O_NONBLOCK
 Transferred: sent 2728, received 2832 bytes, in 0.1 seconds
 Bytes per second: sent 29733.9, received 30867.5
 debug1: Exit status 0
-Dericks-MacBook-Pro:.ssh derickchou$ 
+wakabas-MacBook-Pro:.ssh wakabapubbu$ 
 ```
 
 
