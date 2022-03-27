@@ -1,8 +1,11 @@
-## Gitlab ssh setup Instructions
+t## Gitlab ssh setup Instructions
 
 ### Create rsa ssh key
 ```bash
 $ ssh-keygen -t rsa -C "yourEmail@example.com
+# enter file in which to save the key (/Users/jjjj/.ssh/id_rsa) <filename>
+
+# Enter passphrase (empty for no passphrase): <pass phrase>
 
 ```
 
@@ -13,16 +16,27 @@ $ ssh-keygen -t rsa -C "yourEmail@example.com
 ### Enter passphrase
 ```bash
 Enter passphrase (empty for no passphrase):
-Enter same passphrase again: 
+Enter same passphrase again:
 ```
 
-### Create ssh successfully
+### Create ssh
 ```bash
 Your identification has been saved in /Users/dbit/.ssh/id_rsa.
 Your public key has been saved in /Users/dbit/.ssh/id_rsa.pub.
 The key fingerprint is:
 SHA256: ----
 The key's randomart image is:-----
+```
+
+### 命名 (ssh 用以下命名找尋 ~/.ssh)
+```
+id_rsa
+id_dsa
+id_ecdsa
+id_ecdsa_sk
+id_ed25519
+id_ed25519_sk
+id_xmss
 ```
 
 ### Copy Key to Clipboard
@@ -34,7 +48,11 @@ The key's randomart image is:-----
 ```bash
   ssh -T git@gitlab.xxx-yyy.zzzz
 ```
-### Debug message
+
+### Detail Ssh Debug
+```bash
+ssh -Tvvv git@gitlab.xxx-yyy.zzzz
+```
 ```bash
 wakabas-MacBook-Pro:.ssh wakabapubbu$ ssh -Tvvv git@gitlab.xxx-yyy.zzzz
 OpenSSH_7.9p1, LibreSSL 2.7.3
@@ -75,10 +93,10 @@ debug2: MACs ctos: umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-25
 debug2: MACs stoc: umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1
 debug2: compression ctos: none,zlib@openssh.com,zlib
 debug2: compression stoc: none,zlib@openssh.com,zlib
-debug2: languages ctos: 
-debug2: languages stoc: 
-debug2: first_kex_follows 0 
-debug2: reserved 0 
+debug2: languages ctos:
+debug2: languages stoc:
+debug2: first_kex_follows 0
+debug2: reserved 0
 debug2: peer server KEXINIT proposal
 debug2: KEX algorithms: curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
 debug2: host key algorithms: rsa-sha2-512,rsa-sha2-256,ssh-rsa,ecdsa-sha2-nistp256,ssh-ed25519
@@ -88,10 +106,10 @@ debug2: MACs ctos: umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-25
 debug2: MACs stoc: umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1
 debug2: compression ctos: none,zlib@openssh.com
 debug2: compression stoc: none,zlib@openssh.com
-debug2: languages ctos: 
-debug2: languages stoc: 
-debug2: first_kex_follows 0 
-debug2: reserved 0 
+debug2: languages ctos:
+debug2: languages stoc:
+debug2: first_kex_follows 0
+debug2: reserved 0
 debug1: kex: algorithm: curve25519-sha256
 debug1: kex: host key algorithm: ecdsa-sha2-nistp256
 debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
@@ -118,11 +136,11 @@ debug1: SSH2_MSG_NEWKEYS received
 debug2: set_newkeys: mode 0
 debug1: rekey after 134217728 blocks
 debug1: Will attempt key: wakaba@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
-debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_rsa 
-debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_dsa 
-debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ecdsa 
-debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ed25519 
-debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_xmss 
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_rsa
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_dsa
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ecdsa
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ed25519
+debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_xmss
 debug2: pubkey_prepare: done
 debug3: send packet: type 5
 debug3: receive packet: type 7
@@ -140,12 +158,12 @@ debug3: authmethod_lookup publickey
 debug3: remaining preferred: keyboard-interactive,password
 debug3: authmethod_is_enabled publickey
 debug1: Next authentication method: publickey
-debug1: Offering public key: wakaba@xxxxx.zzz RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
+debug1: Offering public key: wakaba@xxxxx.zzz RSA SHA256:VLf6RzDpqglPl8WPmb1aDG/ntqFyTs7s agent
 debug3: send packet: type 50
 debug2: we sent a publickey packet, wait for reply
 debug3: receive packet: type 60
-debug1: Server accepts key: wakaba@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
-debug3: sign_and_send_pubkey: RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s
+debug1: Server accepts key: wakaba@zzzz.xxx RSA SHA256:VLf6Rzmb1aDG/ntqFyTs7s agent
+debug3: sign_and_send_pubkey: RSA SHA256:VLfDG/ntqFyTs7s
 debug3: sign_and_send_pubkey: signing using rsa-sha2-512
 debug3: send packet: type 50
 debug3: receive packet: type 52
@@ -247,7 +265,7 @@ debug3: fd 1 is not O_NONBLOCK
 Transferred: sent 2728, received 2832 bytes, in 0.1 seconds
 Bytes per second: sent 29733.9, received 30867.5
 debug1: Exit status 0
-wakabas-MacBook-Pro:.ssh wakabapubbu$ 
+wakabas-MacBook-Pro:.ssh wakabapubbu$
 ```
 
 

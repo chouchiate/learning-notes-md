@@ -1,14 +1,9 @@
-## Git_General_Note
-
-
-
+## [Git] - General_Note
 ## 安裝
 
 ```bash
 brew install git
 ```
-
-## CLI 指令 
 
 #### git config - 使用者資料設定
 
@@ -16,10 +11,7 @@ brew install git
 git --version
 git config --global --add user.name "derel33t"
 git config --global --add user.email "derel33t@gmail.com"
-
 ```
-
-
 
 #### git remote - Set a new Remote
 
@@ -28,6 +20,57 @@ git config --global --add user.email "derel33t@gmail.com"
 $ git remote add origin <remote_path> # git@gitlab.com:username/projectpath.git
 # Verify New Remote, view remote repo
 $ git remote -v
+```
+
+#### git add multiple remotes
+```bash
+# Syntax to add a git remote
+git remote add REMOTE-ID REMOTE-URL
+
+# By convention, the original / primary remote repo is called origin
+
+# Add remote 1: GitHub.
+git remote add origin git@github.com:jigarius/toggl2redmine.git
+# Add remote 2: BitBucket.
+git remote add upstream git@bitbucket.org:jigarius/toggl2redmine.git
+
+# To add one or more remote Git repos – make sure that each repo has its unique ID, i.e. origin, upstream
+```
+
+#### Change Remote Url
+```bash
+# The syntax is: git remote set-url REMOTE-ID REMOTE-URL
+git remote set-url upstream git@foobar.com:jigarius/toggl2redmine.git
+```
+
+#### List all remotes
+```bash
+$git remote -v
+origin	    git@github.com:jigarius/toggl2redmine.git (fetch)
+origin	    git@github.com:jigarius/toggl2redmine.git (push)
+upstream    git@bitbucket.org:jigarius/toggl2redmine.git (fetch)
+upstream    git@bitbucket.org:jigarius/toggl2redmine.git (push)
+```
+
+#### Remove a Remote
+```bash
+# The syntax is: git remote remove REMOTE-ID
+git remote remove upstream
+```
+
+#### Push to multiple remotes
+* to push to multiple Git remotes with a single git push command.
+    - choose a remote ID which will refer to all the remotes.
+```bash
+# Create a new remote called "all" with the URL of the primary repo.
+git remote add all git@github.com:jigarius/toggl2redmine.git
+# Re-register the remote as a push URL.
+git remote set-url --add --push all git@github.com:jigarius/toggl2redmine.git
+# Add a push URL to a remote. This means that "git push" will also push to this git URL.
+git remote set-url --add --push all git@bitbucket.org:jigarius/toggl2redmine.git
+
+# Replace BRANCH with the name of the branch you want to push.
+git push all BRANCH
 ```
 
 #### Edit git config
@@ -45,7 +88,7 @@ git config --global --list
 git config --global url.git@gitlab.xxx.com:.insteadOf https://gitlab.xxx.com/
 ```
 
-### More on Replace `git://` with `https://`
+## More on Replace `git://` with `https://`
 Rewrite any `git://` urls to be `https://` but, it won't touch `ssh`urls (`git@github.com:`)
 
 ```sh
@@ -53,7 +96,7 @@ git config --global url."https://github".insteadOf git://github
 ```
  ### or replace with `ssh`
  Use `ssh` instead of `https://`
- 
+
  ```sh
  git config --global url."git@github.com:".insteadOf "https://github.com/"
  ```
@@ -75,11 +118,11 @@ $ git push origin <branch>
 #### git diff - 檢視差異
 
 ```bash
-# 
+#
 git diff			#
 git diff --staged	 #
 git diff [first-branch] [second-branch]		#
-# check difference: current and stash 
+# check difference: current and stash
 git diff stash@{0} master
 
 # 輸出差異到檔案 diff.txt
@@ -115,7 +158,7 @@ git checkout master
 
 ```bash
 $ git fetch --all
-## login 
+## login
 $ git reset --hard origin/<branch_name>
 ```
 
@@ -135,7 +178,7 @@ $ git reset
 $ git reset <file>
 ```
 
-### Rebase Remote Change and Merge with Local Update 
+### Rebase Remote Change and Merge with Local Update
 
 ```bash
 $ git stash
@@ -163,7 +206,7 @@ $ git rebase --continue
 
 ```
 
-### Update Local List of Remote Branches 
+### Update Local List of Remote Branches
 ```bash
 $ git remote update origin --prune
 ## Show all local and remote branches
@@ -180,8 +223,8 @@ $ git rm -r --cached .
 ### Branch Develop then Merge to Main
 
 ```bash
-# Move/rename a branch 
-$ git branch --move --force <new_name> # or 
+# Move/rename a branch
+$ git branch --move --force <new_name> # or
 # -f, --force: Reset <branchname> to <startpoint>
 $ git branch -M <new_name>
 # switch to new-branch
@@ -191,7 +234,7 @@ $ git add -A
 $ git commit -m "commit message"
 $ git checkout master
 $ git merge new-branch
-	
+
 ```
 
 ### Compare difference between Stash and Branch Demo
@@ -221,7 +264,7 @@ git rm -rf
 
  * new empty git branch
 
-   
+
 
 
 
