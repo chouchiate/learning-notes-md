@@ -3,5 +3,6 @@
     "basedef",
     "Baudrate",
     "usbserial"
-  ]
+  ],
+  "trailing-spaces.trimOnSave": true
 }

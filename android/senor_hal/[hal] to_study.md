@@ -2,7 +2,7 @@
 
 [git](https://github.com/jaugustbrenner/Sensor_HAL.git)
 
-
+[]()
 ### Dynamic Android Sensor HAL
 [DASH](https://github.com/sonyxperiadev/DASH)
 

@@ -1,5 +1,15 @@
 ## [ARM] - macOS GCC Setup
 
+### Eclipse
+    -
+    -
+    -
+
+### XPM install
+```bash
+npm install --global xpm@latest
+```
+
 #### Using homebrew
 * Install brew cask
 ```bash
@@ -9,6 +19,7 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 * Install gcc-arm-embedded with following:
 
 ```bash
+
 $ brew install --cask gcc-arm-embedded
 ```
 
@@ -25,6 +36,10 @@ $ brew install --cask gcc-arm-embedded
 $ arm-none-eabi-gdb --version
 ```
 
+### Install FSF/GNU binutils for cross-compiling to arm-linux for MAC with homebrew
+```bash
+$ brew install arm-linux-gnueabihf-binutils
+```
 
 #### external
 * [link](https://brewinstall.org/install-gcc-arm-embedded-mac-osx/)
