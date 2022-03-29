@@ -4,15 +4,13 @@
 
 - 下載 SDK bundle
 
-- Unzip .tar.gz 
+- Unzip .tar.gz
 
-- Run script 
+- Run script
 
   ```bash
   $ ./google-cloud-sdk/install.sh
   ```
-
-  
 
 ### Install / Remove gc sdk component
 
@@ -20,16 +18,13 @@
 $ gcloud components install COMPONENT _ID
 $ gcloud components remove COMPONENT _ID
 ```
-
-
+![](../assets/img/gcloud_component.png)
 
 ### Path to rc file (default)
 
 ```bash
-$ /Users/default_user/.zshrc				
+$ /Users/default_user/.zshrc
 ```
-
-
 
 ### Init gcloud SDK
 
@@ -56,17 +51,21 @@ $ curl -o cloud_sql_proxy https://dl.google.com/cloudsql/cloud_sql_proxy.darwin.
 # Make Cloud SQL Auth Proxy executable
 $ chmod +x cloud_sql_proxy
 
-# Docker Container
+# Docker Container (not tested)
 $ docker pull gcr.io/cloudsql-docker/gce-proxy:1.21.0
-# not yet tested
+
+# install gcloud cli
+* [gcloud](https://cloud.google.com/sdk/docs/install)
 
 # execute cloud_sql_proxy
 $ ./cloud_sql_proxy -instance=<gcp_project>:<location>:<database_name>=tcp:<port>
 ```
 
-### test
+### gcloud auth login & test
 
 ```bash
+# authenticate your google account with chrome
+gcloud auth login
 # 出現成功連結後，可以使用 psql 連進 database
 psql -U postgres -h localhost -d db_name
 ```
