@@ -62,7 +62,7 @@ db.getCollection("hum-time-series").find({
 
 ```js
 db.getCollection("grpc-time-series").find({
-    "timestamp": {$gte: ISODate("2022-03-28T00:00:00Z"), $lt: ISODate("2022-03-29T01:00:00")}
+    "timestamp": {$gte: ISODate("2022-03-28T00:00:00Z"), $lt: ISODate("2022-03-29T01:00:00Z")}
 })
    .projection({})
    .sort({_id:-1})
