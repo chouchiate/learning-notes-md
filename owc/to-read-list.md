@@ -67,4 +67,9 @@ Open Dataset, and Algorithms](https://ieeexplore.ieee.org/document/8661606)
 
 * [Image-sensor-based visible light communication for automotive applications](https://ieeexplore.ieee.org/document/6852088)
 
+* [A 12-m 2.5-Gb/s Lighting Compatible Integrated Receiver for OOK Visible Light Communication Links](https://ieeexplore.ieee.org/document/7505962)
 
+* [Characterization of Light-To-Frequency Converter for
+Visible Light Communication Systems](https://www.mdpi.com/2079-9292/7/9/165)
+
+* [Design and Implementation of a Multi-Colour Visible Light Communication System Based on a Light-to-Frequency Receiver](https://www.mdpi.com/2304-6732/6/2/42)
