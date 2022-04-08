@@ -1,5 +1,92 @@
 ## [gForth] - Words List
 
+### Manual
+[doc](https://www.complang.tuwien.ac.at/forth/gforth/Docs-html/)
+
+
+---
+## Examples
+### rot
+#### Rotate Right
+rot       w1 w2 w3 – w2 w3 w1        core       “rote”
+```bash
+.s <0>  ok
+1 2 3 4 5  ok
+.s <5> 1 2 3 4 5  ok
+rot  ok
+.s <5> 1 2 4 5 3  ok
+
+```
+---
+### -rot
+#### Rotate Left
+> -rot       w1 w2 w3 – w3 w1 w2        gforth       “not-rote”
+
+```bash
+.s <5> 1 2 5 3 4  ok
+-rot  ok
+.s <5> 1 2 4 5 3  ok
+```
+### drop
+```bash
+.s <5> 1 2 3 4 5  ok
+drop  ok
+.s <4> 1 2 3 4  ok
+
+```
+### dup - duplicate
+> ?dup       w – S:... w        core       “question-dupe”
+```bash
+.s <4> 1 2 3 4  ok
+  ok
+dup  ok
+.s <5> 1 2 3 4 4  ok
+
+```
+
+### ?dup
+> ?dup       w – S:... w        core       “question-dupe”
+```bash
+.s <5> 1 2 3 4 4  ok
+?dup  ok
+.s <6> 1 2 3 4 4 4  ok
+
+```
+
+### nip
+> nip       w1 w2 – w2        core-ext       “nip”
+```bash
+.s <3> 2 4 3  ok
+nip  ok
+.s <2> 2 3  ok
+```
+
+### 2nip
+> 2nip       w1 w2 w3 w4 – w3 w4        gforth       “two-nip”
+```bash
+.s <5> 2 3 4 5 6  ok
+2nip  ok
+.s <3> 2 5 6  ok
+```
+
+### over
+> over       w1 w2 – w1 w2 w1        core       “over”
+```bash
+.s <3> 2 5 6  ok
+over  ok
+.s <4> 2 5 6 5  ok
+```
+
+### 2over
+> 2over       w1 w2 w3 w4 – w1 w2 w3 w4 w1 w2        core       “two-over”
+```bash
+.s <4> 2 5 6 5  ok
+2over  ok
+.s <6> 2 5 6 5 2 5  ok
+```
+
+### Full List
+
 disasm
 disassembler
 base-addr

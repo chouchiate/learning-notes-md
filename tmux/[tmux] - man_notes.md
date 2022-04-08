@@ -1,0 +1,3 @@
+## [tmux] - man and notes
+
+> [man](https://man.openbsd.org/OpenBSD-current/man1/tmux.1)

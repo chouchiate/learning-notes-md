@@ -1,4 +1,4 @@
-## [DP] - 後端進階 Design Pattern 
+## [DP] - 後端進階 Design Pattern
 
 ![dp](../img/design_pattern.webp)
 
@@ -11,14 +11,14 @@
   1. 在功能實踐代碼基礎上實現擴展
 
 ### Gang of four Design Patterns
-* 創建型模式 
+* 創建型模式
 * 結構型模式
 * 行為型模式
 
 ### 創建型模型
 * 給客戶端提供創建對象的方式
   1. new 一個對象, set 相關屬性 如 constructor
-* 
+*
 
 ** 簡單的工廠模式 **
 ```java

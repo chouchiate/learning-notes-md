@@ -32,13 +32,13 @@ lsof -n -i | grep LISTEN
 ### Handle - zsh compinit: insecure directories
 
 ```bash
-$ zsh compinit: insecure directories, run compaudit for list. 
-$ Ignore insecure directories and continue [y] or abort compinit [n]? 
+$ zsh compinit: insecure directories, run compaudit for list.
+$ Ignore insecure directories and continue [y] or abort compinit [n]?
 ```
 
 ```bash
-$ cd /usr/local/share/zsh 
-$ sudo chmod -R 755 ./site-functions 
+$ cd /usr/local/share/zsh
+$ sudo chmod -R 755 ./site-functions
 ```
 
 ### **List USB Ports**
@@ -79,11 +79,11 @@ ctrl+c
 ### Handle - zsh compinit: insecure directories
 
 ```bash
-$ zsh compinit: insecure directories, run compaudit for list. 
-$ Ignore insecure directories and continue [y] or abort compinit [n]? 
+$ zsh compinit: insecure directories, run compaudit for list.
+$ Ignore insecure directories and continue [y] or abort compinit [n]?
 ```
 
 ```bash
-$ cd /usr/local/share/zsh 
-$ sudo chmod -R 755 ./site-functions 
+$ cd /usr/local/share/zsh
+$ sudo chmod -R 755 ./site-functions
 ```
