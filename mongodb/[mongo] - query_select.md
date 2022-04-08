@@ -1,4 +1,7 @@
 ## Query with Projection
+
+[doc](https://www.mongodb.com/docs/manual/reference/operator/query/)
+
 ```js
 
 db.getCollection("wis-eventseries").find({
@@ -67,4 +70,42 @@ db.getCollection("grpc-time-series").find({
    .projection({})
    .sort({_id:-1})
    .limit(100)
+```
+
+### Query Not Equal (Single and Multiple)
+* Single Item
+```js
+db.getCollection("hum-time-series").find({
+    "metadata.vendorId": "SPS2021PA000228",
+    status: {$ne: 'ABNORMAL'},
+})
+   .projection({})
+   .sort({_id:-1})
+   .limit(100)
+```
+* Multiple Items
+```js
+db.getCollection("hum-time-series").find({
+    "metadata.vendorId": "SPS2021PA000228",
+    status: {$nin: ['ABNORMAL', 'NORMAL']}
+})
+   .projection({})
+   .sort({_id:-1})
+   .limit(100)
+```
+
+### Or Select
+```js
+    const event = await schema.findOne({ $or: [
+      {
+        "metadata.vendorId": vendorId,
+        "brand": brand,
+        "type": 'v2_event'
+      },
+      {
+        "metadata.vendorId": vendorId,
+        "brand": brand,
+        "type": 'v2_status'
+      },
+    ]}
 ```

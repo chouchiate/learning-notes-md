@@ -11,13 +11,13 @@ stop-mosquitto:
 	@docker stop jubox-mqtt-6 | true
 
 start-main:
-	cd server; echo "Starting Jubo-Box"; npm run start:dev; 
+	cd server; echo "Starting Jubo-Box"; npm run start:dev;
 
 start-gcp-to-local:
-	cd server; echo "Starting Gcp-to-local-sniffer"; npm run start:gcp-to-local; 	
+	cd server; echo "Starting Gcp-to-local-sniffer"; npm run start:gcp-to-local;
 
 start-gcp-to-dev:
-	cd server; echo "Starting Gcp-to-development-sniffer"; npm run start:gcp-to-dev; 	
+	cd server; echo "Starting Gcp-to-development-sniffer"; npm run start:gcp-to-dev;
 
 
 

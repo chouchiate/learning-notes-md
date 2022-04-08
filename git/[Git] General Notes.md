@@ -195,6 +195,8 @@ git stash show
 git stash show -p
 ## Show the changes of the named stash:
 git stash show -p stash@{1}
+## Show stash diff to file
+git stash show -p > ./diff.txt
 
 ## If Conflict
 $ git status

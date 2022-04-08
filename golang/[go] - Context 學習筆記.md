@@ -42,3 +42,13 @@ type Context interface {
     +
 * context.WithValue
 
+
+* defer cancel()
+    + It's best practice to use a defer cancel() immediately after calling WithCancel() or WithTimeout().
+    + the goroutine that WithCancel or WithTimeout created will be retained in memory indefinitely (until the program shuts down), causing a memory leak.
+    ```go
+        ctx, cancel := context.WithTimeout(context.Background(), _defaultConnectTimeout)
+        defer cancel()
+
+    ```
+
