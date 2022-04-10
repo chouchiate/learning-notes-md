@@ -1,18 +1,17 @@
-## 
-
+## [go] - make vs new
 new 和 make 都可以用来分配空间，初始化类型，但是它们确有不同。
 
 new(T) 返回的是 T 的指针
 new(T) 为一个 T 类型新值分配空间并将此空间初始化为 T 的零值，返回的是新值的地址，也就是 T 类型的指针 *T，该指针指向 T 的新分配的零值。
 
 p1 := new(int)
-fmt.Printf("p1 --> %#v \n ", p1) //(*int)(0xc42000e250) 
+fmt.Printf("p1 --> %#v \n ", p1) //(*int)(0xc42000e250)
 fmt.Printf("p1 point to --> %#v \n ", *p1) //0
 
 var p2 *int
 i := 0
 p2 = &i
-fmt.Printf("p2 --> %#v \n ", p2) //(*int)(0xc42000e278) 
+fmt.Printf("p2 --> %#v \n ", p2) //(*int)(0xc42000e278)
 fmt.Printf("p2 point to --> %#v \n ", *p2) //0
 上面的代码是等价的，new(int) 将分配的空间初始化为 int 的零值，也就是 0，并返回 int 的指针，这和直接声明指针并初始化的效果是相同的。
 
@@ -41,7 +40,7 @@ m2 := make(map[int]string)
 if m2 == nil {
     fmt.Printf("m2 is nil --> %#v \n ", m2)
 } else {
-    fmt.Printf("m2 is not nill --> %#v \n ", m2) map[int]string{} 
+    fmt.Printf("m2 is not nill --> %#v \n ", m2) map[int]string{}
 }
 
 
@@ -79,7 +78,7 @@ func modifyChan(c chan string) {
 
 m2 := make(map[int]string)
 if m2 == nil {
-    fmt.Printf("m2 is nil --> %#v \n ", m2) 
+    fmt.Printf("m2 is nil --> %#v \n ", m2)
 } else {
     fmt.Printf("m2 is not nill --> %#v \n ", m2) //map[int]string{}
 }

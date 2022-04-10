@@ -1,4 +1,4 @@
-## [Golang] - Language Specification 學習筆記
+## [go] - Language Specification 學習筆記
 
 #### Lexical elements
 

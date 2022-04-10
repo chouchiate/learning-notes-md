@@ -1,6 +1,6 @@
-## [Golang] - gRPC 學習筆記
+## [go] - gRPC 學習筆記
 
-#### Test Grpc with Grpcurl
+### **Test Grpc with Grpcurl**
 ```bash
   brew install grpcurl
 
@@ -16,4 +16,19 @@ grpcurl -d '{"basic": {"deviceModelName":"id_MzA6QUU6QTQ6RTM6RUI6MjQ","timestamp
 
 ```
 
+### **Install buf**
+```make
+# https://docs.buf.build/installation#homebrew
+install-buf-on-mac:
+	brew tap bufbuild/buf
+	brew install buf
+```
 
+### **Install protoc-gen-go**
+```make
+# https://docs.buf.build/tour/generate-go-code#install-plugins
+install-protoc-gen-go:
+	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+```

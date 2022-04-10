@@ -49,12 +49,10 @@ id_xmss
   ssh -T git@gitlab.xxx-yyy.zzzz
 ```
 
-<<<<<<< HEAD
 ### Detail Ssh Debug
 ```bash
 ssh -Tvvv git@gitlab.xxx-yyy.zzzz
 ```
-=======
 ### 重開機時有時候會 lose ssh info (kept in cache)
 ```bash
 # 重新加 ssh key
@@ -62,7 +60,6 @@ ssh -Tvvv git@gitlab.xxx-yyy.zzzz
 ```
 
 ### Debug message
->>>>>>> 375caed (add 03-29-2022)
 ```bash
 wakabas-MacBook-Pro:.ssh wakabapubbu$ ssh -Tvvv git@gitlab.xxx-yyy.zzzz
 OpenSSH_7.9p1, LibreSSL 2.7.3
@@ -145,21 +142,18 @@ debug3: receive packet: type 21
 debug1: SSH2_MSG_NEWKEYS received
 debug2: set_newkeys: mode 0
 debug1: rekey after 134217728 blocks
-<<<<<<< HEAD
 debug1: Will attempt key: wakaba@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
 debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_rsa
 debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_dsa
 debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ecdsa
 debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_ed25519
 debug1: Will attempt key: /Users/wakabapubbu/.ssh/id_xmss
-=======
 debug1: Will attempt key: derick@zzzz.xxx RSA SHA256:VLf6RzDpqglgFGwNYH8gWBPl8WPmb1aDG/ntqFyTs7s agent
 debug1: Will attempt key: /Users/derickchou/.ssh/id_rsa
 debug1: Will attempt key: /Users/derickchou/.ssh/id_dsa
 debug1: Will attempt key: /Users/derickchou/.ssh/id_ecdsa
 debug1: Will attempt key: /Users/derickchou/.ssh/id_ed25519
 debug1: Will attempt key: /Users/derickchou/.ssh/id_xmss
->>>>>>> 375caed (add 03-29-2022)
 debug2: pubkey_prepare: done
 debug3: send packet: type 5
 debug3: receive packet: type 7
@@ -284,11 +278,8 @@ debug3: fd 1 is not O_NONBLOCK
 Transferred: sent 2728, received 2832 bytes, in 0.1 seconds
 Bytes per second: sent 29733.9, received 30867.5
 debug1: Exit status 0
-<<<<<<< HEAD
 wakabas-MacBook-Pro:.ssh wakabapubbu$
-=======
 Dericks-MacBook-Pro:.ssh derickchou$
->>>>>>> 375caed (add 03-29-2022)
 ```
 
 

@@ -83,7 +83,7 @@ git config --global --edit
 git config --global --list
 ```
 
-### Config Remote Path Replace `git://` with `https://`
+### Config Remote Path Replace `git://` with `https://` (use SSH)
 ```bash
 git config --global url.git@gitlab.xxx.com:.insteadOf https://gitlab.xxx.com/
 ```

@@ -154,30 +154,30 @@ idf.py -p PORT [-b BAUD] flash
 ```bash
 Adding "set-target"'s dependency "fullclean" to list of commands with default set of options.
 Executing action: fullclean
-Build directory '/Users/jubo/esp/hello_world/build' not found. Nothing to clean.
+Build directory '/Users/coco/esp/hello_world/build' not found. Nothing to clean.
 Executing action: set-target
 Set Target to: esp32, new sdkconfig created. Existing sdkconfig renamed to sdkconfig.old.
-Running cmake in directory /Users/jubo/esp/hello_world/build
-Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /Users/jubo/esp/hello_world"...
+Running cmake in directory /Users/coco/esp/hello_world/build
+Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /Users/coco/esp/hello_world"...
 -- Found Git: /opt/homebrew/bin/git (found version "2.35.1")
 
 -- The C compiler identification is GNU 8.4.0
 -- The CXX compiler identification is GNU 8.4.0
 -- The ASM compiler identification is GNU
--- Found assembler: /Users/jubo/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+-- Found assembler: /Users/coco/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /Users/jubo/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc - skipped
+-- Check for working C compiler: /Users/coco/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Users/jubo/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ - skipped
+-- Check for working CXX compiler: /Users/coco/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Project is not inside a git repository, or git repository has no commits; will not use 'git describe' to determine PROJECT_VER.
 -- Building ESP-IDF components for target esp32
--- Project sdkconfig file /Users/jubo/esp/hello_world/sdkconfig
+-- Project sdkconfig file /Users/coco/esp/hello_world/sdkconfig
 -- Looking for sys/types.h
 -- Looking for sys/types.h - found
 -- Looking for stdint.h
@@ -186,25 +186,25 @@ Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DESP_PLATFORM=1 -DIDF_TARGET=
 -- Looking for stddef.h - found
 -- Check size of time_t
 -- Check size of time_t - done
--- Found Python3: /Users/jubo/.espressif/python_env/idf5.0_py3.8_env/bin/python (found version "3.8.9") found components: Interpreter
+-- Found Python3: /Users/coco/.espressif/python_env/idf5.0_py3.8_env/bin/python (found version "3.8.9") found components: Interpreter
 -- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
 -- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
 -- App "hello_world" version: 1
--- Adding linker script /Users/jubo/esp/hello_world/build/esp-idf/esp_system/ld/memory.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-time.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Adding linker script /Users/coco/esp/hello_world/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-time.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
 -- Components: app_trace app_update asio bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp32 esp_adc_cal esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_netif esp_phy esp_pm esp_ringbuf esp_rom esp_serial_slave_link esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freemodbus freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mdns mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport tinyusb ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
--- Component paths: /Users/jubo/esp/esp-idf/components/app_trace /Users/jubo/esp/esp-idf/components/app_update /Users/jubo/esp/esp-idf/components/asio /Users/jubo/esp/esp-idf/components/bootloader /Users/jubo/esp/esp-idf/components/bootloader_support /Users/jubo/esp/esp-idf/components/bt /Users/jubo/esp/esp-idf/components/cmock /Users/jubo/esp/esp-idf/components/console /Users/jubo/esp/esp-idf/components/cxx /Users/jubo/esp/esp-idf/components/driver /Users/jubo/esp/esp-idf/components/efuse /Users/jubo/esp/esp-idf/components/esp-tls /Users/jubo/esp/esp-idf/components/esp32 /Users/jubo/esp/esp-idf/components/esp_adc_cal /Users/jubo/esp/esp-idf/components/esp_common /Users/jubo/esp/esp-idf/components/esp_eth /Users/jubo/esp/esp-idf/components/esp_event /Users/jubo/esp/esp-idf/components/esp_gdbstub /Users/jubo/esp/esp-idf/components/esp_hid /Users/jubo/esp/esp-idf/components/esp_http_client /Users/jubo/esp/esp-idf/components/esp_http_server /Users/jubo/esp/esp-idf/components/esp_https_ota /Users/jubo/esp/esp-idf/components/esp_https_server /Users/jubo/esp/esp-idf/components/esp_hw_support /Users/jubo/esp/esp-idf/components/esp_lcd /Users/jubo/esp/esp-idf/components/esp_local_ctrl /Users/jubo/esp/esp-idf/components/esp_netif /Users/jubo/esp/esp-idf/components/esp_phy /Users/jubo/esp/esp-idf/components/esp_pm /Users/jubo/esp/esp-idf/components/esp_ringbuf /Users/jubo/esp/esp-idf/components/esp_rom /Users/jubo/esp/esp-idf/components/esp_serial_slave_link /Users/jubo/esp/esp-idf/components/esp_system /Users/jubo/esp/esp-idf/components/esp_timer /Users/jubo/esp/esp-idf/components/esp_wifi /Users/jubo/esp/esp-idf/components/espcoredump /Users/jubo/esp/esp-idf/components/esptool_py /Users/jubo/esp/esp-idf/components/fatfs /Users/jubo/esp/esp-idf/components/freemodbus /Users/jubo/esp/esp-idf/components/freertos /Users/jubo/esp/esp-idf/components/hal /Users/jubo/esp/esp-idf/components/heap /Users/jubo/esp/esp-idf/components/http_parser /Users/jubo/esp/esp-idf/components/idf_test /Users/jubo/esp/esp-idf/components/ieee802154 /Users/jubo/esp/esp-idf/components/json /Users/jubo/esp/esp-idf/components/log /Users/jubo/esp/esp-idf/components/lwip /Users/jubo/esp/hello_world/main /Users/jubo/esp/esp-idf/components/mbedtls /Users/jubo/esp/esp-idf/components/mdns /Users/jubo/esp/esp-idf/components/mqtt /Users/jubo/esp/esp-idf/components/newlib /Users/jubo/esp/esp-idf/components/nvs_flash /Users/jubo/esp/esp-idf/components/openthread /Users/jubo/esp/esp-idf/components/partition_table /Users/jubo/esp/esp-idf/components/perfmon /Users/jubo/esp/esp-idf/components/protobuf-c /Users/jubo/esp/esp-idf/components/protocomm /Users/jubo/esp/esp-idf/components/pthread /Users/jubo/esp/esp-idf/components/sdmmc /Users/jubo/esp/esp-idf/components/soc /Users/jubo/esp/esp-idf/components/spi_flash /Users/jubo/esp/esp-idf/components/spiffs /Users/jubo/esp/esp-idf/components/tcp_transport /Users/jubo/esp/esp-idf/components/tinyusb /Users/jubo/esp/esp-idf/components/ulp /Users/jubo/esp/esp-idf/components/unity /Users/jubo/esp/esp-idf/components/usb /Users/jubo/esp/esp-idf/components/vfs /Users/jubo/esp/esp-idf/components/wear_levelling /Users/jubo/esp/esp-idf/components/wifi_provisioning /Users/jubo/esp/esp-idf/components/wpa_supplicant /Users/jubo/esp/esp-idf/components/xtensa
+-- Component paths: /Users/coco/esp/esp-idf/components/app_trace /Users/coco/esp/esp-idf/components/app_update /Users/coco/esp/esp-idf/components/asio /Users/coco/esp/esp-idf/components/bootloader /Users/coco/esp/esp-idf/components/bootloader_support /Users/coco/esp/esp-idf/components/bt /Users/coco/esp/esp-idf/components/cmock /Users/coco/esp/esp-idf/components/console /Users/coco/esp/esp-idf/components/cxx /Users/coco/esp/esp-idf/components/driver /Users/coco/esp/esp-idf/components/efuse /Users/coco/esp/esp-idf/components/esp-tls /Users/coco/esp/esp-idf/components/esp32 /Users/coco/esp/esp-idf/components/esp_adc_cal /Users/coco/esp/esp-idf/components/esp_common /Users/coco/esp/esp-idf/components/esp_eth /Users/coco/esp/esp-idf/components/esp_event /Users/coco/esp/esp-idf/components/esp_gdbstub /Users/coco/esp/esp-idf/components/esp_hid /Users/coco/esp/esp-idf/components/esp_http_client /Users/coco/esp/esp-idf/components/esp_http_server /Users/coco/esp/esp-idf/components/esp_https_ota /Users/coco/esp/esp-idf/components/esp_https_server /Users/coco/esp/esp-idf/components/esp_hw_support /Users/coco/esp/esp-idf/components/esp_lcd /Users/coco/esp/esp-idf/components/esp_local_ctrl /Users/coco/esp/esp-idf/components/esp_netif /Users/coco/esp/esp-idf/components/esp_phy /Users/coco/esp/esp-idf/components/esp_pm /Users/coco/esp/esp-idf/components/esp_ringbuf /Users/coco/esp/esp-idf/components/esp_rom /Users/coco/esp/esp-idf/components/esp_serial_slave_link /Users/coco/esp/esp-idf/components/esp_system /Users/coco/esp/esp-idf/components/esp_timer /Users/coco/esp/esp-idf/components/esp_wifi /Users/coco/esp/esp-idf/components/espcoredump /Users/coco/esp/esp-idf/components/esptool_py /Users/coco/esp/esp-idf/components/fatfs /Users/coco/esp/esp-idf/components/freemodbus /Users/coco/esp/esp-idf/components/freertos /Users/coco/esp/esp-idf/components/hal /Users/coco/esp/esp-idf/components/heap /Users/coco/esp/esp-idf/components/http_parser /Users/coco/esp/esp-idf/components/idf_test /Users/coco/esp/esp-idf/components/ieee802154 /Users/coco/esp/esp-idf/components/json /Users/coco/esp/esp-idf/components/log /Users/coco/esp/esp-idf/components/lwip /Users/coco/esp/hello_world/main /Users/coco/esp/esp-idf/components/mbedtls /Users/coco/esp/esp-idf/components/mdns /Users/coco/esp/esp-idf/components/mqtt /Users/coco/esp/esp-idf/components/newlib /Users/coco/esp/esp-idf/components/nvs_flash /Users/coco/esp/esp-idf/components/openthread /Users/coco/esp/esp-idf/components/partition_table /Users/coco/esp/esp-idf/components/perfmon /Users/coco/esp/esp-idf/components/protobuf-c /Users/coco/esp/esp-idf/components/protocomm /Users/coco/esp/esp-idf/components/pthread /Users/coco/esp/esp-idf/components/sdmmc /Users/coco/esp/esp-idf/components/soc /Users/coco/esp/esp-idf/components/spi_flash /Users/coco/esp/esp-idf/components/spiffs /Users/coco/esp/esp-idf/components/tcp_transport /Users/coco/esp/esp-idf/components/tinyusb /Users/coco/esp/esp-idf/components/ulp /Users/coco/esp/esp-idf/components/unity /Users/coco/esp/esp-idf/components/usb /Users/coco/esp/esp-idf/components/vfs /Users/coco/esp/esp-idf/components/wear_levelling /Users/coco/esp/esp-idf/components/wifi_provisioning /Users/coco/esp/esp-idf/components/wpa_supplicant /Users/coco/esp/esp-idf/components/xtensa
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/jubo/esp/hello_world/build
+-- Build files have been written to: /Users/coco/esp/hello_world/build
 ```
 
 ### Menu Config
@@ -218,28 +218,28 @@ Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DESP_PLATFORM=1 -DIDF_TARGET=
 
 ```bash
 Executing action: all (aliases: build)
-Running ninja in directory /Users/jubo/esp/hello_world/build
+Running ninja in directory /Users/coco/esp/hello_world/build
 Executing "ninja all"...
 [0/1] Re-running CMake...
 -- Project is not inside a git repository, or git repository has no commits; will not use 'git describe' to determine PROJECT_VER.
 -- Building ESP-IDF components for target esp32
--- Project sdkconfig file /Users/jubo/esp/hello_world/sdkconfig
+-- Project sdkconfig file /Users/coco/esp/hello_world/sdkconfig
 -- App "hello_world" version: 1
--- Adding linker script /Users/jubo/esp/hello_world/build/esp-idf/esp_system/ld/memory.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-time.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Adding linker script /Users/coco/esp/hello_world/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-time.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
 -- Components: app_trace app_update asio bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp32 esp_adc_cal esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_netif esp_phy esp_pm esp_ringbuf esp_rom esp_serial_slave_link esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freemodbus freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mdns mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport tinyusb ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
--- Component paths: /Users/jubo/esp/esp-idf/components/app_trace /Users/jubo/esp/esp-idf/components/app_update /Users/jubo/esp/esp-idf/components/asio /Users/jubo/esp/esp-idf/components/bootloader /Users/jubo/esp/esp-idf/components/bootloader_support /Users/jubo/esp/esp-idf/components/bt /Users/jubo/esp/esp-idf/components/cmock /Users/jubo/esp/esp-idf/components/console /Users/jubo/esp/esp-idf/components/cxx /Users/jubo/esp/esp-idf/components/driver /Users/jubo/esp/esp-idf/components/efuse /Users/jubo/esp/esp-idf/components/esp-tls /Users/jubo/esp/esp-idf/components/esp32 /Users/jubo/esp/esp-idf/components/esp_adc_cal /Users/jubo/esp/esp-idf/components/esp_common /Users/jubo/esp/esp-idf/components/esp_eth /Users/jubo/esp/esp-idf/components/esp_event /Users/jubo/esp/esp-idf/components/esp_gdbstub /Users/jubo/esp/esp-idf/components/esp_hid /Users/jubo/esp/esp-idf/components/esp_http_client /Users/jubo/esp/esp-idf/components/esp_http_server /Users/jubo/esp/esp-idf/components/esp_https_ota /Users/jubo/esp/esp-idf/components/esp_https_server /Users/jubo/esp/esp-idf/components/esp_hw_support /Users/jubo/esp/esp-idf/components/esp_lcd /Users/jubo/esp/esp-idf/components/esp_local_ctrl /Users/jubo/esp/esp-idf/components/esp_netif /Users/jubo/esp/esp-idf/components/esp_phy /Users/jubo/esp/esp-idf/components/esp_pm /Users/jubo/esp/esp-idf/components/esp_ringbuf /Users/jubo/esp/esp-idf/components/esp_rom /Users/jubo/esp/esp-idf/components/esp_serial_slave_link /Users/jubo/esp/esp-idf/components/esp_system /Users/jubo/esp/esp-idf/components/esp_timer /Users/jubo/esp/esp-idf/components/esp_wifi /Users/jubo/esp/esp-idf/components/espcoredump /Users/jubo/esp/esp-idf/components/esptool_py /Users/jubo/esp/esp-idf/components/fatfs /Users/jubo/esp/esp-idf/components/freemodbus /Users/jubo/esp/esp-idf/components/freertos /Users/jubo/esp/esp-idf/components/hal /Users/jubo/esp/esp-idf/components/heap /Users/jubo/esp/esp-idf/components/http_parser /Users/jubo/esp/esp-idf/components/idf_test /Users/jubo/esp/esp-idf/components/ieee802154 /Users/jubo/esp/esp-idf/components/json /Users/jubo/esp/esp-idf/components/log /Users/jubo/esp/esp-idf/components/lwip /Users/jubo/esp/hello_world/main /Users/jubo/esp/esp-idf/components/mbedtls /Users/jubo/esp/esp-idf/components/mdns /Users/jubo/esp/esp-idf/components/mqtt /Users/jubo/esp/esp-idf/components/newlib /Users/jubo/esp/esp-idf/components/nvs_flash /Users/jubo/esp/esp-idf/components/openthread /Users/jubo/esp/esp-idf/components/partition_table /Users/jubo/esp/esp-idf/components/perfmon /Users/jubo/esp/esp-idf/components/protobuf-c /Users/jubo/esp/esp-idf/components/protocomm /Users/jubo/esp/esp-idf/components/pthread /Users/jubo/esp/esp-idf/components/sdmmc /Users/jubo/esp/esp-idf/components/soc /Users/jubo/esp/esp-idf/components/spi_flash /Users/jubo/esp/esp-idf/components/spiffs /Users/jubo/esp/esp-idf/components/tcp_transport /Users/jubo/esp/esp-idf/components/tinyusb /Users/jubo/esp/esp-idf/components/ulp /Users/jubo/esp/esp-idf/components/unity /Users/jubo/esp/esp-idf/components/usb /Users/jubo/esp/esp-idf/components/vfs /Users/jubo/esp/esp-idf/components/wear_levelling /Users/jubo/esp/esp-idf/components/wifi_provisioning /Users/jubo/esp/esp-idf/components/wpa_supplicant /Users/jubo/esp/esp-idf/components/xtensa
+-- Component paths: /Users/coco/esp/esp-idf/components/app_trace /Users/coco/esp/esp-idf/components/app_update /Users/coco/esp/esp-idf/components/asio /Users/coco/esp/esp-idf/components/bootloader /Users/coco/esp/esp-idf/components/bootloader_support /Users/coco/esp/esp-idf/components/bt /Users/coco/esp/esp-idf/components/cmock /Users/coco/esp/esp-idf/components/console /Users/coco/esp/esp-idf/components/cxx /Users/coco/esp/esp-idf/components/driver /Users/coco/esp/esp-idf/components/efuse /Users/coco/esp/esp-idf/components/esp-tls /Users/coco/esp/esp-idf/components/esp32 /Users/coco/esp/esp-idf/components/esp_adc_cal /Users/coco/esp/esp-idf/components/esp_common /Users/coco/esp/esp-idf/components/esp_eth /Users/coco/esp/esp-idf/components/esp_event /Users/coco/esp/esp-idf/components/esp_gdbstub /Users/coco/esp/esp-idf/components/esp_hid /Users/coco/esp/esp-idf/components/esp_http_client /Users/coco/esp/esp-idf/components/esp_http_server /Users/coco/esp/esp-idf/components/esp_https_ota /Users/coco/esp/esp-idf/components/esp_https_server /Users/coco/esp/esp-idf/components/esp_hw_support /Users/coco/esp/esp-idf/components/esp_lcd /Users/coco/esp/esp-idf/components/esp_local_ctrl /Users/coco/esp/esp-idf/components/esp_netif /Users/coco/esp/esp-idf/components/esp_phy /Users/coco/esp/esp-idf/components/esp_pm /Users/coco/esp/esp-idf/components/esp_ringbuf /Users/coco/esp/esp-idf/components/esp_rom /Users/coco/esp/esp-idf/components/esp_serial_slave_link /Users/coco/esp/esp-idf/components/esp_system /Users/coco/esp/esp-idf/components/esp_timer /Users/coco/esp/esp-idf/components/esp_wifi /Users/coco/esp/esp-idf/components/espcoredump /Users/coco/esp/esp-idf/components/esptool_py /Users/coco/esp/esp-idf/components/fatfs /Users/coco/esp/esp-idf/components/freemodbus /Users/coco/esp/esp-idf/components/freertos /Users/coco/esp/esp-idf/components/hal /Users/coco/esp/esp-idf/components/heap /Users/coco/esp/esp-idf/components/http_parser /Users/coco/esp/esp-idf/components/idf_test /Users/coco/esp/esp-idf/components/ieee802154 /Users/coco/esp/esp-idf/components/json /Users/coco/esp/esp-idf/components/log /Users/coco/esp/esp-idf/components/lwip /Users/coco/esp/hello_world/main /Users/coco/esp/esp-idf/components/mbedtls /Users/coco/esp/esp-idf/components/mdns /Users/coco/esp/esp-idf/components/mqtt /Users/coco/esp/esp-idf/components/newlib /Users/coco/esp/esp-idf/components/nvs_flash /Users/coco/esp/esp-idf/components/openthread /Users/coco/esp/esp-idf/components/partition_table /Users/coco/esp/esp-idf/components/perfmon /Users/coco/esp/esp-idf/components/protobuf-c /Users/coco/esp/esp-idf/components/protocomm /Users/coco/esp/esp-idf/components/pthread /Users/coco/esp/esp-idf/components/sdmmc /Users/coco/esp/esp-idf/components/soc /Users/coco/esp/esp-idf/components/spi_flash /Users/coco/esp/esp-idf/components/spiffs /Users/coco/esp/esp-idf/components/tcp_transport /Users/coco/esp/esp-idf/components/tinyusb /Users/coco/esp/esp-idf/components/ulp /Users/coco/esp/esp-idf/components/unity /Users/coco/esp/esp-idf/components/usb /Users/coco/esp/esp-idf/components/vfs /Users/coco/esp/esp-idf/components/wear_levelling /Users/coco/esp/esp-idf/components/wifi_provisioning /Users/coco/esp/esp-idf/components/wpa_supplicant /Users/coco/esp/esp-idf/components/xtensa
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/jubo/esp/hello_world/build
+-- Build files have been written to: /Users/coco/esp/hello_world/build
 [3/1203] Generating ../../partition_table/partition-table.bin
 Partition table binary generated. Contents:
 *******************************************************************************
@@ -254,19 +254,19 @@ factory,app,factory,0x10000,1M,
 -- The C compiler identification is GNU 8.4.0
 -- The CXX compiler identification is GNU 8.4.0
 -- The ASM compiler identification is GNU
--- Found assembler: /Users/jubo/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+-- Found assembler: /Users/coco/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /Users/jubo/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc - skipped
+-- Check for working C compiler: /Users/coco/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Users/jubo/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ - skipped
+-- Check for working CXX compiler: /Users/coco/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Building ESP-IDF components for target esp32
--- Project sdkconfig file /Users/jubo/esp/hello_world/sdkconfig
+-- Project sdkconfig file /Users/coco/esp/hello_world/sdkconfig
 -- Looking for sys/types.h
 -- Looking for sys/types.h - found
 -- Looking for stdint.h
@@ -275,18 +275,18 @@ factory,app,factory,0x10000,1M,
 -- Looking for stddef.h - found
 -- Check size of time_t
 -- Check size of time_t - done
--- Adding linker script /Users/jubo/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
--- Adding linker script /Users/jubo/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
+-- Adding linker script /Users/coco/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
 -- Components: bootloader bootloader_support efuse esp32 esp_common esp_hw_support esp_rom esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
--- Component paths: /Users/jubo/esp/esp-idf/components/bootloader /Users/jubo/esp/esp-idf/components/bootloader_support /Users/jubo/esp/esp-idf/components/efuse /Users/jubo/esp/esp-idf/components/esp32 /Users/jubo/esp/esp-idf/components/esp_common /Users/jubo/esp/esp-idf/components/esp_hw_support /Users/jubo/esp/esp-idf/components/esp_rom /Users/jubo/esp/esp-idf/components/esp_system /Users/jubo/esp/esp-idf/components/esptool_py /Users/jubo/esp/esp-idf/components/freertos /Users/jubo/esp/esp-idf/components/hal /Users/jubo/esp/esp-idf/components/log /Users/jubo/esp/esp-idf/components/bootloader/subproject/main /Users/jubo/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /Users/jubo/esp/esp-idf/components/newlib /Users/jubo/esp/esp-idf/components/partition_table /Users/jubo/esp/esp-idf/components/soc /Users/jubo/esp/esp-idf/components/spi_flash /Users/jubo/esp/esp-idf/components/xtensa
+-- Component paths: /Users/coco/esp/esp-idf/components/bootloader /Users/coco/esp/esp-idf/components/bootloader_support /Users/coco/esp/esp-idf/components/efuse /Users/coco/esp/esp-idf/components/esp32 /Users/coco/esp/esp-idf/components/esp_common /Users/coco/esp/esp-idf/components/esp_hw_support /Users/coco/esp/esp-idf/components/esp_rom /Users/coco/esp/esp-idf/components/esp_system /Users/coco/esp/esp-idf/components/esptool_py /Users/coco/esp/esp-idf/components/freertos /Users/coco/esp/esp-idf/components/hal /Users/coco/esp/esp-idf/components/log /Users/coco/esp/esp-idf/components/bootloader/subproject/main /Users/coco/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /Users/coco/esp/esp-idf/components/newlib /Users/coco/esp/esp-idf/components/partition_table /Users/coco/esp/esp-idf/components/soc /Users/coco/esp/esp-idf/components/spi_flash /Users/coco/esp/esp-idf/components/xtensa
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/jubo/esp/hello_world/build/bootloader
+-- Build files have been written to: /Users/coco/esp/hello_world/build/bootloader
 [668/1203] Performing build step for 'bootloader'
 [1/98] Generating project_elf_src_esp32.c
 [2/98] Building C object CMakeFiles/bootloader.elf.dir/project_elf_src_esp32.c.obj
@@ -389,19 +389,19 @@ esptool.py v3.3-dev
 Creating esp32 image...
 Merged 1 ELF section
 Successfully created esp32 image.
-Generated /Users/jubo/esp/hello_world/build/bootloader/bootloader.bin
-[98/98] cd /Users/jubo/esp/hello_world/build/bootloader/esp-idf/esptool_py && /Users/jubo/.espressif/python_env/idf5.0_py3.8_env/bin/python /Users/jubo/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/jubo/esp/hello_world/build/bootloader/bootloader.bin
+Generated /Users/coco/esp/hello_world/build/bootloader/bootloader.bin
+[98/98] cd /Users/coco/esp/hello_world/build/bootloader/esp-idf/esptool_py && /Users/coco/.espressif/python_env/idf5.0_py3.8_env/bin/python /Users/coco/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/coco/esp/hello_world/build/bootloader/bootloader.bin
 Bootloader binary size 0x65c0 bytes. 0xa40 bytes (9%) free.
 [1202/1203] Generating binary image from built executable
 esptool.py v3.3-dev
 Creating esp32 image...
 Merged 2 ELF sections
 Successfully created esp32 image.
-Generated /Users/jubo/esp/hello_world/build/hello_world.bin
-[1203/1203] cd /Users/jubo/esp/hello_world/build/esp-id...e.bin /Users/jubo/esp/hello_world/build/hello_world.bin
+Generated /Users/coco/esp/hello_world/build/hello_world.bin
+[1203/1203] cd /Users/coco/esp/hello_world/build/esp-id...e.bin /Users/coco/esp/hello_world/build/hello_world.bin
 hello_world.bin binary size 0x2b5e0 bytes. Smallest app partition is 0x100000 bytes. 0xd4a20 bytes (83%) free.
 
 Project build complete. To flash, run this command:
-/Users/jubo/.espressif/python_env/idf5.0_py3.8_env/bin/python ../esp-idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/hello_world.bin
+/Users/coco/.espressif/python_env/idf5.0_py3.8_env/bin/python ../esp-idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/hello_world.bin
 or run 'idf.py -p (PORT) flash'
 ```
