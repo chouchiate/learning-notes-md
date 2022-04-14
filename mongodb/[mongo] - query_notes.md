@@ -1,6 +1,8 @@
-## Query with Projection
+## [mongo] - Query Notes
 
 [doc](https://www.mongodb.com/docs/manual/reference/operator/query/)
+
+### Query with Projection
 
 ```js
 
@@ -16,7 +18,7 @@ db.getCollection("wis-eventseries").find({
    .limit(100)
 ```
 
-## Query Object within Object then Flatten by Projection
+### Query Object within Object then Flatten by Projection
 ```js
 db.getCollection("mwg-time-series").find({
     'metadata.vendorId': 'B8F009B55AB0'
@@ -30,7 +32,7 @@ db.getCollection("mwg-time-series").find({
    .limit(100)
 ```
 
-## Get Counts
+### Get Counts
 ```js
 db.getCollection("mwg-time-series").find({
     'metadata.vendorId': 'B8F009B55AB0'
@@ -44,7 +46,7 @@ db.getCollection("mwg-time-series").find({
 
 ```
 
-## Query resporitory rate
+### Query resporitory rate
 ```js
 db.getCollection("hum-time-series").find({
     "metadata.vendorId": "SPS2021PA000163",
@@ -108,4 +110,16 @@ db.getCollection("hum-time-series").find({
         "type": 'v2_status'
       },
     ]}
+```
+
+
+
+### Interfacing
+> [github](https://github.com/tylerbrock/mongo-hacker)
+```js
+// may not work.. have to try
+db.collection.find({ ... }).update({ ... }) -- multi update
+db.collection.find({ ... }).replace({ ... }) -- single replacement
+db.collection.find({ ... }).upsert({ ... }) -- single upsert
+db.collection.find({ ... }).remove() -- multi remove
 ```

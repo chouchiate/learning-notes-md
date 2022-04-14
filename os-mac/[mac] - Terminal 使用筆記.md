@@ -8,6 +8,15 @@
 ctrl+c
 ```
 
+### Get Current path
+```bash
+% pwd
+```
+### Move file from One folder to another
+```bash
+% mv ~/Desktop/esp_mem_map.png ~/Programming/learning-notes-md/assets/img/esp_mem_map.png
+
+```
 ### 查詢目前使用中的 port 及 process id
 ```bash
 lsof -n -i | grep LISTEN
