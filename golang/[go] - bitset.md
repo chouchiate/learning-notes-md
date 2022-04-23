@@ -23,10 +23,31 @@ func main() {
         fmt.Println(i, Has(b, flag))
     }
 }
+/*
+0 true
+1 false
+2 true
+*/
 ```
 
 #### **large bitset**
-
+[github](github.com/yourbasic/bit)
 ```go
-
+// Sieve of Eratosthenes
+import (
+    "github.com/yourbasic/bit"
+)
+const n = 50
+sieve := bit.New().AddRange(2, n)
+sqrtN := int(math.Sqrt(n))
+for p := 2; p <= sqrtN; p = sieve.Next(p) {
+    for k := p * p; k < n; k += p {
+        sieve.Delete(k)
+    }
+}
+fmt.Println(sieve)
+/*
+    Output
+    {2 3 5 7 11 13 17 19 23 29 31 37 41 43 47}
+*/
 ```

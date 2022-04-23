@@ -20,7 +20,7 @@ A series of independent components/stages in which complete specific task in a s
 
 ​	Data can be sent from one goroutine and received by another goroutine using channels.
 
-#### Goroutines: 
+#### Goroutines:
 
 ​	Lightweight thread.
 

@@ -1,0 +1,2 @@
+## [vscode] - Tricks Notes
+

@@ -47,3 +47,4 @@ func (c *CreateCollectionOptions) SetTimeSeriesOptions(timeSeriesOpts *TimeSerie
       SetTimeField("event_time"),
   )
 ```
+

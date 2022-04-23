@@ -111,6 +111,68 @@ fmt.Println(xType, xValue)  // "[]int [1 2 3]
 ```
 
 
+### Interface Embed (Inheritance)
+```go
+package main
+
+import (
+    "fmt"
+)
+
+type People interface {
+    GetName() string
+    GetAge() int
+}
+
+type Student interface {
+    People  //embed
+    GetScore() int
+    GetSchool() string
+}
+
+type StudentImpl struct {
+    name string
+    age int
+    score int
+    school string
+}
+
+func NewStudent() Student {
+    var s = new(StudentImpl)
+    s.name = "Jack"
+    s.age = 18
+    s.score = 100
+    s.school = "HighSchool"
+    return s
+}
+
+func (a *StudentImpl) GetName() string {
+    return a.name
+}
+
+func (a *StudentImpl) GetAge() int {
+    return a.age
+}
+
+func (a *StudentImpl) GetScore() int {
+    return a.score
+}
+
+func (a *StudentImpl) GetSchool() string {
+    return a.school
+}
+
+
+func main() {
+    var a = NewStudent()
+    fmt.Println(a.GetName())
+    fmt.Println(a.GetAge())
+    fmt.Println(a.GetScore())
+    fmt.Println(a.GetSchool())
+}
+```
+
+### Interface 多形
 
 
 
