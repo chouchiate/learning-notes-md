@@ -10,7 +10,10 @@ $ git config --global alias.st status
 
 > Goodies
 ```bash
-$ git config --global alias.gs git status --untracked-files
+# git status 
+$ git config --global alias.gs status --untracked-files
+# git add and commit
+$ git config --global alias.gac git add . && git commit -m '
 
 ```
 
