@@ -1,5 +1,12 @@
 ## [go] - Slice  & Map 筆記
 
+### Intro
+[godev](https://go.dev/blog/slices-intro)
+
+> A slice is a descriptor of an array segment. It consists of a pointer to the array, the length of the segment, and its capacity (the maximum length of the segment).
+
+
+
 > 標準程式庫 sort 的 sort.Slice 函式用法。 可以接收任何一種slice。用來排序slice的函式。
 ```go
 type Person struct {
