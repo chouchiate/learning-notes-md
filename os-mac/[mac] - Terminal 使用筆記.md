@@ -1,5 +1,23 @@
 ## [Mac] - Terminal 使用筆記
 
+
+### Use asciinema
+* [docs](https://asciinema.org/docs/getting-started)
+```bash
+# to install
+$ brew install asciinema
+
+# to record
+$ asciinema rec
+
+# to manage
+$ asciinema auth
+
+```
+* configured at [config](https://asciinema.org/docs/config)
+```bash
+$HOME/.config/asciinema/config
+```
 ### Live PID List
 
 ```bash

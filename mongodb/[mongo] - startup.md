@@ -112,4 +112,17 @@ restart-persistent-mongo: stop-persistent-mongo
 		mongo:5.0-focal
 
 
+stop-mongo:
+	@echo "stop mongo..."
+	@docker stop box-persistent-mongo | true
+
+start-mongo: stop-mongo
+	@mkdir -p $(PERSISTENT_MONGO_PATH)
+	@echo "start persistent mongo..."
+	@docker run -d --rm --name box-persistent-mongo \
+		-p $(PERSISTENT_MONGO_PORT):27017 \
+		-v $(PERSISTENT_MONGO_PATH):/data/db \
+		mongo:5.0-focal
+
+
 ```

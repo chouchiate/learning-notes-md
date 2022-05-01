@@ -52,3 +52,6 @@ type Context interface {
 
     ```
 
+## withTimeout
+
+

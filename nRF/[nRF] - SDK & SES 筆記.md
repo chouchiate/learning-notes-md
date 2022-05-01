@@ -1,15 +1,62 @@
 ## **nRF SDK & Segger (SES) 筆記**
 
+## Segger IDE Installation Tutorial
+*
+[installing-ses-nordic-edition](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/gs_installing.html#installing-ses-nordic-edition)
+
+```bash
+$
+# Install homebrew
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# install dependencies
+$ brew install cmake ninja gperf python3 ccache qemu dtc
+
+```
+
+## Install GN meta-build system
+* [gn-googlesource](https://gn.googlesource.com/gn/)
+* [matter](https://csa-iot.org/all-solutions/matter/)
+
+```bash
+# make folder
+$ mkdir ${HOME}/gn && cd ${HOME}/gn
+# install wget
+$ brew install wget
+# download and extract gn binary archive
+$ wget -O gn.zip https://chrome-infra-packages.appspot.com/dl/gn/gn/mac-amd64/+/latest
+unzip gn.zip
+rm gn.zip
+# add to path
+code ~/.bash_profile
+echo 'export PATH=${HOME}/gn:"$PATH"' >> ${HOME}/.bash_profile
+source ${HOME}/.bash_profile
+
+# install west
+$ pip3 install west
+# use west
+$ west --help
+
+```
+
+### Initialize West
+* To clone repositories
+  1. create folder `ncs`, this folder holds all nRF Connect SDK repositories
+  2. Identify revision to work (release-note)[https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/release_notes.html#release-notes]
+  3.
+```bash
+
+```
+
 * SoftDevice S112
   * Memory-optimized peripheral-only BLE protocol stack for
     * nRF52805
     * nRF52810
     * nRF52811
     * nRF52820
-    * nRF52832 
+    * nRF52832
 
 * SoftDevice S113
-  * Memory-optimized peripheral-only BLE protocol stack for 
+  * Memory-optimized peripheral-only BLE protocol stack for
     * nRF52805
     * nRF52810
     * nRF52811
@@ -26,7 +73,7 @@
     * nRF52840
 
 * SoftDevice S132
-  * high-performance central and peripheral BLE protocol stack for 
+  * high-performance central and peripheral BLE protocol stack for
     * nRF52810
     * nRF52832
 
@@ -74,12 +121,12 @@
 
 #### **Iot SDK**
 
-  * 
+  *
 
 
 #### **AWS Related**
 
-  * AWS Nordic BLE 
+  * AWS Nordic BLE
 
     [aws-nordic](https://docs.aws.amazon.com/freertos/latest/userguide/getting_started_nordic.html)
 
@@ -97,7 +144,7 @@
     * keep reset button pressed while ***powering up / starting up DK*** until LED5 blinks
 
 #### **Virtual COM port**
-  * 
+  *
 
 
 #### **Segger Embedded Studio**
