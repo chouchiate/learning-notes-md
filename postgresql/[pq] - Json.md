@@ -4,7 +4,7 @@
 
 #### Query / Select Data inside JSON
 
-* detail JSON 
+* detail JSON
 ```json
 {
   "status": 4,
@@ -16,7 +16,7 @@
 ```sql
 SELECT *
 	FROM public.detections
-	WHERE box_device_id LIKE 'wis%' 
+	WHERE box_device_id LIKE 'wis%'
 	AND detail->>'status' = '4'
 	AND detail->>'heartRate' = '0'
 	ORDER BY occurred_at LIMIT 100;

@@ -1,3 +1,27 @@
+## [pg] - indexes
+
+
+### What is an Index
+* A redundant data structure
+* Invisible to application
+* Designed to speed up data selection based on certain criteria
+### Type of Indexes
+
+* B-Tree
+    - comparison (<   <=   =   >=   >)
+* Hash Index
+    - equality (=)
+* GIN Index (Generalized Inverted Index)
+    - <@   @>   =   &&
+    - appropriate for data values that contain multiple component values, such as arrays.
+* GiST (Generalized Search Tree)
+    - <<   &<   &>   >>   <<|   &<|   |&>   |>>   @>   <@   ~=   &&
+* SP-GiST
+    - <<   >>   ~=   <@   <<|   |>>
+    - non-balanced disk-based data structures, such as quadtrees, k-d trees, and radix trees (tries).
+* BRIN
+* R-tree Index
+* Bitmap
 ### 讀取 Table 所有的 Index
 
 ```sql
@@ -9,6 +33,7 @@ FROM
 WHERE
     tablename = 'detections';
 ```
+
 
 ### 讀取 'c' 開頭名稱 Table 的所有 Index
 ```sql
@@ -34,8 +59,8 @@ DROP INDEX title_idx;
 ```sql
 CREATE INDEX idx_composite ON detections (device_id, box_device_id, patient_id, updated_at DESC);
 ```
-### Update composite index 
-> Create composite index to 
+### Update composite index
+> Create composite index to
 ```sql
 CREATE INDEX idx_composite ON detections (box_device_id ASC, occurred_at DESC);
 ```

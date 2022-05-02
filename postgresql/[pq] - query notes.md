@@ -1,4 +1,14 @@
-## [PostgreSql] - SQL 學習筆記
+## [PostgreSql] - postgreSQL query notes
+
+
+#### **Time Range**
+
+```sql
+SELECT id, device_id, occurred_at, created_at, loc, loc_detail
+	FROM public.events
+	where occurred_at BETWEEN '2022-04-27' AND '2022-04-28';
+
+```
 
 #### **CREATE EXTENSION**
 
@@ -44,7 +54,7 @@
 
  ```sql
   CREATE MATERIALIZED VIEW current_space_device AS
-  SELECT 
+  SELECT
    current.*,
    patients.sex,
    patients.first_name,
@@ -52,7 +62,7 @@
    patients.id_number,
    patients.status,
    patients.provider_patient_id
-  FROM(  
+  FROM(
    SELECT spaces.id AS space_id,
      spaces.name AS space_name,
      spaces.branch,
@@ -76,7 +86,7 @@
    current.room = patients.room AND
    current.bed = patients.bed AND
    current.organization_id = patients.organization_id;
-   
+
  ```
 
 #### **查找已移除設備心路歷程**
@@ -89,20 +99,20 @@
   SELECT DISTINCT
    detections.box_device_id,
    detections.space_id
-  FROM 
+  FROM
    public.detections
-  JOIN 
+  JOIN
    public.current_space_device
-  ON 
+  ON
    current_space_device.box_device_id = detections.box_device_id
-  AND 
+  AND
    current_space_device.space_id::text != detections.space_id;
  ```
 
 ![](../assets/img/sql_001.png)
 
 * 將上一個 subquery JOIN detections 篩選出已已移除設備的 detections
- 
+
   ```sql
  SELECT *
  FROM public.detections
@@ -116,7 +126,7 @@
   AND current_space_device.space_id::text != detections.space_id
  ) AS relics
  ON relics.rel_space_id = detections.space_id
- AND relics.rel_box_device_id = detections.box_device_id  
+ AND relics.rel_box_device_id = detections.box_device_id
 
   ```
 
@@ -159,7 +169,7 @@ GROUP BY rt.box_device_id, rt.space_id, rt.patient_id;
 * 最後 在重新將 detections table JOIN 篩選最後一筆 detections 紀錄
 
 ```sql
-SELECT 
+SELECT
  dt.*
 FROM public.detections AS dt
 JOIN(
@@ -170,7 +180,7 @@ JOIN(
  MAX(rt.updated_at) AS last_updated_at
  FROM (
   SELECT *
-  FROM public.detections 
+  FROM public.detections
   INNER JOIN (
    SELECT DISTINCT
     detections.box_device_id AS rel_box_device_id,
@@ -199,7 +209,7 @@ AND rl.last_updated_at <= dt.updated_at
 
 ```sql
 CREATE MATERIALIZED VIEW current_space_relic AS
-SELECT 
+SELECT
  dt.*
 FROM public.detections AS dt
 JOIN(
@@ -210,7 +220,7 @@ JOIN(
  MAX(rt.updated_at) AS last_updated_at
  FROM (
   SELECT *
-  FROM public.detections 
+  FROM public.detections
   INNER JOIN (
    SELECT DISTINCT
     detections.box_device_id AS rel_box_device_id,
@@ -245,7 +255,7 @@ AND rl.last_updated_at <= dt.updated_at
 
 ```sql
   CREATE MATERIALIZED VIEW detections_latest AS
-SELECT 
+SELECT
 	spa.organization_id,
 	ld.*
 FROM public.spaces AS spa
@@ -320,15 +330,15 @@ ORDER BY box_device_id, occurred_at DESC
 
 #### Create Index Using btree
 ```sql
-  CREATE INDEX 
-    idx_occurred_time 
-  ON 
-    public.detections 
-  USING 
+  CREATE INDEX
+    idx_occurred_time
+  ON
+    public.detections
+  USING
     btree (occurred_at);
 ```
 
-#### Show all indexes of a table 
+#### Show all indexes of a table
 ```sql
 SELECT
 	indexname,
