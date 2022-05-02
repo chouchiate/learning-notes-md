@@ -127,8 +127,8 @@ CREATE TABLE test (
 );
 ---
 INSERT INTO test
-SELECT 
-	id, 
+SELECT
+	id,
 	floor(RANDOM() * 21) + 1 as user_id,
 	RANDOM() * id as ts
 FROM generate_series(1, 1000000) as id;
@@ -137,7 +137,7 @@ FROM generate_series(1, 1000000) as id;
 總共 1000000 個資料點
 */
 ---
-SELECT * 
+SELECT *
 FROM test
 LIMIT 10
 ```
