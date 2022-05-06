@@ -1,8 +1,6 @@
 ## [pg] - create table insert data
 
-
-
-### 建立測試用 100,000 筆, 3 種 patient_state, 6 種 patient_state_detail,
+### 建立測試用 random data 100,000 筆, 3 種 patient_state, 6 種 patient_state_detail, occurred_at 範圍 (2022-01-10 10:00:00 ~ 2022-01-20 20:00:00)
 ```sql
 DROP TABLE IF EXISTS test;
 CREATE TABLE test (
@@ -41,6 +39,11 @@ SELECT
 
 FROM generate_series(1, 30000) as id;
 
+```
+
+### Generate random md5
+```sql
+SELECT generate_series(1,10) AS id, md5(random()::text) AS descr;
 ```
 
 ### 建立測試用 100,000 筆 random ts 給 21 個 user_id

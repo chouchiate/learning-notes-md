@@ -3,15 +3,15 @@
 ### Merge with Master
 
 ```bash
-$ git log --oneline  
+$ git log --oneline
 
 3db89aa (HEAD) add patient_record
 
-8aacd46 (origin/master, origin/HEAD, master) Update NIS_ORIGIN 
+8aacd46 (origin/master, origin/HEAD, master) Update NIS_ORIGIN
 
 ac7c70c update prod DB_DBNAME in Makefile
 
-5fa0e3a check login 
+5fa0e3a check login
 ```
 
 * You are in 'detached HEAD' state.
@@ -40,7 +40,7 @@ $ git log --oneline
 
 ac7c70c update prod DB_DBNAME in Makefile
 
-5fa0e3a check login 
+5fa0e3a check login
 ```
 
 

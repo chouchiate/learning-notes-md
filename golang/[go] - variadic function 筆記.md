@@ -4,8 +4,8 @@
 
 ![](https://miro.medium.com/max/2000/1*VmY8owzjVTYfyfMgbIJ1eQ.png)
 
-* Simple Variadic Function 
-  - 這個 func 輸入 slice of strings, 回傳用 space 分開的 string 
+* Simple Variadic Function
+  - 這個 func 輸入 slice of strings, 回傳用 space 分開的 string
 ```go
 func toFullname(names ...string) string {
   return strings.Join(names, " ")
@@ -23,7 +23,7 @@ toFullname()
 ```
 
 ### 何時使用 Variadic Func?
-* 簡化需要建立 temp slice 來傳給 func 
+* 簡化需要建立 temp slice 來傳給 func
 * 當輸入 param 數量不確定時
 * 易讀性 表現 func 功能
 
@@ -36,7 +36,7 @@ toFullname()
   fmt.Println("hello")
   fmt.Println()
 ```
-### non-variadic Prinln
+### non-variadic Println
 ```go
   // declaration
   func Println(params []interface{})
@@ -110,7 +110,7 @@ toFullname(names[:]...)
 > variadic func 和量子力學一樣有 spooky action
 ```go
 // 傳一個已建
-dennis := []string{"dennis", "ritchie"}
+dennis := []string{"dennis", "richie"}
 toFullname(dennis...)
 
 ```
