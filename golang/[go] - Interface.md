@@ -174,7 +174,47 @@ func main() {
 
 ### Interface 多形
 
+* Interfacing a type
+```go
 
+type ReliableInfo struct {
+	Data     interface{}
+	Reliable bool
+}
+
+func (h *humetricsProcessor) sampleHeartbeat(datas repository.DataList) (*repository.ReliableInfo, error) {
+	var hb *heartbeat
+	breathDatas := datas.SelectByType(_humetricsHeartbeatType)
+	if len(breathDatas) == 0 {
+		return nil, errNoData
+	}
+	// we just sampling the most recent data to backend
+	// the data array has been sorted, so we just take the first
+	recentData := breathDatas[0]
+	var ret heartbeat
+	if err := recentData.UnmarshalPayload(&ret); err != nil {
+		return nil, err
+	// we sampling first data for measurement
+	d := breathDatas[0]
+	if err := d.UnmarshalPayload(&hb); err != nil {
+		return nil, errNoData
+	}
+
+	return &ret, nil
+	// check if measurement is from _ALP to consider to be reliable
+	if hb.StatusType == _ALP {
+		return &repository.ReliableInfo{
+			Data:     hb,
+			Reliable: true,
+		}, nil
+	} else {
+		return &repository.ReliableInfo{
+			Data:     hb,
+			Reliable: false,
+		}, nil
+	}
+}
+```
 
 
 

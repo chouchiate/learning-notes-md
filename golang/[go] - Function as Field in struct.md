@@ -3,7 +3,7 @@
 #### Syntax
 ```go
 type function_name func()
-type strcut_name struct{
+type struct_name struct{
   var_name  function_name
 }
 ```
@@ -12,26 +12,26 @@ type strcut_name struct{
 // Go program to illustrate the function
 // as a field in Go structure
 package main
-  
+
 import "fmt"
-  
+
 // Finalsalary of function type
 type Finalsalary func(int, int) int
-  
+
 // Creating structure
 type Author struct {
     name      string
     language  string
     Marticles int
     Pay       int
-  
+
     // Function as a field
     salary Finalsalary
 }
-  
+
 // Main method
 func main() {
-  
+
     // Initializing the fields
     // of the structure
     result := Author{
@@ -43,7 +43,7 @@ func main() {
             return Ma * pay
         },
     }
-  
+
     // Display values
     fmt.Println("Author's Name: ", result.name)
     fmt.Println("Language: ", result.language)
@@ -67,9 +67,9 @@ Total salary:  60000
 // as a field in Go structure
 // Using anonymous function
 package main
-  
+
 import "fmt"
-  
+
 // Creating structure
 type Author struct {
     name      string
@@ -78,10 +78,10 @@ type Author struct {
     Particles int
     Pending   func(int, int) int
 }
-  
+
 // Main method
 func main() {
-  
+
     // Initializing the fields
     // of the structure
     result := Author{
@@ -93,15 +93,15 @@ func main() {
             return Ta - Pa
         },
     }
-  
+
     // Display values
     fmt.Println("Author's Name: ", result.name)
     fmt.Println("Language: ", result.language)
     fmt.Println("Total number of articles: ", result.Tarticles)
-      
+
     fmt.Println("Total number of published articles: ",
                                       result.Particles)
-      
+
     fmt.Println("Pending articles: ", result.Pending(result.Tarticles,
                                                    result.Particles))
 }

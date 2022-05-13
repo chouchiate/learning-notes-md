@@ -167,3 +167,77 @@ static void ble_dfu_buttonless_evt_handler(ble_dfu_buttonless_evt_type_t event)
     }
 }
 ```
+* services_init()
+```
+/**@brief Function for initializing services that will be used by the application.
+ */
+static void services_init(void)
+{
+    ret_code_t         err_code;
+    ble_lbs_init_t     init     = {0};
+    nrf_ble_qwr_init_t qwr_init = {0};
+
+    // Initialize Queued Write Module.
+    qwr_init.error_handler = nrf_qwr_error_handler;
+
+    err_code = nrf_ble_qwr_init(&m_qwr, &qwr_init);
+    APP_ERROR_CHECK(err_code);
+
+    // Initialize LBS.
+    init.led_write_handler = led_write_handler;
+
+    err_code = ble_lbs_init(&m_lbs, &init);
+    APP_ERROR_CHECK(err_code);
+
+    // Initialize the DFU service
+    ble_dfu_buttonless_init_t dfus_init =
+    {
+        .evt_handler = ble_dfu_buttonless_evt_handler
+    };
+    err_code = ble_dfu_buttonless_init(&dfus_init);
+    APP_ERROR_CHECK(err_code);
+}
+```
+* main()
+```
+/**@brief Function for application main entry.
+ */
+int main(void)
+{
+    ret_code_t err_code;
+
+    // Initialize.
+    log_init();
+
+    // Initialize the async SVCI interface to bootloader before any interrupts are enabled.
+    err_code = ble_dfu_buttonless_async_svci_init();
+    APP_ERROR_CHECK(err_code);
+
+    leds_init();
+    timers_init();
+    buttons_init();
+    power_management_init();
+    ble_stack_init();
+    gap_params_init();
+    gatt_init();
+    services_init();
+    advertising_init();
+    conn_params_init();
+
+    // Start execution.
+    NRF_LOG_INFO("Blinky example started.");
+    advertising_start();
+
+    // Enter main loop.
+    for (;;)
+    {
+        idle_state_handle();
+    }
+}
+```
+
+### Generating the private-public key pair used for signing the firmware image
+
+```
+nrfutil keys generate private.key
+```

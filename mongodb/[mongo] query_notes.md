@@ -112,8 +112,6 @@ db.getCollection("hum-time-series").find({
     ]}
 ```
 
-
-
 ### Interfacing
 > [github](https://github.com/tylerbrock/mongo-hacker)
 ```js
@@ -122,4 +120,78 @@ db.collection.find({ ... }).update({ ... }) -- multi update
 db.collection.find({ ... }).replace({ ... }) -- single replacement
 db.collection.find({ ... }).upsert({ ... }) -- single upsert
 db.collection.find({ ... }).remove() -- multi remove
+```
+
+### Aggregate Queries
+* Sample documents
+```doc
+    #1. Type: "Like", value: 6, id: 123
+    #2. Type: "Like", value: 7, id: 123
+    #3. Type: "Like", value: 7, id: 123
+    #4. Type: "Like", value: 8, id: 12345
+    #5. Type: "Like", value: 7, id: 12345
+    #6. Type: "Like", value: 6, id: 1234
+    #7. Type: "Like", value: 2, id: 1234
+    #7. Type: "Like", value: 2, id: 1234
+    #7. Type: "Like", value: 2, id: 1234
+```
+* Expected output
+```
+1. id: 123
+2. id: 12345
+3. id: 1234
+```
+* query #1
+```js
+    db.data.aggregate([
+        {$match: {value:{$gt:5}}},
+        {$group: {'_id':"$id", num:{$sum:1}, avg:{$avg:"$value"}}},
+        {$sort:{num:-1}}, { $limit : 50}
+    ]);
+```
+* query #2
+```js
+db.getCollection('my_collection').aggregate([
+    //Only include documents whose field named "value" is greater than 5
+    {
+        $match: {
+            value: {
+                $gt:5
+            }
+        }
+    },
+    //Using the documents gathered from the $match above, create a new set of
+    // documents grouped by the "id" field, and use the "id" field as the "_id"
+    // for the group. Make a new field called "num" that increments by 1 for
+    // every matching document. Make a new field named "avg" that is the average
+    // of the field named "value".
+    {
+        $group: {
+            '_id' : "$id",
+            num : {
+                $sum : 1
+            },
+            avg : {
+                $avg : "$value"
+            }
+        }//end $group
+    },
+    // -- //
+    // Note: you could do another $match here, which would run on the new
+    // documents created by $group.
+    // -- //
+    //Sort the new documents by the "num" field in descending order
+    {
+        $sort : {
+            num : -1
+        }
+    },
+    //Only return the first 3 of the new documents
+    {
+        $limit : 3
+    }
+])
+Share
+Improve this answer
+
 ```
