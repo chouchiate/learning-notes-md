@@ -2,7 +2,6 @@
 
 * ESP IDE
 * ESP OS
-* Arduinno
 * ESP Examples
 
 #### **Installation**
