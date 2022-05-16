@@ -1,7 +1,17 @@
 ## [esp] - ESP32 targets Info
 
-[site](https://www.espressif.com/en/products/modules)
+* [site](https://www.espressif.com/en/products/modules)
+* [technical-documents](https://www.espressif.com/en/support/documents/technical-documents)
+* [product-select](https://products.espressif.com/#/product-selector?names=)
+* [about-matter](https://www.espressif.com/en/news/Matter_on_ESP32)
+* [c2-support-matter](https://www.cnx-software.com/2022/04/25/esp32-c2-wifi-bluetooth-le-5-0-chip-to-support-matter-wifi-protocol/?__s=9gyyfm3xezuc4koaedf4&utm_source=drip&utm_medium=email&utm_campaign=Bluetooth+Industry+Report+%5BApril+29%2C+2022%5D&utm_content=Bluetooth+Industry+Report+%5BApril+29%2C+2022%5D)
+* [how-to-matter](https://blog.espressif.com/announcing-matter-previously-chip-on-esp32-84164316c0e3)
+* [module-difference](https://docs.espressif.com/projects/esp-at/en/release-v2.2.0.0_esp32c3/Compile_and_Develop/How_to_understand_the_differences_of_each_type_of_module.html)
+* [AT-binary-list](https://docs.espressif.com/projects/esp-at/en/latest/esp32/AT_Binary_Lists/index.html)
+* [what-is-PSRAM](https://www.jedec.org/standards-documents/dictionary/terms/pseudostatic-random-access-memory-psram)
 
+### ESP32 development versions (suffix: N8 vs. N8R2 vs. N8R8)
+* [reddit](https://www.reddit.com/r/esp32/comments/tsti9n/esp32_development_versions_suffix_n8_vs_n8r2_vs/)
 ### **ESP32**
 > 32-bit MCU & 2.4 GHz Wi-Fi & Bluetooth/Bluetooth LE
 
