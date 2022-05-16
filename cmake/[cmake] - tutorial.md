@@ -8,3 +8,7 @@
 
 > CMake has three data types: string, list, and a target with properties. make has one: string;
 
+
+
+### external
+[tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)

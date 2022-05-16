@@ -1,4 +1,8 @@
-## [esp] - idf.py command line tool
+## [esp] - iot development framework
+### toolchain setup
+[doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#get-started-set-up-env)
+
+### idf.py notes
 * idf.py is a CMake wrapper
 * Manage following tools
     1. CMake - configure projects to build
@@ -16,6 +20,10 @@
 
 * Should run in ESP-IDF project directory
     - with CMakeList.txt
+
+
+### idf build system
+[doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#)
 
 ### idf.py commands
 * idf.py --help
@@ -40,13 +48,16 @@
 * idf.py monitor
     * display serial output from the target
     * -p set port name option
-    * more info [idf-monitor](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html)
+   api-guides/tools/idf-monitor.html)
 
 
 ### Use CMake Directly
 
 
 
+
+### idf monitor
+ * more info [idf-monitor](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/
 
 ### external
 * [github](https://github.com/espressif/esp-idf)

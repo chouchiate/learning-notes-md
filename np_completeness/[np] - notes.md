@@ -1,7 +1,7 @@
-[np] - 
+[np] -
 
 ** P Class Problem
-> A problem which can be solved on polynomial time 
+> A problem which can be solved on polynomial time
 >   * All sorting and searching algorithms
 >   * verified and solved in polynomial time; easy to solve and verified
 >   * trackable problem

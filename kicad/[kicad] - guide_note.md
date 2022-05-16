@@ -1,8 +1,8 @@
-
+## [kicad] - learning guide
 * [pcb-new-part1](https://www.pcbway.com/blog/PCB_Design_Layout/Layout_In_Pcbnew.html)
 * [pcb-new-part2](https://www.pcbway.com/blog/PCB_Design_Layout/Layout_In_Pcbnew_____part_2.html)
 
-## Footprint Creation
+### Footprint Creation
 
 ```
 F.CrtYd, T:0.05mm, @-2.05
@@ -10,7 +10,7 @@ F.Silk, T:0.12mm, @-1.8
 F.Fab, T:0.1mm, @-1.75
 ```
 
-### 
+###
 
 ## Layout to Gerber
 
