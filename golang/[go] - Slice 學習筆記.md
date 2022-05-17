@@ -180,3 +180,34 @@ func main() {
     */
 }
 ```
+
+### go v1.18 experimental solution for slice object key value look up
+[doc](https://pkg.go.dev/golang.org/x/exp/slices#IndexFunc)
+[appleboy](https://blog.wu-boy.com/2022/02/golang-1-18-generics-constraints-slices-maps/)
+```go
+package main
+
+import (
+	"fmt"
+
+	"golang.org/x/exp/slices"
+)
+
+type Config struct {
+	Key   string
+	Value string
+}
+
+func main() {
+	var myconfig = []Config{
+		{Key: "foo", Value: "bar"},
+		{Key: "key1", Value: "test"},
+		{Key: "web/key1", Value: "test2"},
+	}
+
+	idx := slices.IndexFunc(myconfig, func(c Config) bool { return c.Key == "key1" })
+
+	fmt.Println(idx)
+}
+
+```

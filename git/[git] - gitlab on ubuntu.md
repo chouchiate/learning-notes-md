@@ -7,8 +7,6 @@
 * basic firewall
 * 2 CPU core with > 8GB RAM
 
-
-
 1. Install Dependencies
 ```bash
 $ sudo apt update

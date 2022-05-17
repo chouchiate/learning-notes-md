@@ -30,7 +30,7 @@ Grpc Server-->Grpc Client: UpdateResp
 }
 ```
 
-### Event Detail 
+### Event Detail
 
 |            Operation             |  EventDetail Name  |    EventDetail Message    |
 | :------------------------------: | :----------------: | :-----------------------: |
@@ -122,7 +122,7 @@ Grpc Server-->Grpc Client: UpdateResp
 	timestamp: '2020-12-10T09:48:09.440Z',
 	bed_report_detail: {
 		senior: {
-			patient_id: 'bfd78e77-c89e-488a-8db0-a859df1543a0'		
+			patient_id: 'bfd78e77-c89e-488a-8db0-a859df1543a0'
 		},
 		location: {
 			facility_id: '',
@@ -130,7 +130,7 @@ Grpc Server-->Grpc Client: UpdateResp
 			bed: 'A',
 			position: '',
 			floor: '',
-			area: ''		
+			area: ''
 		},
 		sleep_start_at: '2020-07-20T03:01:40.000Z'
 		sleep_end_at: '2020-07-21T13:01:40.000Z'

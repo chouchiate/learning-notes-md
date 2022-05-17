@@ -6,7 +6,7 @@
 
 
 
-以 __jubox.proto__ 為例 
+以 __jubox.proto__ 為例
 
 ```sequence
 Grpc Nodejs->Grpc Golang: Grpc Message
@@ -43,9 +43,9 @@ message NewDeviceRegister {
 
 message SystemEvent {
     uint32 transaction_no = 1;
-    string timestamp = 2;       
+    string timestamp = 2;
     Affiliation affiliation = 3;
-    string device_id = 4;      
+    string device_id = 4;
     EventDetail sys_event_detail = 5;
 }
 
@@ -74,13 +74,13 @@ message BedReport {
 }
 
 message BedReportDetail {
-    string sleep_start_time = 1;     
-    string sleep_end_time = 2;        
-    uint32 sleep_latency = 3;      
+    string sleep_start_time = 1;
+    string sleep_end_time = 2;
+    uint32 sleep_latency = 3;
     float sleep_effectiveness = 4;
-    uint32 turn_over_cnt = 5;       
-    uint32 not_in_bed_cnt = 6;      
-    uint32 not_in_bed_time = 7;        
+    uint32 turn_over_cnt = 5;
+    uint32 not_in_bed_cnt = 6;
+    uint32 not_in_bed_time = 7;
 }
 
 message FallEvent {
@@ -111,12 +111,12 @@ message UpdateResp {
 
 * Bidirectional stream
 
-  
+
 
 ### 改用 @grpc/grpc-js 起源
 
 * 官方 **grpc/grpc-node** 通知 **April, 2021** 將 **Deprecated** 建議改用 **@grpc/grpc-js**
-* grpc/grpc-node 無 **TS** 支援  
+* grpc/grpc-node 無 **TS** 支援
 * 含 **TS: optional** 以及 **Grpc: oneofs** 的型別特別容易出現 **undefined Error**
 
 ### 探索
@@ -134,7 +134,7 @@ message UpdateResp {
 
 * 試用搭配 devDependencies: **grpc-tools** and **grpc_tools_node_protoc_ts**
 
-  
+
 
   ### Package.json
 
@@ -229,7 +229,7 @@ const defaultBedEvent:BedEventType = {
 
 const BedEventGrpcAdaptee = (bedEvent:BedEventType):BedEvent => {
     const { transactionNo, deviceId, eventDetail, timestamp } = bedEvent
-    
+
     let bedEventGrpc = new BedEvent()
                         .setDeviceId((deviceId!==undefined)?
                                         deviceId:'')
@@ -255,7 +255,7 @@ export {
 }
 ```
 
-### Jubox Grpc Implementation 
+### Jubox Grpc Implementation
 
 ```typescript
 const updateBedEvent = (bedEvent:MwgEvents) => {
@@ -324,5 +324,5 @@ const handleBedUnaryUpdate = (bedUpdate:BedEventType|BedReportType):Promise<Upda
 
 
 
-​		
+​
 
