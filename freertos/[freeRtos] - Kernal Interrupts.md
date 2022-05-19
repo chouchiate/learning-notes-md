@@ -1,4 +1,4 @@
-## [FreeRtos] - Kernal Interrupts
+## [FreeRtos] - Kernel Interrupts
 
 #### SVC Interrupt
 
@@ -37,5 +37,5 @@
       vTaskStartScheduler()
       // port.c
       vPortStartScheduler()
-      
+
     ```

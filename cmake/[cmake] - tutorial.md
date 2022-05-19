@@ -166,6 +166,25 @@ make[2]: *** [CMakeFiles/Tutorial.dir/tutorial.cxx.o] Error 1
 make[1]: *** [CMakeFiles/Tutorial.dir/all] Error 2
 make: *** [all] Error 2
 ```
+* fixes (what did i do wrong)
+    - change CMakeLists.txt
+        - project(Tutorial) to project(Tutorial VERSION 1.0)
+
+* run executable again
+```bash
+$ ./Tutorial 12345
+The square root of 12345 is 111.108
+$ ./Tutorial
+# the version number is now reported when running the executable without any arguments
+./Tutorial Version 1.0
+Usage: ./Tutorial number
+
+```
+
+### Step 2 - Adding a Library
+
+
+
 ### external
 
 * [tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
