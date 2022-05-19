@@ -1,7 +1,5 @@
 ## [freertos] - FreeRTOSConfig.h
 
-
-
 ### configUSE_PREEMPTION
 * 1: use the preemptive RTOS scheduler
 * 0: use the cooperative RTOS scheduler
@@ -11,7 +9,81 @@
 
 [api](https://www.freertos.org/a00110.html#configUSE_PORT_OPTIMISED_TASK_SELECTION)
 
-* Default
+### configUSE_TICK_HOOK
+
+[api](https://www.freertos.org/a00110.html#configUSE_TICK_HOOK)
+
+### configCHECK_FOR_STACK_OVERFLOW
+
+[api](https://www.freertos.org/a00110.html#configCHECK_FOR_STACK_OVERFLOW)
+### configUSE_MALLOC_FAILED_HOOK
+
+[api](https://www.freertos.org/a00110.html#configUSE_PORT_OPTIMISED_TASK_SELECTION)
+
+
+### FreeRTOS port interrupt handlers map to CMSIS standards
+* need to remove SVC_Handler, PendSV_Handler, SysTick_Handler from CMSIS Core source (ie. stm32l4xx_it.c)
+```c
+/* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
+standard names. */
+#define vPortSVCHandler SVC_Handler
+#define xPortPendSVHandler PendSV_Handler
+#define xPortSysTickHandler SysTick_Handler
+```
+### STM32CubeIDE Method
+* remove manually or by device integration tool (*.ioc)
+* System Core > NVIC > Code Generation, un-check:
+    - System service call via SWI instruction
+    - Pendable request for system service
+    - Time base: System tick timer
+
+![](//assets/img/)
+
+### Remove Manually
+```c
+// stm32l4xx_it.c
+/**
+  * @brief This function handles System service call via SWI instruction.
+  */
+void SVC_Handler(void)
+{
+  /* USER CODE BEGIN SVCall_IRQn 0 */
+
+  /* USER CODE END SVCall_IRQn 0 */
+  /* USER CODE BEGIN SVCall_IRQn 1 */
+
+  /* USER CODE END SVCall_IRQn 1 */
+}
+
+/**
+  * @brief This function handles Pendable request for system service.
+  */
+void PendSV_Handler(void)
+{
+  /* USER CODE BEGIN PendSV_IRQn 0 */
+
+  /* USER CODE END PendSV_IRQn 0 */
+  /* USER CODE BEGIN PendSV_IRQn 1 */
+
+  /* USER CODE END PendSV_IRQn 1 */
+}
+/**
+  * @brief This function handles System tick timer.
+  */
+void SysTick_Handler(void)
+{
+  /* USER CODE BEGIN SysTick_IRQn 0 */
+
+  /* USER CODE END SysTick_IRQn 0 */
+  HAL_IncTick();
+  /* USER CODE BEGIN SysTick_IRQn 1 */
+
+  /* USER CODE END SysTick_IRQn 1 */
+}
+```
+
+
+### FREERTOS_CONFIG_H Default
 ```c
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
