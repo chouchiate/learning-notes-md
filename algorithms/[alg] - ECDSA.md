@@ -141,6 +141,10 @@ Secret Key for the Bob is : 9
 
 * The order n of the base point G **must be prime** (2, 3, 5, 7, 11, 13, 17, 19, 23, 29 ... and so on)
 
+### rfc6979 highlights
+* 2.4 - Signature generation:
+    Following steps are applied
+* 3.2 Generation of k
 
 
 ### Elliptic curve point multiplication
@@ -149,3 +153,41 @@ Secret Key for the Bob is : 9
 * point multiplication is defined as
     - repeated addition of a point along that curve
     - denote as nP = P + P + P + ... + P
+
+* Point operations:
+    - Point negation (fig. 3)
+    - Point addition (fig. 1)
+    - Point doubling (fig. 2, 4)
+
+    ![](../assets/img/ECClines.svg.png)
+
+    * Point at infinity
+        + point at infinity O, is the identity element of elliptic curve arithmetic
+        + add any point to O result that point
+        ```
+         O + P = P
+         O + O = O
+        ```
+    * Point negation
+        + same x coordinate but different y, asymmetric
+        ```
+        P + (-P) = O
+        ```
+    * Point Addition
+        + with 2 distinct points, P & Q, result point R on E
+        ```
+        P + Q = R
+        ```
+    * Point Doubling
+
+
+* Point multiplication
+    - Double-and-add method
+    - Windowed method
+    - Sliding-window method
+    - w-ary non-adjacent form (wNAF) method
+
+
+### external
+* DSA and ECDSA deterministic generation [rfc6979](https://datatracker.ietf.org/doc/html/rfc6979)
+* HMAC: keyed-hashing for message authentication [rfc2104](https://datatracker.ietf.org/doc/html/rfc2104)
