@@ -9,6 +9,7 @@
 * [module-difference](https://docs.espressif.com/projects/esp-at/en/release-v2.2.0.0_esp32c3/Compile_and_Develop/How_to_understand_the_differences_of_each_type_of_module.html)
 * [AT-binary-list](https://docs.espressif.com/projects/esp-at/en/latest/esp32/AT_Binary_Lists/index.html)
 * [what-is-PSRAM](https://www.jedec.org/standards-documents/dictionary/terms/pseudostatic-random-access-memory-psram)
+* [PSRAM spec](https://www.espressif.com/sites/default/files/documentation/esp-psram64_esp-psram64h_datasheet_en.pdf)
 * [iot-solution](https://github.com/espressif/esp-iot-solution)
 ### ESP32 development versions (suffix: N8 vs. N8R2 vs. N8R8)
 * [reddit](https://www.reddit.com/r/esp32/comments/tsti9n/esp32_development_versions_suffix_n8_vs_n8r2_vs/)
