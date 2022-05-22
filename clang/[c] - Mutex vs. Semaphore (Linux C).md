@@ -27,6 +27,8 @@ Mutex 與 Semaphore 最大的差異是:
 
 通常也不會把 Semaphore 當作是 Mutex 來使用，而是利用 signal 的特性，同步不同 thread 之間的工作。
 
+### Atomic
+
 ### Reference
 
 
