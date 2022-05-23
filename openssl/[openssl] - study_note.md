@@ -147,6 +147,9 @@
     - private key (use to decrypt information encrypted by the public key)
     ![](https://res.cloudinary.com/practicaldev/image/fetch/s--STcureFX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/v3m6r9s1ardfcq54m5l1.png)
 
+* [ASN1_TLV](https://directory.apache.org/api/internal-design-guide/4.1-asn1-tlv.html) Tag, Length, and Value
+    - Tag-Length-Value encoding is a method of data encoding, governed by the rules of ASN.1-BER (per Annex B, Book 3, of the EMV 4.3 specifications).
+    - ASN.1 specifies several TLV-based encoding rules (BER, DER), as well as non-TLV based ones (PER, XER).
 
 
 ### external
