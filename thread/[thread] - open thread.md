@@ -57,11 +57,11 @@ Security
   - DTLS: Datagram Transport Layer Security, ie., used within UDP (User Datagram Protocol)
 * Network-wide key
   - used in MAC layer and MLE sub-layers
-  - protect 802.15.4 MAC data frame 
+  - protect 802.15.4 MAC data frame
   - protect MLE message
   - compromised thread device could reveal key; not as the only form of protection.
   - Policing Mechanism to verify joining device and limit the effect of rogue device (joining device to identify a trusted router and communicate solely in a p2p manner)
-  - In case commissioning device is not in direct communication with the joining device, "trusted router" MUST relay DTLS handshake with the commissioning device throught "relay agents". 
+  - In case commissioning device is not in direct communication with the joining device, "trusted router" MUST relay DTLS handshake with the commissioning device throught "relay agents".
   - Relay protocol provides encapsulation of the DTLS handshake from joining device to comissioning device.
 
 
@@ -79,7 +79,7 @@ Security
   - 868/915 Mhz (optional) O-QPSK PHY specifications
   - General Radio specifications
 
-## Thread MAC layer 
+## Thread MAC layer
 
 * implementing a subset of IEEE802154 MAC specifications
 * Thread routing device must be capable of as a MAC FFD (Full Function Device) with retrictions in "table" section
@@ -102,7 +102,7 @@ Security
   + Association Response,
   + Disassociation Request,
   + PAN ID Conflict,
-  + Orphan Notification, 
+  + Orphan Notification,
   + Coordinator Realignment,
   + FFD PAN (Personal Area Network) Coordinator mode
   + Any other MAC frame security options not allowed.
@@ -184,7 +184,7 @@ N: Normative, S: Subset, M: Modified, Not Relevant
 * Neighbour Detection
 
   #### Security Format
-  * 
+  *
 
   #### Command Format
 
@@ -393,7 +393,7 @@ Thread Conformance Specification
 |Thread Network Partition |
 |Valid |
 
-## Nomenclature 
+## Nomenclature
 |Designation| Definition|
 I: Informative |
 N: Normative |
