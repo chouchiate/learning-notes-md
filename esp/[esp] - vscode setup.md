@@ -60,16 +60,58 @@ cd ~/esp/esp-idf
 ### **Set up the environment variables**
 * within ~/.zshrc add:
 ```bash
-. $HOME/esp/esp-idf/export.sh
+. $HOME/Programming/esp/esp-idf/export.sh
+# add IDF_PATH
+export IDF_PATH=~/esp/esp-idf
+export PATH="$IDF_PATH/tools:$PATH"
 ```
 * restart zsh
 ```bash
 $ source ~/.zshrc
 ```
 
-#### **Copy Sample Project**
+### check
+```bash
+$ printenv IDF_PATH
+> $HOME/Programming/esp/esp-idf
+$ which idf.py
+> /Users/xxxx/Programming/esp/esp-idf/tools/idf.py
 ```
-cp -r $IDF_PATH/examples/get-started/hello_world .
+
+### Add esp tools to path
+```bash
+$ get_idf
+
+Detecting the Python interpreter
+Checking "python3" ...
+Python 3.9.12
+"python3" has been detected
+Checking Python compatibility
+Checking other ESP-IDF version.
+Adding ESP-IDF tools to PATH...
+Using Python interpreter in /Users/jubo/.espressif/python_env/idf5.0_py3.9_env/bin/python
+Checking if Python packages are up to date...
+Skipping the download of /Users/jubo/.espressif/espidf.constraints.v5.0.txt because it was downloaded recently. If you believe that this is causing you trouble then remove it manually and re-run your install script.
+Constraint file: /Users/jubo/.espressif/espidf.constraints.v5.0.txt
+Requirement files:
+ - /Users/jubo/Programming/esp/esp-idf/tools/requirements/requirements.core.txt
+Python being checked: /Users/jubo/.espressif/python_env/idf5.0_py3.9_env/bin/python
+Python requirements are satisfied.
+...
+...
+Done! You can now compile ESP-IDF projects.
+Go to the project directory and run:
+
+  idf.py build
+```
+
+#### **Copy Sample Project**
+```bash
+## create and go to path
+$ mkdir esp_project && cd esp_project
+## copy example to path
+$ cp -r $IDF_PATH/examples/get-started/hello_world .
+$ cp -r $IDF_PATH/examples/protocols/mqtt/tcp .
 ```
 ### **Create Project**
 
@@ -84,10 +126,18 @@ idf.py set-target esp32
 idf.py menuconfig
 ```
 
+### Menu Config
+> idf.py menuconfig
+
+![](../assets//img/menu_config.png)
+
+
 ### Build Project
 ```bash
 idf.py build
 ```
+
+
 
 ### Flash to Device
 > Replace PORT with your ESP32 board’s serial port name.
@@ -102,6 +152,14 @@ idf.py build
 
 ```bash
 idf.py -p PORT [-b BAUD] flash
+```
+
+* full flash command line
+```bash
+# Project build complete. To flash, run this command:
+
+/Users/jubo/.espressif/python_env/idf5.0_py3.9_env/bin/python ../../esp-idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/hello_world.bin
+
 ```
 #### **Extension activation self configuration**
 
@@ -189,6 +247,9 @@ Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DESP_PLATFORM=1 -DIDF_TARGET=
 -- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
 -- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
 -- App "hello_world" version: 1
+
+### Linking
+
 -- Adding linker script /Users/coco/esp/hello_world/build/esp-idf/esp_system/ld/memory.ld
 -- Adding linker script /Users/coco/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
 -- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
@@ -199,17 +260,20 @@ Executing "cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DESP_PLATFORM=1 -DIDF_TARGET=
 -- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
 -- Adding linker script /Users/coco/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-time.ld
 -- Adding linker script /Users/coco/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+
+### Components
+
 -- Components: app_trace app_update asio bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp32 esp_adc_cal esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_netif esp_phy esp_pm esp_ringbuf esp_rom esp_serial_slave_link esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freemodbus freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mdns mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport tinyusb ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+
+### Component Paths
+
 -- Component paths: /Users/coco/esp/esp-idf/components/app_trace /Users/coco/esp/esp-idf/components/app_update /Users/coco/esp/esp-idf/components/asio /Users/coco/esp/esp-idf/components/bootloader /Users/coco/esp/esp-idf/components/bootloader_support /Users/coco/esp/esp-idf/components/bt /Users/coco/esp/esp-idf/components/cmock /Users/coco/esp/esp-idf/components/console /Users/coco/esp/esp-idf/components/cxx /Users/coco/esp/esp-idf/components/driver /Users/coco/esp/esp-idf/components/efuse /Users/coco/esp/esp-idf/components/esp-tls /Users/coco/esp/esp-idf/components/esp32 /Users/coco/esp/esp-idf/components/esp_adc_cal /Users/coco/esp/esp-idf/components/esp_common /Users/coco/esp/esp-idf/components/esp_eth /Users/coco/esp/esp-idf/components/esp_event /Users/coco/esp/esp-idf/components/esp_gdbstub /Users/coco/esp/esp-idf/components/esp_hid /Users/coco/esp/esp-idf/components/esp_http_client /Users/coco/esp/esp-idf/components/esp_http_server /Users/coco/esp/esp-idf/components/esp_https_ota /Users/coco/esp/esp-idf/components/esp_https_server /Users/coco/esp/esp-idf/components/esp_hw_support /Users/coco/esp/esp-idf/components/esp_lcd /Users/coco/esp/esp-idf/components/esp_local_ctrl /Users/coco/esp/esp-idf/components/esp_netif /Users/coco/esp/esp-idf/components/esp_phy /Users/coco/esp/esp-idf/components/esp_pm /Users/coco/esp/esp-idf/components/esp_ringbuf /Users/coco/esp/esp-idf/components/esp_rom /Users/coco/esp/esp-idf/components/esp_serial_slave_link /Users/coco/esp/esp-idf/components/esp_system /Users/coco/esp/esp-idf/components/esp_timer /Users/coco/esp/esp-idf/components/esp_wifi /Users/coco/esp/esp-idf/components/espcoredump /Users/coco/esp/esp-idf/components/esptool_py /Users/coco/esp/esp-idf/components/fatfs /Users/coco/esp/esp-idf/components/freemodbus /Users/coco/esp/esp-idf/components/freertos /Users/coco/esp/esp-idf/components/hal /Users/coco/esp/esp-idf/components/heap /Users/coco/esp/esp-idf/components/http_parser /Users/coco/esp/esp-idf/components/idf_test /Users/coco/esp/esp-idf/components/ieee802154 /Users/coco/esp/esp-idf/components/json /Users/coco/esp/esp-idf/components/log /Users/coco/esp/esp-idf/components/lwip /Users/coco/esp/hello_world/main /Users/coco/esp/esp-idf/components/mbedtls /Users/coco/esp/esp-idf/components/mdns /Users/coco/esp/esp-idf/components/mqtt /Users/coco/esp/esp-idf/components/newlib /Users/coco/esp/esp-idf/components/nvs_flash /Users/coco/esp/esp-idf/components/openthread /Users/coco/esp/esp-idf/components/partition_table /Users/coco/esp/esp-idf/components/perfmon /Users/coco/esp/esp-idf/components/protobuf-c /Users/coco/esp/esp-idf/components/protocomm /Users/coco/esp/esp-idf/components/pthread /Users/coco/esp/esp-idf/components/sdmmc /Users/coco/esp/esp-idf/components/soc /Users/coco/esp/esp-idf/components/spi_flash /Users/coco/esp/esp-idf/components/spiffs /Users/coco/esp/esp-idf/components/tcp_transport /Users/coco/esp/esp-idf/components/tinyusb /Users/coco/esp/esp-idf/components/ulp /Users/coco/esp/esp-idf/components/unity /Users/coco/esp/esp-idf/components/usb /Users/coco/esp/esp-idf/components/vfs /Users/coco/esp/esp-idf/components/wear_levelling /Users/coco/esp/esp-idf/components/wifi_provisioning /Users/coco/esp/esp-idf/components/wpa_supplicant /Users/coco/esp/esp-idf/components/xtensa
+
+
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/coco/esp/hello_world/build
 ```
-
-### Menu Config
-> idf.py menuconfig
-
-![](../assets//img/menu_config.png)
 
 ### Build Project Logs
 - idf.py build
