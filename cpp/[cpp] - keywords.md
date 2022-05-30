@@ -156,6 +156,14 @@
 
 ### static_assert
 * perform compile-time assertion checking
+* static assert declaration appear at
+    - namespace
+    - block scope (block declaration)
+    - inside class body
+
+* Syntax
+    * c++11 - static_asset(bool-constexpr, message)
+    * c++17 - static_assert(bool-constexpr)
 [reference](https://en.cppreference.com/w/cpp/language/static_assert)
 ### static_cast
 
