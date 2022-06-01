@@ -129,4 +129,62 @@ func main() {
 
 ```
 
+### bson marshal & unmarshal
+
+```go
+
+type ComputedResult struct {
+	EventTime      time.Time  `bson:"event_time"`
+	SinceEventTime *time.Time `bson:"since_event_time"`
+	ModelName      string     `bson:"model_name"`
+
+	// NOTE: developer has responsibility to denote the bson tag in your struct
+	Result interface{} `bson:"result"`
+}
+
+func (c ComputedResult) UnmarshalResult(structWithBsonTags interface{}) error {
+	b, err := bson.Marshal(c.Result)
+	if err != nil {
+		return err
+	}
+
+	if err := bson.Unmarshal(b, structWithBsonTags); err != nil {
+		return err
+	}
+	return nil
+}
+
+
+```
+
+```go
+type Data struct {
+	EventTime   time.Time `bson:"event_time"`
+	ArrivalTime time.Time `bson:"arrival_time"`
+	Metadata    Metadata  `bson:"metadata"`
+
+	// RawPayload is pass by caller. and expect it is a JSON string, will be unmarshal as a JSON object
+	RawPayload []byte `bson:"-"`
+
+	// NOTICE: caller no need to assign this value.
+	// Payload will be parsed from RawPayload automatically.
+	Payload interface{} `bson:"payload"`
+}
+
+type DataList []Data
+
+func (d Data) UnmarshalPayload(structWithBsonTags interface{}) error {
+	b, err := bson.Marshal(d.Payload)
+	if err != nil {
+		return err
+	}
+
+	if err := bson.Unmarshal(b, structWithBsonTags); err != nil {
+		return err
+	}
+	return nil
+}
+
+```
+
 https://www.sohamkamani.com/golang/parsing-json/
