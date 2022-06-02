@@ -58,8 +58,11 @@ $ docker pull gcr.io/cloudsql-docker/gce-proxy:1.21.0
 * [gcloud](https://cloud.google.com/sdk/docs/install)
 
 # execute cloud_sql_proxy
-$ ./cloud_sql_proxy -instance=<gcp_project>:<location>:<database_name>=tcp:<port>
+$ ./cloud_sql_proxy -instances=INSTANCE_CONNECTION_NAME=tcp:0.0.0.0:1234
+
+$ ./cloud_sql_proxy -instances=jubo-pro:asia-east1:jubo-sql:=tcp:5433
 ```
+
 
 ### gcloud auth login & test
 

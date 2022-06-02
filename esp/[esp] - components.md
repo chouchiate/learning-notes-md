@@ -1,4 +1,5 @@
 ## [esp] - components
+> The components directory holds all the 'C' code for the ESP32. It includes Drivers for numerous peripherals, the bootloader, bt(bluetooth), freeRTOS etc.
 
 * The first group (referred to as `G0` from now on) contains `hal`, `xtensa` and `riscv` (referred to as `arch` components from now on), `esp_rom`, `esp_common`, and `soc`.
 
