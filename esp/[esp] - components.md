@@ -1,4 +1,5 @@
 ## [esp] - components
+> The components directory holds all the 'C' code for the ESP32. It includes Drivers for numerous peripherals, the bootloader, bt(bluetooth), freeRTOS etc.
 
 * The first group (referred to as `G0` from now on) contains `hal`, `xtensa` and `riscv` (referred to as `arch` components from now on), `esp_rom`, `esp_common`, and `soc`.
 
@@ -15,7 +16,9 @@
 * .a files are archives. They are groups of objects or static libraries and are also input into the linker.
 
 * makefile snippet generating static libraries
+
 ```makefile
+# This will compile hello.c and world.c into objects and then archive them into library.
 AR = ar
 CC = gcc
 
@@ -37,7 +40,7 @@ libby.a: $(objects)
 | app_update  | Over the air update (OTA) | G1 | [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/ota.html)|
 | bootloader_support | bootloader | | [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/bootloader.html)|
 | bootloader | bootloader | | [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/bootloader.html)|
-| bt | | | |
+| bt | bluetooth api | | [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/bluetooth/index.html)|
 | cmock | | | |
 | console  | | | |
 | cxx  | | | |

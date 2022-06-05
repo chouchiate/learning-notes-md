@@ -137,8 +137,6 @@ idf.py menuconfig
 idf.py build
 ```
 
-
-
 ### Flash to Device
 > Replace PORT with your ESP32 board’s serial port name.
 
@@ -160,6 +158,11 @@ idf.py -p PORT [-b BAUD] flash
 
 /Users/jubo/.espressif/python_env/idf5.0_py3.9_env/bin/python ../../esp-idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/hello_world.bin
 
+##
+
+/Users/jubo/.espressif/python_env/idf5.0_py3.10_env/bin/python ../../../../../esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-120 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/gatt_client_demo.bin
+
+/Users/jubo/.espressif/python_env/idf5.0_py3.10_env/bin/python ../../../../../esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-120 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/gatt_server_demos.bin
 ```
 #### **Extension activation self configuration**
 

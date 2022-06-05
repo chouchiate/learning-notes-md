@@ -1,6 +1,8 @@
 ## [grafana] - loki query
 
-
+```qs
+{container="data-processor"} |= "SPS2021PA000197"
+```
 
 
 ### External

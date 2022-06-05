@@ -10,24 +10,25 @@ F.Silk, T:0.12mm, @-1.8
 F.Fab, T:0.1mm, @-1.75
 ```
 
-###
 
-## Layout to Gerber
+## Generate Drill and Gerber Files
+> Select File -> Plot from the menu to open the gerber generation tool.
+![](../assets/img/)
 
-```
-Plot>>Gerber
+```bash
+# Plot>>Gerber
 Included Layers
 F.Cu
 B.Cu
-F.Paste
-B.Paste
+F.Paste # optional
+B.Paste # optional
 F.Silks
 B.Silks
 F.Mask
 B.Mask
 Edge.Cuts
-In1.Cu (4 layers)
-In2.Cu (4 layers)
+In1.Cu # (4 layers only)
+In2.Cu # (4 layers only)
 
 Uncheck - Plot footprint values
 Check - Use Protel filename extensions
