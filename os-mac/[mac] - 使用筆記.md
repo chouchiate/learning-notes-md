@@ -24,3 +24,8 @@ $ killall Finder
 $ defaults write com.apple.Finder AppleShowAllFiles false
 $ killall Finder
 ```
+
+#### force quit mac shortcut
+* On your keyboard, press and hold Command + Option + Esc.
+* It will immediately bring up a “Force Quit Application” window.
+

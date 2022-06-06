@@ -8,4 +8,5 @@
 | US20100079006A1 | Three-way and four-way switching circuit | Echelon Corp | Active | |
 | US9202368B1 | System for light and appliance remote control | MagicLux LLC | Active | |
 | US9645692B2 | User interface with proximity sensing | GLOBAL TOUCH SOLUTIONS LLC | Expired | |
+| US9521728 | MULTIPLE LOCATION LOAD CONTROL SYSTEM| Lutron Technology Co LLC | Active | |
 

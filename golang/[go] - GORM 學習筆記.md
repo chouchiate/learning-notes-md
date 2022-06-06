@@ -73,3 +73,56 @@ db.Unscoped().Delete(&order)
 ```
 
 
+### Gorm defined clause - package clause
+[git](https://github.com/go-gorm/gorm/tree/master/clause)
+
+[go-pkg](https://pkg.go.dev/gorm.io/gorm/clause)
+
+#### OnConflict
+[git](https://github.com/go-gorm/gorm/blob/v1.23.5/clause/on_conflict.go#L3)
+
+* DoUpdates
+```sql
+INSERT INTO customers (name, email)
+VALUES('Microsoft','hotline@microsoft.com')
+ON CONFLICT (name)
+DO
+   UPDATE SET email = EXCLUDED.email || ';' || customers.email;
+```
+```go
+
+func (p *SpaceCenterRepo) UpsertDeviceInstalledInSpaces(deviceInstalledInSpaces []schema.DeviceInstalledInSpace) error {
+	return p.db.Clauses(
+		clause.OnConflict{
+			Columns: []clause.Column{
+				{Name: "device_id"},
+				{Name: "space_id"},
+			},
+			DoUpdates: clause.AssignmentColumns([]string{
+				"updated_at",
+				"is_installed_in",
+			}),
+		}).Create(&deviceInstalledInSpaces).Error
+}
+```
+* DoNothing
+```sql
+INSERT INTO customers (name, email)
+VALUES('Microsoft','hotline@microsoft.com')
+ON CONFLICT (name)
+DO NOTHING;
+```
+```go
+
+func (p *SpaceCenterRepo) InitDefaultDeviceConfig(deviceDataTypes []schema.DeviceDataType) error {
+	return p.db.Clauses(
+		clause.OnConflict{
+			DoNothing: true,
+		},
+	).Create(&deviceDataTypes).Error
+}
+```
+
+
+#### Association
+[git]()
