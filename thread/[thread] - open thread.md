@@ -1,9 +1,37 @@
 ## [thread] - open thread tutorial
 
+### Developer Components
+* [Core Stack](https://github.com/openthread/openthread)
+* [OpenThread Border Router](https://openthread.io/guides/border-router)
+* [Border Router on POSIX](https://github.com/openthread/ot-br-posix)
+* [External Commissioner](https://github.com/openthread/ot-commissioner)
+* [Network Simulator](https://github.com/openthread/ot-ns)
+* [Many Platform Implementations](https://openthread.io/vendors)
+
+### Download and Build
+```bash
+  $ mkdir -p ~/src
+  $ cd ~/src
+  $ git clone --recursive https://github.com/openthread/openthread.git
+  $ cd openthread
+  $ ./script/bootstrap
+  $ ./bootstrap
+```
+
+
+### Developer Resources
+* [Thread Primer](https://openthread.io/guides)
+* [CodeLab](https://openthread.io/guides)
+* [Packet Sniffer](https://openthread.io/guides/pyspinel/sniffer)
+* [Certification Guide](https://openthread.io/certification)
+
 * How to set up the OpenThread build toolchain
 * How to simulate a Thread network
 * How to authenticate Thread nodes
 * How to manage a Thread network with OpenThread Daemon
+
+### OpenThread Simulation on Docker
+[codelab](https://openthread.io/codelabs/openthread-simulation#0)
 
 ## Specification Versions
 * v1.0 Introduced in 2014
