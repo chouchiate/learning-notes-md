@@ -5,7 +5,7 @@ docker login
 ```
 
 ```bash
-kubectl create secret generic docker-acount --from-file=<file_directory>
+kubectl create secret generic docker-account --from-file=<file_directory>
 ```
 
 ### Pod Health Check & Restart Policy
@@ -44,7 +44,7 @@ metadata:
 	labels:
 		name: <lookupName>
 data:
-	
+
 ```
 
 
@@ -61,4 +61,4 @@ data:
 * Vitual service (Ingress)
 * Service
 * Pod
-* 
+*
