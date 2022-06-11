@@ -83,7 +83,7 @@ BaseType_t wifi_app_send_message(wifi_app_message_e msgID);
 void wifi_app_start(void);
 #endif /* _MAIN_WIFI_APP_H */
 ```
-
+### wifi_app.c 實作
 * wifi_app.c
 
 ```c
@@ -192,14 +192,79 @@ static void wifi_app_event_handler_init(void){
 static void wifi_app_default_wifi_init(void) {
     // initialize the tcp stack
 
-    ESP_ERROR_CHECK(esp_netif_init());
+    wifi_init_config_t wifi_init_config = WIFI_INIT_CONFIG_DEFAULT();
 
-    // default wifi config - operation must be in this order
+    ESP_ERROR_CHECK(esp_netif_init(&wifi_init_config));
 
-    wifi_init_config_t wifi_init
-    // stop at 9:30 - 16. wifi application programming part III
+    // default wifi config - operation must be in this order:
+
+    wifi_init_config_t wifi_init_config = WIFI_INIT_CONFIG_DEFAULT();
+
+    ESP_ERROR_CHECK(esp_wifi_init(&wifi_init_config));
+
+    ESP_ERROR_CHECK(esp_wifi_set_storage(WIFI_STORAGE_RAM));
+
+    esp_netif_sta = esp_netif_create_default_wifi_sta();
+
+    esp_netif_ap = esp_netif_create_default_wifi_ap();
+
 }
 
+/**
+ * Configure the wifi access point setting and assigns the static IP to the softAP
+ *
+ */
+static void wifi_app_soft_ap_config(void)
+{
+    // SoftAP - Wifi access point configuration
+    wifi_config_t ap_config =
+    {
+        .ap = {
+            .ssid = WIFI_AP_SSID,
+            .ssid_len = strlen(WIFI_AP_SSID),
+            .password = WIFI_AP_PASSWORD,
+            .channel = WIFI_AP_CHANNEL,
+            .ssid_hidden = WIFI_AP_SSID_HIDDEN,
+            .authmode = WIFI_AUTH_WPA2_PSK,
+            .max_connection = WIFI_AP_MAX_CONNECTIONS,
+            .beacon_interval = WIFI_AP_BEACON_INTERVAL,
+        },
+    };
+
+    // configure DHCP for the AP
+    // esp_netif_types.h
+    esp_netif_ip_info_t ap_ip_info;
+    memset(&ap_ip_info, 0x00, sizeof(ap_ip_info));
+
+    // esp_netif.h
+    // must call this first
+    esp_netif_dhcps_stop(esp_netif_ap);
+
+    // assign access points' static ip, gateway, and netmask
+
+    inet_pton(AF_INET, WIFI_AP_IP, &ap_ip_info.ip);
+    inet_pton(AF_INET, WIFI_AP_GATEWAY, &ap_ip_info.gw);
+    inet_pton(AF_INET, WIFI_AP_NETMASK, &ap_ip_info.netmask);
+
+
+    // statically configure the network interface
+    ESP_ERROR_CHECK(esp_netif_set_ip_info(esp_netif_ap, &ap_ip_info));
+
+    // start the AP DHCP server (for connecting station e.g. your mobile device)
+    ESP_ERROR_CHECK(esp_netif_dhcps_start(esp_netif_ap));
+
+    // setting the mode as access point / station mode
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_APSTA));
+
+    // set our configuration
+    ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_AP, &ap_config));
+
+    // our default bandwidth 20 Mhz
+    ESP_ERROR_CHECK(esp_wifi_set_bandwidth(WIFI_IF_AP, WIFI_AP_BANDWIDTH));
+
+    // power save set to "NONE" as defined
+    ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_STA_POWER_SAVE));
+}
 
 /**
  * Main task for the wifi application
@@ -208,8 +273,97 @@ static void wifi_app_default_wifi_init(void) {
 
 static void wifi_app_task(void *pvParameter) {
     wifi_app_queue_message_t msg;
+
     // initialize the event handler
     wifi_app_event_handler_init();
+
+    // initialize the TCP/IP stack and WIFI config
+    wifi_app_default_wifi_init();
+
+    // softAP config
+    wifi_app_soft_ap_config();
+
+    // start wifi
+    ESP_ERROR_CHECK(esp_wifi_start());
+
+    // send first event message
+    wifi_app_send_message(WIFI_APP_MSG_START_HTTP_SERVER);
+
+    for (;;)
+    {
+        if (xQueueReceive(wifi_app_queue_handle, &msg, portMAX_DELAY))
+        {
+            switch (msg.msgID)
+            {
+                case WIFI_APP_MSG_START_HTTP_SERVER:
+                    ESP_LOGI(TAG, "WIFI_APP_MSG_START_HTTP_SERVER");
+
+                    http_server_start();
+                    rgb_led_http_server_started();
+                    break;
+                case WIFI_APP_MSG_CONNECTING_FROM_HTTP_SERVER:
+                    ESP_LOGI(TAG, "WIFI APP MSG CONNECTING FROM HTTP SERVER");
+                    break;
+            }
+        }
+    }
 }
 
 ```
+
+### Test
+* main.c
+```c
+/**
+ * Application entry point
+ *
+ */
+
+#include "nvs_flash.h"
+#include "wifi_app.h"
+
+void app_main(void)
+{
+    // Initialize NVS
+    esp_err_t ret = nvs_flash_init();
+
+    // nvs.h
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+    {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+
+    ESP_ERROR_CHECK(ret);
+
+    // start wifi
+    wifi_app_start();
+}
+```
+
+### HTTP server implementation
+* web page files (.html, .css, and .js)
+* support OTA firmware updates
+* support for DHT22 temperature and humidity sensor reading display on web page
+* able to respond to connection and disconnection buttons on web page, by entering SSID, and password into text fields and clicking connect and disconnect
+* handle sending connection information (SSID, IP, Gateway, Netmask)
+* send ESP32's assigned SSID to the webpage.
+
+
+### Doc
+* [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html)
+
+### Configure steps creating HTTP server using ESP-IDF
+* Embed binary data (index.html, app.css, code.js)
+    - [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#embedding-binary-data)
+* Create HTTP server start and stop functions
+    - [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html#application-example)
+* Create default HTTP server configuration and adjust to needs
+    - create struct httpd_config_t
+        - [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html#structure)
+    - call httpd_start
+        - [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html#_CPPv411httpd_startP14httpd_handle_tPK14httpd_config_t)
+
+* Register URL handlers
+    - [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html#_CPPv426httpd_register_uri_handler14httpd_handle_tPK11httpd_uri_t)
+* monitor task which can receive queue message to respond certain events
