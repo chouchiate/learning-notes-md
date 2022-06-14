@@ -1,4 +1,11 @@
 ## [esp] - iot development framework
+
+### Add esp tools to path
+```bash
+$ get_idf
+## you can use idf.py command in console now!
+
+```
 ### toolchain setup
 [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#get-started-set-up-env)
 

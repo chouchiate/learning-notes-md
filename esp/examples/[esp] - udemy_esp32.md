@@ -367,3 +367,141 @@ void app_main(void)
 * Register URL handlers
     - [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/esp_http_server.html#_CPPv426httpd_register_uri_handler14httpd_handle_tPK11httpd_uri_t)
 * monitor task which can receive queue message to respond certain events
+
+### HTTP Server Programming
+* create  ./main/webpage
+    - add app.css, app.js, favicon.ico, index.html, jquery-3.3.1.min.js to folder
+* CMakeLists.txt
+```make
+    idf_component_register(SRCS main.c rgb_led.c wifi_app.c http_server.c
+                        INCLUDE_DIRS "."
+                        EMBED_FILES webpage/app.css webpage/app.js webpage/favicon.ico webpage/index.html webpage/jquery-3.3.1.min.js)
+```
+* create http_server.c & http_server.h
+
+* in tasks_common.h
+```c
+#ifndef MAIN_TASKS_COMMON_H_
+#define MAIN_TASKS_COMMON_H_
+
+#define WIFI_APP_TASK_STACK_SIZE 4096
+#define WIFI_APP_TASK_PRIORITY 5
+#define WIFI_APP_TASK_CORE_ID   0
+
+// HTTP SERVER task
+#define HTTP_SERVER_TASK_STACK_SIZE 8192
+#define HTTP_SERVER_TASK_PRIORITY 4
+#define HTTP_SERVER_TASK_CORE_ID 0
+
+// HTTP server Monitor task
+#define HTTP_SERVER_MONITOR_TASK_STACK_SZIE 4096
+#define HTTP_SERVER_MONITOR_PRIORITY 3
+#define HTTP_SERVER_MONITOR_CORE_ID 0
+#endif
+```
+
+* in http_server.h
+```c
+#ifndef MAIN_HTTP_SERVER_H_
+#define MAIN_HTTP_SERVER_H_
+
+/**
+ * Messages for the HTTP monitor
+ */
+typedef enum http_server_message
+{
+    HTTP_MSG_WIFI_CONNECT_INIT = 0,
+    HTTP_MSG_WIFI_CONNECT_SUCCESS,
+    HTTP_MSG_WIFI_CONNECT_FAIL,
+    HTTP_MSG_OTA_UPDATE_SUCCESSFUL,
+    HTTP_MSG_OTA_UPDATE_FAILED,
+    HTTP_MSG_OTA_UPDATE_INITIALIZED,
+} http_server_message_e;
+
+/**
+ * Structure for the message queue
+ */
+
+typedef struct http_server_queue_message
+{
+    http_server_message_e msgID;
+} http_server_queue_message_t;
+
+/**
+ * Sends a message to the queue
+ * @param msgID message ID from the http server message_e enum
+ * @return odTRUE if an item was successfully sent to the queue, otherwise pdFALSE.
+ * @note Expand the parameter list based on your requirement e.g. how to expand the http_server_queue_message_t
+ */
+BaseType_t http_server_monitor_send_message(http_server_message_e msgID);
+
+/**
+ * Starts the HTTP server
+ */
+void http_server_start(void);
+/**
+ * Stops the HTTP server
+ */
+void http_server_stop(void);
+
+#endif
+```
+
+* in http_server.c
+```c
+#include "esp_http_server.h"
+#include "esp_log.h"
+
+#include "http_server.h"
+#include "tasks_common.h"
+#include "wifi_app.h"
+
+// Tag used for ESP serial console messages
+static const char TAG[] = "http_server"
+
+// HTTP server task handle
+static httpd_handle_t http_server_handle = NULL;
+
+// Embedded files: JQuery, index.html, app.css, app.hs and favicon.ico files
+extern const uint8_t jquery_3_3_1_min_js_start[]    asm("_binary_jquery_3_3_1_min_js_start");
+extern const uint8_t jquery_3_3_1_min_js_end[]    asm("_binary_jquery_3_3_1_min_js_end");
+extern const uint8_t index_html_start[]    asm("_binary_index_html_start");
+extern const uint8_t index_html_end[]    asm("_binary_index_html_end");
+extern const uint8_t app_css_start[]    asm("_binary_app_css_start");
+extern const uint8_t app_css_end[]    asm("_binary_app_css_end");
+extern const uint8_t app_js_start[]    asm("_binary_app_js_start");
+extern const uint8_t app_js_end[]    asm("_binary_app_js_end");
+extern const uint8_t favicon_ico_start[]    asm("_binary_favicon_ico_start");
+extern const uint8_t favicon_ico_end[]    asm("_binary_favicon_ico_end");
+
+/**
+ * Sets up the default http server configuration.
+ * @return http server instance handle if successful. NULL otherwise.
+ */
+
+static httpd_handle_t http_server_configure(void)
+{
+    // Generate the default configuration
+
+}
+
+void http_server_start(void)
+{
+    if (http_server_handle == NULL)
+    {
+        http_server_handle = http_server_configure();
+    }
+}
+
+void http_server_stop(void)
+{
+    if (http_server_handle)
+    {
+        httpd_stop(http_server_handle);
+        ESP_LOGI(TAG, "http_server_stop: stopping HTTP server");
+        http_server_handle = NULL;
+    }
+}
+
+
+```
