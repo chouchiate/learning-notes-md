@@ -85,7 +85,7 @@ screen /dev/tty.usbserial-DO02K4IH **Baudrate**
 
 ### Output log to File in a Screen Session
 ```bash
-script -a -t 0 out11.txt screen /dev/tty.usbserial-DO02K4IH 115200
+script -a -t 0 out27.txt screen /dev/tty.usbserial-DO02K4IH 115200
 ```
 * script: A built-in application to "make a typescript of terminal session"
 * -a: Append to output file
