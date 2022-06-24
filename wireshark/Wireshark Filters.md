@@ -4,6 +4,7 @@
 
 ```
 tcp.port eq 9669 && http.request.method == "POST"
+http.request.method == "GET"
 ```
 
 ### Filter Mqtt
