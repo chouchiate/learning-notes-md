@@ -125,6 +125,9 @@ git diff [first-branch] [second-branch]		#
 # check difference: current and stash
 git diff stash@{0} master
 
+# Window Power shell need to add quote
+git diff stash@"{0}" main > ./tmp/diff_adc.txt
+
 # 輸出差異到檔案 diff.txt
 git diff master..branch1 > diff.txt
 
