@@ -478,8 +478,8 @@ IEEE|
 iETF|
 IID|Interface Identifier
 IP|Internet Protocol
-IPv4|
-IPv6|
+IPv4|32 bit 4 byte addressing, provide 232 unique address
+IPv6|128 bit 16 byte addressing
 ISP|
 IS-IS|
 ITU|
