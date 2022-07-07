@@ -1,2 +1,0 @@
-## [amc] Install Zsh & OhMyZ
-

@@ -1,7 +1,8 @@
 ## [thread] - fundamental
 
 ### Thread stack
-|Layer|Protocos|
+|Layer|Protocols|
+|----|----|
 |Application layer|RFC768, RFC6347|
 |UDP + DTLS | RFC4279, RFC4492, RFC3315, RFC5007|
 |Distance Vector Routing| RFC1058, RFC2080|

@@ -83,7 +83,7 @@ screen /dev/tty.usbserial-DO02K4IH **Baudrate**
 > To Quit: the screen app, type CTRL-A, then CTRL-\.
 
 
-### Output log to File in a Screen Session
+### Output Terminal log to File in a Screen Session
 ```bash
 script -a -t 0 out27.txt screen /dev/tty.usbserial-DO02K4IH 115200
 ```

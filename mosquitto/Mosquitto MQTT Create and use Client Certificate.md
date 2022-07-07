@@ -25,7 +25,7 @@
   $ openssl genrsa -out client.key 2048
   ```
 
-  
+
 
 * Create a **Certificate Request** and use **Client Private Key** to sign it
 
@@ -41,11 +41,11 @@
   $ openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 3650
   ```
 
-  
+
 
 ## Testing
 
-### mosquitto_sub 
+### mosquitto_sub
 
 * Sub with username / password
 
@@ -53,4 +53,11 @@
   $ mosquitto_sub -p 1883 -t '#' --username <name> --pw <password>
   ```
 
-  
+
+### mosquitto retained message
+
+* . 設備在 auth 過程中會連 mqtt broker, 在設備 auth 完成後, 才會去啟動雷達模組
+* . 如果設備在尚未啟動雷達前發出設定 mqtt topic /devices/#/config, 設備收到 config 後將會 stall (設備 log 會 print - RadarTimeSyncRequired ＆ StateUpdateRequired)
+* . 又, 設備收到設定完成後會自動重啟, 重啟後連上 broker 又會看到 retain config 而進入無限設定循環狀態
+* . 因此 mqtt config payload 在傳給 broker 一定時間後必須發 retained empty struct{}{} 給 broker 清除
+* . 詳細請見介紹 http://www.steves-internet-guide.com/mqtt-retained-messages-example/
