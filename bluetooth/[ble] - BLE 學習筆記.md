@@ -5,6 +5,9 @@
 * 2013 (v4.1) - First smartphone support
 * 2014 (v4.2) - IP connectivity, increased speed
 * 2016 (v5) - 4x range, 2x speed
+* 2019 1/29 (v5.1) - AoD/AoA
+* 2019 12/31 (v5.2) - EATT/ LE Power Control / LE Isochronous Channel
+* 2021 July (v5.3) - Periodic Advertising Enhancement / Channel Classification Enhancement
 ---
 
 ### **Bluetooth Device Types**
@@ -422,6 +425,68 @@ Authenticates a message
     * Primary Adv. Channel: Legacy Advertisement
     * Secondary Adv. Channel: Extended Advertisement
 
+
+### **BLE 5.0 簡介**
+  * LE 1M PHY 通道
+  * LE 2M PHY 通道
+
+  * LE Coded PHY (Convolutional Forward Error Correction Coding)
+    - Forward Error Correction (FEC) 前向糾錯
+      - 發射端在發送馬元序列中加入差錯控制碼元
+      - 接收端可發現錯碼, 恢復正確取值
+      - 增加數據通信可信度方法
+      - 提高接收靈敏度和有效通信距離
+        1. CI: coding indicator
+        2. TERM1:
+        3. TERM2: 
+
+    - 500 kbps (s = 2) -75dbm
+    - 125 kbps (s = 8) -82dbm
+    - 提高 C/I 載干比 = 載波信號強度/干擾信號強度
+
+  * 40 個 2.4Ghz ISM 頻道分兩組廣播頻道:
+    * Primary 廣播 channel 37, 38, 39
+    * Secondary 廣播 others
+    * 有效廣播載荷 255 Bytes (vs BLE 4.0 31 Bytes)
+
+### **BLE 5.1 簡介**
+  * 導向功能 (藍芽方向偵測)
+    - AoA (到達角度)
+    - AoD (離開角度)
+  * GATT 緩存
+    - 已綁定客戶設備連接期間緩存 GATT 服務器數據庫
+    - 減少服務發現時間
+    - 減少發現服務耗電量
+    - 跳過服務發現模式 加速連線過程
+  * 廣播增強 (隨機廣播頻道索引技術, 週期廣播同步傳輸技術)
+    - 5.1 可以隨機選擇廣播頻道, 減少同一廣播頻道隨機碰撞概率, 避免不必要互相干擾
+    - 5.1 週期廣播 (廣播時間表功能) 掃描設備可以和廣播設備同步 同時喚醒 同步廣播數據包 同步掃描接收廣播數據包
+
+### **BLE 5.2 簡介**
+  * 增強版屬性協議 (EATT)
+    - Enhanced Attribute Protocol - EATT
+      * 支持開發事務, 允許不同應用程序 ATT 數據包與相關的 L2CAP 數據包交叉
+      * 允許連線期間更改 ATT 最大傳輸單元 (MTU)
+      * 提高改進 BLE 設備用戶體驗
+        - 當多個應用同時使用
+        - 暫時停止壅塞應用的使用
+        - 減少端到端延遲
+      * 可加密連線使用
+  * 新的 L2CAP 模式 (增強型 信用流量控制模式)
+    - 流量控制 應用程序將協議視為可靠 可加密連線上使用
+  * LE 功率控制
+    - 動態優化連線設備之間的傳輸功率
+    - 實時監測射頻信號強度 控制連接設備傳輸功率級別變化
+    - 合理信號強度 降低互相干擾和信號通信可靠性
+  * LE 同步頻道 (LE Audio)
+    - 小型私有設備組 (個人音頻共享)
+      - 公共空間建構輔助聽力系統 多語言音頻系統
+      - 多語言飛行公告
+      - 個人音頻分享
+      - 公共輔助聽力
+      - 公共空間
+
+### **BLE 5.3 簡介**
 
 
 ### **Abbreviations - Nomenclature**
