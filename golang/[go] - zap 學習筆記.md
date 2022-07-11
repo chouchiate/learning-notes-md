@@ -102,3 +102,14 @@ func main() {
 
 }
 ```
+
+### Mustrun
+
+```go
+func mustrun(msg string, err error, fields ...zapcore.Field) {
+	logger.Info(msg, fields...)
+	if err != nil {
+		log.Fatalf("failed to run %s: %s", msg, err)
+	}
+}
+```

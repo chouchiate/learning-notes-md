@@ -1,5 +1,5 @@
 ## [unity] - test environment
-
+---
 ### Linux
 * Default support ***gcc*** command to invoke GNU C compiler
 * Need to install g++ to use CppUTest
@@ -7,26 +7,27 @@
 $ sudo apt-get install build-essential
 $ sudo apt-get install g++
 ```
+---
 ### Window
 * Cygwin
 * MinGW + MSYS
 * VM Linux (Virtual box)
-
+---
 ### Mac
 * Xcode dev env include GNU toolchain
-
+---
 ### IDE Eclipse setup
 
 
 ### VSCode setup
 
-
+---
 ### Full test build makefile
 * incremental build based on file dependencies for fast build
 * Test are run with every build
 * Test files override production code
 * No cruft files (left over) should be in the directory tree
-
+---
 ### Directory structure
 * isolate test code from production code
 * specify a list of production code directories
@@ -52,7 +53,7 @@ TEST_SRC_DIRS = \
     tests/LedDriver \
     test/HomeAutomation
 ```
-
+---
 ### AllTests.cpp
 * defines the test main()
 * calls the test runner to run all tests
