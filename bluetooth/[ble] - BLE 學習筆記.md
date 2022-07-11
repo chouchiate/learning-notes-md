@@ -425,7 +425,7 @@ Authenticates a message
     * Primary Adv. Channel: Legacy Advertisement
     * Secondary Adv. Channel: Extended Advertisement
 
-
+---
 ### **BLE 5.0 簡介**
   * LE 1M PHY 通道
   * LE 2M PHY 通道
@@ -448,7 +448,7 @@ Authenticates a message
     * Primary 廣播 channel 37, 38, 39
     * Secondary 廣播 others
     * 有效廣播載荷 255 Bytes (vs BLE 4.0 31 Bytes)
-
+---
 ### **BLE 5.1 簡介**
   * 導向功能 (藍芽方向偵測)
     - AoA (到達角度)
@@ -461,7 +461,7 @@ Authenticates a message
   * 廣播增強 (隨機廣播頻道索引技術, 週期廣播同步傳輸技術)
     - 5.1 可以隨機選擇廣播頻道, 減少同一廣播頻道隨機碰撞概率, 避免不必要互相干擾
     - 5.1 週期廣播 (廣播時間表功能) 掃描設備可以和廣播設備同步 同時喚醒 同步廣播數據包 同步掃描接收廣播數據包
-
+---
 ### **BLE 5.2 簡介**
   * 增強版屬性協議 (EATT)
     - Enhanced Attribute Protocol - EATT
@@ -485,10 +485,12 @@ Authenticates a message
       - 個人音頻分享
       - 公共輔助聽力
       - 公共空間
-
+---
 ### **BLE 5.3 簡介**
 
 
+
+---
 ### **Abbreviations - Nomenclature**
 * GATT - Generic Attribute Profile
 * PDU - Protocol Data Unit
