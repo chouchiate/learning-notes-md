@@ -6,7 +6,7 @@
 
 
 
-以 __jubox.proto__ 為例
+以 __thudercatx.proto__ 為例
 
 ```sequence
 Grpc Nodejs->Grpc Golang: Grpc Message
@@ -21,10 +21,10 @@ Grpc Golang-->Grpc Nodejs: Grpc Resp
 ```protobuf
 syntax = "proto3";
 
-package grpc.proto.jubox;
-option go_package = "jubo.health/smilinn/server/grpc/proto/jubox";
+package grpc.proto.thudercatx;
+option go_package = "thudercat.health/smilinn/server/grpc/proto/thudercatx";
 
-service Jubox {
+service thudercatx {
     rpc RequestDeviceId (NewDeviceRegister) returns (NewDeviceRegister) {}
     rpc SystemEventUpdate (SystemEvent) returns (UpdateResp) {}
     rpc BedEventUpdate (BedEvent) returns (UpdateResp) {}
@@ -123,13 +123,13 @@ message UpdateResp {
 
 <img src="/Users/derickchou/Programming/markdowns/img/Screen Shot 2021-01-19 at 11.15.57 AM.png" alt="alt" style="zoom:35%;" />
 
-*  試用 **@grpc/grpc-js + Typescript** 中採用 **gRpc** 建議的標準命名方式  **package grpc.proto.jubox** 需要一層層手動撥洋蔥 **tsc** 才不會出現錯誤
+*  試用 **@grpc/grpc-js + Typescript** 中採用 **gRpc** 建議的標準命名方式  **package grpc.proto.thudercatx** 需要一層層手動撥洋蔥 **tsc** 才不會出現錯誤
 
   ```protobuf
   // package naming convention
   syntax = "proto3";
-  package grpc.proto.jubox;
-  option go_package = "jubo.health/smilinn/server/grpc/proto/jubox";
+  package grpc.proto.thudercatx;
+  option go_package = "thudercat.health/smilinn/server/grpc/proto/thudercatx";
   ```
 
 * 試用搭配 devDependencies: **grpc-tools** and **grpc_tools_node_protoc_ts**
@@ -176,11 +176,11 @@ $PROTOC \
 
 ```markdown
 ./dist/iot/protocol/grpc
-										├── jubox_grpc_pb.d.js
-										├── jubox_pb.d.ts
+										├── thudercatx_grpc_pb.d.js
+										├── thudercatx_pb.d.ts
 ./src/iot/protocol/grpc
-										├── jubox_grpc_pb.d.ts
-										├── jubox_pb.d.ts
+										├── thudercatx_grpc_pb.d.ts
+										├── thudercatx_pb.d.ts
 ```
 
 ### 使用注意
@@ -212,11 +212,11 @@ const isBedEventType = (obj:BedEventType): obj is BedEventType => {
 }
 ```
 
-### Jubox - Grpc Adapter Implementation
+### thudercatx - Grpc Adapter Implementation
 
 ```typescript
 'use strict'
-import { BedEvent } from '../proto/jubox_pb'
+import { BedEvent } from '../proto/thudercatx_pb'
 import { BedEventType } from 'types/Proto'
 import { eventDetailAdaptee, defaultEventDetail } from './eventDetail'
 
@@ -255,7 +255,7 @@ export {
 }
 ```
 
-### Jubox Grpc Implementation
+### thudercatx Grpc Implementation
 
 ```typescript
 const updateBedEvent = (bedEvent:MwgEvents) => {

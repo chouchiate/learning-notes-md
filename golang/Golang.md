@@ -2,7 +2,7 @@
 
 ## Golang
 
-1. Jubo-space-backend
+1. thudercat-space-backend
 
 2. Change env variable for GOPATH
 
@@ -81,7 +81,7 @@
 
    ```bash
    # exit db bash
-   $ createdb jubo_space -O postgres -E utf8
+   $ createdb thudercat_space -O postgres -E utf8
    ```
 
 8. **Check Database is created**

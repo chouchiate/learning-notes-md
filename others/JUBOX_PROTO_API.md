@@ -15,7 +15,7 @@ Grpc Server-->Grpc Client: UpdateResp
 	transaction_no: 123
 	timestamp: '2020-12-10T09:48:09.440Z',
 	location: {
-		facility_id: 'jubo',
+		facility_id: 'thudercat',
 		room: '101',
 		bed: 'A',
 		position: 'optional',

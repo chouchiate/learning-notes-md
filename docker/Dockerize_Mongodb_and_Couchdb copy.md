@@ -7,7 +7,7 @@
 ```
 0. Download latest CouchDb Image
     * docker pull couchdb
-1. Make sure jubo-box/server contains couch.env
+1. Make sure thudercat-box/server contains couch.env
     
 2. Check if couchdb installed in machine
     * sudo dpkg -l | grep couchdb

@@ -26,7 +26,7 @@ Max 後端教學
 組員
 文件提供
 最晚請於預約時段一週前提供
-優先放置 https://gitlab.smart-aging.tech/sa/jubo-docs
+優先放置 https://gitlab.smart-aging.tech/sa/thudercat-docs
 其他位置 (HackMD、Notion 等等) 請提供網址
 會錄影，故會議採用 Google meet
 公司有提供部門的學習進修經費，分享內容若需要課程或書籍等資源，有需要都歡迎找凱元申請

@@ -5,7 +5,7 @@
 
 version: "3.3"
 services: 
-  jubox:
+  thudercatx:
     networks:
       - network-name
     image: "example/backend:latest"

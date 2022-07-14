@@ -96,7 +96,7 @@ $ docker build --tag <image_tag_name> .
 ### Docker Create Network Bridge
 
 ```bash
-# Check if jubo-net is created
+# Check if thudercat-net is created
 $ sudo docker network ls
 # create new bridge with 1.
 $ sudo docker network create -d bridge <network_name>

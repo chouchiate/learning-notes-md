@@ -34,7 +34,7 @@
   - `ArgoCD` (需要再到 ArgoCD Web UI 執行手動部署)
 
 延伸閱讀：
-- internal doc for developers: [Development Workflow and CI/CD Pipeline](https://internal.jubo.health/docs/docs/devops/cicd-pipeline)
+- internal doc for developers: [Development Workflow and CI/CD Pipeline](https://internal.thudercat.health/docs/docs/devops/cicd-pipeline)
 - DevOps [high level picture](https://gitlab.smart-aging.tech/devops/knowledgebase/-/blob/main/architectures/overview.drawio.png)
 
 ## Contributing Guide
@@ -119,7 +119,7 @@
   metadata:
     annotations:
       # image 的來源，請與 application gitlab-ci.yaml 中 publish 的 image name/tag 做一致的確認
-      argocd-image-updater.argoproj.io/image-list: IMAGE_NAME_ALIAS=gcr.io/jubo-pro/SUB_PROJECT/IMAGE_NAME
+      argocd-image-updater.argoproj.io/image-list: IMAGE_NAME_ALIAS=gcr.io/thudercat-pro/SUB_PROJECT/IMAGE_NAME
 
       # 使用 IMAGE_NAME_ALIAS 來指定更新策略。沒特別需求的話，應使用 latest 來表示總是抓最新的 image tag
       argocd-image-updater.argoproj.io/IMAGE_NAME_ALIAS.update-strategy: latest
@@ -194,7 +194,7 @@
 ### 如何新增一個環境變數 ？
 1. 要先判斷是不是共用資源 (在Develop/Demo/Release皆相同)
     - 如果是共用資源就加在base directory 裏面
-      - 舉例來說: 新增環境變數 GRPC_NIS_PORT到jubofamily-backend，會增加內容到以下Files: ConfigMap.yaml, Deployment.yaml
+      - 舉例來說: 新增環境變數 GRPC_NIS_PORT到thudercatfamily-backend，會增加內容到以下Files: ConfigMap.yaml, Deployment.yaml
 
     - 如果不是共用，則要到分別的 directory下新增需要加入的環境變數的 YAML file 並到 Kustomization.yaml去新增到patchesStrategicMerge底下，而Deployment.yaml一樣更新
 

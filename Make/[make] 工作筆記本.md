@@ -2,16 +2,16 @@
 
 start-mosquitto:
 	@echo "start mosquitto broker..."
-	@docker run -d --rm --name jubox-mqtt-6 \
+	@docker run -d --rm --name thudercatx-mqtt-6 \
 		-p $(MQTT_PORT):1883 \
 		eclipse-mosquitto:1.6.12-openssl
 
 stop-mosquitto:
 	@echo "stop mosquitto broker..."
-	@docker stop jubox-mqtt-6 | true
+	@docker stop thudercatx-mqtt-6 | true
 
 start-main:
-	cd server; echo "Starting Jubo-Box"; npm run start:dev;
+	cd server; echo "Starting thudercat-Box"; npm run start:dev;
 
 start-gcp-to-local:
 	cd server; echo "Starting Gcp-to-local-sniffer"; npm run start:gcp-to-local;

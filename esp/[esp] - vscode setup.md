@@ -89,13 +89,13 @@ Python 3.9.12
 Checking Python compatibility
 Checking other ESP-IDF version.
 Adding ESP-IDF tools to PATH...
-Using Python interpreter in /Users/jubo/.espressif/python_env/idf5.0_py3.9_env/bin/python
+Using Python interpreter in /Users/thudercat/.espressif/python_env/idf5.0_py3.9_env/bin/python
 Checking if Python packages are up to date...
-Skipping the download of /Users/jubo/.espressif/espidf.constraints.v5.0.txt because it was downloaded recently. If you believe that this is causing you trouble then remove it manually and re-run your install script.
-Constraint file: /Users/jubo/.espressif/espidf.constraints.v5.0.txt
+Skipping the download of /Users/thudercat/.espressif/espidf.constraints.v5.0.txt because it was downloaded recently. If you believe that this is causing you trouble then remove it manually and re-run your install script.
+Constraint file: /Users/thudercat/.espressif/espidf.constraints.v5.0.txt
 Requirement files:
- - /Users/jubo/Programming/esp/esp-idf/tools/requirements/requirements.core.txt
-Python being checked: /Users/jubo/.espressif/python_env/idf5.0_py3.9_env/bin/python
+ - /Users/thudercat/Programming/esp/esp-idf/tools/requirements/requirements.core.txt
+Python being checked: /Users/thudercat/.espressif/python_env/idf5.0_py3.9_env/bin/python
 Python requirements are satisfied.
 ...
 ...
@@ -156,13 +156,13 @@ idf.py -p PORT [-b BAUD] flash
 ```bash
 # Project build complete. To flash, run this command:
 
-/Users/jubo/.espressif/python_env/idf5.0_py3.9_env/bin/python ../../esp-idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/hello_world.bin
+/Users/thudercat/.espressif/python_env/idf5.0_py3.9_env/bin/python ../../esp-idf/components/esptool_py/esptool/esptool.py -p (PORT) -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/hello_world.bin
 
 ##
 
-/Users/jubo/.espressif/python_env/idf5.0_py3.10_env/bin/python ../../../../../esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-120 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/gatt_client_demo.bin
+/Users/thudercat/.espressif/python_env/idf5.0_py3.10_env/bin/python ../../../../../esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-120 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/gatt_client_demo.bin
 
-/Users/jubo/.espressif/python_env/idf5.0_py3.10_env/bin/python ../../../../../esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-120 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/gatt_server_demos.bin
+/Users/thudercat/.espressif/python_env/idf5.0_py3.10_env/bin/python ../../../../../esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-120 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size detect --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/gatt_server_demos.bin
 ```
 #### **Extension activation self configuration**
 

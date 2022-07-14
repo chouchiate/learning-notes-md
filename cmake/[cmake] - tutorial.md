@@ -33,7 +33,7 @@
         -- Detecting CXX compile features - done
         -- Configuring done
         -- Generating done
-        -- Build files have been written to: /Users/jubo/Programming/CMake/Help/guide/tutorial/Step1_build
+        -- Build files have been written to: /Users/thudercat/Programming/CMake/Help/guide/tutorial/Step1_build
     ```
 * following files are generated
     - CMakeFiles folder
@@ -133,13 +133,13 @@ cmake --build .
 ## got error message
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/jubo/Programming/CMake/Help/guide/tutorial/Step1_build
+-- Build files have been written to: /Users/thudercat/Programming/CMake/Help/guide/tutorial/Step1_build
 Consolidate compiler generated dependencies of target Tutorial
 [ 50%] Building CXX object CMakeFiles/Tutorial.dir/tutorial.cxx.o
-/Users/jubo/Programming/CMake/Help/guide/tutorial/Step1/tutorial.cxx:16:46: error: expected expression
+/Users/thudercat/Programming/CMake/Help/guide/tutorial/Step1/tutorial.cxx:16:46: error: expected expression
       std::cout << argv[0] << " Version " << Tutorial_VERSION_MAJOR << "."
                                              ^
-/Users/jubo/Programming/CMake/Help/guide/tutorial/Step1/TutorialConfig.h.in:2:32: note: expanded from macro 'Tutorial_VERSION_MAJOR'
+/Users/thudercat/Programming/CMake/Help/guide/tutorial/Step1/TutorialConfig.h.in:2:32: note: expanded from macro 'Tutorial_VERSION_MAJOR'
 #define Tutorial_VERSION_MAJOR @Tutorial_VERSION_MAJOR@
                                ^
 1 error generated.
@@ -155,10 +155,10 @@ make: *** [all] Error 2
 $ cmake --build .
 Consolidate compiler generated dependencies of target Tutorial
 [ 50%] Building CXX object CMakeFiles/Tutorial.dir/tutorial.cxx.o
-/Users/jubo/Programming/CMake/Help/guide/tutorial/Step1/tutorial.cxx:16:69: error: expected expression
+/Users/thudercat/Programming/CMake/Help/guide/tutorial/Step1/tutorial.cxx:16:69: error: expected expression
       std::cout << argv[0] << " Version " << Tutorial_VERSION_MAJOR << "."
                                                                     ^
-/Users/jubo/Programming/CMake/Help/guide/tutorial/Step1/tutorial.cxx:17:43: error: expected expression
+/Users/thudercat/Programming/CMake/Help/guide/tutorial/Step1/tutorial.cxx:17:43: error: expected expression
                 << Tutorial_VERSION_MINOR << std::endl;
                                           ^
 2 errors generated.

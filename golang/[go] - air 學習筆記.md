@@ -22,7 +22,7 @@ $ source /.bashrc
 
   ```bash
   $ mkdir <project_folder> && cd <project_folder>
-  $ go mod init <module_path> # jubo.health/jubo-space-backend
+  $ go mod init <module_path> # thudercat.health/thudercat-space-backend
   
   
   ```
