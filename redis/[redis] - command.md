@@ -1,6 +1,6 @@
 ## [redis] - commands
 
-### SET
+### SET command
 - 存入/複寫 value 給指定 key. 丟棄舊的 time to live 值
 #### options
 * EX seconds -- Set the specified expire time, in seconds.
@@ -14,10 +14,9 @@
 
 [SET](https://redis.io/commands/set/)
 
-### MSET
+### MSET command
 > * MSET key value [key value ...]
 > * Time Complexity: O(N) where N is the number of keys to set.
-
 
 ### Redis Sorted Set commands (有序集合命令)
 |# | 命令 | 描述 |
@@ -43,3 +42,66 @@
 | 19|ZUNIONSTORE destination numkeys key [key...] |計算給定一個或多個有序集的開集 儲存在新key 中 |
 | 20|ZSCAN key cursor [MATCH pattern] [COUNT count] |迭代有序集合中的元素 |
 
+### ZRANGEBYSCORE command
+#### prototype
+```bash
+ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]
+```
+* 返回有序集合中 指定分數 區間的遞增成員列表
+```bash
+$ ZRANGEBYSCORE zset (1 5
+
+$ ZRANGEBYSCORE zset(5 (10
+```
+#### options
+* LIMIT
+    - get a range of the matching elements (similar to SELECT LIMIT offset, count in SQL)
+    - negative count returns all elements from the "offset"
+
+#### range
+```bash
+# return all elements with 1 < zset <= 5
+ZRANGEBYSCORE zset (1 5
+#return all elements with 5 < zset < 10
+ZRANGEBYSCORE zset (5 (10
+# all elements
+ZRANGEBYSCORE zset -inf +inf
+
+```
+#### example
+```bash
+# 測試數據
+redis 127.0.0.1:6379> ZADD salary 2500 jack
+(integer) 0
+redis 127.0.0.1:6379> ZADD salary 5000 tom
+(integer) 0
+redis 127.0.0.1:6379> ZADD salary 12000 peter
+(integer) 0
+
+ # 顯示整個有序集合 (+infinity to -infinity)
+redis 127.0.0.1:6379> ZRANGEBYSCORE salary -inf +inf
+1) "jack"
+2) "tom"
+3) "peter"
+
+ # 顯示整個有序集合成員 score 值
+redis 127.0.0.1:6379> ZRANGEBYSCORE salary -inf +inf WITHSCORES
+1) "jack"
+2) "2500"
+3) "tom"
+4) "5000"
+5) "peter"
+6) "12000"
+
+# 顯示工資 <=5000 的所有成員
+redis 127.0.0.1:6379> ZRANGEBYSCORE salary -inf 5000 WITHSCORES
+1) "jack"
+2) "2500"
+3) "tom"
+4) "5000"
+
+# 顯示工資大於 5000 小於等於 400000 的成員
+redis 127.0.0.1:6379> ZRANGEBYSCORE salary (5000 400000
+1) "peter"
+
+```

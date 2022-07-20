@@ -1,7 +1,9 @@
 ## [dsp] - A C Implementation
 
 #### **Gnuplot**
+```bash
 
+```
 
 #### **Quantization**
 
