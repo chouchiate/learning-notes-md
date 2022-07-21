@@ -14,3 +14,7 @@
     - touch panel refactor
     - led scan refactor
     - await time to spec meet review and confirmation
+
+#### e-paper
+    - dc-dc-boost no signal
+    - study demo board
