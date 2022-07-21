@@ -113,8 +113,6 @@ $ git push origin <branch>
 
 ```
 
-
-
 #### git diff - 檢視差異
 
 ```bash
@@ -142,7 +140,6 @@ git diff e7ea844 a5eaff7 ./data-processor/processor/hmq.go  > ./tmp/diff.log
 $ git log --all --oneline | grep "slack"
 ```
 
-
 #### git blame - 檢視
 
 
@@ -158,8 +155,6 @@ git checkout .
 git checkout [commit-hash]
 git checkout master
 ```
-
-
 
 ### Discard local and fetch from remote master
 
@@ -227,7 +222,6 @@ $ git branch -a
 # clear git cache
 $ git rm -r --cached .
 ```
-
 
 ### Branch Develop then Merge to Main
 
@@ -315,7 +309,6 @@ git graph 上可以看到: master/demo 會在兩條平行線上
   git log -p .gitlab-ci.yml >./tmp/gitlab-ci-yml.txt
   ```
 
-
 ### How to handle Git Deteched HEAD
 
 > Merge with Master
@@ -360,6 +353,3 @@ ac7c70c update prod DB_DBNAME in Makefile
 
 5fa0e3a check login
 ```
-
-
-
