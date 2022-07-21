@@ -3,6 +3,12 @@
 #### dsp
     - gnu-plot study
 
+
+### tdk-mems-study
+    - air quality
+    - smart sound
+    -
+
 #### openthread
     - simplicity ftd project compiled and loaded to dev-kit
     - cli tested no response
@@ -17,3 +23,9 @@
 #### unity-c-tdd
     - template project for stm study
 
+
+#### high speed security
+* [google scholar](https://scholar.google.com/citations?user=hI3a_oIAAAAJ&hl=en)
+* [sinica](https://homepage.iis.sinica.edu.tw/pages/byyang/supervised_en.html)
+* [sinica](https://troll.iis.sinica.edu.tw/by-publ/#%E6%BB%B7%E6%95%99%E6%8E%88)
+* [springer](https://link.springer.com/content/pdf/10.1007/s13389-012-0027-1.pdf)

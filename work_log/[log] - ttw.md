@@ -3,7 +3,7 @@
 ### 07-21-2022
 #### IT611N
     - battery alert (red blink) triggered too frequently
-        - possible adc voltage drop after motor operation, measure too close to motor operation
+        - possible adc voltage drop after motor operation, measure too close right after motor operation
         - change measurement timing:
             from: every idle before sleep, (possibly after motor movement) to
             to: prior motor movement when battery voltage level is smooth

@@ -1,11 +1,16 @@
 ## K8s Deployment
 
-```
+```bash
 docker login
 ```
 
 ```bash
 kubectl create secret generic docker-account --from-file=<file_directory>
+```
+
+### k8s deploy nginx
+```bash
+$ kubectl create deployment nginx --image nginx
 ```
 
 ### Pod Health Check & Restart Policy

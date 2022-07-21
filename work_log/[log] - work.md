@@ -42,9 +42,16 @@
     - design repeat alert repo interface methods
         - FetchDeviceAlertPlan (V)
         - ListActiveAlerts (V)
-    - design repeat alert cache interface methods
-        - move alert cache
-        - CacheDeviceAlertPlan (x)
+    - design repeat alert job queue interface methods
+        - create redis-lua script and function for AlertJobQueue Interfaces
+            - Add (V)
+            - GetDataFromUnconsumedAlert (V)
+            - AckAlert (V)
+            - PullAlert (V)
+        - CacheDeviceAlertPlan (X)
+            -
+        - Test Cases for repeat_alert_job_queue (>>)
+    - alert job queue 的前世今生 postgresql update to redis dataset when new server is up
     TODOs:
     - design grpc interaction with repeat alert interfaces
         - incoming events to
