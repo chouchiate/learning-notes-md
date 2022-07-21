@@ -4,8 +4,12 @@
     - gnu-plot study
 
 #### openthread
-    - simplicity compiled and loaded
-    - cli no response
+    - simplicity ftd project compiled and loaded to dev-kit
+    - cli tested no response
+    - buy radio-kit for rpi
+    - buy another dev-kit
+    - plan and design usage
+    - study CLIMAX
 
 #### power modeling
     - small signal modeling for dc-dc-buck

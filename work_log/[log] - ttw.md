@@ -2,11 +2,13 @@
 
 ### 07-21-2022
 #### IT611N
-    - battery alert triggered issue
-        - possible adc voltage drop after motor operation
-        - change measurement timing from
-            1. every idle before sleep, (possibly after motor movement) to
-            2. prior motor movement when battery voltage level is smooth
+    - battery alert (red blink) triggered too frequently
+        - possible adc voltage drop after motor operation, measure too close to motor operation
+        - change measurement timing:
+            from: every idle before sleep, (possibly after motor movement) to
+            to: prior motor movement when battery voltage level is smooth
+            to: every idle before sleep if no motor movement
+            ** no measurement right after motor movement
     -
 
 #### IT603_JTIC new spec

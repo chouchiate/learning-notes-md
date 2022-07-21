@@ -37,9 +37,11 @@
     - design repeat alert repo and cache
 ## T
 * [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
+    - design alertjobqueue (redis cache) interaction with repeat_alert_repo (postgresql)
+        -
     - design repeat alert repo interface methods
         - FetchDeviceAlertPlan (V)
-        - Load
+        - ListActiveAlerts (V)
     - design repeat alert cache interface methods
         - move alert cache
         - CacheDeviceAlertPlan (x)
