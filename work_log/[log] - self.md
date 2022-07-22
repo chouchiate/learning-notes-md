@@ -1,30 +1,33 @@
 ## [log] - self
 ## 07-21-2022
 #### dsp
-    - gnu-plot study
-
-
+:open_book: gnu-plot study
+    - download
+    - generate waveform
 
 
 ### tdk-mems-study
-    - air quality
-    - smart sound
-    -
+:floppy_disk: air quality
+
+:floppy_disk: smart sound
+
+:floppy_disk: smart_bug project
 
 #### openthread
-    - simplicity ftd project compiled and loaded to dev-kit
-    - cli tested no response
-    - buy radio-kit for rpi
-    - buy another dev-kit
-    - plan and design usage
-    - study CLIMAX
+- simplicity ftd project compiled and loaded to dev-kit
+- cli tested no response
+- buy radio-kit for rpi
+- buy another dev-kit
+- plan and design usage
+- study CLIMAX
 
 #### power modeling
-    - small signal modeling for dc-dc-buck
-    - :bangbang: matlab dc-dc simulation modeling code
+:open_book: small signal modeling for dc-dc-buck
+
+:bangbang: matlab dc-dc simulation modeling code
 
 #### unity-c-tdd
-    - template project for stm study
+:open_book: template project for stm study
 
 
 #### high speed security
