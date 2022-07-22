@@ -1,9 +1,8 @@
 ## [log] - my_work_log
 
+---
 ### 07-22-2022
 
-
-### 07-21-2022
 #### [Y]
 * [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
     - 完成 - complete design repeat alert repo interface methods
@@ -23,6 +22,9 @@
         - setting change update
 
 ---
+
+
+### 07-21-2022
 #### [Y]
 * [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
     - Refactoring alert-job-queue
