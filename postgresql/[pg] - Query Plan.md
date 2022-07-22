@@ -1,7 +1,15 @@
 # [pg] - **Query Plan Learning Notes**
 
-####
+#### Query Plan Structure
 
+```
+Sort
+└── Hash Join
+    ├── Seq Scan
+    └── Hash
+        └── Bitmap Heap Scan
+            └── Bitmap Index Scan
+```
 
 
 # **Reference**

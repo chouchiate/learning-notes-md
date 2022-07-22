@@ -4,6 +4,8 @@
     - gnu-plot study
 
 
+
+
 ### tdk-mems-study
     - air quality
     - smart sound
@@ -19,6 +21,7 @@
 
 #### power modeling
     - small signal modeling for dc-dc-buck
+    - :bangbang: matlab dc-dc simulation modeling code
 
 #### unity-c-tdd
     - template project for stm study

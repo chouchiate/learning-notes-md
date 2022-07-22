@@ -1,6 +1,28 @@
 ## [log] - my_work_log
-### 07-21-2022
 
+### 07-22-2022
+
+
+### 07-21-2022
+#### [Y]
+* [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
+    - 完成 - complete design repeat alert repo interface methods
+    - 完成 - complete design repeat alert job queue interface methods
+    - 設計中 - design alertjobqueue (redis cache) AND repeat_alert_repo (postgresql) interaction 和開機初始狀態
+
+#### [T]
+    - 設計中 - design alertjobqueue (redis cache) AND repeat_alert_repo (postgresql) interaction 和開機初始狀態
+    - 設計中 design grpc interaction with repeat alert interfaces
+        - incoming events to
+            1. activate,
+            2. cancel,
+            3. reset repeat alerts
+    - 設計中 design restful interaction with repeat alert interfaces
+        - line cancel and
+        - frontend cancel
+        - setting change update
+
+---
 #### [Y]
 * [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
     - Refactoring alert-job-queue
@@ -21,7 +43,7 @@
             - PullAlert (V)
         - CacheDeviceAlertPlan (X)
             -
-        - Test Cases for repeat_alert_job_queue (>>)
+        - Test Cases for repeat_alert_job_queue (V)
     - alert job queue 的前世今生 postgresql update to redis dataset when new server is up
     TODOs:
     - design grpc interaction with repeat alert interfaces
