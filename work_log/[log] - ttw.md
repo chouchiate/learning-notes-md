@@ -29,7 +29,7 @@
 :white_check_mark: study demo board
 - tracing demo board circuit
 
-
+---
 ### 07-21-2022
 #### IT611N
     - :construction: battery alert (red blink) triggered too frequently
