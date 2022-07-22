@@ -7,7 +7,7 @@
 
 :sos: possible adc voltage drop after motor operation, measure too close right after motor operation
 
-:bangbang: change measurement timing:
+:hammer: change measurement timing:
 * from: every idle before sleep, (possibly after motor movement) to
 * to: prior motor movement when battery voltage level is smooth
 * to: every idle before sleep if no motor movement
