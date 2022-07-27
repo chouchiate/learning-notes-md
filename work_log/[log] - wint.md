@@ -1,4 +1,15 @@
-## [log] - wintact
+## [log] - wint
+
+![](./wint_gantt.drawio.png)
+### 07-26-2022
+#### WP222F12 refactoring
+:white_check_mark:      ac_signal (done, unit tested)
+
+:white_check_mark: adc - vv, vi, vt (done, fully tested)
+
+:construction: state machine logic and flow
+
+:construction: protection flow
 
 ### 07-22-2022
 #### WP222F12 refactoring

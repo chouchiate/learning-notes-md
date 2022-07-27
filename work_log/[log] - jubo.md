@@ -1,5 +1,39 @@
 ## [log] - my_work_log
 
+### 07-26-2022
+#### [Y]
+* [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
+
+- :white_check_mark: 完成 design RepeatManager 之
+    - restful interaction with repeat alert interfaces (前端 frontend disalarm -> restful cancel)
+    - go routine (repeat alert checking)
+    - grpc incoming events
+        - grpc interaction with repeat alert interfaces
+
+- :construction: 設計中 design RepeatManager 之
+    - grpc incoming events 實作
+        1. activate / re-activate,
+        2. cancel,
+        3. change alert to repeat
+
+---
+### 07-25-2022
+#### [Y]
+* [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
+    - 完成 -  design restful interaction with repeat alert interfaces
+        * frontend disalarm
+    - 完成 - complete design repeat alert job queue interface methods
+    - 完成 design grpc interaction with repeat alert interfaces
+        - incoming events to
+            1. activate,
+            2. cancel,
+            3. reset repeat alerts
+    - 設計中 - design alertjobqueue (redis cache) AND repeat_alert_repo (postgresql) interaction 和開機初始狀態
+
+#### [T]
+    - 設計中
+
+
 ---
 ### 07-22-2022
 

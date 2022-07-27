@@ -1,4 +1,7 @@
 ## [log] - self
+
+![](./fluxconn_gantt.drawio.png)
+
 ## 07-21-2022
 #### dsp
 :open_book: gnu-plot study
