@@ -14,7 +14,7 @@
         2. cancel,
         3. change alert to repeat
 - :white_check_mark:
-    - TDD Database preparation for repeat alert (user and user preferences settings)
+    - TDD Database preparation for repeat alert (mocking user and user preferences settings)
 
 #### [T]
 - :construction:
