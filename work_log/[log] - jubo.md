@@ -1,5 +1,27 @@
 ## [log] - my_work_log
 
+### 07-28-2022
+#### [Y]
+* [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
+
+- :white_check_mark: 完成 design RepeatManager 之
+    - restful interaction with repeat alert interfaces (前端 frontend disalarm -> restful cancel)
+    - go routine (repeat alert checking)
+    - grpc incoming events
+        - grpc interaction with repeat alert interfaces
+    - grpc incoming events 實作
+        1. activate / re-activate,
+        2. cancel,
+        3. change alert to repeat
+- :white_check_mark:
+    - TDD Database preparation for repeat alert (user and user preferences settings)
+
+#### [T]
+- :construction:
+    - TDD Unit Testing and integration testing for repeat alert
+
+
+
 ### 07-26-2022
 #### [Y]
 * [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
