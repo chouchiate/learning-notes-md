@@ -9,3 +9,5 @@
 #### redis-cli
 
 
+#### external
+[hackmd](https://hackmd.io/@maxcian/101-caching-and-redis)
