@@ -13,6 +13,7 @@
 :hammer: add logic to compensate for bsw uncertainty issues by saving and checking eeprom accordingly
 
 :hammer: adc battery check timing has been changed when system waking up
+    - only after 10th accumulated measurement of low battery should trigger battery saving modes.
 
 ### 07-22-2022
 
