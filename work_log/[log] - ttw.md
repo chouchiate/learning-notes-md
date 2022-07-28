@@ -4,6 +4,11 @@
 
 #### IT611N
 :hammer: change locking behaviour according to customer feedback
+    - auto locking
+    - go to error if auto locking fails, then go to sleep
+    - if waking at locking preparation position, use nfc to trigger locking
+    - all motor movement mut be recorded and new movement is prevented until sleep occurred.
+    - if movement is performed and another possible movement is triggered, lock will show error and be forced to sleep.
 
 :hammer: add logic to compensate for bsw uncertainty issues by saving and checking eeprom accordingly
 
