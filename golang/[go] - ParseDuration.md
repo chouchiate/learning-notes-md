@@ -33,24 +33,24 @@ There are 3.00e-06 seconds in 3µs.
 ```
 
 ```go
-// Golang program to illustrate 
-// how to find time duration 
-package main 
-  
-import ( 
+// Golang program to illustrate
+// how to find time duration
+package main
+
+import (
     "fmt"
     "time"
-) 
-  
-func main() { 
-  
-    // Using ParseDuration() function 
-    hr, _:= time.ParseDuration("3h") 
-    comp, _:= time.ParseDuration("5h30m40s") 
-  
-    fmt.Println("Time Duration 1:", hr) 
-    fmt.Println("Time Duration 2:", comp) 
-  
+)
+
+func main() {
+
+    // Using ParseDuration() function
+    hr, _:= time.ParseDuration("3h")
+    comp, _:= time.ParseDuration("5h30m40s")
+
+    fmt.Println("Time Duration 1:", hr)
+    fmt.Println("Time Duration 2:", comp)
+
 }
 ```
 

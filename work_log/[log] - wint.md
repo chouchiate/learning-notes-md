@@ -2,7 +2,34 @@
 
 ![](./wint_gantt.drawio.png)
 
+### 07-29-2022
+:construction: command-line-calibration for ovp/otp/scp/ocp level
+
+:construction: LCD display
+
+:construction: 30v_output protection flow
+
+:white_check_mark: over_temperature protection flow
+
+:white_check_mark: 30v_output state machine logic flow
+
+:white_check_mark: ac_input state machine logic flow
+
+:white_check_mark: ac_input protection flow
+
+:white_check_mark: 12v_output state machine logic flow
+
+:white_check_mark: 12v_output protection flow
+
+:white_check_mark:      ac_signal (done, unit tested)
+
+:white_check_mark: adc - vv, vi, vt (done, fully tested)
+
+
 ### 07-28-2022
+:construction: command-line-calibration for ovp/otp/scp/ocp level
+
+:construction: LCD display
 
 :construction: 30v_output state machine logic flow
 

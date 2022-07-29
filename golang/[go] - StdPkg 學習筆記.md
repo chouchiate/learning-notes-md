@@ -16,7 +16,7 @@
 
 #### Example: Print Slice of struct
 ```go
-var projects []Project  
+var projects []Project
 // try %v, %+v or %#v verbs of fmt
 fmt.Printf("%v", projects)
 ```
@@ -28,7 +28,7 @@ fmt.Printf("%v", projects)
 > Errorf formats according to a format specifier and returns the string as a value that satisfies error.
 ```go
 func Errorf (
-    format string, 
+    format string,
     intf ...interface{}
 ) error
 ```

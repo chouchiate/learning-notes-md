@@ -188,7 +188,6 @@ func main() {
 	b.SayWorld("Kubernetes")
 }
 
-
 ```
 #### **Output**
 ```bash
@@ -222,8 +221,8 @@ func (a *aaa) SayHello(input string) {
 	fmt.Println("Hello~A ", input)
 }
 
-func (a *aaa) SayWorld(input string) {
-	fmt.Println("World~A ", input)
+func (a *aaa) SayWorld(input string, intput2 string) {
+	fmt.Println("World~A ", input, input2)
 }
 
 type bbb struct {
@@ -239,17 +238,16 @@ func (b *bbb) SayHello(input string) {
 
 func (b *bbb) SayWorld(input string) {
 	fmt.Println("World~B ", input)
-	b.aaa.SayHello("TEST!!!")   // NewBBB wrapper can only be called within function implementations
+	b.aaa.SayHello("TEST!!!")   // NewBBB wrapper can only be called within function implementations (of same scope)
 }
 
 func main() {
-	// New Interface doesn't support inherited methods
 	a := NewAAA()
 	b := NewBBB()
 	// a := &aaa{}
 	// b := &bbb{}
-	// b.aaa.SayHello("TEST!!!")
-	a.SayHello("Derick")
+	// b.aaa.SayHello("TEST!!!")    // b.aaa.SayHello("TEST!!!") cannot be called in main
+	a.SayHello("Derick", "Super")
 	a.SayHello("Chou")
 	b.SayHello("Docker")
 	b.SayWorld("Kubernetes")
