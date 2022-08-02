@@ -2,7 +2,7 @@
 
 ### Type Assertion
 * Provide access to an interface's concrete value.
-* Type Assertion x.(T) asserts the dynamic type of x 
+* Type Assertion x.(T) asserts the dynamic type of x
   * if T is not interface, asserts dynamic type of x is identical to T.
   * if T is interface, asserts dynamic type of x implements T.
 ```go
@@ -33,17 +33,30 @@ var x interface{} = "foo"
 switch v := x.(type) {
   case nil:
     fmt.Println("x is nil")
-    
+
   case int:
     fmt.Println("x is", v)
-    
+
   case bool, string:
     fmt.Println("x is bool or string")
-    
+
   default:
     fmt.Println("type not processed")
-    
+
 }
+```
+
+### Type detection with interface
+```golang
+switch t := myVar.(type){
+  case []uint8:
+    // t is []uint8
+  case *Foo:
+    // t is *Foo
+  default:
+    panic("unknown type")
+}
+
 ```
 
 

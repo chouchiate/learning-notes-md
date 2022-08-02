@@ -133,7 +133,7 @@ entry 0x400805cc
 0000000000284,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 0000000000286,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 0000000000293,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-0000000000301,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+0000000000301,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 0000000000819,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 0000000000823,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 0000000006439,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -175,7 +175,7 @@ entry 0x400805cc
 0000000026864,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 0000000028864,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505217916,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:06:57 (GMT+0)
-1657505218578,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505218578,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505218579,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDUyMTcsImV4cCI6MTY1NzU5MTYxNywiYXVkIjoid2FsYWJvdC1ob21lIn0.Kf71c83Ipw9tLniP645VqOpRAAJyR7PA-0uPNJycp9rNFBL_3oRuIl0xJAGx7bmOOpdY94bbqn-UU5vMhZy0YXly2KMCTvKrKJEkN5Rf9UEiEaxuZxq5348g49Avkav4TxFUq9E4RI9ljFhyNf4QQniRjMMJ0X3YOQiTUIRMWmvT_XNwXyw3SlQQ62cpDk0qldg0CAKXYoAvWX5WcSuB89UGebi5H9rdURy0MTdBFNy4uBB1kW_P8rK7xPJVBHbmPn4invQjnNqbfGt2rHpVnsMuMJB61TApBSmyNJLsHnDAYFN4HqBCuhGdz9laUpCPz_o_DK92bzY8y8Mu2WGr2g
 1657505218628,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505218632,DEBUG,http.cpp(92), <- keyver 2
@@ -221,7 +221,7 @@ entry 0x400805cc
 1657505285605,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505285610,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505285619,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505285637,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505285637,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505285844,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505285848,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505291461,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -236,7 +236,7 @@ entry 0x400805cc
 1657505293695,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657505295695,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505297144,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:08:17 (GMT+0)
-1657505297809,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505297809,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505297810,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDUyOTcsImV4cCI6MTY1NzU5MTY5NywiYXVkIjoid2FsYWJvdC1ob21lIn0.Qepmm8iId_4MCgWQB8neh3tybtN-2gTwoVZhlEP-pQ2YisEi90EnUxAnlRyiTiX9LWfLId2x00ehDbWsoWzlAnyY9hkpfdTdVPXZoW9Mfmps8lFb3zlfAdaEjqKkGDoZdJizek3flIywjvIF7sqk_zpRLg0jxoNEBWEPjZsCOOQqRsBouFq_jPxcwsumDW0dldRtEwqYe4zLwIj7IYllM8VFIvnZn49NlSb5biWL8TQAhOJV3-5Y4U4736EKgmRqPdBe0mwLE-v-_tz9-5Lhp84MOY3WMSC1g2NaudSSj6UwCfnEXlRj4rHSgoHQbGyhx3BzvBDDIsGOzCmABsHiKw
 1657505297859,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505297863,DEBUG,http.cpp(92), <- keyver 2
@@ -282,7 +282,7 @@ entry 0x400805cc
 1657505364111,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505364123,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505364129,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505364137,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505364137,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505364342,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505364346,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505369959,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -297,7 +297,7 @@ entry 0x400805cc
 1657505372703,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657505374703,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505376730,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:09:36 (GMT+0)
-1657505377387,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505377387,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505377388,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDUzNzYsImV4cCI6MTY1NzU5MTc3NiwiYXVkIjoid2FsYWJvdC1ob21lIn0.gJUYKImTDp9zjhHZjyo4yGCU0UlBaSVl3vxGVXAqmPwbNeh7sHZVKGWi8c4fFn5PDpF4dcq_flRt-mvP5FtmO00cvAwbB6nYFXATsoNVRCDzrDgHDr8LCmHIwL2my68bW_Rcos5wiLRa0UAlgMAzbQy1bXi3wdjJEj43D2gguK6WT02JeBKidYsINBC4WzmNuHgZprTV3WBGMpJQI5SAm1Igo38SRG2vP3XVBxdehPc-_3dWPxrgzcppJDeIHWR_yIPGWhNIKsVTVJeSrgGPpPBAIrGLv622gyrB-kqMJiimN0L9GmpmuwDGg5LfFZySYgeDGAzU8CwGxjLbh42WCw
 1657505377437,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505377441,DEBUG,http.cpp(92), <- keyver 2
@@ -343,7 +343,7 @@ entry 0x400805cc
 1657505443998,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505444003,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505444012,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505444030,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505444030,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505444536,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505444540,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505450154,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -359,7 +359,7 @@ entry 0x400805cc
 1657505454088,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505456088,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657505457953,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:10:57 (GMT+0)
-1657505458608,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505458608,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505458610,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDU0NTcsImV4cCI6MTY1NzU5MTg1NywiYXVkIjoid2FsYWJvdC1ob21lIn0.PoUpGVR1M1dJ5VJ_9CEsg2863M8sb9Ly0jmwtfnwrBZvERvWCnqdJftkdXRieqRTXTAO3PAzyPR8fwLOvAdULoVwquXs8kAubLL-8IVoifORF2fQPmV5_tXC1l1j-Ew0vzIKpGVrX4TRy1Js7KELofEKK0Zc5L7djPK76Ocg7pDygaa_9UcMK1qieYaJPcRZ0L_cnxz7vMkkZsl1DVkzJtp2vGvW4798SWNEihCxM5TUTDlatmBV1SvdBShnPJX-OLo85rmVIVyR4Ne0adsOltMtoLrpQYD4iEHtEWSxpSRW8KxFMXrt4vYfYXrxcheMAz4_pS_1PDBdpUay90_lQw
 1657505458658,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505458663,DEBUG,http.cpp(92), <- keyver 2
@@ -405,7 +405,7 @@ entry 0x400805cc
 1657505525398,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505525402,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505525411,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505525427,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505525427,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505525647,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505525717,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505531411,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -419,7 +419,7 @@ entry 0x400805cc
 1657505533477,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657505533486,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657505535228,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:12:15 (GMT+0)
-1657505535889,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505535889,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505535891,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDU1MzUsImV4cCI6MTY1NzU5MTkzNSwiYXVkIjoid2FsYWJvdC1ob21lIn0.bzNYLeSL1y_i_Y0D_YI-IqZy-4b0iSlb1IYejHxL4CmqC7944qFCdZA4xcAu-RDFSSuyHDqWyUDdzbTbCDe85TJeV-z-qo89s4fyc7EncNfWXu7PheZ94Si_dnKSq8sTZZ6wK1pR_RL_kCcU9d3w5YHkt3LjdSab86IPo6tKCjnl3PhzAU7JN4e1U9-6ZoeuRw_24ZDtGtX1y-AUk7J-4HHMsR64wAgLlOk0Olt_5Zh6a6u8pfyVpbVoBBHxkg4Fgm7NwZRDFmt0LUt_9nh5zMrAh0o61DedSNNNgtrvvvSiM07HIpJUKAyDYr5AjHEVDmQyAIfKRjS2_X29T43B_A
 1657505535939,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505535944,DEBUG,http.cpp(92), <- keyver 2
@@ -465,7 +465,7 @@ entry 0x400805cc
 1657505602768,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505602774,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505602782,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505602800,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505602800,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505603072,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505603076,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505608694,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -481,7 +481,7 @@ entry 0x400805cc
 1657505612858,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505614858,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657505616519,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:13:36 (GMT+0)
-1657505617176,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505617176,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505617177,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDU2MTYsImV4cCI6MTY1NzU5MjAxNiwiYXVkIjoid2FsYWJvdC1ob21lIn0.a3psPHTaJDEa_WyAphwgXxrtMLcAeDjUIgn_gaer-r5CVJyXagSNndkGy3QjhFWQc6-WymjU8ABHSp5RZ42gkaE_mTn2yIqNKEKCWuI7EZrIPHplfecwLoA48LsMWZerAhe36TXaxgOoPtm2jxt7HAfzl78YK2JT4Ji4nJe59sX28KXJ0EPCSnUVZ8PKZkhAsL-XxT-O2u2gkERqjGCBxndyuVtSvwkf3QUULe0iJSs6L296nBAk_C34clzvo5nhnGeGlRBuPcs6EV_5wB6VNwvl6nMPA6HpJPHobd__W-MaoZ7g6Pd6vi0ioAaOrLESeHUxjvnu70vVrUx_TaLrig
 1657505617226,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505617230,DEBUG,http.cpp(92), <- keyver 2
@@ -527,7 +527,7 @@ entry 0x400805cc
 1657505683754,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505683761,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505683769,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505683783,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505683783,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505684005,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505684076,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505689777,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -542,7 +542,7 @@ entry 0x400805cc
 1657505691842,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657505693841,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505695719,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:14:55 (GMT+0)
-1657505696381,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505696381,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505696383,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDU2OTUsImV4cCI6MTY1NzU5MjA5NSwiYXVkIjoid2FsYWJvdC1ob21lIn0.Hyt6aC4ZXOnrLDchHjAeII3rvPWnM90qC4ouiKpv164V1gX2F_XCPYkpJuUNv3uXXbKQWE-5r-xObT02oV-gRtnIgIlJ18IgSkRzuj_dP8cXkeFrgiW_N-FVcRpmAjuFAiGLcYwIi-Cvt4zaMA1FsxtX6BTDLy_XTtxgtGKtEkoSt0Tergnylpa9aNPS9CLW6hDbFNubl4wSocTzYrWwu9NgpBICjHJE2SkrIlEJWhllg--k5B4siKYVN-WbErxxuy4qJhLVq0yjfknadDzeOffmZ23sVmz3hDe7Xv_n_WadsEJvxG5q5itZuM-kED6vqi36omTtcwcht1Ws1RBx8Q
 1657505696431,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505696436,DEBUG,http.cpp(92), <- keyver 2
@@ -588,7 +588,7 @@ entry 0x400805cc
 1657505764000,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505764006,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505764014,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505764032,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505764032,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505764233,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505764237,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505769857,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -603,7 +603,7 @@ entry 0x400805cc
 1657505772092,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657505774090,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505775822,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:16:15 (GMT+0)
-1657505776480,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505776480,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505776481,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDU3NzUsImV4cCI6MTY1NzU5MjE3NSwiYXVkIjoid2FsYWJvdC1ob21lIn0.Sp6k5TWhr9DLCbarxGDmUjlwOHImBRQ_a9bUyh6qiQ_bjuts_QT65oY7iNDnbP9Vap-RMw5TaZOoQ4mW_TOah08vECq8m_JWdX82ghaokR9pbpDf5RjhTFKx_Up9UIqgvG4fYhzpPfxhQh-vVDvqlESVZTXedz0KKjHPulAbRDZDynNN0SgD2Q1mUOcQj9ce0P6WOJsZO_Q5SjuC69GpsvhAj4BRFEK-grbEUxW_Neqh606Vo0VkxQduWnwRQ_2sIMD1Yoeroz5DfKLKo7kppZetrw4gsmSrOOf-Huu0nKiCN1-6qkp_PfJsSW-3Y-A_5y_S7_u1eiC919MpaiFkhA
 1657505776530,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505776534,DEBUG,http.cpp(92), <- keyver 2
@@ -647,7 +647,7 @@ entry 0x400805cc
 0000000000138,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 0000000000145,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 0000000000154,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-0000000000166,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+0000000000166,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 0000000000418,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 0000000000422,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 0000000006039,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -662,7 +662,7 @@ entry 0x400805cc
 0000000008290,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 0000000010306,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657505856428,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:17:36 (GMT+0)
-1657505857083,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505857083,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505857084,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDU4NTYsImV4cCI6MTY1NzU5MjI1NiwiYXVkIjoid2FsYWJvdC1ob21lIn0.VyE8z6HQofTYohhBdRDouAgX9fdPpb7mpFa95PhuH3Rp9HySUufdrUpqe2cLmbFvAezod2yWrCv817AGaCo8OcwhU4cWwLMYMEEklfRUrCZNWBfRXFSIqWcuLcLcTMF07-xZh9adQp7q6QhIMBp242l_dnOa97guzMir19x2TmVLHI47VFdbmD4RVnRNJlI0YMZdlK3KugzxyynXWH3IxZ06apMMfIi4ye8yrHfHwQUSXbCLLCphviEPz6nIktpxS2wWNWKFeefFoFhzQXF2Hb7sZ6h0jiW0ke5kN5rez61p4aUSFQQYaB37_EKqCm9x8U4ScVTfPzDY7racxiRAUg
 1657505857132,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505857137,DEBUG,http.cpp(92), <- keyver 2
@@ -708,7 +708,7 @@ entry 0x400805cc
 1657505924336,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657505924341,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657505924350,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657505924368,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657505924368,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657505924752,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657505924757,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657505930371,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -722,7 +722,7 @@ entry 0x400805cc
 1657505932417,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657505932426,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657505933626,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:18:53 (GMT+0)
-1657505934288,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657505934288,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657505934290,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDU5MzMsImV4cCI6MTY1NzU5MjMzMywiYXVkIjoid2FsYWJvdC1ob21lIn0.RnH7a0-lQWe6pKwEynHify-80kn7wo8qdqYwlJmPd316wljPi-R6JKKkRFjTDKOICzy-7_9Nh_wvwONYDsF-h5CUqpayZ1B8jhuwoztkMwO0GWUvCB0jSWnR2ljSS9AgHXYCrd9cZU2KDqlgV43kGmPfJ_ZF_HYPuoLVvUiVxsr-fSRQ0H1352-u4Ecte3PIoOC6W0alr-IzYoGq3aMYG7A2v5FLSTp1pGR6tnjcE-8zeeVOGIQ06ZkLty0YVtjgnfBud60YF6Iy30S9V1E0RXf1Z6GUe3eEmisVM2u44T3q2ZqGVjKF1Y50MRfxbxxHV8hN-9d7s_CQhZP9JiGCuA
 1657505934338,DEBUG,http.cpp(92), <- Content-Type application/json
 1657505934343,DEBUG,http.cpp(92), <- keyver 2
@@ -768,7 +768,7 @@ entry 0x400805cc
 1657506000466,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506000475,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506000492,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506000495,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506000495,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506000713,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506000717,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506006337,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -782,7 +782,7 @@ entry 0x400805cc
 1657506009042,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506009051,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506011174,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:20:11 (GMT+0)
-1657506011834,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506011834,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506011835,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDYwMTEsImV4cCI6MTY1NzU5MjQxMSwiYXVkIjoid2FsYWJvdC1ob21lIn0.FC9y5TYof3DE5fnyGSgvP6_JLIaBo5ZjEe24IcDUqzyNLuubYZLn2qEyBjoe7n2bq976Oz0wryx2P36ZN6Ler9bMdh-1-Y9Deuh2wQI_rwteayAweLrMSW_6_e-QN0M_1Wl8LI44ziHDAQyDs14tXDcKNH__ypSCOjLuspIXNCYh-Q2imbFhBL0Q-UIK3gTkpm00vLCP_jHE6GqkZMvL3UH0ftL4AnqniEAGhN8BvbvTUnFdrH1VLNKAUnbsPfOq_BE8mxMJHQGMR2GLPvJ4JUqoGfS88rbeyfe_uDZRQ2odQ_PqjXqwvfo_b30LY2CjmLO2UrEQGJOVpDD4oUULtQ
 1657506011884,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506011888,DEBUG,http.cpp(92), <- keyver 2
@@ -828,7 +828,7 @@ entry 0x400805cc
 1657506078491,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506078496,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506078505,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506078523,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506078523,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506078725,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506078729,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506084347,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -843,7 +843,7 @@ entry 0x400805cc
 1657506086581,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506088581,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657506090598,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:21:30 (GMT+0)
-1657506091263,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506091263,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506091264,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDYwOTAsImV4cCI6MTY1NzU5MjQ5MCwiYXVkIjoid2FsYWJvdC1ob21lIn0.MFvu1dcvivQzRwGAWY4_mh4tWL6oTanhJV3kzJe7L8qp3fAmmKQD-Z6CGI4oFWcmQoBYz0MG-1RslTtjtOaPRxh_3m4FyxHjRSt7s7sbcPUKIRmheSVy3VZFnkohPkeRN-jepL49EGgu4crzKXm_1IVskwx6FkpyewO_C0P64M_dqkgbWB6GHJGeghMZu1ps9A7b49BQu8b8yMgAjLV8Q1D2x3rsVF6Sd_PDO6nN4H0q0IIkhvINQKV8Tf-w85rWi-7gI_DAuSH3Mi_JLy2FIxSWOnDOTRq4yxqDcPUh40OMTGk0kQs3oXf_s-gmwgmGfw9FFvXpeuWwwa0X76Sl0A
 1657506091313,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506091317,DEBUG,http.cpp(92), <- keyver 2
@@ -889,7 +889,7 @@ entry 0x400805cc
 1657506157630,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506157636,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506157645,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506157660,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506157660,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506157882,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506157886,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506163504,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -905,7 +905,7 @@ entry 0x400805cc
 1657506167718,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657506169718,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657506171665,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:22:51 (GMT+0)
-1657506172326,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506172326,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506172327,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDYxNzEsImV4cCI6MTY1NzU5MjU3MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.Q-5XpIyM6-i14kQH_tvq2lhK6xtFhzmunAC37riK9F47g5MMMmw7cHfNLwqfoFpLUuKcTp4dmwGtx6whQ0yqAkgUcCcIOfyAFOG0ipF1d53C7v2Z7dyJvtJUZbHcoxrbIpoA2NjEKQ8vv55BrgCS4OClpkpLbKhxSQqz3oo3CC1CDTmBRQgN7i-6iv6PaWZJut61Z5P7kAz1uvCZ4jUGONMhOBtBaragZ6Ch27WKCbdLfaXtgF-XKi-k7ML6twcsk_RqOS8XDmuKy5W3kwuGQ3YmG8ld4wQb1lzdFOQN_-is0cuzyE_Zb9qMCsr70Goa0P-ENJMWKabiz6l5JhAnwQ
 1657506172376,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506172380,DEBUG,http.cpp(92), <- keyver 2
@@ -951,7 +951,7 @@ entry 0x400805cc
 1657506239074,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506239080,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506239088,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506239106,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506239106,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506239760,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506239765,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506245381,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -967,7 +967,7 @@ entry 0x400805cc
 1657506249164,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657506251164,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657506253244,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:24:13 (GMT+0)
-1657506253906,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506253906,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506253908,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDYyNTMsImV4cCI6MTY1NzU5MjY1MywiYXVkIjoid2FsYWJvdC1ob21lIn0.YRmZ67FVertquTGHHYkDfxh5NUOx4Sxfe9H5k0Z0CnkplMrvJk2lxdOx00zgCLISuP3xGpxQk118PYe1oZCWyaatzJQJTtktmLkHuaARrjOJxiGX92ubLO4W2MQmfoPkJNlHNYZdY58b7BWfanpU5Zlw23kwjgVMCLCvJwo178uevfaWUgoYO5YIwsN3HN0nb93mJLThHG3mXWb-Y3sYPcqw4Vk_WIo5Y-u3bDP6iningOQSBCH5ChXFVU-2_SQWRbEl_fNGU8ddNC7iuaDRTcreR6xIjN2B062ehqKdqlfH5km9wc1TI_iagrJ-X5XFrBRSpbZLlEKcAY-00hLH2g
 1657506253956,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506253961,DEBUG,http.cpp(92), <- keyver 2
@@ -1013,7 +1013,7 @@ entry 0x400805cc
 1657506320548,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506320557,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506320565,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506320577,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506320577,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506320847,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506320920,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506326621,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1029,7 +1029,7 @@ entry 0x400805cc
 1657506330635,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657506332635,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657506334330,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:25:34 (GMT+0)
-1657506334992,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506334992,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506334994,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDYzMzQsImV4cCI6MTY1NzU5MjczNCwiYXVkIjoid2FsYWJvdC1ob21lIn0.Mzz5QMF_JWWwIHiffaV2Coo8bZiyPpuKOSxnGmsw6hQB0xDWrVS05gGYQkKZToyFI5xGa_ywYnkc_p1z6Oh_awOdkWxtE7vGyjsHJJS59DygKZHLlME9kkp2yd2xpvOsZ86Ja55v6VOY7IkSmx4G9PLZpHH3tra6mp6otPLEe7i5kuWmqf3NPI4VbRY8AfoXD14j6kxYrgUgjwp2DoZOqFf06GX-x3r44GcGpLDAelJWDxT1rhjQYMMBjvIjgA0OUXMDumHrVz-q9F4LPrm4-9WximKatmc7cAexDfp0pPgkuWjs_qD-bxSu2khloCg_caGA4pfd9nzsS2pcK38Gpg
 1657506335042,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506335047,DEBUG,http.cpp(92), <- keyver 2
@@ -1075,7 +1075,7 @@ entry 0x400805cc
 1657506401740,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506401746,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506401754,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506401772,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506401772,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506401984,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506401988,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506407606,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1089,7 +1089,7 @@ entry 0x400805cc
 1657506409322,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506409331,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506411248,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:26:51 (GMT+0)
-1657506411903,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506411903,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506411904,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY0MTEsImV4cCI6MTY1NzU5MjgxMSwiYXVkIjoid2FsYWJvdC1ob21lIn0.mH5MapdXOm1sa4fzlIZECeNK2lZQroRGAw5QC7Na_bcxbqcob7BId3onAT4ewj2L-w-zEFQ_MWRT1Pd2M_pRnlJqKJ6Jt85k-rNDsjiC-9O1bpQPn02UV2C-RAkLUGGIYFrE30ql82ufWuO0ISESNTQWXI9e7k6nzulZN4MXeLgJaWK521mSQ4oRpWMSlsU1MgbrRI73RbQ2h_YICt2Uzs-azDdMYQ3XrY-DNQFw6X6dBYYb8TJJ3ss5N5k2V6BEStunjhj7s88JhQr_zZi6qnpCiahXP8CzO_Curua9oWjL0mBbgq7kRNnhkeNIRMyk7klOTN6abcChR43zV1QJSg
 1657506411953,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506411957,DEBUG,http.cpp(92), <- keyver 2
@@ -1135,7 +1135,7 @@ entry 0x400805cc
 1657506478391,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506478399,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506478417,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506478421,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506478421,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506478701,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506478705,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506484322,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1149,7 +1149,7 @@ entry 0x400805cc
 1657506486467,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506486476,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506488343,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:28:08 (GMT+0)
-1657506489011,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506489011,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506489013,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY0ODgsImV4cCI6MTY1NzU5Mjg4OCwiYXVkIjoid2FsYWJvdC1ob21lIn0.VnVNpLV4MCwOrujyZA_I2UtofLNOfQSRpyrfaa-KwYre57rDM6yEYzmhTJM8D_RnWJRG94H_YFnWoUN90Duu_hGv2R5NxFGAQAc8GJeG1_8ZD2X56_ucbAZjdzYkudk_YPRMZ91u6XgUIoTj98Frt9EIgbh_gehMqwSJpJeXNb7kgBea3rgU-YaOO9enmKRQIzVgjlPp_2cHQAE_JeOQ3oMYroMoLNVem05DN9pWZmE0kpJYjJCOhIduYkahd7eVL1BNPH2AMr2mIRtkzyqhMTBcITVtr0o3ogtN_AnBxyvrp1Z7OApW8uT0A_rqCdW-KBiprD-MF9cBHn-kJPYhBA
 1657506489061,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506489065,DEBUG,http.cpp(92), <- keyver 2
@@ -1195,7 +1195,7 @@ entry 0x400805cc
 1657506555558,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506555564,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506555572,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506555590,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506555590,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506555898,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506555903,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506561514,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1209,7 +1209,7 @@ entry 0x400805cc
 1657506563640,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506563649,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506565499,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:29:25 (GMT+0)
-1657506566159,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506566159,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506566160,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY1NjUsImV4cCI6MTY1NzU5Mjk2NSwiYXVkIjoid2FsYWJvdC1ob21lIn0.G4H1JSxaz4_4i74bHblE5OCp1DLYBvFQq9buDo8XXMkzdJAK6z1hgq4JU7NHByBLydibwFvo56mjnarIvRSMMfLzppkFgL5GqccRGE584yIZ6Wxv7MievXKMhgTP7Z8WCQeEyc_wQF2kaS-LlKp4yd3qCv3KusJhWQFq0NiLruI-7ndy6HX2IWpjIE47D6EuF7ALKAT3BGDcQXxn3yWv5cUHJf3atw37en-zHi0dl2U9ki-IywJHOL9WGFJYzboipOe9cy3MwU6VAGTEuVCoXRId8liTzVfiGmz0Ij6js3Q72V7Re75bb1mjz0hFTGpHYCPdvAB4rfWXZ7kIKOjqQg
 1657506566209,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506566213,DEBUG,http.cpp(92), <- keyver 2
@@ -1255,7 +1255,7 @@ entry 0x400805cc
 1657506632031,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506632040,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506632057,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506632061,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506632061,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506632283,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506632287,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506637902,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1269,7 +1269,7 @@ entry 0x400805cc
 1657506640108,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506640116,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506642494,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:30:42 (GMT+0)
-1657506643154,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506643154,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506643155,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY2NDIsImV4cCI6MTY1NzU5MzA0MiwiYXVkIjoid2FsYWJvdC1ob21lIn0.g3D6q68mGQF69_gZ9k-FzgQffHW6MojnXmSUTgRTYP7j2eHfIV3lTxEF2JrKXdzgLJGvsF-EfInIvbXqmKbxhxCAY9T07i0Td0YSH4biq-tWgoafaBWfgxi7KKcqAikB4ssWA4TgVBETCgwJny9wqZhfaBfAODhc6hz4Z8kRFN5bIjq6pBVspZW9ZkbcfOSOqWGWlMDKzKN4FwBxFtEaaN2miFrZBKfzLczrO4pmnO3W6oj1tM9ayXqL6b4wBGKlGNF_0ys4oqZ23oOL7K0CJJaRx23yrvYLQWrMEwHAHZ3c7dggAl8zcKwKDJCZjEpI7SIDnuv_YE49P2Zw2uTUhg
 1657506643206,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506643208,DEBUG,http.cpp(92), <- keyver 2
@@ -1315,7 +1315,7 @@ entry 0x400805cc
 1657506709770,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506709775,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506709784,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506709801,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506709801,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506710014,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506710018,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506715636,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1330,7 +1330,7 @@ entry 0x400805cc
 1657506717860,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506719859,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657506721614,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:32:01 (GMT+0)
-1657506722281,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506722281,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506722282,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY3MjEsImV4cCI6MTY1NzU5MzEyMSwiYXVkIjoid2FsYWJvdC1ob21lIn0.b6Id9Mv17rGIJUzlQxbeayb8mPQDjcyqPcyg4DoMp_RjkUY_oTHLboxiPBPGuuUjuaVfugwMDD-_QV4n8n5daEhssbEJDqSFcD6FDy1f0AxdY1H5sW43AVd3yufiPCm5V_5uWnYcmkhyC6rLY96o5tGiXTwJpB1-eevqcKdQSxSBftYFVjq-Kt_VWU6DSLUGoUXvb35skfmVFlcIgcjqJKgV0lpLp8TeATR9MmPXHXJeiBwFemNk6gToao3LgNCes7JliYvmQC-lFFODmYvwqSUHkWuqjg17w-iuY0Ib933ZBMS50vuYxdMMVScUUvDbrZ0VgSlBW5Dg_N5oJAUmIA
 1657506722331,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506722335,DEBUG,http.cpp(92), <- keyver 2
@@ -1376,7 +1376,7 @@ entry 0x400805cc
 1657506788918,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506788924,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506788932,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506788947,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506788947,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506789187,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506789191,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506794811,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1390,7 +1390,7 @@ entry 0x400805cc
 1657506796997,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506797006,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506798709,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:33:18 (GMT+0)
-1657506799380,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506799380,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506799381,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY3OTgsImV4cCI6MTY1NzU5MzE5OCwiYXVkIjoid2FsYWJvdC1ob21lIn0.FEInrhVNW9msK8NvL4aSed_prZATfPKGsB77LTf_E_yew_uM-9sBkBcSA2AVhBE1H2fF3SR54jwaD7jqtL337VN_PDgxidcQLUniDSBlMzZ5_Js9smPfWgJQr_fLbNaIjoQXRUffADlVHi-aJ6fOUvY1UfkF1PiCnohi-J1h8TrRv6Lvjr00eKwU3dkTS9cdYjD7vE1jexsd_CS8_Y-KqNCQlkVJLL-cznaYo6M0iwh16_BbG_ol5f3gYOdPV86lX2tkkqqGviZ1O0iDJCfpKDh5VQPrBr3YcWygaFc4Qh5_Cq87AX0rF_KiSERWexiF7goRkZ5OnaQi_aPAhyJDDQ
 1657506799429,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506799434,DEBUG,http.cpp(92), <- keyver 2
@@ -1436,7 +1436,7 @@ entry 0x400805cc
 1657506865677,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506865683,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506865691,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506865709,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506865709,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506866000,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506866004,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506871623,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1450,7 +1450,7 @@ entry 0x400805cc
 1657506873759,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506873767,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506875994,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:34:35 (GMT+0)
-1657506876656,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506876656,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506876658,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY4NzUsImV4cCI6MTY1NzU5MzI3NSwiYXVkIjoid2FsYWJvdC1ob21lIn0.Lg9PMYUZni3dsy4FRFMoOAcGU3CHzQi-dka4rjBKK0tm3t2iq1MC3y6F0r6Ls_4T5ijZj1U8Ry1hFjUcquOMcASE_vGHpuV1pahYPzWhTXWP8hcGqP_S41L-eCO78fwgovQmy0LVvPrIuTHOxmoGrmmvyAH1jJOxLnm3UbN79On2G9MpbLJyV0xQYi8YZFX0KKinlQJyrr23dw31P9UibPYK509JsyVN5zIgDVECAPibjjjHUh_Rec6QY728q-GbNUVulMkBdWWSR-mjrDnRqnD_v-pAZgoMGU8ydDXKfT2Ttsb8I0PNGaXO1oEoMMWHRz3gVQNqZT_n9ryRU3KRgA
 1657506876706,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506876711,DEBUG,http.cpp(92), <- keyver 2
@@ -1496,7 +1496,7 @@ entry 0x400805cc
 1657506943287,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657506943295,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657506943304,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657506943317,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657506943317,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657506943539,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657506943543,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657506949161,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1510,7 +1510,7 @@ entry 0x400805cc
 1657506951866,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657506951875,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657506953453,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:35:53 (GMT+0)
-1657506954124,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657506954124,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657506954125,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDY5NTMsImV4cCI6MTY1NzU5MzM1MywiYXVkIjoid2FsYWJvdC1ob21lIn0.GD1SzR-g6Ukmd3ZHQyDyQ5EergmaE9RmYufTWfKFm0QhunrlPOEgGZphc-iqxN_jzhrMohwhPwE6t2Aj8gOz-N1K1rIWkT16OJioCiL7o8OOwtIAvK0V7PXKArdwNRX_qVBIYNmLu8VuaOVmLtX7J9ePsXy0Eii2ENHL_u8InHmK1yT04r3And2-p0fSs0ro5wn8pNX8WNcrgF89fk7JkMqzLPx8KEzH0u4dOMeToIoyUKsbyCDoHKMAZlU2cD_gnlSNVK_XjAQ5CuyG-wJsueXOPe1ib6dxLAEjKJhxqE8iyeeIB4YtpxYVaDbVD5qcNxNQzd0XExWNN9Kepu8bjg
 1657506954173,DEBUG,http.cpp(92), <- Content-Type application/json
 1657506954178,DEBUG,http.cpp(92), <- keyver 2
@@ -1556,7 +1556,7 @@ entry 0x400805cc
 1657507021027,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507021032,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507021041,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507021058,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507021058,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507021356,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507021360,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507026973,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1572,7 +1572,7 @@ entry 0x400805cc
 1657507031116,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507033116,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657507034797,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:37:14 (GMT+0)
-1657507035455,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507035455,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507035457,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDcwMzQsImV4cCI6MTY1NzU5MzQzNCwiYXVkIjoid2FsYWJvdC1ob21lIn0.A68-nzEYd3bo4JnGafFEww_ExMsAZs-vFwuHZp3LteBU5GT6tvj-VHLY-4LgF5Z-b3w1fvKL6w-8bxqcUvWch6O07mb7fZg36ESRU0xyhd3zI2zArhqFmaQA8oBxQOtIsa9bqkJrIm-AZUIBHT9trutAIinYpk45DK9uTh_FXPZqevONUDGmPGtdutPwClOlwS_yzjpvDwwZuyWuGxUGGLzUKLabNijeMm9bHttGZy4kLDMvlKoCPa7TZyKgserA52-Rx3rIjW38dcjmuHXSKX1f_ml83rNi62kojUC6kaqL6fkANgdWXOpGRAO0PWn5kg2B7mWPidzisFoApOA38w
 1657507035505,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507035510,DEBUG,http.cpp(92), <- keyver 2
@@ -1618,7 +1618,7 @@ entry 0x400805cc
 1657507102230,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507102238,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507102247,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507102260,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507102260,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507102561,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507102632,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507108324,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1633,7 +1633,7 @@ entry 0x400805cc
 1657507110318,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507112318,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507113994,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:38:33 (GMT+0)
-1657507114654,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507114654,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507114656,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDcxMTMsImV4cCI6MTY1NzU5MzUxMywiYXVkIjoid2FsYWJvdC1ob21lIn0.jBVPEFqxA1bX5gLUZtlk0sJHrlwOhBPmhT70nzY1-Tv0E7QMBVLIaH5iOLXfPT1_56NU_tH5WhozC0O2PY9tPCLJqhdDGpD2rCgkhnNtuAzvVUvHHzxkRMust6_xfni8_72nxxetrluVLcIlJjm9UtUYbSYZ9m8CMMNhAlF8WD7sdHDrUDRp6BjaTOWICc-U7Q1OyI0PIZelRtb0_achJ_Wka0WXLuL0FStENu-nnWaIIclGS77a3C6f9VmUqe6Ni0xUJT660kLy_Wo1vLLWWXIJca5wb1Ad1EsGRV6WbDQfi9iwgNSPaUWCqoyw2FYLG0Ja-Hpiq3Mvj_zyI1GIfA
 1657507114704,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507114709,DEBUG,http.cpp(92), <- keyver 2
@@ -1679,7 +1679,7 @@ entry 0x400805cc
 1657507181542,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507181547,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507181556,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507181574,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507181574,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507181902,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507181906,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507187518,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1693,7 +1693,7 @@ entry 0x400805cc
 1657507189623,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657507189632,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507190999,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:39:50 (GMT+0)
-1657507191659,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507191659,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507191661,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDcxOTEsImV4cCI6MTY1NzU5MzU5MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.J55qMNhk_Ye1aIAUNofNN-USu_sERM0-DlorthLjA4fdblhuHEwPIdJORwKlR4GZ2pfDtONxGb4-7H8l2GNTSDap5fZPIuwS1w5_-ltn3gx_vV2iMrw4UaKaMU_t9Tz8EyeBht8oA5CoyqPey_DqkEWk7gvUoCDEjwzYiwqzDjPxFXzEUKUEUykv3KYy3C_wDkXDypGVTnWSjC5vdC4B9wCm8_QXv5X8Wa4a_chhSxNW02gk4SM465pQIUzkKfBzUwdh1inMKkieKa-MYJFXt7dVn659bWJt4xt6qdZ7mbRdAa-GYZd8WeI8e2KrkZT3roo4poaQ7cQccJ8mCk8GgA
 1657507191710,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507191714,DEBUG,http.cpp(92), <- keyver 2
@@ -1739,7 +1739,7 @@ entry 0x400805cc
 1657507258118,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507258127,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507258145,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507258149,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507258149,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507258374,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507258378,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507263991,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1753,7 +1753,7 @@ entry 0x400805cc
 1657507266196,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657507266204,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507268170,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:41:08 (GMT+0)
-1657507268836,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507268836,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507268838,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDcyNjgsImV4cCI6MTY1NzU5MzY2OCwiYXVkIjoid2FsYWJvdC1ob21lIn0.PC621cjLyBtdqLtbzLlFVR2YkYmXxkb4ROjZI7Z4u8wMilxVrBxro8GNnbC6GbAArFcOtPcpN-rqhJ_e_yJQQzmx5U-vyENcwUsqDceQVAph3rQvL6r1cAiML7DrzpC09PoOY5IzPPQ_td_MMBpAEYkGgKc2DYkuLdjAVZOCTB4jLwRhRSvGZYn6Vh2zMS1TduqyUfWAKX_09HR6SHk_NJK_UOKNBOG9ouFDot34f3yzg13WbsMbTMbcAa7CHuTmX7sdM7SrQGQt991QAwgARjIug2hLaj0YZbrIv7dRLVLE9mqSQeNtjB93V6Aii0WBIr17vw9GaE4CknPYQAAFUQ
 1657507268886,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507268891,DEBUG,http.cpp(92), <- keyver 2
@@ -1799,7 +1799,7 @@ entry 0x400805cc
 1657507335330,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507335336,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507335344,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507335362,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507335362,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507335579,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507335583,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507341196,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1815,7 +1815,7 @@ entry 0x400805cc
 1657507345420,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507347420,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657507349326,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:42:29 (GMT+0)
-1657507349985,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507349985,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507349986,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDczNDksImV4cCI6MTY1NzU5Mzc0OSwiYXVkIjoid2FsYWJvdC1ob21lIn0.gHjhvUerNG85r4f4v-CrkXduhE7kRI4eo2JVD3GCPQVRa08F3eTh3pKOXwLwuBIEi8UHmIxmfu6F5RhJdgBquiC0e6f5XP-ddXT78ySnPBvB1c6jj0RxjNXh7IxBp1tqrjuaHonYc5vSRFWqN9jguPrG6FLI_mOpxkvdg_wpBwkDVYIvqIfP0O9cQSke2AQ8-BQ_oRklD0qHgU3KynmwIWAwmUDCvBjR3SrsQuTyF5vAsv4-BMLvRkPSwaMIHtEqg-950TayHXTeZl6VdXmGPolzVm6QbMw0vlmYQMBKfTW1cgOT1zNad1N3qHAw40OfnZkQSm5p7NCWyJde5wwDDg
 1657507350035,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507350039,DEBUG,http.cpp(92), <- keyver 2
@@ -1861,7 +1861,7 @@ entry 0x400805cc
 1657507416586,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507416591,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507416600,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507416617,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507416617,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507416846,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507416916,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507422602,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1877,7 +1877,7 @@ entry 0x400805cc
 1657507426675,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507428675,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657507430520,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:43:50 (GMT+0)
-1657507431180,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507431180,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507431181,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc0MzAsImV4cCI6MTY1NzU5MzgzMCwiYXVkIjoid2FsYWJvdC1ob21lIn0.WMtfApo9TnnelKTfu5xjRx7mv6AenijbWNcozmuFsl4mIpS8lqkdLvhyMk-FFk_pyYMjpP-kZyy4Zjcc8u_lTDX08s_2T77sVMTSjXXIRjoV3hnBRFhOpBiZhbleG7N_GJUbpzC1BLzer55SLx49ogYH6IP4q5t33VmQeca9M3daHIgOOgvCkBqDDT1Y9ia1YHvwzsXW1p1wSOz04m_cGpNWCd9UlgaZn9SSqEGRlVgFHFx1Nms-joJFJm3wRdaCq0S16Izul7UCk3URoX0lT1J1CZe4oOxVPbXTx3QcKbxmPcO2b4lzEJzEMdwick_s1vCAzaUZo-idnErQnnOuRg
 1657507431230,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507431234,DEBUG,http.cpp(92), <- keyver 2
@@ -1923,7 +1923,7 @@ entry 0x400805cc
 1657507497210,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507497215,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507497224,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507497242,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507497242,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507497504,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507497508,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507503126,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1937,7 +1937,7 @@ entry 0x400805cc
 1657507505291,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657507505300,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507507707,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:45:07 (GMT+0)
-1657507508369,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507508369,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507508370,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc1MDcsImV4cCI6MTY1NzU5MzkwNywiYXVkIjoid2FsYWJvdC1ob21lIn0.QAIbecrokXwb4IIEgCnHJ13NRg6wWiiSdgh_pdVopnAoX89C7Se-Dz5H-npb-zAAZQbYyC8AYmjf2R1gvp0-zo5nxueRKyafDLkaigr2nkua8xKy6vg5-h9RiZFOqnXw1oyXEPTHnv64TdMeWS_yxll5X9ELdqVItd2kQ5vWMwUoiyt3cXgn_F2lzvX33uhFFZ9eO9x-HJqPGSVxbzUvDIlxVJkHRZuINBXrSX_R07FRy4_X-Z7oKPRIBNG9uzU1XO7Y2gyu46CDvzAjBGfzOVHtu49WitlG5dqP-Xww_zbdu-gojt3YfaK39byt0HxdF2Svsdj9PHxl3PtKGxJCPA
 1657507508419,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507508423,DEBUG,http.cpp(92), <- keyver 2
@@ -1983,7 +1983,7 @@ entry 0x400805cc
 1657507575701,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507575706,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507575715,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507575731,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507575731,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507575930,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507575934,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507581546,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -1998,7 +1998,7 @@ entry 0x400805cc
 1657507583789,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507585789,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507586773,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:46:26 (GMT+0)
-1657507587437,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507587437,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507587439,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc1ODYsImV4cCI6MTY1NzU5Mzk4NiwiYXVkIjoid2FsYWJvdC1ob21lIn0.Sy_DrjEmL2_iGIsBdkNSUr1vNylqYQYlvowxthEEfCk7VUT3VXwlvrP3j_Rc5mCuIYZPtBPJjqgH-HUKNQsvaI_QqK3cRxq-XiaZtU8QcZ5rCo7cRLYL8s4lZYMZWBQQ3uTf0BtyiyplFCfLrvN9E3Z9PWBygnzP1huAbI15pvCfODjlnucWEoQiHk3iNNG1K4zpqKXjgvZsoRp02DzVI1PUCblAxaThoFoim4vvkbuSr6J8EwqNDPSOmV_PsRDblPdsMfXRrAAQq9duKXgWx_NbEhP9yt2I_Od79sNagNcrEkYelFmU1cNqyOM-VM3a19iJCXEFqbMshO_pANEjPQ
 1657507587487,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507587492,DEBUG,http.cpp(92), <- keyver 2
@@ -2044,7 +2044,7 @@ entry 0x400805cc
 1657507653645,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507653650,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507653659,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507653677,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507653677,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507654000,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507654004,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507659621,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2059,7 +2059,7 @@ entry 0x400805cc
 1657507661736,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507663735,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507665988,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:47:45 (GMT+0)
-1657507666649,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507666649,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507666650,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc2NjUsImV4cCI6MTY1NzU5NDA2NSwiYXVkIjoid2FsYWJvdC1ob21lIn0.BuUhJlRshv49uXkVUdv1ae4dSJSPdUFN8Tu2ahAf6fogYSgLI_0AY6iI3oMs1DWzfQ4_hQtNctNtZT0T7klYYmcrTfsB0n8iLvtNU6tCEmElJ6RtyNRyGvk0oUbiP-lpZ6fVzLGdHnU0J-cYq2MAHPmM6HMHv4xdfW37tmliYRCx0ZQrqDOpWRI-CUsjqlX0QdC-njYg34wXIwOu39ZLPOrfsi8uvJtlanRh3cRVeA7KYM86JkI1Vwwwvq3IdLHSGrXrgcZbUj7qOv1ko_3gU0gYgbvD0ghZLUC3H1_bSVyCjrPgO-EOmx_n5i8LcciE4NIbN3J9b3xhfokOvrqr6A
 1657507666700,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507666703,DEBUG,http.cpp(92), <- keyver 2
@@ -2105,7 +2105,7 @@ entry 0x400805cc
 1657507732892,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507732900,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507732908,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507732922,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507732922,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507733153,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507733157,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507738776,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2121,7 +2121,7 @@ entry 0x400805cc
 1657507742980,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507744980,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657507747238,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:49:07 (GMT+0)
-1657507747902,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507747902,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507747903,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc3NDcsImV4cCI6MTY1NzU5NDE0NywiYXVkIjoid2FsYWJvdC1ob21lIn0.hvFESzqW8sdWgZtg7puAJR2YPbtDQOyxmICrQnbiAnp-GtwMxJa1aUkWetRvwjLxd9Oor78mCjke7AsSMtzxhTyc4qmpdvmRGyT5TQddcbohrZigsHgk8GyO1ktTNg2Lird3r1CNy6H9aFHyL8D4TFW13ldLdri7Fvwx1G55tIkRzsQtAl-2XeEORbG_VAAQGp1Dhr_qKNVFlmj_jOi4LZ_bdG0N1kUCHex6WcMUhzmT3SabSqaU3B57MKuY2oLaNhte9IRJ9CAE-r4wEGgEiWcl1fMlxQb9VaYomV6_2XUt-uKV2oE0oIEKSR6mJxBlaUwUUqEqa_0nL984lyQ_aA
 1657507747952,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507747956,DEBUG,http.cpp(92), <- keyver 2
@@ -2167,7 +2167,7 @@ entry 0x400805cc
 1657507814420,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507814426,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507814434,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507814452,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507814452,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507814730,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507814734,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507820346,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2182,7 +2182,7 @@ entry 0x400805cc
 1657507822510,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507824510,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657507826569,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:50:26 (GMT+0)
-1657507827237,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507827237,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507827239,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc4MjYsImV4cCI6MTY1NzU5NDIyNiwiYXVkIjoid2FsYWJvdC1ob21lIn0.Ms5-SkkrnLuJqzbWaz2tbm7K6hpuYKpwqc7Zyu7FbdE6OqMRDTKq4OPIVLuW9Flx80jWw9xw9mW9qpFDs1v4JNMExXhtOaDb19GowHsU8jZ_GmJMpNgZMehvr3DhRGfQ9fY69xmXdy04rRES1vHuqj0JxyUNXdN1CsUPtUXZ-4sy7xKZXKQtGLDq6J87Ztg02b3ZV41apdmC9GL5UYnXO9FwFqEuB7TjSIdHpQSGn-TGdSud_m0aK6mkebYLkcExOowHDG9Zpe2iEgzN4xYzbgMdQql79dhkP4HyDcc6_Za151cnTjgibaztbn_Q8KjoZjy1LNukeiIecQduhNc4wg
 1657507827287,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507827292,DEBUG,http.cpp(92), <- keyver 2
@@ -2228,7 +2228,7 @@ entry 0x400805cc
 1657507895001,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507895009,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507895018,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507895029,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507895029,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507895529,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507895533,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507901153,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2242,7 +2242,7 @@ entry 0x400805cc
 1657507903079,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657507903087,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507903763,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:51:43 (GMT+0)
-1657507904424,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507904424,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507904426,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc5MDMsImV4cCI6MTY1NzU5NDMwMywiYXVkIjoid2FsYWJvdC1ob21lIn0.SptvTl0zOlipHkTXRtGYdm6ikxy7A4xB6ppZvEQKAltk26oXUih1tVizGot6sMvCmvpzynFsb6WVqvuCHo9J8baV5DR-nG8xZTBm2MSW_hysRmcMC_hAbBf84kd9khAejTcpSRAgDHHUD9GCH9M-RaxiQQNzDNZk9nrRJvaCVIG432N_uWZFpSSyfBURFSx1_HWAIsD-XiLY4xKCcZJYrGOsjWvIKa3oNK__7ybBQ5F6LfNwIlKZqidpySJ3bDkkYsdA_hOiRDeCEQ48jWNPM_4oKItBvaG77_wd1XXZUOnnSmOpEol0eDi_47H8WsgpuXS2K7QpixGB0nbxPz2lNA
 1657507904474,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507904479,DEBUG,http.cpp(92), <- keyver 2
@@ -2288,7 +2288,7 @@ entry 0x400805cc
 1657507970203,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657507970208,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657507970217,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657507970234,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657507970234,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657507970438,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657507970442,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657507976059,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2302,7 +2302,7 @@ entry 0x400805cc
 1657507978284,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657507978293,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657507981126,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:53:01 (GMT+0)
-1657507981788,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657507981788,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657507981790,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDc5ODEsImV4cCI6MTY1NzU5NDM4MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.dcWITet6RFzW8hXBvR3G9Cwajqw4wG9k-4ZtoN16OIpgWsjqnPHXlP8FJueH9XKZLgEddp5fySq7QFcFugPI4Cu1lyBuTj4M_59uC0jGBdXGD00BpD_J4FY61uBo8xBo4ZKyKApdd5S9SEXX7oktRrwtxmsa7RDHEDPk-gDyhy7JaT-RYMqDmdx8LLB7dBcsgpdhu4XfjCyApG0Voispt_DHWMoMBCryec_Mz_gxkeisXylXHxG2GeESWP5YnrlHK-pB6KvkFWUpj310qXuLhBMS_WrtayM8i5tI5rPbVabOhKD-gjwJg1doIWj_OqKvssUXSWLnpzYPg_ZRradRuA
 1657507981838,DEBUG,http.cpp(92), <- Content-Type application/json
 1657507981843,DEBUG,http.cpp(92), <- keyver 2
@@ -2348,7 +2348,7 @@ entry 0x400805cc
 1657508048523,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508048528,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508048536,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508048552,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508048552,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508048745,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508048749,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508054367,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2364,7 +2364,7 @@ entry 0x400805cc
 1657508058610,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508060610,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657508062520,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:54:22 (GMT+0)
-1657508063186,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508063186,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508063187,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDgwNjIsImV4cCI6MTY1NzU5NDQ2MiwiYXVkIjoid2FsYWJvdC1ob21lIn0.JR_yR6YtWuE9haQhPUAA0FSQg0S17o_-OV3is_kFehFVtCi6PKcOKVaZ32iU_jwRCMCKEo0zM7CfRwABKZAnffhaIhOBXTENVROCpbM_IwTzglTKXxXCtbkTowFYgXoyRcTURP9aqlXCpLi2nf0SgjxqueWADjduMoNzfVIPirNCoeyt0WgymHNgtB7kNZ5H7G__PMP-0kEE-rcZiCIUhKZqwDr0aXazCbkotEmL4C9C9RNjcJydAIDLMG-Pt72e6SE0CxUUKi49erooZZFYI2nZToBbsJne2mnkbqgcJCPH5uiGFCgnQVF9sRHTO8Q4HOitFHrzAQyhr60P4epufA
 1657508063237,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508063240,DEBUG,http.cpp(92), <- keyver 2
@@ -2410,7 +2410,7 @@ entry 0x400805cc
 1657508129130,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508129135,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508129144,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508129162,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508129162,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508129379,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508129383,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508134997,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2425,7 +2425,7 @@ entry 0x400805cc
 1657508136720,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508138720,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508141011,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:55:41 (GMT+0)
-1657508141676,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508141676,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508141678,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDgxNDEsImV4cCI6MTY1NzU5NDU0MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.O9NZEPW_RhWTk9VC7cP9Lm5oAitYnTUrsy-Wy6q8wk7FJQyqbj9QHRYfDmkqsXgTUxQdSQw0KnCx4Q5w4UM9f0QV8WWu_VgAFAXxPpPLxDA-AoFQTJPspowpgJIxudFgC3kaSTCjWhv6MTgsebCrolJbGgbkwDxisqLrzYy79XBIebYTMVNfgIOSdJ6iECM9Tpw6JW_3BI7tjDYF90ZM5jTipiS04F4y61wuRAg2f_R_NTaLKS1USS917nEZ6TPPDKTxZS1mnGP4AKJa8bPSlmzdAcUJ2zNLb0W5UzNR0Xv5plUrsOUAtBVGZiJ-RJ0jL-_1hZJo2tSj8_FyfuwarQ
 1657508141726,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508141731,DEBUG,http.cpp(92), <- keyver 2
@@ -2471,7 +2471,7 @@ entry 0x400805cc
 1657508208009,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508208014,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508208022,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508208038,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508208038,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508208420,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508208424,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508214043,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2487,7 +2487,7 @@ entry 0x400805cc
 1657508218096,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508220096,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657508222276,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:57:02 (GMT+0)
-1657508222936,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508222936,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508222938,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDgyMjIsImV4cCI6MTY1NzU5NDYyMiwiYXVkIjoid2FsYWJvdC1ob21lIn0.AZSWsSs8JBhqMDDZtIeGmByc-iKRW1XIdU66VRB4vppxg4vC8z7uJeoBSr9kowb0UtVx4tWDdV70yCixtfNLlmoTtXXx8Gi3GEgQvEKPgTWOf0noByG5dRlLWL3kCpETTA4ek62Y896hefBTgcyy1qEIwpq3RNA6ctzTY2zVs-F3I-sdolNxspzXRoxRm1aTkQMic_ezmrwDnnWKCl6eCR5Hnte2YwBzhbMm7Ru4SF2btg4upof5nRJt96nNTVqRy9VpqnJfOZZLN4juKit3R0kaMbuYGVE1kN66Hrj2SvheWd_fVzhIIMetoTKP-pq2TrOAAJysDLfw5U00zc2yeg
 1657508222987,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508222992,DEBUG,http.cpp(92), <- keyver 2
@@ -2533,7 +2533,7 @@ entry 0x400805cc
 1657508289404,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508289409,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508289418,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508289436,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508289436,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508289630,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508289634,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508295250,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2547,7 +2547,7 @@ entry 0x400805cc
 1657508296985,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657508296994,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508298971,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:58:18 (GMT+0)
-1657508299635,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508299635,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508299636,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDgyOTgsImV4cCI6MTY1NzU5NDY5OCwiYXVkIjoid2FsYWJvdC1ob21lIn0.BktEzH0J08x-m8BnCRlfZ26NmErndi81_o691QHK-ZcNgaCROQUpXdIFpY_Lk1txRiEJIrRjJ8fYZKIxcTpmByzWbBpNOJ59mQKctEFGi71rIwqR7nSmnQhGxodcYn6wocxud0rqmdodmnewjdnP6_IrljWnJGS3dU5N-xRtj9ZLCvbR_87pJXxlLQ2feIET2CrDM-y1pOMpz3ZSkmbSmQRgT34NPgUIY42O5KIEdmWKSr-dNgPu6OefzjNH0lp-UoLnr7Knl3NKdZU_djAbFK8xWJQKFn89nQcsjSkjS1guhn2AJ5LMtzPujeKIiDGCfkX1pqdod_GaIb-aQRugcw
 1657508299685,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508299689,DEBUG,http.cpp(92), <- keyver 2
@@ -2593,7 +2593,7 @@ entry 0x400805cc
 1657508367459,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508367467,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508367475,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508367489,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508367489,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508367685,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508367689,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508373304,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2609,7 +2609,7 @@ entry 0x400805cc
 1657508377547,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508379547,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657508380199,INFO,sys-esp.cpp(152), current_time=2022-07-11 02:59:40 (GMT+0)
-1657508380855,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508380855,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508380857,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDgzODAsImV4cCI6MTY1NzU5NDc4MCwiYXVkIjoid2FsYWJvdC1ob21lIn0.Fj4uWLTbNA1reGQmjOsUSnkLnHir1hirX1KOQWI3pTQCgpPpn48jtyk5AFRulyawToqOGjj6ZnCJ3QQIl4Ha0Juv1pdEzdq5yiWELke_ZwOTpYnYvjaRYL4AEFWtaFaSLOLWPRgXrPmOcMr9PiIIR7BAq9GvyJ9jisBQO0l1fq1owkAuQymP1sqkK3UyEoyiXa0wbEEYI2aUC94eK2ndDocV1h47S3yc38IEdfShPxB8oHPxiJo3M-_V-aONY7estCLDlfnjNEwgda78YZVMBtKeD9AnjEIQMGN5urnbuL-aFz5MjRUoMdSx71EcvkSFirGUAnGXIwGG01bZyRd_sQ
 1657508380905,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508380911,DEBUG,http.cpp(92), <- keyver 2
@@ -2655,7 +2655,7 @@ entry 0x400805cc
 1657508445183,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508445188,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508445197,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508445215,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508445215,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508445543,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508445548,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508451159,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2670,7 +2670,7 @@ entry 0x400805cc
 1657508453273,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508455273,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508459425,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:00:59 (GMT+0)
-1657508460082,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508460082,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508460084,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDg0NTksImV4cCI6MTY1NzU5NDg1OSwiYXVkIjoid2FsYWJvdC1ob21lIn0.BOGlTSdAEtjhZF0IVoc2Kxlb2kHqEBnfYQjtdtAdgnesD36Jol6ycAfZer8lYlyMXk4W7tI54fnF6uagiw_yoD1a7u2ZlB7scv9ZHfoOu8n0PLSjb12MkYNC_yScI75fMSrywHri9dQYAqsaiI3_ELuY7ahetHw8eJGll3FhXQqd9r8EUdNA50ctG2GLa7Y-sBTIIkPzIA0q5h6Znc_cAM-kvRfYpJTzItX08RU6DuFP57eOyx2VNDEMY9_99RqUrF4Ku9czERRAQwSSrbjIcknmkrZ7Fud08gFv7tetPEn2a8DDeDreWtf2PEyuqo7uLfudz2eG9wjnjdDyWcTNkQ
 1657508460132,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508460137,DEBUG,http.cpp(92), <- keyver 2
@@ -2716,7 +2716,7 @@ entry 0x400805cc
 1657508527992,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508528000,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508528009,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508528020,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508528020,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508528213,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508528217,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508533835,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2730,7 +2730,7 @@ entry 0x400805cc
 1657508536070,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657508536079,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508536814,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:02:16 (GMT+0)
-1657508537474,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508537474,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508537476,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDg1MzYsImV4cCI6MTY1NzU5NDkzNiwiYXVkIjoid2FsYWJvdC1ob21lIn0.SdUZZTVhUHlha0xp0NaZeaj9mVI_fQPp0dXAZ4FAxBCvnAwi-4eEzt8kRb3GA6U386z5xxfWJZ9fycVXQAJhylCkQlxeKVMLp1vSprCZPTNxsk1egc6fMhXSWIhTytrVL5JQE_BMHVCGneu6_lEtVptOBjKwEPNS19FI87Ert6wBoQSn0EdLXmwCG88j451CHTEYK7HgRWHA10y987J5yDUHJAQHXw_ShKvQQZ-WtjPlLv6KADytd6JdWu44UWwviAsipL41FOlBHmZKf1Izk2UYa9l3kAObh43caqJs2UZ-BiRFerSsQDUCBsUZmlibVY34ItV6AkEpv15nS5NTeg
 1657508537524,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508537529,DEBUG,http.cpp(92), <- keyver 2
@@ -2776,7 +2776,7 @@ entry 0x400805cc
 1657508603620,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508603625,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508603634,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508603652,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508603652,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508603862,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508603866,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508609486,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2790,7 +2790,7 @@ entry 0x400805cc
 1657508611203,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657508611210,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508613600,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:03:33 (GMT+0)
-1657508614265,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508614265,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508614267,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDg2MTMsImV4cCI6MTY1NzU5NTAxMywiYXVkIjoid2FsYWJvdC1ob21lIn0.eIDx-qXUdmnmihpa8I26RBHrwaSNpQBDZVSRq1lTK-xHn66vR7kR82iZexSdbJhlQg0C03-y8ISwjQrTCCVkVWbPjr9C3iHND_H9zbUxXbocGl7HyNbcfY0pLG3OiBkRw8KSd19uIiix_XlKYxDxbCp0hnBTnLAx6xirVJcC4lFetJ8URbZ32TpbO4FGU3C4FP0boAGdOSzxmCVP1Dpc1GohHG0MNLYYANz3u8_OFjZAXewiSIdtR_K1Od1FezLD-c2kEnlXTygC8Q0hg8_mvFIKC7fX671j0bwLfBqKIq1EiBBwaRv3PpH00orPzW-UK4f8Z_cVeM5CnDXGW6qNMg
 1657508614315,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508614320,DEBUG,http.cpp(92), <- keyver 2
@@ -2836,7 +2836,7 @@ entry 0x400805cc
 1657508681292,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508681301,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508681318,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508681321,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508681321,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508681508,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508681512,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508687123,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2850,7 +2850,7 @@ entry 0x400805cc
 1657508689368,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657508689377,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508691039,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:04:51 (GMT+0)
-1657508691704,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508691704,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508691706,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDg2OTEsImV4cCI6MTY1NzU5NTA5MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.XCvS8j9SbCJYS1g5xRM811ReV3g3Ab7TrNqxbSoLReWkcV8gb8JRpgw30PKs8TZHLvA6wvVjU6CUF6zUdVUNSYUy82rYfiizBr7AN238cvWLZYUVYDn_cglDMrt6ux5-c6IVKiboFA4KJNktZEknpkW0YVkqAI3w3fURbUwgkHxInO82IMTPnS4-sgExhaYNLWrFgO8TRByRjQIRugiA7k-Biz14G3hB6klhz0LUHZSYGd3whkiBVFTNfe-rTblQ8XqMlB1_-rH5EJMMx77kaVUZtpTYL4zZIRWc5InxOzMJytAspw9BvT6GC0YcarkSUZub-Est_pi_6DU8e1cvGA
 1657508691754,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508691759,DEBUG,http.cpp(92), <- keyver 2
@@ -2896,7 +2896,7 @@ entry 0x400805cc
 1657508757230,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508757235,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508757244,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508757262,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508757262,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508757446,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508757450,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508763067,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2911,7 +2911,7 @@ entry 0x400805cc
 1657508765320,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508767320,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508770274,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:06:10 (GMT+0)
-1657508770938,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508770938,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508770939,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDg3NzAsImV4cCI6MTY1NzU5NTE3MCwiYXVkIjoid2FsYWJvdC1ob21lIn0.kA6-KDvacjxnkpcQuDod05phTFYR0X4aeTKgzTGwe1uglBCCDWY1nlZCZSfOewtHze1HuupiblzH13I-gx5qXBGviYDtgkPTQMnABU_SvJ5uK_HPekBqrQ-hwUgjPHADUAKVgMLbFPdV9QtFE4q5eNL9aKRQ4T4zYWw_pkcwbaf5_FIzGH0YoJlQXRgxPoUSbedmvvHJ0Om8GjDbDXgHiioDVqpwnZgFLVm3wEoyA00_Hy27XUDkkqhchjTOu9okQKywAMis6DgvuK1EIui4T-z5WG8pLbHVKfdcjqrLedSt8E1vENH0q4e3ZLgU8x4dhpjs_VHs713HBpRXZmOFpA
 1657508770987,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508770992,DEBUG,http.cpp(92), <- keyver 2
@@ -2957,7 +2957,7 @@ entry 0x400805cc
 1657508838071,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508838077,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508838086,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508838100,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508838100,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508838430,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508838435,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508844055,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -2973,7 +2973,7 @@ entry 0x400805cc
 1657508848158,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508850158,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657508851414,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:07:31 (GMT+0)
-1657508852077,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508852077,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508852079,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDg4NTEsImV4cCI6MTY1NzU5NTI1MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.XexmXfBcV0y0qe2fIR1RUa7L4_7V_2TT94d83_h7rNnzCoGwApJe8jG48ESYDxdQS3IcaasvWyQlYpGGL-5hgXZoBkOceWoAZBmtC46SoIvcOeB05LFlfYaYre8sAHp8r3B7bbQ2VbRk6V38O-Wuhy5mxUUfKWpu5rPLudnwaen_eKLS1sY76O80ezW4NzrC2SoCWjJhrjagisAhNbNdyU18KX058-4fQ6ktPENnthkWeIMit0Pcs01V45VTytQIGu-wv9Octdub9aJvm1Y__yccigh63dddWBfnV_ZK8Bo0eKPE9RUZ8LDt25LQ8p3-jvc5NcMVg4Mg8YWGtrA0LA
 1657508852127,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508852132,DEBUG,http.cpp(92), <- keyver 2
@@ -3019,7 +3019,7 @@ entry 0x400805cc
 1657508917762,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508917768,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508917776,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508917794,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508917794,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508918131,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508918135,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657508923749,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3034,7 +3034,7 @@ entry 0x400805cc
 1657508925852,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657508927852,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657508930957,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:08:50 (GMT+0)
-1657508931624,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657508931624,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657508931626,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDg5MzAsImV4cCI6MTY1NzU5NTMzMCwiYXVkIjoid2FsYWJvdC1ob21lIn0.Xj3Zsd8ZAVEWiFYDst6GCFgKRCvBRVaUfsjZj9kX4VBqtkMtondxTjS9q0ChI1urZahUfxCL9sIcYvaPzl82LOTHEXqTOsNPi95Q__xbj9mUcNfF3_7SzdoFyGjiBVaMVZieB4sTCqoK_pNuP-3yF7M9iFbR6e0ifnsSThMhUNUSnCrj9HvSEjWdwsYUgRx65ha4wlXfGu5h2G8qEJU05R5b2lKhsjpNg3hxlDCaOEJ7MVrm-OilW94SFL5u4Y1mcYkVMYopu1fbh1g9iQI9SRS8qGeeBJM82T_xtT7sjb6fAROihOCseBrbyhbsn94D6aVeFO2jfjKVwDxyIm_yLA
 1657508931674,DEBUG,http.cpp(92), <- Content-Type application/json
 1657508931679,DEBUG,http.cpp(92), <- keyver 2
@@ -3080,7 +3080,7 @@ entry 0x400805cc
 1657508997462,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657508997470,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657508997488,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657508997492,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657508997492,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657508997707,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657508997711,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509003323,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3095,7 +3095,7 @@ entry 0x400805cc
 1657509005547,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657509007547,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657509010212,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:10:10 (GMT+0)
-1657509010875,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509010875,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509010877,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDkwMTAsImV4cCI6MTY1NzU5NTQxMCwiYXVkIjoid2FsYWJvdC1ob21lIn0.KzyjQfsPkVtlpkBnyrcNRFfa6z5LLaVcHce35NQRQHS9ac2QJ-bEXs-sPA__EIRbSIWOogh3RQnkwcZpFUZwgNZOP3lu34poaIaIHnvWz-fs_rYHmCTtPJCUeIK-yk4JDtjc430E44S66N7uzXgVbgti5f2RjldnvxDaeOhCjS7qOaevfAVbWCnIN3E0-0tonZtbAr1nPYLWS5M1L9hovgwKrLJ3Qwk3mu5RJ4wJcIv9lE9Sf1qEk87RKZnImwzXQkYlDvgMfKsPVVOApTj74vonVy603WuPerdpUD04K7FIRZDj2Cw9yFiDV_VJjyaVMTgv-rQjniHbTMzv7sKXnA
 1657509010925,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509010931,DEBUG,http.cpp(92), <- keyver 2
@@ -3141,7 +3141,7 @@ entry 0x400805cc
 1657509077006,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509077011,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509077020,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509077038,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509077038,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509077385,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509077390,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509083003,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3157,7 +3157,7 @@ entry 0x400805cc
 1657509087096,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657509089096,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657509091475,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:11:31 (GMT+0)
-1657509092131,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509092131,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509092133,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDkwOTEsImV4cCI6MTY1NzU5NTQ5MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.BMhHPZaGaYV3u0ok-6PiKLdWYvmgCaMVjsFl3CRBvF61RfEdirFR6XuYy40xtMt2UrglLK0Yldkm3TXoo1WETiRjEdgGLFx-fMtmiHD72-NsUgH4AFIVST3bEkkia7-ERhi7yEwdHKrIGo06rCVQ541F6sA6B9RILeyU9wI0xMLtsgK_VozzH-VnHHi0B4tHn0099GkjQiTe64UsuSw61BA21DBE7LhcgolLPHuMRW4OP8iH5PwsVM4IF8m4OcKcAPKQg4wUi6Uupr8817SFcLz3liy7d9wWGhvjYh8Q1qJkV2VcVvWnvS5c7bImj6oAtfcAezSyogRCw6kaeYCTYg
 1657509092181,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509092186,DEBUG,http.cpp(92), <- keyver 2
@@ -3203,7 +3203,7 @@ entry 0x400805cc
 1657509156391,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509156400,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509156417,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509156421,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509156421,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509156635,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509156708,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509162392,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3217,7 +3217,7 @@ entry 0x400805cc
 1657509164468,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657509164477,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657509168499,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:12:48 (GMT+0)
-1657509169158,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509169158,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509169159,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDkxNjgsImV4cCI6MTY1NzU5NTU2OCwiYXVkIjoid2FsYWJvdC1ob21lIn0.F-9vgkO2jNAWtJlRFXiPVUVAvqnsOfL_siG0ZpkU-la1NZJNcC6pjJB8Ey6xLGNQAUfjtVjAmcZd0SjENU-Xry0oKPRfyOPc8U-TnQPGzWn66QNtLgjW3JNAwdnNxiTiDOOSXMJfr11Hus0urcX16BukYp3Gjdni7bH_opGVmoblGPCRkkajPsE8APYukoHw9CT33CkZ2MsUQzrnmKFgVCN0c-vEipiRXhujwUpE91c3u9cFZycEQ4jXo3YaPc1f-TwWR-1CvGkuDNSNLuyRqWZlqeVEZVYQ5_URHxz708u42Nhjv9-lc4Evi3-W1skTWQGmY-KaahywMINLkeDNnA
 1657509169209,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509169212,DEBUG,http.cpp(92), <- keyver 2
@@ -3263,7 +3263,7 @@ entry 0x400805cc
 1657509235342,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509235348,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509235356,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509235374,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509235374,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509235604,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509235609,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509241228,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3277,7 +3277,7 @@ entry 0x400805cc
 1657509243424,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657509243432,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657509245099,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:14:05 (GMT+0)
-1657509245762,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509245762,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509245765,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDkyNDUsImV4cCI6MTY1NzU5NTY0NSwiYXVkIjoid2FsYWJvdC1ob21lIn0.hK9J6zAGJ53ghtAI-Y0Yy1MrMaxulX_rkIE7FawCS5jHQdGJklytYB4vbkhxxWnt0KBlQD5OX4TPmFrBGZZDvWSs2p7crSpZSfadc9pKb5tG_wvh2YMOz-uz0IyR_uScI3s91eVaMMIuvuVCNu4a_NxTmQrAQO6B8tS9x6TlG6qSuyzAl8zOWXG7Z9dJ-BAXRt6Zw1qrBR6kBDmLA2VrVmS8MDVR62ZQQGJgmwgWAAdd7838b-l5Bxdz7KthbMgXhDJn3NRe7azkd7jbcKnbK3N2bSZYOZMeYB-SbrYbj3oD4_9guLF8GMpgmwhpBwF3tSMcI_4OC9BYiTt9GuEhaw
 1657509245812,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509245817,DEBUG,http.cpp(92), <- keyver 2
@@ -3323,7 +3323,7 @@ entry 0x400805cc
 1657509313679,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509313688,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509313705,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509313709,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509313709,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509313911,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509313915,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509319530,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3339,7 +3339,7 @@ entry 0x400805cc
 1657509323764,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657509325764,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657509326890,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:15:26 (GMT+0)
-1657509327550,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509327550,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509327552,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDkzMjYsImV4cCI6MTY1NzU5NTcyNiwiYXVkIjoid2FsYWJvdC1ob21lIn0.QHuOfWvb9klOLyHkdPaAhnumVZhdrQnFx-NYgX3T0UA6snbeuGe-NTPtYgaChN5RM91HY9IeX9f1dFewxyWlubiGM8fKbo2-Nw_P17w0shiSjrhz3bBPsjC3UrrbFG4WFyKZOuTi7v2wQIPYPoOWseqlqXLDqWDkjYuMV8xScn3LmEIuLICQD7ZT6BZdaSvedpCqJ2jGZXIEEUw1YWefbshTFIty60eC_pVmg5nJ4rLVgkDwhDoMPD9TvAQ4zrTNfqr875osawDgFZL6ajh39cVFac45mJVPCJxMUHD69RWahktW2YTK-bMLQwMm13uJMFNIx7p-5pFshTJ-AiZtnA
 1657509327602,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509327605,DEBUG,http.cpp(92), <- keyver 2
@@ -3385,7 +3385,7 @@ entry 0x400805cc
 1657509393600,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509393605,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509393614,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509393632,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509393632,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509393845,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509393850,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509399466,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3400,7 +3400,7 @@ entry 0x400805cc
 1657509401190,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657509403190,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657509405809,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:16:45 (GMT+0)
-1657509406471,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509406471,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509406472,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDk0MDUsImV4cCI6MTY1NzU5NTgwNSwiYXVkIjoid2FsYWJvdC1ob21lIn0.dczdF-BXqhpbMAbNg1Rs58YD2HsxrjtZSyZFL1bKzDDcAoDD1ALD12Owi-b_CveS2MoWmItJV0m6hs-k5BEwVyP_UDkwPwUhtQCmqnEXVVqawt78kQs0I-9p1pinjQgv5rssDzCD4DJMXG36bAM5GDC1iJupoVVBdZdLd2JEJHN_X4q7xz-9LBV2GRovXXiBWCpMoM2dwgIPz45Xhj67pSnwphxBQpBnp_MXFjpKc83mTLIYkHCLwPQ5nV5tfa6AxUpV099ecTzJ_FPsQxZnCzpyCrJbm2gQTaPwy6Bwy7SbyIkkoT9UfUGMD9UsnykFQboe7CduHDJDpa3JupBp7A
 1657509406521,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509406525,DEBUG,http.cpp(92), <- keyver 2
@@ -3446,7 +3446,7 @@ entry 0x400805cc
 1657509471744,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509471750,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509471758,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509471773,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509471773,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509471972,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509471976,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509477587,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3460,7 +3460,7 @@ entry 0x400805cc
 1657509479823,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657509479831,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657509482825,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:18:02 (GMT+0)
-1657509483493,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509483493,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509483494,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDk0ODIsImV4cCI6MTY1NzU5NTg4MiwiYXVkIjoid2FsYWJvdC1ob21lIn0.NloJDhnMX86QQ5uvik9NiOUae1LKtywRqnhFa-WPlp6dPdIwSXRTwURzTdrfDFFptRtr5Xv-GQp9qU9h8Xk5knsN2LzrP68HwwbYQscgwim_cF-H8AUSvVpvxf9vykG8sI_Kc1NUUr5FoiLKt4qF244n1YImft1TS0OARakhWghCbQkXdd3LBG6EE9rnWFk5I3u9xI4XuxeDt7p5I6fx5uy-HbCxOiLnU8c8k6knCYuHLUD7glAHGi9Vfs_IYREXqA9YVmsJri8Le_SmeK3wEtYAbS_m5kgZuqBJNhYC_tk3pGBz5O-OMRB6OA3Dw4Z0Qc8_s2nLBZgNapoElL56cg
 1657509483543,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509483547,DEBUG,http.cpp(92), <- keyver 2
@@ -3506,7 +3506,7 @@ entry 0x400805cc
 1657509549323,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509549328,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509549337,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509549354,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509549354,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509549566,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509549570,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509555190,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3521,7 +3521,7 @@ entry 0x400805cc
 1657509556913,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657509558912,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657509561769,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:19:21 (GMT+0)
-1657509562427,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509562427,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509562428,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDk1NjEsImV4cCI6MTY1NzU5NTk2MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.H5ls6xMIB08_kS9-8mQ0PJXYX4klrkicu4DcPyC_CBC9ldLZbMT2cPUDODoo3TUabZ0z-1j0t3oYW_aN_m4s0GTT7c0crKfHHk48zivopj14ZFNe6r-8VY-LVEvpC3L5Wi8l92Ve39n9u7A5Os_rCvF4d3ooTAQpfnr22ywP5SyAyYFPyMCH4cC9_jAoRT9GudWNHsnTGrDWOCviVxG9mHIs4J74Bj2VkLAtCLn2M08xG2o8JnVz4aQ3NtqdiHR_TILRVG2g65YMIlaCKV65TIOTd0UxCtQzzi_z_PHasKhEzBxmIFLYp6mVSgSydQRP4VOdo4v5EIv7CjkjSA9uKg
 1657509562477,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509562481,DEBUG,http.cpp(92), <- keyver 2
@@ -3567,7 +3567,7 @@ entry 0x400805cc
 1657509630360,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509630368,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509630377,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509630389,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509630389,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509630601,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509630605,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509636224,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -3581,7 +3581,7 @@ entry 0x400805cc
 1657509638438,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657509638448,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657509638972,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:20:38 (GMT+0)
-1657509639634,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657509639634,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657509639636,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MDk2MzgsImV4cCI6MTY1NzU5NjAzOCwiYXVkIjoid2FsYWJvdC1ob21lIn0.hl1cFbBZ1vqZVjj44tWkhT_5VdUrj2ZDhIFFk7Zp-hWXQ14-zRKtkWR2ff1O8MnCVJ21cSFsxwz5ae9bBjaGpNAEKwjhPccoamN1QGUYI6sxMwJtCJyYvRuSa_19ahf8brXP8LbP81fXwyHRdXGjMiINN2AZUYGzo-BPQAAnS9UJaD6wvR_O-lXXm8xh_ADZqMcKgQRbNdwBZgXH4pBxjpj1PKlBCKaVStScGbgBYMNbIbqHyE0NJDcPvzl3_L6XEWXsjzRUUy9ceCOQtp1r_G9n3X6vrOSAFuq7LTAEgaq3JblmC7E_cNku5e3YaL3wQdxGqtpFnEjI_emlr40h7Q
 1657509639684,DEBUG,http.cpp(92), <- Content-Type application/json
 1657509639689,DEBUG,http.cpp(92), <- keyver 2
@@ -3627,7 +3627,7 @@ entry 0x400805cc
 1657509705457,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657509705462,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657509705471,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657509705488,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657509705488,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657509705680,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657509705684,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657509711304,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -4917,7 +4917,7 @@ entry 0x400805cc
 0000000000136,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 0000000000145,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 0000000000153,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-0000000000166,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+0000000000166,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 0000000000386,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 0000000000391,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 0000000006010,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5011,7 +5011,7 @@ entry 0x400805cc
 0000000063724,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 0000000065724,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657511283470,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:48:03 (GMT+0)
-1657511284130,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511284130,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511284132,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTEyODMsImV4cCI6MTY1NzU5NzY4MywiYXVkIjoid2FsYWJvdC1ob21lIn0.K03rjUgD6AyxR_BXeZvfaAvnbKKXsfQDxbcaAKB1wzQp0TqoCXeyFt8A0k4o1bwDInM7s7T5UaYO0JyX6Qz4NGAFrU62BrHC7raZd4rCrd3BoNZgDSIse43sMhsS4puvTEk1bdiWJHENYULJ55h62IFpe91Lft5l-Un5aXPdzwXd02gatVG44VL0nbN-zs18D_EJE7gYfv51gnLw2pCobXS-uR2jszzIz2zP4rvT5quRyUZcmGApVATrzR0RJRyZptpw-1prGX9zjHETqZiNRyURgtnFrcdCLRDaJhHqe8ZdoMPjdAJjuNm32FDPCLFF8Ql9zTG_SCfyXN9C-4oXGw
 1657511284180,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511284184,DEBUG,http.cpp(92), <- keyver 2
@@ -5057,7 +5057,7 @@ entry 0x400805cc
 1657511354148,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511354157,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511354175,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511354179,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511354179,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511354388,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511354392,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511360010,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5073,7 +5073,7 @@ entry 0x400805cc
 1657511364234,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657511366234,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657511367427,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:49:27 (GMT+0)
-1657511368085,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511368085,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511368087,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTEzNjcsImV4cCI6MTY1NzU5Nzc2NywiYXVkIjoid2FsYWJvdC1ob21lIn0.LckOSpZLhoDTGJ3iL2caAlavDvEg5DHbF9lENwg8EZ9SCGYHIT-d9Ekb284UNfoxImX2SuxckKKrkClsWXllBf0ppa6nOpCt5WmclNiaSd0O_lwnS64ovubSsvAT_yoUz_DqQhr9d3-PVGuyJyibLRWTXvvRnOc553KSKfMeOrtHIIybEkXKaNciHOBDhm00IJpzvzHTTD2TsCzjL--1uJT97AR61zEvcoAylOpRoAIeRzZWU5H1G94WS2lYpWTkBbp-tiebwqCApzaLMYiZLJvQoYprNkwVqUOdDxL4xVcanOBlQ9hAhvurbgm0Q-9MJxQY-AQvm3ubU_2SgzQaqg
 1657511368135,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511368140,DEBUG,http.cpp(92), <- keyver 2
@@ -5119,7 +5119,7 @@ entry 0x400805cc
 1657511434270,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511434279,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511434295,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511434299,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511434299,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511434506,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511434510,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511440121,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5133,7 +5133,7 @@ entry 0x400805cc
 1657511442346,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657511442355,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657511444859,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:50:44 (GMT+0)
-1657511445518,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511445518,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511445520,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE0NDQsImV4cCI6MTY1NzU5Nzg0NCwiYXVkIjoid2FsYWJvdC1ob21lIn0.msKy8DIXq8ZtVGClCpxx9siKHu-FlcfqCYuNI8p9I4VXB3In-W5GNjg6KBMB6OB1466sh4-VYPi7pA5JXQGViyi9whBBZ-46v3ogZaBNRm_uob1THHnbE4bXBN_pEWevGD3OzgaREPQWIcoyiD5L_PvAIMH92mnCwpnnvEitmD9j5kUqELRT1rDuDsLVDpUW-xoPcG4NrNGyoYMTEYCSo2SVZAKuId8KFHZjN0pRa-0tWU74nt6efPgfB74Z7Z8YaUryyQszA5d5rUYJaMqPMPLo7yVkyD7HanviqCKsjVSmXo1SeYDyDKMwXOQPSJggM29ejnCEN0cxWNiuoOazNw
 1657511445568,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511445573,DEBUG,http.cpp(92), <- keyver 2
@@ -5179,7 +5179,7 @@ entry 0x400805cc
 1657511511573,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511511591,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511511594,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511511601,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511511601,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511511863,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511511867,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511517487,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5193,7 +5193,7 @@ entry 0x400805cc
 1657511519652,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657511519661,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657511522021,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:52:02 (GMT+0)
-1657511522683,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511522683,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511522685,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE1MjIsImV4cCI6MTY1NzU5NzkyMiwiYXVkIjoid2FsYWJvdC1ob21lIn0.Jtao5HPIN3H8v6i0g6tTqkmjywtWUtyyDidQgQqmuJTZsHNBT6NocmPfPZ7RZ2xR8f0yfLlmuhYQqJ4SyvNC1qjg5hWD97dmhDyUwf1uQtPX5ssAakP-MWeOHd3HZ8IKRteD3JrjYaPqegJE23MJA4AbTBOqof3FVQ-Oaj9q_wGklvDEds9DBsAw0J-j51yyKdVIiSPG-M2s8-7wN5KTOYJsm2uCZnDIWimY9Pe-abbx1IA7w4ynC4nMJMiAhHFXXGPuNtOTrgsJvn6BNEaUYhBPDP_v4fTMUQ8uyPlSZ0MeJkoF7ZiN1Kk-mQk_TcLFXwvLPeZUL4zhFQ2TKCpv2A
 1657511522733,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511522738,DEBUG,http.cpp(92), <- keyver 2
@@ -5239,7 +5239,7 @@ entry 0x400805cc
 1657511588940,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511588946,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511588955,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511588969,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511588969,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511589184,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511589189,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511594805,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5254,7 +5254,7 @@ entry 0x400805cc
 1657511597089,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657511599087,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657511601322,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:53:21 (GMT+0)
-1657511601986,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511601986,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511601987,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE2MDEsImV4cCI6MTY1NzU5ODAwMSwiYXVkIjoid2FsYWJvdC1ob21lIn0.gN2d3bx5REK7wpi68Bwc7To0FrCm4q-SHgioBrQEQO231kmt2GbgRIPdLFtH8EPj6dhLVCh1zCW0Ejl69B71DuG0Vhv8BmRf0qVq2SfxsOMZFal1XlQBmw0JrpcseHGzMM2_X3MMLuPrUl3U5fQv2zVPtUU0PeJMLoSIRNIyW_o2GlFZn3v4ur960_CtytPOMJESyZdL7n6jr3fbBNy8LSDupNieJs5RYtRMMZxKA1YsWIipMoXVhUAqN58vlQeAS99DhljEKGAcgaTdLtwJRpL1Fj881oCjJWnL-KwwnCRkEcHiB2vH3BUGZ3anCDJxJPDQuRuHEU2W0dtJb1owDA
 1657511602036,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511602040,DEBUG,http.cpp(92), <- keyver 2
@@ -5300,7 +5300,7 @@ entry 0x400805cc
 1657511668197,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511668202,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511668211,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511668228,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511668228,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511668456,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511668460,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511674072,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5315,7 +5315,7 @@ entry 0x400805cc
 1657511676287,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657511678286,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657511680345,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:54:40 (GMT+0)
-1657511681005,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511681005,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511681007,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE2ODAsImV4cCI6MTY1NzU5ODA4MCwiYXVkIjoid2FsYWJvdC1ob21lIn0.S4ENG-m8XahULCoG4VQdrxpcpTbNnhoX3mZgMuLO2uMR76R-zcBE1tYyXcHV0U3TedFJe1v8J-Cvp27rUNq3A_2mCI0oMdQLEg4SWC7faiD4odTgeWQCJW2OmcQWAoiv7cUXrpHviVar6kWdwnPc8YyTORlJzeIrua7RBskBT3yvCVbti1xIjpxNeoqv4m8j6Ei61U5naScyzh5G5MCPJoimFF9XN0m5afPMIn8DR6t2wZQulYQ7JZ-AyFkqoCLJGy7j_DIx-cyKqJTGq9o693n3B7DSwagEfd8jf_WXfKcOjVE60mNmv_HmakjhrhmS39lsxEeMxep3EA41aPse6w
 1657511681055,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511681059,DEBUG,http.cpp(92), <- keyver 2
@@ -5361,7 +5361,7 @@ entry 0x400805cc
 1657511747017,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511747026,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511747034,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511747046,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511747046,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511747306,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511747310,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511752932,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5376,7 +5376,7 @@ entry 0x400805cc
 1657511755105,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657511757104,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657511759378,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:55:59 (GMT+0)
-1657511760040,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511760040,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511760041,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE3NTksImV4cCI6MTY1NzU5ODE1OSwiYXVkIjoid2FsYWJvdC1ob21lIn0.I9fujbhyhv7SpgTT5cWyKeXKEOlV2g2Y27xlKW_I10SH7poxyRXWjX1d306aII6ZDIEPXLNC2_BjGE2KThW3aXchqp3DDeib3yrvmsD2bnjlRxLwvgPPZgpxygG5CneovALQ2IO0fn-LJYhWSRYWQbr0V0nsltIn2Iwk2XPx6Ayl9pi2g9bmw3e_V-Gl3rueVD8HXAOT9wjdvwI342oqQDuIvHhi3okoYb7bSYnsQ33ta7ryThJXt-HxBBrYkxr6rhwxqIotAJ2_gjFnnmbFxhnbMhPg3x_MAvC8nycGy6ECmsELLSvnYVLkwC7AkD3jC8-Vubt453JQouSJjS8qvQ
 1657511760090,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511760094,DEBUG,http.cpp(92), <- keyver 2
@@ -5422,7 +5422,7 @@ entry 0x400805cc
 1657511826560,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511826565,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511826574,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511826592,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511826592,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511826793,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511826797,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511832416,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5437,7 +5437,7 @@ entry 0x400805cc
 1657511834150,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657511836149,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657511838486,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:57:18 (GMT+0)
-1657511839146,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511839146,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511839147,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE4MzgsImV4cCI6MTY1NzU5ODIzOCwiYXVkIjoid2FsYWJvdC1ob21lIn0.LEk3tu4JnDgbCvOrF9H88ahXUGr8knWaKXzlRNydn_VrsHllwOjuJB5EAuWM4LRLTHkWfM1Mo4pAXfbnR42CQJc-pq9xaEYOjRSPytyFV_5R8wepsfPEeVRwSQpmNSYi7pYAIEmW7LRg2csYzDADmw5syUB65eMXPDwEm7ppbKqX0SpAC9X26J1Uh0BHjShbURTR8wQ21CUwF6rZ15hrMhuQbCEAQ_ULICjLRiMozLBlIE5oav82iI6j34SNXrdZ3WZfBOMajT7CwhnT0SF9PcbjojscR-SIuoeu0RtoywcnKZMTM1ovGFrP4Nn8NU539nukQUthuqhzrHYg21Xljw
 1657511839195,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511839200,DEBUG,http.cpp(92), <- keyver 2
@@ -5483,7 +5483,7 @@ entry 0x400805cc
 1657511905384,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657511905392,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657511905410,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657511905413,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657511905413,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657511905623,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657511905627,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657511911245,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5499,7 +5499,7 @@ entry 0x400805cc
 1657511915469,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657511917469,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657511919425,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:58:39 (GMT+0)
-1657511920090,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511920090,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511920091,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE5MTksImV4cCI6MTY1NzU5ODMxOSwiYXVkIjoid2FsYWJvdC1ob21lIn0.awBv_WuOyE4fOIIbeFJB9RgcXtqTxiAgWzxVFsanJkA5NkWj2HtzGhBzMYHucW9EIEA9IuCxwpis-PwUN5wGGsWBLNppi93-37omPcFFk2SYoLQ-pay8NT952OEqCoCo63JsEHPxUxSA6QI9EyKQqDoSViDOOs3eLGdWa_75RwLHM5KvPPyTdoqGuwzhfTdh4AMbK_iiuD_T_puWCOJEuHFwx-itLRnZEhBmPZP_H791n8XO9l40uQ6JPQUcKxwjuhhZBq0jeg-i-iue6s7Lm1ham6hq2Le_DeuImF0uPaMH6xf72WcJ-o4qtWU_nIN-qDSVICx1k0EDhKwjg7hSng
 1657511920140,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511920144,DEBUG,http.cpp(92), <- keyver 2
@@ -5541,7 +5541,7 @@ entry 0x400805cc
 0000000000214,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 0000000000219,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 0000000000228,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-0000000000246,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+0000000000246,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 0000000000607,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 0000000000611,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 0000000006229,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5555,7 +5555,7 @@ entry 0x400805cc
 0000000008296,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 0000000008304,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657511981257,INFO,sys-esp.cpp(152), current_time=2022-07-11 03:59:41 (GMT+0)
-1657511981920,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657511981920,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657511981922,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTE5ODEsImV4cCI6MTY1NzU5ODM4MSwiYXVkIjoid2FsYWJvdC1ob21lIn0.nO61xBg3oSAXEQlmJAI3cAZnEkXgQPPvyyKly-G1ulwHWcx_z5r7MMOp2NNLxesEorXX-oMmBOc2DwN2WCAiyhnloQnGNtv57DJeOzjOsEQM8KawPyV8ARS2x40PDw9DeZ5R0dWQVV1f1JfIh3oIvQ9szWx_I2DF-orr0sJ1B-CzAEfd_-yRMc4cQUAqXOJeWBUJqUyYQvbN3D_4Jb2cqYl9A2GvEM5e78I87w7_F4L9sMx-3puj-ilEipnk-U3nCaKPybvHPKQwhr5gN3Ova43ehppV5GarVq58gss34Qm_GgN9F0fq60pXDnb3L6eze_DQ0985rxdAREGlYDZaGA
 1657511981970,DEBUG,http.cpp(92), <- Content-Type application/json
 1657511981974,DEBUG,http.cpp(92), <- keyver 2
@@ -5601,7 +5601,7 @@ entry 0x400805cc
 1657512049417,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657512049426,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657512049443,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657512049447,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657512049447,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657512049726,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657512049731,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657512055349,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5617,7 +5617,7 @@ entry 0x400805cc
 1657512059502,INFO,sys-esp.cpp(136), Waiting for system time to be set... (2/60)
 1657512061502,INFO,sys-esp.cpp(136), Waiting for system time to be set... (3/60)
 1657512062775,INFO,sys-esp.cpp(152), current_time=2022-07-11 04:01:02 (GMT+0)
-1657512063434,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657512063434,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657512063436,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTIwNjIsImV4cCI6MTY1NzU5ODQ2MiwiYXVkIjoid2FsYWJvdC1ob21lIn0.Xo_X8Q1O8OObWCBkZURgw2EjDBlLL-i2qIdnwLaXLwmV0NS68D5qlNwhTGqtoiUTW7ayoosg2YeTInqt_BDGVa9qZZ24JT6lYI3pn76IzFEa_KHjZ8VRztuL1up5IfVH-Uq7xAfTpGcoO6pNulkBWhB_jfANSpERoz2kWDNzg5cZ34tK7bl7Dq9fl3qlOySWWJCzUStqYdtK4RJ1bIVjiJ_VXEKnOeHYT3NmzMFqHPjCQrNRT0e_5trKvbbVm-CEvotAR2IVYLXYgl1P42CsyiINS1Zv3KOH-8Ah8zQZxeDWSu2cVhdRB-acHkaCkF1qlASb8mEFg99bveF43Ijzcg
 1657512063484,DEBUG,http.cpp(92), <- Content-Type application/json
 1657512063489,DEBUG,http.cpp(92), <- keyver 2
@@ -5663,7 +5663,7 @@ entry 0x400805cc
 1657512129913,WARN,walabot_home_provision_cfg.cpp(85), this is not a valid configuration, ignoring
 1657512129918,DEBUG,walabot_home_provision_cfg.cpp(153), v_provision_cfg_load: mem=189
 1657512129927,DEBUG,walabot_home_provision_cfg.cpp(161), v_provision_cfg_load: mem=188
-1657512129944,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.jubo.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"jubo","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.jubo.health","package_name":"com.walabot.home.esp.client"}
+1657512129944,INFO,walabot_home_provision_cfg.cpp(75), {"version":3,"wifi_ssid":"iPhone","wifi_pass":"59273272","mqtt_uri":"mqtt://mqtt.boju.health","mqtt_port":1883,"ntp_url":"pool.ntp.org","mqtt_client_id":"abc","mqtt_username":"boju","mqtt_password":"space","cloud_type":0,"cloud_region":"us-central1","project_id":"walabot-home","http_url":"https://dev-box.boju.health","package_name":"com.walabot.home.esp.client"}
 1657512130155,INFO,wifi.cpp(37), WIFI_EVENT_STA_START
 1657512130159,INFO,v_radar.cpp(185), VayyarRadar=0.35.0.1.0xd8191d82
 1657512135779,INFO,v_radar.cpp(192), telem_max_size: 111036
@@ -5677,7 +5677,7 @@ entry 0x400805cc
 1657512137494,INFO,sys-esp.cpp(133), Waiting for system time to be set... (0/60)
 1657512137503,INFO,sys-esp.cpp(136), Waiting for system time to be set... (1/60)
 1657512139493,INFO,sys-esp.cpp(152), current_time=2022-07-11 04:02:19 (GMT+0)
-1657512140159,DEBUG,http.cpp(88), POST https://dev-box.jubo.health/device/
+1657512140159,DEBUG,http.cpp(88), POST https://dev-box.boju.health/device/
 1657512140160,DEBUG,http.cpp(92), <- Authorization Bearer eyJhbGciOiJSUzI1NiIsInR5cGUiOiJKV1QiLCJkZXZpY2VJZCI6ImlkX016QTZRVVU2UVRRNlJUTTZOelU2TWpnIiwicmVnaXN0cnlJZCI6IiJ9.eyJpYXQiOjE2NTc1MTIxMzksImV4cCI6MTY1NzU5ODUzOSwiYXVkIjoid2FsYWJvdC1ob21lIn0.lECVLPRJ9DZzoa9Sgf5261TSuRQW6M3xeAI0dknc9v5uOkQdv8RtfrNpinMsyNRUusdb5xf4zvPaC0knL7ipZKd38Dw3I7TTCddwH45qRXsDlWER6gozjJtfvCLte1D2IBLkri0kvNNbOW8-zJWsySpDJNfcMKk1RUR7QBhHoyc6T5v4N0ee1P7ZH7ug3ZZXRvnv6NWUhgD87SdCkGWWK5PxhvN0QgPVkTSjy20FQWcg0eTdQz7Spy61SDib9k_0mE9aDqc49tRsMgqT7RAox6SdDEgGCFDY9_4fwP_cjY2xKWAl9L_VEauJUFWfOAS8siMSo25l_l_Yf0OLnps4BQ
 1657512140209,DEBUG,http.cpp(92), <- Content-Type application/json
 1657512140213,DEBUG,http.cpp(92), <- keyver 2

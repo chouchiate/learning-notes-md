@@ -30,8 +30,6 @@ func main () {
 }
 ```
 
-
-
 ### Type - Struct
 
 ```go
@@ -63,7 +61,7 @@ type Password struct {
 | Tag | Documentation |
 | --- | ------------- |
 | xml | https://godoc.org/encoding/xml |
-| json | https://godoc.org/encoding/json | 
+| json | https://godoc.org/encoding/json |
 | bson | https://godoc.org/labix.org/v2/mgo/bson, https://godoc.org/go.mongodb.org/mongo-driver/bson/bsoncodec |
 | bigquery | https://godoc.org/cloud.google.com/go/bigquery |
 
@@ -120,22 +118,18 @@ func measure(g geometry) {
 func main() {
   r := rect{width: 3, height: 4}
   c := circle{radius: 5}
-  
+
   measure(r)
   measure(c)
 }
 
 ```
 
-
-
 ### Type - Slice
 > The slice type is an abstraction built on top of Go's array type
 
 * The type specification for a slice is []T, where T is the type of the elements of the slice
 * slice type has no specified length
-
-
 
 ### Slice Operation
 > slice literal:
@@ -147,8 +141,8 @@ letters := []string{"a", "b", "c", "d"}
 func make([]T, len, cap) []T
 
 ```
-* T stands for the element type of the slice to be created. 
-* The make function takes a ***type***, a ***length***, and an ***optional capacity***. 
+* T stands for the element type of the slice to be created.
+* The make function takes a ***type***, a ***length***, and an ***optional capacity***.
 * When called, make allocates an array and returns a slice that refers to that array.
 * A slice is a descriptor of an array segment. It consists of a pointer to the array, the length of the segment, and its capacity (the maximum length of the segment).
 * Slicing does not copy the slice's data. It creates a new slice value that points to the original array.
@@ -158,7 +152,6 @@ func make([]T, len, cap) []T
 
 ```go
 ```
-
 
 ## Byte Slice to String (and vice versa)
 
@@ -181,16 +174,16 @@ func string2ByteSlice ( s string ) [] byte {
 ```
 
 ### Type - Array
-An array type definition specifies a length 
-and an element type. An array's size is fixed; 
+An array type definition specifies a length
+and an element type. An array's size is fixed;
 ```go
 var a [4]int
 a[0] = 1
 i := a[0]
 // i == 1
 ```
-* Go's arrays are values. 
-* An array variable denotes the entire array; 
+* Go's arrays are values.
+* An array variable denotes the entire array;
 * ***it is not a pointer*** to the first array element (as would be the case in C).
 
 > An array literal can be specified as
@@ -207,9 +200,7 @@ b := [...]string{"Penn", "Teller"}
 
 > String Builder Go v1.10 or later
 
-
-
-### Type - Map 
+### Type - Map
 
 * A map maps keys to values.
 * Map 中的所有 Key & Value 型別必須一樣
@@ -238,9 +229,7 @@ func main() {
 }
 ```
 
-
-
-## Range 
+## Range
 
 - Loop iteration over slice or map
 - Range over slice returns index, copy of element at index
@@ -254,13 +243,11 @@ func main() {
 }
 ```
 
-
-
 ## Pointer Receiver
 
 * Function with pointer receiver can modify value to which receiver points
 * Function must have pointer receiver to change value pointed to where the function is called
-* Use value.function syntax to call 
+* Use value.function syntax to call
 
 ```go
 type Vertex struct {
@@ -269,7 +256,7 @@ type Vertex struct {
 func (v Vertex) Abs() float64 {
   return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
-func (v *Vertex) Scale (f float64) {			// <-- change 
+func (v *Vertex) Scale (f float64) {			// <-- change
   v.X = v.X * f
   v.Y = v.Y * f
 }
@@ -277,16 +264,7 @@ func main() {
   v := Vertex{3,4}
   v.Scale(10)
   fmt.Println(v.Abs())	// print 50
-  
+
   //print 5 if change to func(v Vertex) Scale (f flaot64) {
 }
 ```
-
-
-
-
-
-
-
-
-

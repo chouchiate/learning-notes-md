@@ -35,14 +35,14 @@
 ### **BLE 與其他通訊技術比較**
 
 |Bluetooth   |Ethernet|Wi-Fi |Modem |
-| ---------- | ------ | ---- | ---- | 
+| ---------- | ------ | ---- | ---- |
 |v1.1: 1Mbps (BR)|802.3i: 10Mbps|802.11: 2Mbps|b.21: 0.3kbps
 |v2.0 3Mbps  (EDR)|802.3u: 100Mbps|802.11b: 11Mbps|v.22: 1.2kbps
 |v3.0: 54Mbps (MAC/PHY)|802.3ab: 1000Mbps|802.11g: 54Mbps|v.32: 9.6kbps
 |v4.0: 0.3Mbps (BLE) |802.3an: 10000Mbps|802.11n: 135Mbps|v.34: 28.6kbps
 |v5.0: 2Mbps (BLE) |
 
-* BR: Basic Rate, 
+* BR: Basic Rate,
 * EBR: Enhanced Basic Rate
 
 
@@ -56,7 +56,7 @@
   - Device End App Use Case
 * Host
   - Device Communication Manager
-* HCI 
+* HCI
   - Host Controller Interface
 * Controller
   - HW / Module Tx/Rx Radio Signal
@@ -85,7 +85,7 @@
     * S2 - 2x range, 1/2 data rate
     * S8 - 4x range, 1/8 data rate
 
-* Modulation: 
+* Modulation:
   - Gaussian Frequency Shift Keying (GFSK)
 
 ![](../assets/img/Fsk.svg.png)
@@ -96,7 +96,7 @@
   - Scanning
   - Creating / Maintaining connection
   - Ensure packets structure
-  - Provide PHY means to talk to HCI layer 
+  - Provide PHY means to talk to HCI layer
 
 #### **Link Layer Roles**
 * Advertiser
@@ -113,7 +113,7 @@
 #### ***Link Layer States***
 
 * Standby
-  - Default, 
+  - Default,
   - No Tx or Rx
 * Advertising
   - Send out advertising packet
@@ -130,7 +130,7 @@
 * Data Packet
   - Sending/Receiving data once connected
 
-* Shortest Allowable packet: 
+* Shortest Allowable packet:
   - Empty data packet, 80 usec long
 * Longest Allowable packet:
   - Fully loaded adv packet, 376 usec long
@@ -158,7 +158,7 @@
 
 #### ***Advertising State***
 > Device sends out packets containing useful data.
-* Fixed Advertising Interval 
+* Fixed Advertising Interval
   - (20ms - 10.28s)
 * Same adv. packet is transmitted on each of 3 primary adv. channels
 * Primary adv. packet limited to 31 bytes
@@ -248,7 +248,7 @@
 
 - Protocol Multiplexing
 - Flow Control
-- Handles 
+- Handles
   * Attribute Protocol (ATT)
   * Security Manager Protocol (SMP)
 - Segmentation / Reassebly of packets (when larger than radio can deliver)
@@ -257,13 +257,13 @@
 > Defines how a server exposes its data to a client.
 * Server: The device that exposes data.
   - Beacon act as server, exposing battery level, transmit power, etc.
-  - Server sends 
+  - Server sends
     * reponses,
-    * notifications, and 
+    * notifications, and
     * indications
 * Client: The device that consumes data.
   - Mobile phone app act as client consuming data.
-  
+
 > Attribute is a generic name for any data exposed by the server.
 * Data is labelled and addressable.
 * Attribute made up of:
@@ -333,7 +333,7 @@ Authenticates a message
     - value
       * user data
     - descriptor
-      * expand metadata 
+      * expand metadata
 
 #### <u>Characteristic Value</u>
 |Attribute Handle|Attribute Type|Attribute Value|Attribute Permission|
@@ -438,7 +438,7 @@ Authenticates a message
       - 提高接收靈敏度和有效通信距離
         1. CI: coding indicator
         2. TERM1:
-        3. TERM2: 
+        3. TERM2:
 
     - 500 kbps (s = 2) -75dbm
     - 125 kbps (s = 8) -82dbm
@@ -485,6 +485,10 @@ Authenticates a message
       - 個人音頻分享
       - 公共輔助聽力
       - 公共空間
+
+
+  * The new Low Complexity Communication Codec (LC3) is set to replace SBC in Bluetooth 5.2, and it will be capable of scaling between 345kbps to 160kbps both at a bit depth of 16.
+  * LC3Plus will boast a latency time of around 5ms, much quicker than SBC's 100ms.
 ---
 ### **BLE 5.3 簡介**
 

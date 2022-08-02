@@ -1,7 +1,7 @@
 ## [kicad] - learning guide
 * [pcb-new-part1](https://www.pcbway.com/blog/PCB_Design_Layout/Layout_In_Pcbnew.html)
 * [pcb-new-part2](https://www.pcbway.com/blog/PCB_Design_Layout/Layout_In_Pcbnew_____part_2.html)
-
+* [digikey](https://www.digikey.tw/en/resources/design-tools/kicad?utm_adgroup=General&utm_source=google&utm_medium=cpc&utm_campaign=EN_Brand_Digi-Key&utm_term=digikey&productid=&gclid=Cj0KCQjw852XBhC6ARIsAJsFPN15Fzo4-AeDfheG-68YNcqRMsz2aeGzc25ERuwTwuAsqgKEK7W9OlsaAmO9EALw_wcB)
 ### Footprint Creation
 
 ```

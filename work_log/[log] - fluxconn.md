@@ -2,6 +2,24 @@
 
 ![](./fluxconn_gantt.drawio.png)
 
+
+## 08-01-2022
+#### NCL31000 & NCL31000ASGEVB evaluation
+
+- BOM LIST
+- BOM COST EVALUATION
+- Datasheet, EVB
+- Circuit Design
+- PCB Layout
+
+#### CI/CD Pipeline setup using GitHub Actions and AWS
+- New AWS Account
+- New Github Action account
+
+
+
+
+
 ## 07-21-2022
 #### dsp
 :open_book: gnu-plot study

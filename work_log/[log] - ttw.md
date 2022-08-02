@@ -1,5 +1,19 @@
 ## [log] -- ttw
 
+### 08-01-2022
+
+#### IT611N
+:hammer: change prevent lock behaviour according to customer feedback
+    - un-latch lock prevention when position at switch open
+
+:hammer: no locking operation when no nfc is registered according to customer spec change
+    - remove touch key unlock and lock when there is no nfc is registered
+    - locking operation prevention when no nfc is registered
+
+:hammer:
+    - minor bug fix when factory reset interrupt in the middle causing lock entering incorrect lock state.
+
+
 ### 07-28-2022
 
 #### IT611N

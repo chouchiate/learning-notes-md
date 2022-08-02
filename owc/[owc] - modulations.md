@@ -23,3 +23,27 @@ PAM 是脈波振幅調變 Pulse-Amplitude Modulation 的縮寫
 * PAM8(IEEE P802.3bm)
 
 ...等多種不同位階數的編碼方式，常用於高速數位訊號的傳輸。
+
+
+
+### Pulse Position Modulation (PPM) for Sub carrier-multiplexed (SCM) Optical Communication
+* Inverted L-ary Pulse Position Modulation (I-LPPM)
+* L-ary Pulse Position Modulation (LPPM)
+* MultiPulse PPM (MPPM)
+
+> these are designed for free-space-optical communication utilizing infrared (IR)transmission which can only support data transmission (i.e., communication support).Hence, it can be assumed that these techniques did not support dimming.
+
+
+### Multi-Carrier-Modulation (MCM) with Orthogonal Frequency Division Multiplexing (OFDM)
+
+* utilizing MultiCarrier Modulation (MCM) techniques
+such as Orthogonal Frequency Division
+Multiplexing (OFDM) was introduced as a
+reliable substitute for these equalization
+techniques for Li-Fi systems
+
+- [paper](https://opg.optica.org/oe/fulltext.cfm?uri=oe-20-17-18861&id=240366)
+*  combines OFDM with Multi levelQuadrature Amplitude Modulation (MQAM). A modification to this scheme is
+presented in [34] that can achieve excess
+data transmission by merging Multi PulsePosition Modulation (MPPM) pulses with
+M-QAM OFDM
