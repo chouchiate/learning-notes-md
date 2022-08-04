@@ -181,7 +181,8 @@ func main() {
 	// b := NewBBB()
 	a := &aaa{}
 	b := &bbb{}
-	b.aaa.SayHello("TEST!!!")       // struct embedded function can only be called within its scope, which is main in this case
+	b.aaa.SayHello("TEST!!!")
+    // struct embedded function can only be called within its scope, which is main in this case
 	a.SayHello("Derick")
 	a.SayHello("Chou")
 	b.SayHello("Docker")

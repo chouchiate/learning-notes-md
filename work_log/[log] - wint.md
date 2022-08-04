@@ -2,6 +2,10 @@
 
 ![](./wint_gantt.drawio.png)
 
+### 08-04-2022
+
+:construction: LCD display migration and upgrade
+
 ### 08-01-2022
 :construction: command-line-calibration for ovp/otp/scp/ocp level
 

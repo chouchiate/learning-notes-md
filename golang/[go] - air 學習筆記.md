@@ -4,14 +4,19 @@
 
 ```bash
 $ go get -u github.com/cosmtrek/air
+
+# install bin
+$ curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
 ```
 
-#### Add Air to Bashrc or 
+#### Add Air to zshrc or
 ```bash
-$ code /.bashrc
+# open .zshrc with vscode
+$ code ~/.zshrc
 ## add this line
-alias air='~/.air'
-$ source /.bashrc
+alias air='$(go env GOPATH)/bin/air'
+# update to env
+$ source ~/.zshrc
 ```
 
 #### First Program
@@ -23,8 +28,8 @@ $ source /.bashrc
   ```bash
   $ mkdir <project_folder> && cd <project_folder>
   $ go mod init <module_path> # thudercat.health/thudercat-space-backend
-  
-  
+
+
   ```
 
 #### Run project with auto-reload using Air.
@@ -50,7 +55,7 @@ $ sample-go-project
 #### Import Package from remote modules
 
 ```bash
-# import remote module 
+# import remote module
 import (
 	...
   "github.com/google/go-cmp/cmp"
@@ -87,15 +92,15 @@ $ go clean -modcache
       t.Fatalf(`test result fatal message`)
     }
   }
-  
+
   // in package folder
   $ go test
   $ go test -v	// get verbose output that lists all tests and results
   ```
-  
-  
-  
-  
+
+
+
+
 
 ### Compile and Install Application
 
@@ -113,7 +118,7 @@ $ go clean -modcache
   $ ./program
   # On Window
   ~ program.exe
-  
+
   ```
 
 * Discover GO Install Path
@@ -131,7 +136,7 @@ $ go clean -modcache
   $ set PATH=%PATH%;C:\path\to\your\install\directory
   ```
 
-  
+
 
 #### alternatively, 使用 go env 更改 GOBIN
 
@@ -150,7 +155,7 @@ $ go env -w GOBIN=C:\path\to\your\bin
 $ go env -u GOBIN
 ```
 
-#### 
+####
 
 當設定好 shell ENV path
 

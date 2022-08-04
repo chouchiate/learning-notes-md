@@ -13,7 +13,7 @@
 :hammer:
     - minor bug fix when factory reset interrupt in the middle causing lock entering incorrect lock state.
 
-
+---
 ### 07-28-2022
 
 #### IT611N
@@ -28,7 +28,7 @@
 
 :hammer: adc battery check timing has been changed when system waking up
     - only after 10th accumulated measurement of low battery should trigger battery saving modes.
-
+---
 ### 07-22-2022
 
 #### IT611N

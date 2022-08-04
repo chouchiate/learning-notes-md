@@ -63,7 +63,6 @@ $ ./cloud_sql_proxy -instances=INSTANCE_CONNECTION_NAME=tcp:0.0.0.0:1234
 $ ./cloud_sql_proxy -instances=thudercat-pro:asia-east1:thudercat-sql:=tcp:5433
 ```
 
-
 ### gcloud auth login & test
 
 ```bash
