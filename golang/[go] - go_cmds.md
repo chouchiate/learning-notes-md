@@ -1,6 +1,11 @@
+## [go] - go cmds
 
+### go clean -modcache
+This command deletes the cache downloaded along with unpacked code dependencies. These packages can be found in the $GOPATH/pkg/mod directory.
 
-## Golang
+### when to use go clean -modcache
+* when we want to remove our downloaded packages. It lets us download packages for reading an excel file; when we run the code. It removes the package.
+* when we want to do a major upgrade to the application, and at times we want to remove all downloaded packages.
 
 1. thudercat-space-backend
 

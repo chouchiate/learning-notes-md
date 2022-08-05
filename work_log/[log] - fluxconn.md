@@ -2,6 +2,63 @@
 
 ![](./fluxconn_gantt.drawio.png)
 
+## 08-05-2022
+
+#### **M2351 AN0019 Study**
+| Task | Status | Description |
+| --- | --- | --- |
+| IDAU | :white_check_mark: | |
+| SAU | :white_check_mark: | |
+| (S) (NS) (NSC) switch | | |
+| Keil Environment | | |
+
+---
+#### **NCL31000 & NCL31000ASGEVB evaluation**
+
+| Task | Status | Description |
+| --- | --- | --- |
+| BOM LIST |  | |
+| BOM COST EVALUATION | |
+| Datasheet, EVB | |
+| Circuit Design | |
+| PCB Layout | |
+
+---
+#### **CI/CD Pipeline setup using GitHub Actions and AWS**
+| Task | Status | Description |
+| --- | --- | --- |
+| New AWS Account | | |
+| New Github Action account | | |
+
+---
+#### **dsp**
+:open_book: gnu-plot study
+    - download
+    - generate waveform
+
+---
+### **tdk-mems-study**
+:floppy_disk: air quality
+
+:floppy_disk: smart sound
+
+:floppy_disk: smart_bug project
+
+---
+
+#### **openthread**
+- simplicity ftd project compiled and loaded to dev-kit
+- cli tested no response
+- buy radio-kit for rpi
+- buy another dev-kit
+- plan and design usage
+- study CLIMAX
+
+#### **power modeling**
+:open_book: small signal modeling for dc-dc-buck
+
+:bangbang: matlab dc-dc simulation modeling code
+
 
 ## 08-01-2022
 #### NCL31000 & NCL31000ASGEVB evaluation
@@ -15,7 +72,6 @@
 #### CI/CD Pipeline setup using GitHub Actions and AWS
 - New AWS Account
 - New Github Action account
-
 
 
 

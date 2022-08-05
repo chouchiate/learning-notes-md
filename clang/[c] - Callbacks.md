@@ -4,7 +4,7 @@
 * In simple language, If a reference of a function is passed to another function as an argument to call it, then it will be called as a Callback function.
 * In C, a callback function is a function that is called through a [function pointer](https://www.geeksforgeeks.org/function-pointer-in-c/).
 
-```
+```c
 // A simple C program to demonstrate callback
 #include<stdio.h>
 
