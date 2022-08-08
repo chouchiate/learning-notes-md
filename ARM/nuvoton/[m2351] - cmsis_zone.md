@@ -13,16 +13,16 @@
 
 #### Armv8-M Programmer's model memory Map
 * secure and non-secure interleaved every 256MBs
-![](../assets/img/armv8_memory_map.png)
+![](../../assets/img/armv8_memory_map.png)
 
 
 #### Fido Application Memory Map for RAM/Flash
 
-![](../assets/img/fido_application_memory_map.png)
+![](../../assets/img/fido_application_memory_map.png)
 
 
 #### Add secure flash in azone setting
-![](../assets/img/azone_add_secure_flash.png)
+![](../../assets/img/azone_add_secure_flash.png)
 
 #### Resource map example
-![](../assets/img/m2351_resource_map_example.png)
+![](../../assets/img/m2351_resource_map_example.png)

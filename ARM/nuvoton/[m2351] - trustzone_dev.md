@@ -5,7 +5,7 @@
 
 ### memory map and partitions
 
-![](../assets/img/m2351_memory_map.png)
+![](../../assets/img/m2351_memory_map.png)
 
 ### Memory Map Security attribution configuration
 
@@ -46,11 +46,11 @@ Test Target (TT) queries the security state and access permissions of a memory l
         * it is secured (S)
         * in flash and RAM area, it is non-secure callable (NSC)
 
-![](../assets/img/m2351_idau_defined_memory_map_address_security_attribution.png)
+![](../../assets/img/m2351_idau_defined_memory_map_address_security_attribution.png)
 
-![](../assets/img/m2351_idau_memory_map.png)
+![](../../assets/img/m2351_idau_memory_map.png)
 
-![](../assets/img/m2351_idau_block_diagram.png)
+![](../../assets/img/m2351_idau_block_diagram.png)
 
 
 
@@ -68,7 +68,7 @@ Test Target (TT) queries the security state and access permissions of a memory l
 | SAU_RBAR | 0xE000EDDC | SAU setting start address |
 | SAU_RLAR | 0xE000EDE0 | SAU setting end address and attribution |
 
-![](../assets/img/m2351_sau_security_attribution_configuration.png)
+![](../../assets/img/m2351_sau_security_attribution_configuration.png)
 
 
 ### Secure and non-secure switch

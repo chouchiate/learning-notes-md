@@ -1,5 +1,18 @@
 ## [log] - my_work_log
 
+### 08-05-2022
+
+#### [Y]
+* [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
+
+- Deployment to DEV
+- Test with IOT Devices
+
+#### [T]
+
+- Continue Testing
+- Evaluation of new features (Statistical Usage Analysis)
+
 ### 08-01-2022
 
 * [JUSPACE-330](https://jubo.atlassian.net/browse/JUSPACE-330?atlOrigin=eyJpIjoiYTQxZjA1ZWYwNDk0NDg2MWJhZDQ5NTliMzVlNGIzZDYiLCJwIjoiaiJ9)
@@ -26,7 +39,6 @@
 #### [T]
 - :construction:
     - TDD Unit Testing and integration testing for repeat alert
-
 
 
 ### 07-26-2022
