@@ -2,6 +2,11 @@
 
 ![](./fluxconn_gantt.drawio.png)
 
+## 08-09-2022
+* Add LED display tasks
+  * esp32 mqtt driver -> led display driver
+  * raspberry pi 4 mqtt driver -> led display driver
+
 ## 08-05-2022
 
 #### **M2351 AN0019 Study**

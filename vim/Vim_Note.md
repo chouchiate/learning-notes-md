@@ -24,7 +24,7 @@
 ?text
 ```
 
-### Exiting Vi
+### Vim commands lists
 
 * <Esc> or <ctrl> + <c> --> Enter Command Mode
 
@@ -32,4 +32,19 @@
 * ZZ <Enter> --> Write, then quit
 * :wq <Enter> --> Write, then quit
 * :q <Enter> --> Quit (No Change)
-* :q! <Enter> --> Quit without saving 
+* :q! <Enter> --> Quit without saving
+* :set number <enter> -> add line numbers
+
+### Open 2 files at once
+```bash
+# <file1> <file2>
+$ vim -O pthread.c Makefile
+```
+
+### select between tabs
+
+
+### setup .vimrc
+* unix: .vimrc
+* window: _vimrc
+
