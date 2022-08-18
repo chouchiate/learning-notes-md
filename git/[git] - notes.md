@@ -357,3 +357,21 @@ ac7c70c update prod DB_DBNAME in Makefile
 ### hello
 * derick.chou
 * IlovecocoD12060129D
+
+
+### commit message
+
+* Use the git commit command without any flags. The configured editor VIM will open.
+
+* To start typing press the INSERT key on your keyboard, then in insert mode create a better commit with description how do you want.
+
+* Once you have written all that you need, to returns to git, first you should exit insert mode, for that press ESC.
+
+* Now close the Vim editor with save changes by typing on the keyboard :wq (w - write, q - quit):
+
+[stack-overflow](https://stackoverflow.com/questions/16122234/how-to-commit-a-change-with-both-message-and-description-from-the-command-li)
+
+### VScode as git editor
+[how-to](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor
+
+)

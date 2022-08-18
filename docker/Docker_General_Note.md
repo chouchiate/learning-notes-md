@@ -33,7 +33,7 @@ $ docker build --tag <tag_name> .
 ### List Images
 
 ```bash
-$ docker image ls					
+$ docker image ls
 ```
 
 

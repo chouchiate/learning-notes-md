@@ -4,15 +4,15 @@
 // docker-compose.yml template
 
 version: "3.3"
-services: 
+services:
   thudercatx:
     networks:
       - network-name
     image: "example/backend:latest"
     container_name: back_container
     #network_mode: "host"
-    #volumes: 
-    #  - ./server/dist:/usr/app/dist 
+    #volumes:
+    #  - ./server/dist:/usr/app/dist
     restart: always
     env_file: ./server/.env
     tty: true
@@ -23,7 +23,7 @@ services:
       - "9999:9999"
       # MQTT Broke Port
       - "1883:1883"
-      
+
     expose:
       - "6666"
       - "8888"
@@ -45,7 +45,7 @@ services:
     expose:
       - "3000"
     command: [ "pm2-runtime", "npm", "--", "start"]
-    
+
   couchdb-example:
     networks:
       - network-name
@@ -56,14 +56,14 @@ services:
     env_file:
         - ./server/couch.env
     tty: true
-    ports: 
+    ports:
       - "5984:5984"
     expose:
       - "5984"
 
 networks:
   network-name:
-    external: true      
+    external: true
 
 
 

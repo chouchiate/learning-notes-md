@@ -3,8 +3,7 @@
 ### setup
 
 ```go
-
-
+// config.go
 import "github.com/kelseyhightower/envconfig"
 
 type (
@@ -27,7 +26,6 @@ func New() (*Env, error) {
 	}
 	return &env, nil
 }
-
 ```
 
 ### main usage
@@ -41,3 +39,4 @@ func main() {
     }
 }
 ```
+
