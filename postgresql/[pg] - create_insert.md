@@ -1,5 +1,48 @@
 ## [pg] - create table insert data
 
+
+### Create table with numeric columns (precise floating point)
+```sql
+CREATE TABLE Vehicles (
+     Vehicle_ID int NOT NULL,
+     Vehicle_Type VARCHAR(255) NOT NULL,
+     Model_name VARCHAR(255) NOT NULL,
+     Engine_Size int NOT NULL,
+     Vehicle_Condition VARCHAR(255) NOT NULL,
+     --price is numeric, not float, because the precision and scale are specified.
+     Price numeric(9,2) NOT NULL,
+     PRIMARY KEY (Vehicle_ID)
+);
+```
+
+### 創建 random number table
+```sql
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (
+    id uuid,
+    a integer,
+    b integer,
+)
+```
+
+### generate fake data
+```sql
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (
+    id uuid,
+    a integer,
+    b integer,
+	PRIMARY KEY (id)
+);
+
+INSERT INTO test
+SELECT
+	gen_random_uuid() as id,
+	floor(RANDOM() * 6) AS a,
+	floor(RANDOM() * 5) AS b
+FROM  generate_series(1,10) as id;
+```
+
 ### 建立測試用 random data 100,000 筆, 3 種 patient_state, 6 種 patient_state_detail, occurred_at 範圍 (2022-01-10 10:00:00 ~ 2022-01-20 20:00:00)
 ```sql
 DROP TABLE IF EXISTS test;
@@ -38,7 +81,6 @@ SELECT
                    timestamp '2022-01-15 10:00:00') as occurred_at
 
 FROM generate_series(1, 30000) as id;
-
 ```
 
 ### Generate random md5

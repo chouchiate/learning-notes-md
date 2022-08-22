@@ -26,19 +26,20 @@ type SpacePatientDeviceRegistry struct {
 ### API Design
 
 * METHOD: GET
-* API URL: https://space.jubo.health/api/statistics/
+* API URLs:
+  * https://space.jubo.health/api/statistics/{organizationID}/{interval}
+  * https://space.jubo.health/api/statistics/{patientID}/{interval}
 * Payload:
-
-```json
-"criteria": {
-    "dataType": "organization", // organization, individual
-    "interval": "weekly",       // weekly, daily
-    "organizationID": "d8788976-cbd7-4b9a-9f77-318113b929ab",
-    "patientID": "c9b16660-e226-4198-bf31-ee7ecd551606",
-    "end": 1660924800,
-    "start": 1660320000
-}
-```
+    ```json
+    "criteria": {
+        "dataType": "organization", // organization, individual
+        "interval": "weekly",       // weekly, daily
+        "organizationID": "d8788976-cbd7-4b9a-9f77-318113b929ab",
+        "patientID": "c9b16660-e226-4198-bf31-ee7ecd551606",
+        "end": 1660924800,
+        "start": 1660320000,
+    }
+    ```
 
 1. 夜間離床計算平均次數 (週)
     * 設計 Db Query: 從 events table select count distinct patientId with patient state = 1 in time range (week).
@@ -89,9 +90,7 @@ Statistics: {
 ```
 
 ### networking 的路線圖
-
-![](./safety_stats.drawio.png)
-
+![](https://i.imgur.com/ZANjJ6S.png)
 ### data 的流向、資料的「讀」與「寫」路徑有清晰的分野
 
 
