@@ -1,5 +1,20 @@
 ## [log] -- ttw
 
+### 08-19-2022
+#### IT603_JTIC new spec
+
+:white_check_mark: Complete
+*
+
+
+:construction: Designing
+
+
+:hammer:
+
+
+
+
 ### 08-01-2022
 
 #### IT611N

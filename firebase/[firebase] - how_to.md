@@ -1,4 +1,4 @@
-# Firebase Note
+## [Firebase] - How to Note
 
 ### Download CLI
 

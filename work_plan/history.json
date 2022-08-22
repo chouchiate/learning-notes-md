@@ -1,0 +1,327 @@
+{
+    "histories": [
+        {
+            "spaceID": "006ed2c2-ed56-4d5c-855f-52492139aca4",
+            "branch": "2",
+            "room": "101",
+            "bed": "A",
+            "patient": {
+                "id": "c9b16660-e226-4198-bf31-ee7ecd551606",
+                "firstName": "John (佳德座位)",
+                "lastName": "Smith",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "d8788976-cbd7-4b9a-9f77-318113b929ab"
+                    ],
+                    "dataType": "smartbed_delay"
+                },
+                {
+                    "ids": [
+                        "d8788976-cbd7-4b9a-9f77-318113b929ab"
+                    ],
+                    "dataType": "breath"
+                }
+            ]
+        },
+        {
+            "spaceID": "52e3b0e0-2c35-4bde-96a9-e788dba47a67",
+            "branch": "2",
+            "room": "201",
+            "bed": "B",
+            "dataTypes": [
+                {
+                    "ids": [
+                        "81e4dc66-972f-43b8-833f-3276310f2d3d"
+                    ],
+                    "dataType": "smartbed_delay"
+                },
+                {
+                    "ids": [
+                        "81e4dc66-972f-43b8-833f-3276310f2d3d"
+                    ],
+                    "dataType": "breath"
+                },
+                {
+                    "ids": [
+                        "81e4dc66-972f-43b8-833f-3276310f2d3d"
+                    ],
+                    "dataType": "smartbed"
+                }
+            ]
+        },
+        {
+            "spaceID": "3ba76754-ea58-4f1b-8903-e09dccdd660c",
+            "branch": "1",
+            "room": "103",
+            "bed": "B",
+            "patient": {
+                "id": "2b225398-04b1-4fbd-8fb3-c6fe923efd17",
+                "firstName": "可可",
+                "lastName": "林",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "f8a8ddb8-31ea-44c1-bd52-8eabcce0dfb2"
+                    ],
+                    "dataType": "smartbed"
+                }
+            ]
+        },
+        {
+            "spaceID": "deda0339-d4f7-4473-bc3e-a8909971f861",
+            "branch": "1",
+            "room": "休息室",
+            "bed": "",
+            "dataTypes": [
+                {
+                    "ids": [
+                        "ee381cd2-c722-427c-be85-74ac765e93a5"
+                    ],
+                    "dataType": "falldown"
+                }
+            ]
+        },
+        {
+            "spaceID": "67b9acd4-24a9-4f52-aa9a-7723cfe38dd4",
+            "branch": "2",
+            "room": "房間浴室",
+            "bed": "",
+            "dataTypes": [
+                {
+                    "ids": [
+                        "7dda516b-ee6c-45d3-8b05-2f91acb2f5a8"
+                    ],
+                    "dataType": "falldown"
+                }
+            ]
+        },
+        {
+            "spaceID": "70f86b61-1b74-4ad0-bd7a-72f3a703e1dd",
+            "branch": "3",
+            "room": "507",
+            "bed": "1",
+            "patient": {
+                "id": "a682a5f8-2274-4290-b020-5b75637297d8",
+                "firstName": "建宏",
+                "lastName": "Space",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "630b43e3-59e1-45cd-92c6-69b09df71b57"
+                    ],
+                    "dataType": "breath"
+                },
+                {
+                    "ids": [
+                        "630b43e3-59e1-45cd-92c6-69b09df71b57"
+                    ],
+                    "dataType": "smartbed_delay"
+                }
+            ]
+        },
+        {
+            "spaceID": "cd04926c-a389-48c9-95b5-73baeed1c9e5",
+            "branch": "4",
+            "room": "222",
+            "bed": "3",
+            "patient": {
+                "id": "ea8b2224-112a-43c1-8851-3d6a5f73ed0d",
+                "firstName": "SG Test",
+                "lastName": "Space",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "f6ee2122-a7ab-43f8-8774-9c85188d5c3c"
+                    ],
+                    "dataType": "smartbed_delay"
+                }
+            ]
+        },
+        {
+            "spaceID": "8dd0aa93-6429-46d2-9029-ebda49a9dadc",
+            "branch": "1",
+            "room": "107",
+            "bed": "B",
+            "patient": {
+                "id": "e21516db-ce4c-4da2-af5a-5e3a2518a05c",
+                "firstName": "Marcie",
+                "lastName": "(內湖展示)Brown",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "14957446-297e-4140-a762-698505c42649"
+                    ],
+                    "dataType": "breath"
+                },
+                {
+                    "ids": [
+                        "14957446-297e-4140-a762-698505c42649"
+                    ],
+                    "dataType": "heart"
+                },
+                {
+                    "ids": [
+                        "6a4056ea-a288-4a09-a30f-775c52112cd8"
+                    ],
+                    "dataType": "smartbed"
+                }
+            ]
+        },
+        {
+            "spaceID": "595e86ad-e502-4cba-85f7-e77310731f05",
+            "branch": "2",
+            "room": "202",
+            "bed": "C",
+            "patient": {
+                "id": "60234912-fdbb-452a-9a24-b301cb7d4502",
+                "firstName": "Alu",
+                "lastName": "Liu",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "78f6ece2-7d18-4017-b50c-377a30eca88b",
+                        "8b92eb0c-7a5e-4306-8b49-41a11550fc07"
+                    ],
+                    "dataType": "breath"
+                },
+                {
+                    "ids": [
+                        "78f6ece2-7d18-4017-b50c-377a30eca88b"
+                    ],
+                    "dataType": "smartbed_delay"
+                },
+                {
+                    "ids": [
+                        "8b92eb0c-7a5e-4306-8b49-41a11550fc07"
+                    ],
+                    "dataType": "heart"
+                }
+            ]
+        },
+        {
+            "spaceID": "c2e8963e-d0e6-41ed-9c54-cfbc4c212d6d",
+            "branch": "1",
+            "room": "休息室AA",
+            "bed": "",
+            "dataTypes": [
+                {
+                    "ids": [
+                        "98932ea6-2ea6-49d8-8102-06491f215b5b"
+                    ],
+                    "dataType": "falldown"
+                }
+            ]
+        },
+        {
+            "spaceID": "ec4c240c-3aec-48bd-a063-c0514bba5f5a",
+            "branch": "2",
+            "room": "202",
+            "bed": "CC",
+            "dataTypes": [
+                {
+                    "ids": [
+                        "71646293-6b2a-4245-af98-8cb6f79ae7d3"
+                    ],
+                    "dataType": "breath"
+                },
+                {
+                    "ids": [
+                        "71646293-6b2a-4245-af98-8cb6f79ae7d3"
+                    ],
+                    "dataType": "smartbed_delay"
+                }
+            ]
+        },
+        {
+            "spaceID": "0c17f9c3-91d5-41ec-913f-f745fbb14bb4",
+            "branch": "3",
+            "room": "312",
+            "bed": "3",
+            "patient": {
+                "id": "e4dbf86a-7baa-4e2f-b697-e11cc6bd21d6",
+                "firstName": "Andy",
+                "lastName": "Space",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "4e611cbf-ad78-45b3-888c-bb62659fba5a"
+                    ],
+                    "dataType": "smartbed_delay"
+                },
+                {
+                    "ids": [
+                        "4e611cbf-ad78-45b3-888c-bb62659fba5a"
+                    ],
+                    "dataType": "breath"
+                }
+            ]
+        },
+        {
+            "spaceID": "3d164fee-123a-4f84-aa6e-6354262b6e24",
+            "branch": "2",
+            "room": "101",
+            "bed": "AA",
+            "patient": {
+                "id": "d5737814-4e89-41b5-a4a4-6636a6a912ef",
+                "firstName": "座位分靈",
+                "lastName": "Space測試",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "6a51d748-eacb-4f39-99e2-22e3fd742fd0"
+                    ],
+                    "dataType": "breath"
+                },
+                {
+                    "ids": [
+                        "6a51d748-eacb-4f39-99e2-22e3fd742fd0"
+                    ],
+                    "dataType": "smartbed_delay"
+                }
+            ]
+        },
+        {
+            "spaceID": "45f68bc9-2a85-4810-9bcf-6e15c7b51153",
+            "branch": "2",
+            "room": "201",
+            "bed": "BB",
+            "patient": {
+                "id": "fe1c6303-bcca-477e-95d3-10d841a9f646",
+                "firstName": "曉燕分靈",
+                "lastName": "Space測試",
+                "residentStatus": "present"
+            },
+            "dataTypes": [
+                {
+                    "ids": [
+                        "7d75fe04-47f3-49ac-b187-d8717de7c9f5"
+                    ],
+                    "dataType": "breath"
+                },
+                {
+                    "ids": [
+                        "7d75fe04-47f3-49ac-b187-d8717de7c9f5"
+                    ],
+                    "dataType": "smartbed_delay"
+                }
+            ]
+        }
+    ]
+}
