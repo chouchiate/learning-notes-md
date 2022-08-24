@@ -132,6 +132,8 @@ git diff master..branch1 > diff.txt
 # git diff 對檔案 hmq.go 檔案兩個 commits (1st 2nd) 比較差異, 輸出差異到 ./tmp/diff.log
 git diff e7ea844 a5eaff7 ./data-processor/processor/hmq.go  > ./tmp/diff.log
 
+#  git diff 對檔案 main.c 檔案兩個 commits (1st..2nd) 比較差異, 輸出差異到 ./tmp/diff_main.log
+git diff c65a929..e2b7108 ./firmware/Program/main.c > ./tmp/diff_main.log
 ```
 
 #### git log - 檢視紀錄

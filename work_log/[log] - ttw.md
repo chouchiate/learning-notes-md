@@ -1,5 +1,6 @@
 ## [log] -- ttw
 
+<<<<<<< Updated upstream
 ### 08-19-2022
 #### IT603_JTIC new spec
 
@@ -14,12 +15,22 @@
 
 
 
+=======
+### 08-08-2022
+:hammer: battery spec change
+    - 1.3V: battery independently measure 10 time below 1.3V will reach battery protect; re-count if over 1.3V
+        - motor operational
+        - red fast blink before sleep
+    - 1.2V: same logic with 1.2V
+        - go back to sleep when waking up, red fast blink before sleep 
+>>>>>>> Stashed changes
 
 ### 08-01-2022
 
 #### IT611N
 :hammer: change prevent lock behaviour according to customer feedback
     - un-latch lock prevention when position at switch open
+
 
 :hammer: no locking operation when no nfc is registered according to customer spec change
     - remove touch key unlock and lock when there is no nfc is registered
