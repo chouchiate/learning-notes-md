@@ -60,7 +60,7 @@ $ docker pull gcr.io/cloudsql-docker/gce-proxy:1.21.0
 # execute cloud_sql_proxy
 $ ./cloud_sql_proxy -instances=INSTANCE_CONNECTION_NAME=tcp:0.0.0.0:1234
 
-$ ./cloud_sql_proxy -instances=thudercat-pro:asia-east1:thudercat-sql:=tcp:5433
+$ ./cloud_sql_proxy -instances=lorem-pro:asia-east1:lorem-sql:=tcp:5433
 ```
 
 ### gcloud auth login & test

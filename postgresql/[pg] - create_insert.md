@@ -54,6 +54,7 @@ CREATE TABLE test (
     occurred_at timestamp,
     PRIMARY KEY (id)
 );
+
 ---
 INSERT INTO test
 SELECT
@@ -66,6 +67,34 @@ SELECT
                    timestamp '2022-01-10 10:00:00') as occurred_at
 
 FROM generate_series(1, 100000) as id;
+```
+
+---
+### create a events table with random event series for testing purposes
+* 3 種 patient_state, 6 種 patient_state_detail
+* more than one week of time series data
+```sql
+DROP TABLE IF EXISTS test;
+CREATE TABLE test (
+    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+    device_id uuid,
+	patient_state integer,
+	patient_state_detail integer,
+	occurred_at timestamp,
+	count_of_events integer
+);
+---
+INSERT INTO test
+SELECT
+	gen_random_uuid() as id,
+	gen_random_uuid() as device_id,
+	floor(RANDOM() * 3) as patient_state,
+	floor(RANDOM() * 6) as paitnet_state_detail,
+    timestamp '2022-01-10 20:00:00' +
+       random() * (timestamp '2022-01-20 20:00:00' -
+                   timestamp '2022-01-10 10:00:00') as occurred_at
+
+FROM generate_series(1, 100000) as count_of_events;
 
 ```
 

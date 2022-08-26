@@ -3,7 +3,6 @@
 ### 評估需求合理性
 * 根據 PM 或需求提出方的隻字片語，探索出真實的需求
 
-
 * 向 stakeholders 簡述此任務的需求、目標、客戶價值等
 
 
@@ -16,19 +15,9 @@
 
 * METHOD: GET
 * API URLs:
-  * https://space.jubo.health/api/statistics/{organizationID}/{interval}
-  * https://space.jubo.health/api/statistics/{patientID}/{interval}
-* Payload:
-    ```json
-    "criteria": {
-        "dataType": "organization", // organization, individual
-        "interval": "weekly",       // weekly, daily
-        "organizationID": "d8788976-cbd7-4b9a-9f77-318113b929ab",
-        "patientID": "c9b16660-e226-4198-bf31-ee7ecd551606",
-        "end": 1660924800,
-        "start": 1660320000,
-    }
-    ```
+  * `https://space.jubo.health/api/statistics/{organizationID}/?start={RFC3339 timestamp}&end={RFC3339 timestamp}`
+  * `https://space.jubo.health/api/statistics/{patientID}/?start={RFC3339 timestamp}&end={RFC3339 timestamp}`
+
 
 1. 夜間離床計算平均次數 (週)
     * 設計 Db Query: 從 events table select COUNT distinct patientId with patient state = 1 in time range (week).
@@ -49,31 +38,29 @@
     * 設計 Db Query: 從 breath_rate_alerts table query
         + repository.statistics.CountAbnormalBreathing(deviceIDs []*uuid.UUID, startAt, endAt time.Timer)
 
+##### API Template
 ```json
 Statistics: {
-    "PatientID_1": {
-        "eveningAwayFromBedAvg": 1,           // 次數
-        "eveningSleepLessThanAvg": 2.5,       // 小時
-        "dailyLongLying":     1,              // 次數
-        "dailyAbnormalBreath":    2           // 次數
+    "eveningAwayFromBedAvg": {
+        "PatientID_1": 1,           // 次數
+        "PatientID_2": 1,           // 次數
+        "PatientID_5": 3,           // 次數
+
     },
-    "PatientID_2": {
-        "eveningAwayFromBedAvg": 1,           // 次數
-        "eveningSleepLessThanAvg": 4.1,       // 小時
-        "dailyLongLying":     1,              // 次數
-        "dailyAbnormalBreath":    2           // 次數
+    "eveningSleepLessThanAvg": {
+        "PatientID_1": 2.5,         // 小時
+        "PatientID_2": 1.3,         // 小時
+        "PatientID_3": 4.8,         // 小時
     },
-    "PatientID_3": {
-        "eveningAwayFromBedAvg": 1,           // 次數
-        "eventingSleepLessThanAvg": 8.4,      // 小時
-        "dailyLongLying":     1,              // 次數
-        "dailyAbnormalBreath":    2           // 次數
+    "dailyLongLying": {
+        "PatientID_1": 2,           // 次數
+        "PatientID_2": 1,           // 次數
+        "PatientID_6": 3,           // 次數
     },
-    ...
-    "RequestedInterval": {
-        // return timestamp from api context
-        "startAt": 1660900859,
-        "endAt": 1660900859
+    "dailyAbnormalBreath": {
+        "PatientID_1": 4,           // 次數
+        "PatientID_2": 2,           // 次數
+        "PatientID_9": 3,           // 次數
     }
 },
 ```
@@ -194,18 +181,12 @@ ON psh.space_id = dsh.space_id
 
 ```
 ##### SQL Query Design (Tested in DEV)
+
 ```sql
 SELECT device_id , COUNT(patient_state)
 FROM events
 WHERE device_id IN (    -- 模擬 SpacePatientDeviceRegistry Results
-	'81e4dc66-972f-43b8-833f-3276310f2d3d',
-	'd8788976-cbd7-4b9a-9f77-318113b929ab',
-	'7d75fe04-47f3-49ac-b187-d8717de7c9f5',
-	'14957446-297e-4140-a762-698505c42649',
-	'6a4056ea-a288-4a09-a30f-775c52112cd8',
-	'8b92eb0c-7a5e-4306-8b49-41a11550fc07',
-	'f8a8ddb8-31ea-44c1-bd52-8eabcce0dfb2',
-	'79c34af8-f799-4a4d-a7cb-1ab6202447fe'
+'3ab2cdd8-1f50-47f3-ab1a-856b95481305','488327c3-47d0-451b-b82b-4982c04988a8','de430736-4be5-409f-80fb-2afcd1b3b87e','36aae508-3f67-4e21-b76b-713753f8c280','2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be','74d69e32-ed9c-4813-8d08-6c701c227936','efc326e3-0c8c-4601-9a51-50c6075f0a10','6a69d2c6-9cf0-4885-a791-2510260c1b0b','5a1ffb43-1311-43ca-ae84-6b99eaa4abe5'
 )
 
 AND occurred_at BETWEEN '2022-08-15 00:00:00' AND '2022-08-22 00:00:00'

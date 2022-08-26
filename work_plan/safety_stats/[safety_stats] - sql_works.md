@@ -246,3 +246,63 @@ GROUP BY device_id
 
 
 ```
+
+
+#### create a events table with random event series for testing purposes
+* 3 種 patient_state, 6 種 patient_state_detail
+* more than one week of time series data
+
+```sql
+DROP TABLE IF EXISTS events;
+CREATE TABLE events (
+    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+    device_id uuid,
+	patient_state integer,
+	patient_state_detail integer,
+	occurred_at timestamp,
+	counter integer
+);
+---
+INSERT INTO events
+SELECT
+	gen_random_uuid() as id,
+	(
+		array[
+				'3ab2cdd8-1f50-47f3-ab1a-856b95481305'::uuid,
+				'488327c3-47d0-451b-b82b-4982c04988a8'::uuid,
+				'de430736-4be5-409f-80fb-2afcd1b3b87e'::uuid,
+				'36aae508-3f67-4e21-b76b-713753f8c280'::uuid,
+				'2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be'::uuid,
+				'74d69e32-ed9c-4813-8d08-6c701c227936'::uuid,
+				'efc326e3-0c8c-4601-9a51-50c6075f0a10'::uuid,
+				'6a69d2c6-9cf0-4885-a791-2510260c1b0b'::uuid,
+				'5a1ffb43-1311-43ca-ae84-6b99eaa4abe5'::uuid
+			  ]
+	)[floor(random() * 9 + 1)] as device_id,
+	floor(RANDOM() * 3) as patient_state,
+	floor(RANDOM() * 6) as patient_state_detail,
+    timestamp '2022-08-18 00:00:00' +
+       random() * (timestamp '2022-08-27 00:00:00' -
+                   timestamp '2022-08-18 00:00:00') as occurred_at
+
+FROM generate_series(1, 100000) as counter;
+```
+
+```
+"device_ids_list":["3ab2cdd8-1f50-47f3-ab1a-856b95481305","488327c3-47d0-451b-b82b-4982c04988a8","de430736-4be5-409f-80fb-2afcd1b3b87e","36aae508-3f67-4e21-b76b-713753f8c280","2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be","74d69e32-ed9c-4813-8d08-6c701c227936","efc326e3-0c8c-4601-9a51-50c6075f0a10","6a69d2c6-9cf0-4885-a791-2510260c1b0b","5a1ffb43-1311-43ca-ae84-6b99eaa4abe5"]}
+
+'3ab2cdd8-1f50-47f3-ab1a-856b95481305','488327c3-47d0-451b-b82b-4982c04988a8','de430736-4be5-409f-80fb-2afcd1b3b87e','36aae508-3f67-4e21-b76b-713753f8c280','2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be','74d69e32-ed9c-4813-8d08-6c701c227936','efc326e3-0c8c-4601-9a51-50c6075f0a10','6a69d2c6-9cf0-4885-a791-2510260c1b0b','5a1ffb43-1311-43ca-ae84-6b99eaa4abe5'
+
+
+				'3ab2cdd8-1f50-47f3-ab1a-856b95481305',
+				'488327c3-47d0-451b-b82b-4982c04988a8',
+				'de430736-4be5-409f-80fb-2afcd1b3b87e',
+				'36aae508-3f67-4e21-b76b-713753f8c280',
+				'2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be',
+				'74d69e32-ed9c-4813-8d08-6c701c227936',
+				'efc326e3-0c8c-4601-9a51-50c6075f0a10',
+				'6a69d2c6-9cf0-4885-a791-2510260c1b0b',
+				'5a1ffb43-1311-43ca-ae84-6b99eaa4abe5',
+
+```
+
