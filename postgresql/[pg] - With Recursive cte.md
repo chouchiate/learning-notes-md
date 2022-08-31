@@ -1,23 +1,20 @@
 ## [pg] - WITH RECURSIVE (Common Table Expression)
 
-###
-
-
-
-
-### WITH QUERY and TIMESTAMP TIMEZONE RANGE type with night shift intersection
+### SYNTAX
 ```sql
-WITH night_shifts AS (
-	SELECT TSTZRANGE('2022-08-15 00:00:00', '2022-08-22 00:00:00') *
-	TSTZRANGE('2022-08-15 00:00:00'::date + time '23:00', '2022-08-22 00:00:00'::date + time '06:00')
-)
-SELECT
-	device_id,
-	COUNT(patient_state)
-FROM events
-WHERE patient_state = 1 AND device_id = '0025656b-f320-4daa-ab2f-16c2ae9aed84'
-
-GROUP BY device_id
-
-
+WITH RECURSIVE cte_name AS(
+    CTE_query_definition -- non-recursive term
+    UNION [ALL]
+    CTE_query_definition  -- recursive term
+) SELECT * FROM cte_name;
 ```
+
+* Non-recursive term: a CTE query definition that forms the base result set of the CTE structure.
+
+* Recursive term: one or more CTE query definitions joined with the non-recursive term using the UNION or UNION ALL operator. The recursive term references the CTE name itself.
+
+* Termination check: the recursion stops when no rows are returned from the previous iteration.
+
+
+
+

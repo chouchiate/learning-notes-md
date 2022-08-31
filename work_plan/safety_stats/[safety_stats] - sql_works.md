@@ -260,11 +260,12 @@ CREATE TABLE events (
 	patient_state integer,
 	patient_state_detail integer,
 	occurred_at timestamp,
-	counter integer
+	num_of_items integer
 );
 ---
 INSERT INTO events
 SELECT
+	num_of_items,
 	gen_random_uuid() as id,
 	(
 		array[
@@ -285,7 +286,7 @@ SELECT
        random() * (timestamp '2022-08-27 00:00:00' -
                    timestamp '2022-08-18 00:00:00') as occurred_at
 
-FROM generate_series(1, 100000) as counter;
+FROM generate_series(1, 100000) as num_of_items;
 ```
 
 ```
@@ -306,3 +307,27 @@ FROM generate_series(1, 100000) as counter;
 
 ```
 
+### non-working with SELECT CASE THEN END
+```sql
+WITH RECURSIVE final_results AS (
+
+	VALUES(50)
+
+)
+
+SELECT device_id
+ 	, occurred_at
+	, CASE WHEN a2 = 0 THEN a1 END AS activity
+	, CASE WHEN a2 = 1 THEN a2 END AS next_activity
+FROM (
+	SELECT --n DISTINCT ON (device_id)
+		device_id
+		, occurred_at
+		, LEAD(patient_state) OVER (PARTITION BY device_id ORDER BY occurred_at DESC) AS a1
+		, patient_state AS a2
+	FROM events
+	WHERE (patient_state = 0 OR patient_state = 1)
+	ORDER BY device_id, occurred_at DESC -- LIMIT 1
+) subs;
+
+```

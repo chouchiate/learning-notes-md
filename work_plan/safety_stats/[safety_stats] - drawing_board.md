@@ -224,11 +224,139 @@ GROUP BY device_id;
 ```
 ##### SQL Query Design (Tested in DEV)
 ```sql
+-- EXPLAIN ANALYZE
+
+WITH RECURSIVE
+selected_sleep_on_bed AS
+(
+	SELECT *
+	FROM events
+	WHERE
+	occurred_at BETWEEN '2022-08-24 00:00:00' AND '2022-08-31 00:00:00'
+	AND (EXTRACT(HOUR from events.occurred_at) >= 20 OR EXTRACT(HOUR FROM events.occurred_at) < 6)
+	AND (events.patient_state = 0)
+	AND
+	device_id IN
+	(    -- 模擬 SpacePatientDeviceRegistry Results
+		'091a97cf-eb30-4605-939f-ee2901665688'
+	)
+	ORDER BY device_id, occurred_at DESC
+),
+selected_leave_bed AS
+(
+	SELECT *
+	FROM events
+	WHERE
+	occurred_at BETWEEN '2022-08-24 00:00:00' AND '2022-08-31 00:00:00'
+	AND (EXTRACT(HOUR from events.occurred_at) >= 20 OR EXTRACT(HOUR FROM events.occurred_at) < 6)
+	AND (events.patient_state = 1)
+	AND
+	device_id IN
+	(    -- 模擬 SpacePatientDeviceRegistry Results
+		'091a97cf-eb30-4605-939f-ee2901665688'
+	)
+	ORDER BY device_id, occurred_at DESC
+),
+final_results AS (
+	(
+ 		SELECT
+		lb.id AS leave_id,
+		sob.id AS sleep_id,
+		lb.device_id,
+		lb.patient_state AS leave_ps,
+		sob.patient_state AS sleep_ps,
+		lb.occurred_at AS leave_occurred_at,
+		sob.occurred_at AS sleep_occurred_at,
+		EXTRACT(EPOCH FROM(lb.occurred_at - sob.occurred_at)) AS diff
+		FROM selected_leave_bed AS lb
+		LEFT JOIN selected_sleep_on_bed as sob
+		ON lb.device_id = sob.device_id
+ 		WHERE lb.occurred_at > sob.occurred_at
+		LIMIT 1
+
+	) -- seed query for recursive union all
+	UNION ALL
+	SELECT iterative_result.* FROM final_results, LATERAL
+	(
+		SELECT
+		lb.id AS leave_id,
+		sob.id AS sleep_id,
+		lb.device_id,
+		lb.patient_state AS leave_ps,
+		sob.patient_state AS sleep_ps,
+		lb.occurred_at AS leave_occurred_at,
+		sob.occurred_at AS sleep_occurred_at,
+		EXTRACT(EPOCH FROM(lb.occurred_at - sob.occurred_at)) AS diff
+		FROM selected_leave_bed AS lb
+		LEFT JOIN selected_sleep_on_bed as sob
+		ON lb.device_id = sob.device_id
+ 		WHERE
+		lb.occurred_at < final_results.leave_occurred_at
+		AND lb.occurred_at < final_results.sleep_occurred_at
+		AND sob.occurred_at < final_results.sleep_occurred_at
+		AND lb.occurred_at > sob.occurred_at
+		LIMIT 1
+
+	) AS iterative_result
+)
+
+SELECT
+ *
+--  	SUM(device_id)
+
+FROM final_results AS sase
+
 
 ```
 ##### EXPLAIN ANALYZE (Tested on DEV)
 ```sql
-
+"CTE Scan on final_results sase  (cost=50797.85..50799.87 rows=101 width=80) (actual time=384.600..910.992 rows=2544 loops=1)"
+"  CTE selected_sleep_on_bed"
+"    ->  Gather Merge  (cost=23973.24..24637.12 rows=5690 width=52) (actual time=39.857..41.693 rows=5168 loops=1)"
+"          Workers Planned: 2"
+"          Workers Launched: 2"
+"          ->  Sort  (cost=22973.22..22980.33 rows=2845 width=52) (actual time=20.209..20.413 rows=1723 loops=3)"
+"                Sort Key: events.occurred_at DESC"
+"                Sort Method: quicksort  Memory: 556kB"
+"                Worker 0:  Sort Method: quicksort  Memory: 154kB"
+"                Worker 1:  Sort Method: quicksort  Memory: 162kB"
+"                ->  Parallel Seq Scan on events  (cost=0.00..22810.00 rows=2845 width=52) (actual time=0.020..19.470 rows=1723 loops=3)"
+"                      Filter: ((occurred_at >= '2022-08-24 00:00:00'::timestamp without time zone) AND (occurred_at <= '2022-08-31 00:00:00'::timestamp without time zone) AND (patient_state = 0) AND (device_id = '091a97cf-eb30-4605-939f-ee2901665688'::uuid) AND ((date_part('hour'::text, occurred_at) >= '20'::double precision) OR (date_part('hour'::text, occurred_at) < '6'::double precision)))"
+"                      Rows Removed by Filter: 331611"
+"  CTE selected_leave_bed"
+"    ->  Gather Merge  (cost=23972.79..24635.04 rows=5676 width=52) (actual time=344.711..346.440 rows=5021 loops=1)"
+"          Workers Planned: 2"
+"          Workers Launched: 2"
+"          ->  Sort  (cost=22972.77..22979.86 rows=2838 width=52) (actual time=261.618..261.791 rows=1674 loops=3)"
+"                Sort Key: events_1.occurred_at DESC"
+"                Sort Method: quicksort  Memory: 485kB"
+"                Worker 0:  Sort Method: quicksort  Memory: 207kB"
+"                Worker 1:  Sort Method: quicksort  Memory: 208kB"
+"                ->  Parallel Seq Scan on events events_1  (cost=0.00..22810.00 rows=2838 width=52) (actual time=2.875..259.535 rows=1674 loops=3)"
+"                      Filter: ((occurred_at >= '2022-08-24 00:00:00'::timestamp without time zone) AND (occurred_at <= '2022-08-31 00:00:00'::timestamp without time zone) AND (patient_state = 1) AND (device_id = '091a97cf-eb30-4605-939f-ee2901665688'::uuid) AND ((date_part('hour'::text, occurred_at) >= '20'::double precision) OR (date_part('hour'::text, occurred_at) < '6'::double precision)))"
+"                      Rows Removed by Filter: 331660"
+"  CTE final_results"
+"    ->  Recursive Union  (cost=0.00..1525.69 rows=101 width=80) (actual time=384.585..909.137 rows=2544 loops=1)"
+"          ->  Limit  (cost=0.00..15.01 rows=1 width=80) (actual time=384.583..384.585 rows=1 loops=1)"
+"                ->  Nested Loop  (cost=0.00..807850.56 rows=53827 width=80) (actual time=384.582..384.583 rows=1 loops=1)"
+"                      Join Filter: ((lb.occurred_at > sob.occurred_at) AND (lb.device_id = sob.device_id))"
+"                      Rows Removed by Join Filter: 1"
+"                      ->  CTE Scan on selected_leave_bed lb  (cost=0.00..113.52 rows=5676 width=44) (actual time=344.712..344.712 rows=1 loops=1)"
+"                      ->  CTE Scan on selected_sleep_on_bed sob  (cost=0.00..113.80 rows=5690 width=44) (actual time=39.860..39.861 rows=2 loops=1)"
+"          ->  Nested Loop  (cost=0.00..150.87 rows=10 width=80) (actual time=0.204..0.204 rows=1 loops=2544)"
+"                ->  WorkTable Scan on final_results  (cost=0.00..0.20 rows=10 width=16) (actual time=0.000..0.000 rows=1 loops=2544)"
+"                ->  Limit  (cost=0.00..15.05 rows=1 width=80) (actual time=0.204..0.204 rows=1 loops=2544)"
+"                      ->  Nested Loop  (cost=0.00..90008.96 rows=5982 width=80) (actual time=0.204..0.204 rows=1 loops=2544)"
+"                            Join Filter: ((lb_1.occurred_at > sob_1.occurred_at) AND (lb_1.device_id = sob_1.device_id))"
+"                            Rows Removed by Join Filter: 1"
+"                            ->  CTE Scan on selected_leave_bed lb_1  (cost=0.00..141.90 rows=1892 width=44) (actual time=0.101..0.101 rows=1 loops=2544)"
+"                                  Filter: ((occurred_at < final_results.leave_occurred_at) AND (occurred_at < final_results.sleep_occurred_at))"
+"                                  Rows Removed by Filter: 2547"
+"                            ->  CTE Scan on selected_sleep_on_bed sob_1  (cost=0.00..128.03 rows=1897 width=44) (actual time=0.101..0.102 rows=2 loops=2543)"
+"                                  Filter: (occurred_at < final_results.sleep_occurred_at)"
+"                                  Rows Removed by Filter: 2574"
+"Planning Time: 2.430 ms"
+"Execution Time: 913.854 ms"
 ```
 
 #### 設計 久臥超過三次 (週 / 日)

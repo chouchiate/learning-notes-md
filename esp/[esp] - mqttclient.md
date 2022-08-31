@@ -1,8 +1,18 @@
 ## [esp] - MQTT Client
 
-
 ### esp-idf Example Code Study
 
+*
+```c
+#ifdef MQTT_DISABLE_API_LOCKS
+# define MQTT_API_LOCK(c)
+# define MQTT_API_UNLOCK(c)
+#else
+# define MQTT_API_LOCK(c)          xSemaphoreTakeRecursive(c->api_lock, portMAX_DELAY)
+# define MQTT_API_UNLOCK(c)        xSemaphoreGiveRecursive(c->api_lock)
+#endif /* MQTT_USE_API_LOCKS */
+
+```
 ```c
 // mqtt event enum
 typedef enum esp_mqtt_event_id_t {
@@ -26,6 +36,47 @@ esp_mqtt_client_config_t mqtt_cfg = {
 };
 
 ```
+
+### lib/mqtt_msg.c  lib/mqtt_msg.h
+
+
+
+### lib/mqtt_outbox.c lib/mqtt_outbox.h
+
+```c
+//
+typedef struct outbox_list_t *outbox_handle_t;
+//
+typedef struct outbox_item *outbox_item_handle_t;
+//
+typedef struct outbox_message *outbox_message_handle_t;
+//
+typedef long long outbox_tick_t;
+//
+typedef struct outbox_message {
+    uint8_t *data;
+    int len;
+    int msg_id;
+    int msg_qos;
+    int msg_type;
+    uint8_t *remaining_data;
+    int remaining_len;
+} outbox_message_t;
+//
+typedef enum pending_state {
+    QUEUED,
+    TRANSMITTED,
+    ACKNOWLEDGED,
+    CONFIRMED
+} pending_state_t;
+
+```
+
+### lib/mqtt_config.h
+
+
+
+
 ### EMQ Tutorial - ESP8266 connects to the free public MQTT broker
 
 #### External

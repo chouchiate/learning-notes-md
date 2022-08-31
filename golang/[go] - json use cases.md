@@ -1,10 +1,11 @@
 ## [go] - JSON usage 全集
 
+[tool-json-to-go](https://mholt.github.io/json-to-go/)
 [articles](https://eagain.net/articles/go-dynamic-json/)
 [blog](https://www.sohamkamani.com/golang/json/)
 [git](https://github.com/taocpp/json/blob/main/doc/Common-Use-Cases.md)
 #### **Dynamic Json**
-> use a map (of type map[string]interface{}) to work with dynamic JSON. 
+> use a map (of type map[string]interface{}) to work with dynamic JSON.
 * Here is an example of creating a new map:
 ```go
 // Initial declaration
