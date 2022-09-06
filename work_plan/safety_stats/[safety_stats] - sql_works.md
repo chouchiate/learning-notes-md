@@ -3,6 +3,7 @@
 
 ## ListSpaceWithHistoricPatientDevice
 
+---
 ### With Device Installed in Space in period of Time
 > 取已搬遷物件和仍安裝物件 在時間範圍內 單一公司
 * inputs
@@ -37,6 +38,7 @@ OR dins.is_installed_in IS TRUE
 
 ```
 
+---
 ### JOIN Device_Installed_in_Space_History and Patient_Lived_in_Space_History
 * inputs
   * orgID,
@@ -86,6 +88,7 @@ FROM device_installed_in_spaces_history AS dsh
 
 ```
 
+---
 ### Final (List both is_living_in / is_installed_in and has_moved_out)
 ```sql
 WITH device_installed_in_spaces_history AS (
@@ -131,6 +134,8 @@ JOIN patient_lived_in_spaces_history AS psh
 ON psh.space_id = dsh.space_id
 ```
 
+---
+### query result
 ```sql
 
 "f850d373-c326-4602-8b92-dba408302e47"	"f6ee2122-a7ab-43f8-8774-9c85188d5c3c"	"cd04926c-a389-48c9-95b5-73baeed1c9e5"	"ea8b2224-112a-43c1-8851-3d6a5f73ed0d"	"SG Test"	"Space"	true	"2022-08-23 03:00:05.988321+00"	true	"2022-08-12 02:15:06.966045+00"
@@ -155,8 +160,10 @@ ON psh.space_id = dsh.space_id
 
 ```
 
+---
 ## 夜間離床計算平均次數 (週)
 
+---
 ### Listing Single Device from Date Range in night shift
 
 ```sql
@@ -169,6 +176,7 @@ AND device_id = '0025656b-f320-4daa-ab2f-16c2ae9aed84'
 --- table
 ```
 
+---
 ### COUNTING Test 1
 * Outer range: 7 days (1 week) range
 * Inner range: night shifts per day
@@ -184,6 +192,7 @@ GROUP BY device_id;
 --- 16
 ```
 
+---
 ### COUNTING Test 2 with ANY (ARRAY[data1, data2...])
 
 ```sql
@@ -203,6 +212,7 @@ AND events.patient_state = 1
 GROUP BY id, device_id;
 ```
 
+---
 ### COUNTING Test 3 with IN operator(data1, data2, data3...)
 ```sql
 SELECT device_id , COUNT(patient_state)
@@ -228,6 +238,7 @@ GROUP BY device_id;
 "d8788976-cbd7-4b9a-9f77-318113b929ab"	4
 ```
 
+---
 ### TRY TSTZRANGE
 * Following is not working properly; noted
 ```sql
@@ -244,10 +255,118 @@ WHERE patient_state = 1 AND device_id = '0025656b-f320-4daa-ab2f-16c2ae9aed84'
 
 GROUP BY device_id
 
+```
+
+---
+#### create a smartbed_delay_alerts table with random alert series for testing purposes
+```sql
+Create or replace function random_string(length integer) returns text as
+$$
+declare
+  chars text[] := '{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}';
+  result text := '';
+  i integer := 0;
+begin
+  if length < 0 then
+    raise exception 'Given length cannot be less than 0';
+  end if;
+  for i in 1..length loop
+    result := result || chars[1+random()*(array_length(chars, 1)-1)];
+  end loop;
+  return result;
+end;
+$$ language plpgsql;
+
+DROP TABLE IF EXISTS smartbed_delay_alerts;
+CREATE TABLE smartbed_delay_alerts (
+	data_id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+	created_at timestamp,
+	disalarmed_at timestamp,
+	option text,
+	severity text,
+	event text,
+	delay_period bigint,
+	device_id uuid,
+	should_emit_at timestamp,
+	canceled_at timestamp,
+	emitted_at timestamp
+);
+---
+INSERT INTO smartbed_delay_alerts
+SELECT
+	gen_random_uuid() as data_id,
+timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
+	timestamp '2022-08-24 00:00:00') as created_at,
+timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
+    timestamp '2022-08-24 00:00:00') as disalarmed_at,
+'longLying' as option,
+random_string(15) as severity,
+random_string(15) as event,
+floor(RANDOM() * 10) as delay_period,
+(array[
+	'6b9a898a-638e-46ec-a070-1d774b4e24e0'::uuid,
+	'7cadec86-c516-4b74-8e1d-1e6122b460c4'::uuid,
+	'55a0fb18-8457-4152-8606-046b91fa5df5'::uuid,
+	'1b26e15d-05c5-48eb-b589-419206636302'::uuid,
+	'5077d253-6562-4947-b99a-2eabd524ae38'::uuid,
+	'73031bb9-eec4-4b28-9f59-d450750de396'::uuid,
+	'82ed1b77-7a6a-4346-a1d4-c40fc2e87e90'::uuid,
+	'091a97cf-eb30-4605-939f-ee2901665688'::uuid,
+	'38c697ff-bfaf-45c1-82f2-8541def0d89a'::uuid,
+	'5c85dfc0-1a57-4c8d-b868-c4e975e013f4'::uuid,
+	'1a64f461-6d79-4c49-9cfb-c72dda00114a'::uuid,
+	'9afcad4b-6bac-4ff9-8555-c1142bfbb079'::uuid,
+	'b313b8c8-4888-40af-a86f-157ce3b32b26'::uuid,
+	'6f64c988-1bb3-4088-8268-d2d015b3238f'::uuid,
+	'8f840182-4814-498c-9c0e-0fd2698d622e'::uuid,
+	'19156b85-59bd-40d3-b0c7-41aea29c1a5b'::uuid,
+	'e9a4fefa-4bfd-49a8-831d-32eb4ce97ed9'::uuid,
+	'01443c0d-3df4-4906-822b-9b6726c57b69'::uuid,
+	'ac04d72d-ed2f-46bb-827b-57d56db3138c'::uuid,
+	'a4fa03cf-ec44-4451-85d6-756e027d8b9d'::uuid,
+	'08184e54-3e87-435a-bb30-604032fa30b1'::uuid
+])[floor(random() * 20 + 1)] as device_id,
+timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
+                   timestamp '2022-08-24 00:00:00') as should_emit_at,
+timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
+                   timestamp '2022-08-24 00:00:00') as canceled_at,
+timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
+                   timestamp '2022-08-24 00:00:00') as emitted_at
+FROM generate_series(1, 1000) as num_of_items;
+
 
 ```
 
+---
+### create a breath_rate_alerts table with random alert series for test purposes
+```sql
+DROP TABLE IF EXISTS breath_rate_alerts;
+CREATE TABLE breath_rate_alerts (
+	data_id DEFAULT gen_random_uuid() PRIMARY KEY,
+	created_at timestamp,
+	disalarmed_at timestamp,
+	option text,
+	severity text,
+	threshold int
+);
+---
+INSERT INTO breath_rate_alerts
+SELECT
+	gen_random_uuid() as id,
+    timestamp '2022-08-24 00:00:00' +
+       random() * (timestamp '2022-09-01 00:00:00' -
+                   timestamp '2022-08-24 00:00:00') as occurred_at,
+    timestamp '2022-08-24 00:00:00' +
+       random() * (timestamp '2022-09-01 00:00:00' -
+                   timestamp '2022-08-24 00:00:00') as occurred_at,
+	slowHeartRate as option,
+	severe as severity,
+	floor(RANDOM() * 60) as threshold
+FROM generate_series(1, 10000) as num_of_items;
 
+```
+
+---
 #### create a events table with random event series for testing purposes
 * 3 種 patient_state, 6 種 patient_state_detail
 * more than one week of time series data
@@ -289,24 +408,29 @@ SELECT
 FROM generate_series(1, 100000) as num_of_items;
 ```
 
+---
+
+### device list generation
 ```
-"device_ids_list":["3ab2cdd8-1f50-47f3-ab1a-856b95481305","488327c3-47d0-451b-b82b-4982c04988a8","de430736-4be5-409f-80fb-2afcd1b3b87e","36aae508-3f67-4e21-b76b-713753f8c280","2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be","74d69e32-ed9c-4813-8d08-6c701c227936","efc326e3-0c8c-4601-9a51-50c6075f0a10","6a69d2c6-9cf0-4885-a791-2510260c1b0b","5a1ffb43-1311-43ca-ae84-6b99eaa4abe5"]}
+"device_ids_list":[
+	"3ab2cdd8-1f50-47f3-ab1a-856b95481305","488327c3-47d0-451b-b82b-4982c04988a8","de430736-4be5-409f-80fb-2afcd1b3b87e","36aae508-3f67-4e21-b76b-713753f8c280","2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be","74d69e32-ed9c-4813-8d08-6c701c227936","efc326e3-0c8c-4601-9a51-50c6075f0a10","6a69d2c6-9cf0-4885-a791-2510260c1b0b","5a1ffb43-1311-43ca-ae84-6b99eaa4abe5"]}
 
 '3ab2cdd8-1f50-47f3-ab1a-856b95481305','488327c3-47d0-451b-b82b-4982c04988a8','de430736-4be5-409f-80fb-2afcd1b3b87e','36aae508-3f67-4e21-b76b-713753f8c280','2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be','74d69e32-ed9c-4813-8d08-6c701c227936','efc326e3-0c8c-4601-9a51-50c6075f0a10','6a69d2c6-9cf0-4885-a791-2510260c1b0b','5a1ffb43-1311-43ca-ae84-6b99eaa4abe5'
 
 
-				'3ab2cdd8-1f50-47f3-ab1a-856b95481305',
-				'488327c3-47d0-451b-b82b-4982c04988a8',
-				'de430736-4be5-409f-80fb-2afcd1b3b87e',
-				'36aae508-3f67-4e21-b76b-713753f8c280',
-				'2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be',
-				'74d69e32-ed9c-4813-8d08-6c701c227936',
-				'efc326e3-0c8c-4601-9a51-50c6075f0a10',
-				'6a69d2c6-9cf0-4885-a791-2510260c1b0b',
-				'5a1ffb43-1311-43ca-ae84-6b99eaa4abe5',
+'3ab2cdd8-1f50-47f3-ab1a-856b95481305',
+'488327c3-47d0-451b-b82b-4982c04988a8',
+'de430736-4be5-409f-80fb-2afcd1b3b87e',
+'36aae508-3f67-4e21-b76b-713753f8c280',
+'2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be',
+'74d69e32-ed9c-4813-8d08-6c701c227936',
+'efc326e3-0c8c-4601-9a51-50c6075f0a10',
+'6a69d2c6-9cf0-4885-a791-2510260c1b0b',
+'5a1ffb43-1311-43ca-ae84-6b99eaa4abe5',
 
 ```
 
+---
 ### non-working with SELECT CASE THEN END
 ```sql
 WITH RECURSIVE final_results AS (

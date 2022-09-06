@@ -2,7 +2,45 @@
 
 ### esp-idf Example Code Study
 
-*
+
+### esp_mqtt_client_init
+```c
+    // mqtt_client.h
+    const esp_mqtt_client_config_t mqtt_cfg = {
+        .broker.address.uri = CONFIG_BROKER_URI,
+    };
+
+    // mqtt_client.h
+    // typedef struct esp_mqtt_client *esp_mqtt_client_handle_t;
+    esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
+```
+
+### esp_mqtt_client_register_event - mqtt_event_handler - mqtt_event_handler_cb
+```c
+static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
+{
+    switch (event->event_id) {
+        case MQTT_EVENT_CONNECTED:
+            ...
+
+    }
+}
+
+static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
+    ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%d", base, event_id);
+    mqtt_event_handler_cb(event_data);
+}
+
+void mqtt_app_start(void)
+{
+    s_client = esp_mqtt_client_init(&mqtt_cfg);
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
+    esp_mqtt_client_start(s_client);
+}
+```
+
+
+###
 ```c
 #ifdef MQTT_DISABLE_API_LOCKS
 # define MQTT_API_LOCK(c)

@@ -15,8 +15,8 @@
 
 * METHOD: GET
 * API URLs:
-  * `https://space.jubo.health/api/statistics/{organizationID}/?start={RFC3339 timestamp}&end={RFC3339 timestamp}`
-  * `https://space.jubo.health/api/statistics/{patientID}/?start={RFC3339 timestamp}&end={RFC3339 timestamp}`
+  * `https://space.ngrk.health/api/statistics/{organizationID}/?start={RFC3339 timestamp}&end={RFC3339 timestamp}`
+  * `https://space.ngrk.health/api/statistics/{patientID}/?start={RFC3339 timestamp}&end={RFC3339 timestamp}`
 
 
 1. 夜間離床計算平均次數 (週)
@@ -366,7 +366,39 @@ FROM final_results AS sase
 ```
 ##### SQL Query Design (Tested in DEV)
 ```sql
+WITH long_lying_events AS (
+	SELECT
+		sba.data_id,
+		events.device_id,
+		sba.option,
+		sba.created_at AS emitted_at
 
+	FROM smartbed_alerts AS sba
+
+	LEFT JOIN events
+	ON sba.data_id = events.id
+
+	WHERE sba.option = 'longLying' AND
+		events.device_id IN @DEVICE_IDS
+
+	UNION
+
+	SELECT
+		sbda.data_id,
+		sbda.device_id,
+		sbda.option,
+		sbda.emitted_at
+	FROM smartbed_delay_alerts AS sbda
+	WHERE sbda.option = 'longLying' AND sbda.emitted_at IS NOT NULL
+	AND sbda.device_id IN @DEVICE_IDS
+)
+
+SELECT
+	device_id,
+	COUNT(device_id)
+FROM long_lying_events
+WHERE emitted_at BETWEEN '%[1]s' AND '%[2]s'
+GROUP BY device_id
 ```
 ##### EXPLAIN ANALYZE (Tested on DEV)
 ```sql

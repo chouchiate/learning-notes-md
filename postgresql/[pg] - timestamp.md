@@ -28,3 +28,14 @@ SELECT
   AGE(arrival, departure) AS difference
 FROM travel;
 ```
+
+
+### difference in seconds
+```sql
+SELECT
+  id,
+  departure,
+  arrival,
+  EXTRACT(EPOCH FROM (arrival - departure)) AS difference
+FROM travel;
+```
