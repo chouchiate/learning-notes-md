@@ -33,27 +33,27 @@ Pod installation complete! There are 2 dependencies from the Podfile and 3 total
 ### Android -  **android/app/src/main/AndroidManifest.xml**
 
 ```
- <uses-permission android:name="android.permission.BLUETOOTH" />  
-	 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />  
-	 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>  
+ <uses-permission android:name="android.permission.BLUETOOTH" />
+	 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
  <application
 ```
 
 ### IOS - **ios/Runner/Info.plist**
 
 ```
-	<dict>  
+	<dict>
 			<key>NSBluetoothAlwaysUsageDescription</key>
 			<string>Your own description of the purpose.</string>
-	    <key>NSBluetoothAlwaysUsageDescription</key>  
-	    <string>Need BLE permission</string>  
-	    <key>NSBluetoothPeripheralUsageDescription</key>  
-	    <string>Need BLE permission</string>  
-	    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>  
-	    <string>Need Location permission</string>  
-	    <key>NSLocationAlwaysUsageDescription</key>  
-	    <string>Need Location permission</string>  
-	    <key>NSLocationWhenInUseUsageDescription</key>  
+	    <key>NSBluetoothAlwaysUsageDescription</key>
+	    <string>Need BLE permission</string>
+	    <key>NSBluetoothPeripheralUsageDescription</key>
+	    <string>Need BLE permission</string>
+	    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	    <string>Need Location permission</string>
+	    <key>NSLocationAlwaysUsageDescription</key>
+	    <string>Need Location permission</string>
+	    <key>NSLocationWhenInUseUsageDescription</key>
 	    <string>Need Location permission</string>
 	    ...
 ```

@@ -45,6 +45,25 @@ func main() {
   db.Delete(&product)
 }
 ```
+
+## ** GORM DEBUG **
+```go
+var lovers []*lovers
+res := *gorm.DB.Debug().Raw(fmt.Sprintf(`
+  SELECT
+    lover_id,
+    COUNT(lover_id)
+  FROM love_making_events
+  WHERE semen_ejaculated_at BETWEEN '%[1]s' AND '%[2]s'
+  AND motel_id IN @MOTEL_IDS
+  GROUP BY lover_id
+  `, startAt.Format(time.RFC3339),
+  endAt.Format(time.RFC3339),
+  sql.Named("MOTEL_IDS", motelIDs)),
+).Scan(&lovers)
+
+```
+
 ## **連接數據庫**
 
 MySql
@@ -475,4 +494,44 @@ func (r *repeatAlertRepo) Cancel(dataID uuid.UUID) (*uuid.UUID, error) {
 	return &ret.DeviceID, nil
 }
 
+```
+
+### gorm bulk INSERT
+```go
+
+type YourRecord struct {
+  ID        string    `gorm:"size:36;primary_key"`
+	Field1    string    `gorm:"type:varchar(32);column:field1"`
+	Field2    string    `gorm:"type:varchar(32);column:field2;index"`
+}
+
+func (FileFieldCopy) TableName() string {
+	return "record_t"
+}
+
+func BulkCreateRecords(rs []*YourRecord) error {
+	valueStrings := []string{}
+	valueArgs := []interface{}{}
+
+	for _, f := range fs {
+		valueStrings = append(valueStrings, "(?, ?, ?)")
+
+		valueArgs = append(valueArgs, f.ID)
+		valueArgs = append(valueArgs, f.Field1)
+		valueArgs = append(valueArgs, f.Field2)
+	}
+
+	smt := `INSERT INTO record_t(id, field1, field2) VALUES %s ON DUPLICATE KEY UPDATE field2=VALUES(field2)`
+
+	smt = fmt.Sprintf(smt, strings.Join(valueStrings, ","))
+
+	tx := db.Conn.Begin()
+	if err := tx.Exec(smt, valueArgs...).Error; err != nil {
+		tx.Rollback()
+		return err
+	}
+
+	tx.Commit()
+	return nil
+}
 ```

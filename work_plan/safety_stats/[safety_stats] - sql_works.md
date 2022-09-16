@@ -388,22 +388,34 @@ SELECT
 	gen_random_uuid() as id,
 	(
 		array[
-				'3ab2cdd8-1f50-47f3-ab1a-856b95481305'::uuid,
-				'488327c3-47d0-451b-b82b-4982c04988a8'::uuid,
-				'de430736-4be5-409f-80fb-2afcd1b3b87e'::uuid,
-				'36aae508-3f67-4e21-b76b-713753f8c280'::uuid,
-				'2e7a4a78-ecb4-4fb2-98f2-ea62b9d7d8be'::uuid,
-				'74d69e32-ed9c-4813-8d08-6c701c227936'::uuid,
-				'efc326e3-0c8c-4601-9a51-50c6075f0a10'::uuid,
-				'6a69d2c6-9cf0-4885-a791-2510260c1b0b'::uuid,
-				'5a1ffb43-1311-43ca-ae84-6b99eaa4abe5'::uuid
-			  ]
-	)[floor(random() * 9 + 1)] as device_id,
+			'30476692-b6a9-4899-bb69-354328ad98fd',
+			'9be3e65d-ad24-45e9-b031-04c7b7c9493f',
+			'05ff4935-38a6-408b-8131-216ddc778a9b',
+			'419e0738-faa7-4677-9e6f-802376308b38',
+			'1c4e3d32-72a5-408c-9a6d-b41afb505874',
+			'84196ef6-f5f3-4922-b2e3-304680360512',
+			'cb0e757e-200e-4df4-8ae9-296da28f1411',
+			'0557d8e3-8168-4b95-ace1-8f8f124afb3b',
+			'3b5b296d-4a95-45b2-8115-c34c60e6440c',
+			'01d30259-0142-4c60-b234-eb7f28a17dd8',
+			'f5ed14a2-212e-4128-b2f3-e482a0bdb314',
+			'9a5b20a6-2821-4ba5-be05-5b19a9322fd9',
+			'0b9ee3d2-19fa-46f5-b0f7-e5b03dbb9d65',
+			'8abcc0b7-69aa-4e40-9407-b356c3a22e2f',
+			'e2338948-d238-4c02-9d2d-1bad34201c8c',
+			'fe50ff3e-79cd-4ec7-a2f0-a806af5f24dd',
+			'72bff8bc-7fab-4858-b3ef-4ab5a3e43cfd',
+			'58733033-1134-4721-83bf-874e6c019415',
+			'c524835f-dcfe-44e3-adbe-c6febdee8453',
+			'231f3829-ea7a-42e2-a6d4-d25b5ba1672e',
+			'c79f1294-910c-4714-86e5-6b4db5c2ad23'
+		]
+	)[floor(random() * 20 + 1)] as device_id,
 	floor(RANDOM() * 3) as patient_state,
 	floor(RANDOM() * 6) as patient_state_detail,
-    timestamp '2022-08-18 00:00:00' +
-       random() * (timestamp '2022-08-27 00:00:00' -
-                   timestamp '2022-08-18 00:00:00') as occurred_at
+    timestamp '2022-09-14 00:00:00' +
+       random() * (timestamp '2022-09-20 00:00:00' -
+                   timestamp '2022-09-14 00:00:00') as occurred_at
 
 FROM generate_series(1, 100000) as num_of_items;
 ```
