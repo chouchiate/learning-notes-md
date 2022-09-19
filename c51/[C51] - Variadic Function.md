@@ -11,8 +11,8 @@
 ```c
 #include <stdarg.h>
 type va_arg(
-  argptr,     
-  type        
+  argptr,
+  type
 );
 ```
 * argptr - 指針 variable length argument list
@@ -48,7 +48,7 @@ int varfunc (char *buf, int id, ...) {
 
   if (id == 0)
   {
-    int arg1; 
+    int arg1;
     char *arg2;
     long arg3;
 
