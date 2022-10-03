@@ -295,43 +295,40 @@ CREATE TABLE smartbed_delay_alerts (
 INSERT INTO smartbed_delay_alerts
 SELECT
 	gen_random_uuid() as data_id,
-timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
-	timestamp '2022-08-24 00:00:00') as created_at,
-timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
-    timestamp '2022-08-24 00:00:00') as disalarmed_at,
+timestamp '2022-09-21 00:00:00' + random() * (timestamp '2022-09-29 00:00:00' -
+	timestamp '2022-09-21 00:00:00') as created_at,
+timestamp '2022-09-21 00:00:00' + random() * (timestamp '2022-09-29 00:00:00' -
+    timestamp '2022-09-21 00:00:00') as disalarmed_at,
 'longLying' as option,
 random_string(15) as severity,
 random_string(15) as event,
 floor(RANDOM() * 10) as delay_period,
 (array[
-	'6b9a898a-638e-46ec-a070-1d774b4e24e0'::uuid,
-	'7cadec86-c516-4b74-8e1d-1e6122b460c4'::uuid,
-	'55a0fb18-8457-4152-8606-046b91fa5df5'::uuid,
-	'1b26e15d-05c5-48eb-b589-419206636302'::uuid,
-	'5077d253-6562-4947-b99a-2eabd524ae38'::uuid,
-	'73031bb9-eec4-4b28-9f59-d450750de396'::uuid,
-	'82ed1b77-7a6a-4346-a1d4-c40fc2e87e90'::uuid,
-	'091a97cf-eb30-4605-939f-ee2901665688'::uuid,
-	'38c697ff-bfaf-45c1-82f2-8541def0d89a'::uuid,
-	'5c85dfc0-1a57-4c8d-b868-c4e975e013f4'::uuid,
-	'1a64f461-6d79-4c49-9cfb-c72dda00114a'::uuid,
-	'9afcad4b-6bac-4ff9-8555-c1142bfbb079'::uuid,
-	'b313b8c8-4888-40af-a86f-157ce3b32b26'::uuid,
-	'6f64c988-1bb3-4088-8268-d2d015b3238f'::uuid,
-	'8f840182-4814-498c-9c0e-0fd2698d622e'::uuid,
-	'19156b85-59bd-40d3-b0c7-41aea29c1a5b'::uuid,
-	'e9a4fefa-4bfd-49a8-831d-32eb4ce97ed9'::uuid,
-	'01443c0d-3df4-4906-822b-9b6726c57b69'::uuid,
-	'ac04d72d-ed2f-46bb-827b-57d56db3138c'::uuid,
-	'a4fa03cf-ec44-4451-85d6-756e027d8b9d'::uuid,
-	'08184e54-3e87-435a-bb30-604032fa30b1'::uuid
-])[floor(random() * 20 + 1)] as device_id,
-timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
-                   timestamp '2022-08-24 00:00:00') as should_emit_at,
-timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
-                   timestamp '2022-08-24 00:00:00') as canceled_at,
-timestamp '2022-08-24 00:00:00' + random() * (timestamp '2022-09-01 00:00:00' -
-                   timestamp '2022-08-24 00:00:00') as emitted_at
+'cf098895-ee08-49c9-a680-9fe9ec0c85ae'::uuid,
+'742098af-d1dd-4dac-8318-da91973a34dc'::uuid,
+'f3121ba9-ea16-41e6-88f2-e9ff71d081f1'::uuid,
+'0aba613c-c2e2-4d7b-84b2-bb20acb6c299'::uuid,
+'4420c8eb-d25e-4325-a4ae-f22a2d1bd3bb'::uuid,
+'100f4205-b8da-4050-b724-dee4ec40d5a6'::uuid,
+'6dc10fb5-be99-4701-99da-c3aea58fbc3d'::uuid,
+'a85ff085-fca7-4515-9caf-17f1102d35b6'::uuid,
+'de2957e8-7dd1-462a-a61d-520599aa05ae'::uuid,
+'df0c696c-8fc0-45e3-bf87-9690efef92ec'::uuid,
+'81daa930-628b-4c44-bd5c-2c4f3cccd403'::uuid,
+'54995874-6dd7-4f63-aabd-3950e2fffcf6'::uuid,
+'43d0a370-5523-4ad2-b570-46117daa98b5'::uuid,
+'8df5f7c7-27b0-429d-a416-5b52c79d5102'::uuid,
+'07ce3d39-ae9b-4a14-ad37-49668cbda042'::uuid,
+'668e5023-a4c1-4280-9a7e-547706602b63'::uuid,
+'1624f2a4-0fc5-4c95-a8e0-67ff498aca76'::uuid,
+'c9d894c8-c2bb-455c-9fc9-72c9c17f16a4'::uuid
+])[floor(random() * 21 + 1)] as device_id,
+timestamp '2022-09-21 00:00:00' + random() * (timestamp '2022-09-29 00:00:00' -
+                   timestamp '2022-09-21 00:00:00') as should_emit_at,
+timestamp '2022-09-21 00:00:00' + random() * (timestamp '2022-09-29 00:00:00' -
+                   timestamp '2022-09-21 00:00:00') as canceled_at,
+timestamp '2022-09-21 00:00:00' + random() * (timestamp '2022-09-29 00:00:00' -
+                   timestamp '2022-09-21 00:00:00') as emitted_at
 FROM generate_series(1, 1000) as num_of_items;
 
 
@@ -384,38 +381,37 @@ CREATE TABLE events (
 ---
 INSERT INTO events
 SELECT
-	num_of_items,
 	gen_random_uuid() as id,
 	(
 		array[
-			'30476692-b6a9-4899-bb69-354328ad98fd',
-			'9be3e65d-ad24-45e9-b031-04c7b7c9493f',
-			'05ff4935-38a6-408b-8131-216ddc778a9b',
-			'419e0738-faa7-4677-9e6f-802376308b38',
-			'1c4e3d32-72a5-408c-9a6d-b41afb505874',
-			'84196ef6-f5f3-4922-b2e3-304680360512',
-			'cb0e757e-200e-4df4-8ae9-296da28f1411',
-			'0557d8e3-8168-4b95-ace1-8f8f124afb3b',
-			'3b5b296d-4a95-45b2-8115-c34c60e6440c',
-			'01d30259-0142-4c60-b234-eb7f28a17dd8',
-			'f5ed14a2-212e-4128-b2f3-e482a0bdb314',
-			'9a5b20a6-2821-4ba5-be05-5b19a9322fd9',
-			'0b9ee3d2-19fa-46f5-b0f7-e5b03dbb9d65',
-			'8abcc0b7-69aa-4e40-9407-b356c3a22e2f',
-			'e2338948-d238-4c02-9d2d-1bad34201c8c',
-			'fe50ff3e-79cd-4ec7-a2f0-a806af5f24dd',
-			'72bff8bc-7fab-4858-b3ef-4ab5a3e43cfd',
-			'58733033-1134-4721-83bf-874e6c019415',
-			'c524835f-dcfe-44e3-adbe-c6febdee8453',
-			'231f3829-ea7a-42e2-a6d4-d25b5ba1672e',
-			'c79f1294-910c-4714-86e5-6b4db5c2ad23'
+'ad26cc1f-2080-44e8-87ad-acb41cd64ff3'::uuid,
+'d036f216-c556-4858-804a-b0baa53e85ba'::uuid,
+'5267852a-1844-47fa-89f7-04856085fac2'::uuid,
+'ed1171c8-9a9c-49fc-9fcf-8954afc10555'::uuid,
+'0593f306-af43-4440-8998-1e12883a0554'::uuid,
+'13b83df8-4541-445f-8174-eddd63f129dc'::uuid,
+'daa184b4-465c-4290-8977-871b4d705bff'::uuid,
+'f1cbcaf0-3403-4cfc-9cd6-90688f0c2634'::uuid,
+'35dd59a5-ca1b-4bdd-a80f-3564e7bbc0ff'::uuid,
+'db8a3b21-4211-4318-9837-40a197ae603d'::uuid,
+'15b749cc-63c2-4d85-8324-acd93979d3cf'::uuid,
+'92dcefe4-9ee0-422a-a6f2-fc275024f6ee'::uuid,
+'b6e60c1d-3ff2-4484-8167-725aa407d213'::uuid,
+'979c66d3-1208-4c35-8108-062801c44267'::uuid,
+'93b23fee-0c89-464d-a8e7-bc4cd6f580a5'::uuid,
+'c6e63c7b-db11-4420-bb46-99d0a0880727'::uuid,
+'ba568af5-30e6-4a0e-b05d-6025d0b34516'::uuid,
+'0a14ee75-751c-41f7-b972-fe3b7d563909'::uuid,
+'0e236dfb-4426-4a22-b5d4-347609452d7c'::uuid,
+'4dd53db3-a8a0-46a9-9895-8120e1a47aa9'::uuid,
+'e6d3e67a-29e0-4d87-a110-a3ec446fc9ef'::uuid
 		]
-	)[floor(random() * 20 + 1)] as device_id,
-	floor(RANDOM() * 3) as patient_state,
+	)[floor(random() * 21 + 1)] as device_id,
+	floor(RANDOM() * 2) as patient_state,
 	floor(RANDOM() * 6) as patient_state_detail,
-    timestamp '2022-09-14 00:00:00' +
-       random() * (timestamp '2022-09-20 00:00:00' -
-                   timestamp '2022-09-14 00:00:00') as occurred_at
+    timestamp '2022-09-21 00:00:00' +
+       random() * (timestamp '2022-09-29 00:00:00' -
+                   timestamp '2022-09-21 00:00:00') as occurred_at
 
 FROM generate_series(1, 100000) as num_of_items;
 ```

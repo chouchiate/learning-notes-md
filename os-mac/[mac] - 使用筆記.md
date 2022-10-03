@@ -29,3 +29,20 @@ $ killall Finder
 * On your keyboard, press and hold Command + Option + Esc.
 * It will immediately bring up a “Force Quit Application” window.
 
+#### Copy Folder
+* -R 旗標會讓 cp 拷貝檔案夾和其內容。請注意，檔案夾名稱並不會以斜線結尾，那樣會更改 cp 拷貝檔案夾的方式。
+```bash
+cp -R ./esp-idf-template ./esp32_mqtt_led_display
+```
+
+#### Move Folder
+* move one file
+
+```bash
+mv ~/Downloads/MyFile.txt ~/Documents/Work/MyFile.txt
+```
+
+* Move one file and rename
+```bash
+mv ~/Downloads/MyFile.txt ~/Documents/Work/NewFileName.txt
+```

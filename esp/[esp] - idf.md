@@ -73,6 +73,16 @@ $ ./set-submodules-to-github.sh
 
 ```
 
+### Copy esp-idf-template from github
+```bash
+$ git clone https://github.com/espressif/esp-idf-template.git
+## copy to new project
+
+$ cp -R ./esp-idf-template ./esp32_mqtt_led_display_project
+
+```
+
+
 ### idf.py notes
 * idf.py is a CMake wrapper
 * Manage following tools
@@ -95,6 +105,23 @@ $ ./set-submodules-to-github.sh
 
 ### idf build system
 [doc](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#)
+
+### check usb port on macos
+
+```bash
+$ ls /dev/cu.*
+```
+
+### Flashing to device
+
+```bash
+$ idf.py -p PORT [-b BAUD] flash
+```
+
+```bash
+/Users/jubo/.espressif/python_env/idf5.1_py3.10_env/bin/python ../../../../esp-idf/components/esptool_py/esptool/esptool.py -p /dev/cu.usbserial-120 -b 460800 --before default_reset --after hard_reset --chip esp32  write_flash --flash_mode dio --flash_size 2MB --flash_freq 40m 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/wifi_softAP.bin
+```
+
 
 ### idf.py commands
 * idf.py --help

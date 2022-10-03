@@ -1,5 +1,8 @@
 ## [k8s] - kubectl
 
+## cheatsheet
+[cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+
 ## Usage
 ```bash
     $kubectl [flags] [options]
@@ -8,6 +11,18 @@
 ## help
 ```bash
     $kubectl <command> --help
+```
+
+## viewing
+```bash
+    # Get commands with basic output
+    kubectl get services                          # List all services in the namespace
+    kubectl get pods --all-namespaces             # List all pods in all namespaces
+    kubectl get pods -o wide                      # List all pods in the current namespace, with more details
+    kubectl get deployment my-dep                 # List a particular deployment
+    kubectl get pods                              # List all pods in the namespace
+    kubectl get pod my-pod -o yaml                # Get a pod's YAML
+
 ```
 
 ## options
@@ -22,8 +37,6 @@
 | --cluster='' | the name of the kubeconfig cluster to use |
 | --context='' | the name of the kubeconfig context to use |
 | --server='' | address and port of the kubernetes api server |
-
-
 
 ## Basic commands
 ### create
