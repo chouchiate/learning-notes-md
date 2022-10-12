@@ -1,0 +1,1488 @@
+commit f64c8b6b15dd9b8618591026aebeba1fc0222d0f
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Wed Oct 5 08:33:23 2022 +0800
+
+    10-05-2022-1
+
+commit 1726b8afd82afe0f64f7a3220015290f9e29eaaf
+Author: Derick <derick.chou@fluxconn.com>
+Date:   Sat Jul 9 09:33:31 2022 +0800
+
+    commit owc
+
+commit 02abb933dc8cff3619899e9daafa14f1dee2b3a2
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Oct 3 09:17:39 2022 +0800
+
+    10-03-2022-1
+
+commit 634f5bad7bc7be5a7539216cba6796c862588794
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Sep 19 18:36:26 2022 +0800
+
+    09-19-2022-1
+
+commit 33c76b38c8f5ad391be6b3a1ae46dba9946f8fb6
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Sep 16 09:58:17 2022 +0800
+
+    09-16-2022
+
+commit 367e270e5aa37deaf167f68f777df50a0be1e40a
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat Sep 10 17:53:10 2022 +0800
+
+    09-10-2022-2
+
+commit bafaf286f709fbab55c310de2934409bddf705fb
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat Sep 10 15:08:15 2022 +0800
+
+    09-10-2022-1
+
+commit 0ae25f176c6527a9332038ea4c57f4ee26808d30
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Wed Aug 24 22:56:32 2022 +0800
+
+    08-24-2022-2
+
+commit a02d287a1d70711752bc9198890aa04490ca8ade
+Author: chouchiate <derick@jubo.health>
+Date:   Tue Sep 6 14:41:36 2022 +0800
+
+    09-06-2022-1
+
+commit 59fceb2586a395cc6443bde249e92ed4a71aebdd
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Aug 31 19:30:33 2022 +0800
+
+    08-31-2022-1
+
+commit 6e39ec6efbbe213c0b0a74695eefa22871cff27b
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Aug 26 16:42:08 2022 +0800
+
+    08-26-2022-1
+
+commit 88f9ad805d8ef12e0f0a4cbe1c46f5190c22b2f8
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Aug 24 03:02:25 2022 +0800
+
+    08-24-2022-1
+
+commit 0e82dcc87fa23b6fd7cd520aed1e9410192bad90
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Aug 22 15:52:45 2022 +0800
+
+    08-22-2022-2
+
+commit 1d34d60885b8f80f3f98d78a6aea13f29b7b998b
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Aug 22 11:44:02 2022 +0800
+
+    08-22-2022-1
+
+commit d51e357adbd6d6b4bb2422badf178a8d26c320b7
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Aug 19 13:18:17 2022 +0800
+
+    08192022-1
+
+commit e3c1d1c54f4f543a5b61e2ab1a89f97fda9b792c
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Aug 18 16:24:20 2022 +0800
+
+    08182022-1
+
+commit b68833ad7cc75d3d3907a5c9da892209ac74a40e
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Aug 11 08:05:45 2022 +0800
+
+    08-11-2022-1
+
+commit 3090534354c17748c89cbe1a314c1b440b93d21c
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Aug 8 08:40:50 2022 +0800
+
+    08-08-2022-01
+
+commit 8df04b638bc628b5d2d9c4fe0616d385a7739ec3
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Aug 5 09:07:12 2022 +0800
+
+    08-05-2022-1
+
+commit 93e53af5565cf72dedc485520ec75e2abad01d9f
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Aug 4 16:48:25 2022 +0800
+
+    08-04-2022-1
+
+commit f3db46265ea2aa97ad404d8482b8b68a48f20c97
+Author: chouchiate <derick@jubo.health>
+Date:   Tue Aug 2 10:38:11 2022 +0800
+
+    08-02-2022-1
+
+commit 5cf935a0addb8e882889b2b6c0cae0aaf2d66d54
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Jul 29 08:31:41 2022 +0800
+
+    07-29-2022-1
+
+commit 2c73197f8ca295768dfcfd7e9042ef67291003a3
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 28 16:57:35 2022 +0800
+
+    07-28-2022-7
+
+commit 9060be2cfdf984a8d1a53e0b6a43691ffc2c4ce5
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 28 09:52:40 2022 +0800
+
+    07-28-2022-6
+
+commit 511d58e4ff28687c0591443d686cd04d73a46d57
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 28 09:51:16 2022 +0800
+
+    07-28-2022-4
+
+commit b9d63227f51232332ac61c6d0f31d6ac1b278442
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 28 09:43:36 2022 +0800
+
+    07-28-2022-3
+
+commit d695b9843213d44f4c2deb7d62ef8ae186c7d333
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 28 09:42:53 2022 +0800
+
+    07-28-2022-2
+
+commit a165a90e7f8290bd3a41b4894fbc24845c458e33
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 28 09:40:02 2022 +0800
+
+    07-28-2022-01
+
+commit cdccfab25193d9f6b7b4e6562cbd45096421da2f
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Jul 27 09:08:10 2022 +0800
+
+    07-27-2022-2
+
+commit bb342422b0e13fbd4734af709ae27acb6699edbe
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Jul 27 08:45:08 2022 +0800
+
+    07-27-2022-1
+
+commit 1f0f510e521e4c8574a61c44325016978e4f574a
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:34:45 2022 +0800
+
+    Update [log] - work.md
+
+commit 3d186e33892d39c055b1c9a27979c5691a22d031
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:33:26 2022 +0800
+
+    Update [log] - self.md
+
+commit ec777f6e8d1866b0ac9cadac6a1239384c70ab7a
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:28:56 2022 +0800
+
+    Update [log] - ttw.md
+
+commit 547bcd9d09e860c3d9de696ca0aa85450a31ffea
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:18:02 2022 +0800
+
+    Update [log] - ttw.md
+
+commit cb4f349e883014e2b12b764b3a025759be2de439
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:17:26 2022 +0800
+
+    Update [log] - wintact.md
+
+commit 808af60a1d9052e2e461e91b8b97e8046546934d
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:17:00 2022 +0800
+
+    Update [log] - wintact.md
+
+commit caa6f6475c5e6edf5e495a4d4dac10996a263737
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:16:11 2022 +0800
+
+    Update [log] - ttw.md
+
+commit b8d3ff77fb2fc71f89456ed2310202160233ee84
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Fri Jul 22 10:12:27 2022 +0800
+
+    Update README.md
+
+commit 85ecdcc92fc1b794224b39569908a21e3423086d
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Jul 22 09:57:19 2022 +0800
+
+    07-22-2022-1
+
+commit 113627b4d86e1d70d8158ed67e46397aeebe1098
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 21 14:33:29 2022 +0800
+
+    07-21-2022-5
+
+commit fedeacaec5c2deb9477eb61901146e5665ec0c26
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 21 14:30:12 2022 +0800
+
+    07-21-2022-4
+
+commit b5da8ff3afd03f7c9d563640c1124e2d36a83cf1
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 21 12:07:03 2022 +0800
+
+    07-21-2022-3
+
+commit e0589fbd1609f7d52559270ecfe45299c257f68b
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 21 11:58:30 2022 +0800
+
+    07-21-2022-2
+
+commit d9d601d7ad912fa5adb69df38c41ff6f894ce7c2
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 21 11:57:42 2022 +0800
+
+    07-21-2022-2
+
+commit 4c06a63e2afd78bb000234580771f75010b397b6
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Jul 20 09:37:35 2022 +0800
+
+    07-20-2022-2
+
+commit 94b7f088d2576cbcb26571290b5754efd116397d
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Wed Jul 20 06:12:06 2022 +0800
+
+    07-20-2022-1
+
+commit d31c508ae4283969720581fd240a59464c456ec6
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Jul 18 21:51:03 2022 +0800
+
+    07-18-2022-1
+
+commit 39df575cae7ff905270ecb9ef70d059483a83733
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 14 10:54:10 2022 +0800
+
+    07-14-2022-1
+
+commit 327fcc70a7f287b78aab265aa7eacb2c49aad1b8
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Mon Jul 11 21:08:59 2022 +0800
+
+    07-11-2022-2
+
+commit 549a37ad351c38d076368f9623d68b653228f5e1
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Jul 11 09:58:40 2022 +0800
+
+    07-11-2022-1
+
+commit b89c1eeb37c464438be80e65f6280fc5c21bf288
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Jul 10 09:49:56 2022 +0800
+
+    07-10-2022-1
+
+commit 61c7fcb72cdfe640a9b5a3408e1399f1bf6a3733
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Jul 10 09:06:39 2022 +0800
+
+    07-10-2022
+
+commit 58570d006f2ba87b272dc217b5d8bfef3b480c30
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Jul 8 07:47:12 2022 +0800
+
+    06-08-2022
+
+commit d84a5109289f8254abfd7a2dab628d2095bc0774
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jul 7 09:49:16 2022 +0800
+
+    add07-04-2022
+
+commit 7cb24a4ebc41ad77085be71470bacaecd1e8d1b2
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Jul 6 07:41:37 2022 +0800
+
+    07-06-2022
+
+commit 3a9466d0da089c6175f8ed0f6fe8b2097e565cac
+Author: chouchiate <derick@jubo.health>
+Date:   Tue Jul 5 09:13:00 2022 +0800
+
+    add06-05-2022
+
+commit 0f86e64c2ca88e568f7236f6611df8315f75d0eb
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jun 30 09:57:33 2022 +0800
+
+    06-30-2022
+
+commit 5d6f9621c457d9ae6f603a80cef4217285e8dcd2
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Wed Jun 29 05:30:00 2022 +0800
+
+    06-29-2022
+
+commit e7fb553a79d68c4814c3e28a62d783229f18bbc5
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Jun 27 09:22:49 2022 +0800
+
+    06-27-2022
+
+commit 521e5bab325437f11535b7112e39013f3f30bcf3
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Jun 24 17:18:52 2022 +0800
+
+    06-24-2022
+
+commit 060b1bf1a27837958a3a1046e4ef03758fd72968
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jun 23 09:04:37 2022 +0800
+
+    06-23-2022-1
+
+commit c5eb7c74ceadc1a7f790829bfafdf424c4925d1d
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jun 23 06:55:53 2022 +0800
+
+    06-23-2022
+
+commit 8680f928f9003ab413282dbf3f5db1d7f72dabcf
+Author: chouchiate <derick@jubo.health>
+Date:   Tue Jun 14 11:50:42 2022 +0800
+
+    06-14-2022
+
+commit 3f160c40d6fef89d00469cd9b4c74f136ac1685f
+Author: chouchiate <derick@jubo.health>
+Date:   Sat Jun 11 11:27:10 2022 +0800
+
+    06-11-2022
+
+commit da0a999833ff61797908e0ac891c54a1f9ed3854
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Jun 10 18:04:17 2022 +0800
+
+    06-10-2022
+
+commit 3cf87e8e99b5f8e11a1e0b99549ac365440a5625
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Jun 9 13:41:34 2022 +0800
+
+    06-09-2022
+
+commit e0593b9db5f6a5ba746f5cd7b69f16f6cd6f4538
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Jun 6 14:52:08 2022 +0800
+
+    0606-2022-push
+
+commit 08fbc8aea09ff39379528618fee850bfa4edf6a0
+Author: chouchiate <derick@jubo.health>
+Date:   Mon Jun 6 14:48:03 2022 +0800
+
+    commit for 0606-2022
+
+commit 0c143af58c5653852305e7ee44588af68c841a6a
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Mon Jun 6 04:02:25 2022 +0800
+
+    06-06-2022
+
+commit b8005ef09f535b146ee805ab4b1b81dd3c751a2f
+Merge: 5e6de72 ecb1439
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Mon Jun 6 03:43:48 2022 +0800
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md
+
+commit ecb1439c13bc1c5c8e6715c2333693c2874919ca
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Jun 3 05:40:56 2022 +0800
+
+    06-03-2022
+
+commit 8ec4e65c383481dbc011f03b537a5e0810d8252f
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Jun 1 10:00:25 2022 +0800
+
+    06-01-2022
+
+commit 8c5624f5df2abf61f6ddc73a5d1a9a87d22a236c
+Author: chouchiate <derick@jubo.health>
+Date:   Mon May 30 18:44:52 2022 +0800
+
+    05-30-2022
+
+commit 5e6de7290c1eb0961f7c8b350fbd91b3111bfb82
+Merge: 96cef8a a5c4f59
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat May 28 15:50:25 2022 +0800
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md
+
+commit bcb0b90e5c78875a0804490ad4e3aed98bcb7c88
+Author: chouchiate <derick@jubo.health>
+Date:   Fri May 27 10:01:34 2022 +0800
+
+    05-27-2022
+
+commit a5c4f593d667bb5ee3d45996c8c4de74d3508d7f
+Author: chouchiate <derick@jubo.health>
+Date:   Tue May 24 22:57:12 2022 +0800
+
+    05-28-2022 add
+
+commit 00e81291bc310303a4aa85279e4cfe8a4e251089
+Author: chouchiate <derick@jubo.health>
+Date:   Tue May 24 20:04:51 2022 +0800
+
+    05-24-2022
+
+commit 96cef8a416dfd6522472d7e6b72f62bbe6021974
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat May 21 18:09:48 2022 +0800
+
+    add commit 05-21-2022
+
+commit f24c5b04ce3416e0de0fe3304842825f78c339ef
+Author: chouchiate <derick@jubo.health>
+Date:   Mon May 23 19:24:08 2022 +0800
+
+    add 05-23-2022-01
+
+commit 1a4669d3d9ef0c8cb577e109356f53cc889199fe
+Author: chouchiate <derick@jubo.health>
+Date:   Sun May 22 22:03:52 2022 +0800
+
+    05-22-2022
+
+commit 9eedf46508730ba048500697750f827695d701b2
+Author: chouchiate <derick@jubo.health>
+Date:   Fri May 20 21:44:31 2022 +0800
+
+    complete scheduling
+
+commit 6fff952d4c4f93e22a821954302a1e20900f98e5
+Author: chouchiate <derick@jubo.health>
+Date:   Fri May 20 15:29:04 2022 +0800
+
+    add scheduling
+
+commit 59be4360a93a7ee967c0c0baa979e7fb0741d62d
+Author: chouchiate <derick@jubo.health>
+Date:   Fri May 20 12:30:02 2022 +0800
+
+    add freertos task
+
+commit 7023d3d53a206255ce9579ee6cb9c4bf28aa23e5
+Author: chouchiate <derick@jubo.health>
+Date:   Fri May 20 10:16:52 2022 +0800
+
+    add ecdsa
+
+commit 551e481aa223c4882e04f1c58420fcd981c19d03
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Fri May 20 08:53:19 2022 +0800
+
+    05-19-2022-5
+
+commit d28e0465466c2c608ab329203423495d47aa3c3f
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu May 19 22:23:31 2022 +0800
+
+    05-19-2022-3
+
+commit a19b4f7594e7afdc48f70c297ebf777190c564b7
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu May 19 21:09:08 2022 +0800
+
+    05-19-2022-02
+
+commit 325b0afecd42f62a190dcb5a982c58bae70c1a86
+Author: chouchiate <derick@jubo.health>
+Date:   Thu May 19 20:07:28 2022 +0800
+
+    05-19-2022
+
+commit 2551c7836b27e12748fee086cc701e0d63ce0c1a
+Author: chouchiate <derick@jubo.health>
+Date:   Thu May 19 14:12:26 2022 +0800
+
+    05-19-2022
+
+commit dac598453d2d37f671449e387d58a8fd516ab642
+Author: chouchiate <derick@jubo.health>
+Date:   Wed May 18 06:01:59 2022 +0800
+
+    05-18-2022
+
+commit be88eac0985bc735b3703af98444861006f408e3
+Author: chouchiate <derick@jubo.health>
+Date:   Mon May 16 19:27:02 2022 +0800
+
+    05-16-2022-3
+
+commit 7c309edd1574124417ebfd26914f005420db4812
+Author: chouchiate <derick@jubo.health>
+Date:   Mon May 16 09:30:43 2022 +0800
+
+    add 05-16-2022-2
+
+commit c343a70a22c53d5ca203cf6e2459df61f3e300c0
+Author: chouchiate <derick@jubo.health>
+Date:   Mon May 16 09:12:24 2022 +0800
+
+    05-16-2022
+
+commit 17aae1037bc076824125d5b109831dc9ecec5af9
+Author: chouchiate <derick@jubo.health>
+Date:   Fri May 13 13:34:36 2022 +0800
+
+    05-13-2022
+
+commit 009fc3f8ad4a4a5b5753828e8064d83e5036c286
+Author: chouchiate <derick@jubo.health>
+Date:   Wed May 11 17:21:15 2022 +0800
+
+    add some new stuf
+
+commit 571f81588133d79e07ebcd592b975cc84e50657e
+Author: chouchiate <derick@jubo.health>
+Date:   Wed May 11 11:38:30 2022 +0800
+
+    commit 05-11-2022
+
+commit 5636c90613e0df371fa50c93e09c2b212ca26f9f
+Author: chouchiate <derick@jubo.health>
+Date:   Fri May 6 17:23:53 2022 +0800
+
+    05-06-2022
+
+commit add1340b711d7eb79bbd865ba93c5354eb93229a
+Author: chouchiate <derick@jubo.health>
+Date:   Tue May 3 06:43:18 2022 +0800
+
+    05-03-2022
+
+commit 7eb15d2d577caab636196825a8c8a072de869591
+Author: chouchiate <derick@jubo.health>
+Date:   Mon May 2 16:34:29 2022 +0800
+
+    05-02-2022 commit
+
+commit 6b5623bbb849da7dec636e7d1033519bc2634c01
+Author: chouchiate <derick@jubo.health>
+Date:   Sun May 1 15:47:38 2022 +0800
+
+    05-01-2022
+
+commit 0c6a7ee74dc5e15c84749e121836c5b2eb4ea7fc
+Author: chouchiate <derick@jubo.health>
+Date:   Wed Apr 27 09:26:20 2022 +0800
+
+    04-27-2022
+
+commit bc91ed53cf2823f8f3f89cc8535169d243fb7c36
+Author: chouchiate <derick@jubo.health>
+Date:   Sat Apr 23 18:13:53 2022 +0800
+
+    this is a commit test
+
+commit 09ee9f621a21c55bf0133801e1e821bfd5e13f58
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Apr 26 21:30:52 2022 +0800
+
+    04-26-2022
+
+commit b213f62c666359baae79c2f573437a2cb0687769
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat Apr 23 18:16:46 2022 +0800
+
+    my test commit
+
+commit 6195a426b47caea2a25bf652bce2f61d2c43bd68
+Author: chouchiate <derick@jubo.health>
+Date:   Sat Apr 23 17:50:16 2022 +0800
+
+    04-23-2022 commit
+
+commit 82b0359c8f058877ff5241a4b05779036cad2618
+Author: chouchiate <derick@jubo.health>
+Date:   Thu Apr 14 23:26:40 2022 +0800
+
+    update 0414
+
+commit 438660d3b0fda6733317a92158492ec78289f58f
+Author: chouchiate <derick@jubo.health>
+Date:   Sun Apr 10 21:54:22 2022 +0800
+
+    04-10-commits
+
+commit 787144bed711173bbcc187888de4dfedc0cb0833
+Author: chouchiate <derick@jubo.health>
+Date:   Fri Apr 8 10:01:33 2022 +0800
+
+    04-08-02
+
+commit 623b9ea1f24d6c25b34abe1412c1018df4bab999
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Apr 8 09:45:22 2022 +0800
+
+    update 04-08
+
+commit a0d71e896857f0be57bea68e48e8562706f7fd67
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Mar 31 01:51:55 2022 +0800
+
+    03-31-2022
+
+commit 0553cc331d362f51735d61fbb532e52165c6bed5
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Mar 29 21:01:18 2022 +0800
+
+    commit 03-29-3
+
+commit ed56289a0f439d64eb432855bf164175c80ff2da
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Mar 29 03:11:59 2022 +0100
+
+    commit 03-29-02
+
+commit 48314c6e51f5f3dada62658bc404fa43bd45a07f
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Mar 27 17:49:51 2022 +0800
+
+    03-27-2
+
+commit c6585292fa81dee9bc2edb71df287c4609c249d6
+Merge: f31d5db 6d80f3a
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Mar 27 17:48:41 2022 +0800
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md
+
+commit 6d80f3a8ec66a642912cd43f47d70c13d62e1ddf
+Author: chouchiate <derick@jubo.health>
+Date:   Sun Mar 27 17:45:10 2022 +0800
+
+    commit 03-27
+
+commit 2e6641e78cfd41d4a2991e8236e28a99b8917ac2
+Author: jubo <jubo@jubos-MacBook-Pro.local>
+Date:   Fri Mar 18 17:39:39 2022 +0800
+
+    03-18-new
+
+commit f31d5dbcdbe2f7cd221eeda3174af0e6c27b2577
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Mar 13 11:51:06 2022 +0800
+
+    03-13-commit
+
+commit 2b4eb6c2a1786cb88469e98632b538b160d82b5e
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat Mar 12 01:13:23 2022 +0800
+
+    03-12-home
+
+commit 24e4fb88e308fc83b265b8a4296de44467d96c7b
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Mar 11 17:12:48 2022 +0000
+
+    remove invalid path files
+
+commit 2647ac3316036576a44416f14a955fbfcc52e7a9
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Mar 11 17:08:33 2022 +0000
+
+    commit 03-12
+
+commit 549454e287d3ac03183a6cfabcfb54cfd0d8446c
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Mar 1 05:01:51 2022 +0000
+
+    03-01-2022
+
+commit aef9b5a0cf7b2bc610791b2480da13a137474215
+Author: Derick Chou <derick@jubo.health>
+Date:   Sun Feb 20 05:47:46 2022 +0000
+
+    02-20-2022 commit
+
+commit 3d371eb120de95eb8ceabcdc8c10149db9d90d4a
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Feb 18 03:35:48 2022 +0000
+
+    02182022
+
+commit 437281528cf61834d863a747d9cdc38802b343ab
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Feb 15 02:50:38 2022 +0000
+
+    02-15-commit
+
+commit 7fd10153090bc1f6a0d7ee81921f7f885f7444a1
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Feb 8 02:58:55 2022 +0000
+
+    update2 0208
+
+commit 16290244250c195631f5f813bd84768f3f67febc
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Feb 8 02:58:20 2022 +0000
+
+    update 0208
+
+commit 33486e852608c230ce11f5b2a155d9c86703fefc
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Fri Feb 11 22:59:45 2022 +0800
+
+    02-11-2022
+
+commit 544c97cd4ad6409db4a77706cd73b67cb08a5715
+Merge: ae00bd2 a89edc8
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Feb 8 22:59:16 2022 +0800
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md
+
+commit ae00bd20fe8678bb0fda2599bbcfd52c9e10e9c3
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Feb 8 22:59:07 2022 +0800
+
+    02-08-wanghua commit
+
+commit a89edc83c9f208fe69e7e4576211cee80c7330f4
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Feb 2 22:31:31 2022 +0000
+
+    0202-sdcc
+
+commit 79c5611e15ec9b3270c003d03f6bd200de87d349
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Feb 2 22:05:09 2022 +0000
+
+    0202-push
+
+commit 6721f51e9fb30eba5b3e29ca311fa310fc44eac9
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Feb 1 10:18:58 2022 +0800
+
+    add matlab
+
+commit b486c217a1ff908c415546908508add03d7f9bad
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Mon Jan 31 14:15:49 2022 +0800
+
+    add
+
+commit 3935961dbfb5b9744d94afe70ba9ba29ffe11659
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Mon Jan 31 14:13:15 2022 +0800
+
+    add to-read
+
+commit d992dbae8802847b54ea47d119f0d96ae7c8f736
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat Jan 29 11:28:04 2022 +0800
+
+    commit on bday
+
+commit 1e8075bb1712b4c97bb6940aacfa08f0dd6539c2
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Jan 27 11:27:37 2022 +0800
+
+    0127 commits
+
+commit de49d6f10ac119672087dcd464be036b53e75295
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Wed Jan 26 19:42:34 2022 +0800
+
+    0126 commits
+
+commit 3329d44623adfd7628880679b06435814b51b910
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Jan 25 11:38:33 2022 +0000
+
+    update on Jan 25
+
+commit 4e922bb2b7d67f9fa6d8bce8251d7b0949969489
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sat Jan 22 08:20:40 2022 +0800
+
+    add owc
+
+commit 5d425c4b38be7c95237c3809a06f4fe9d2d5b67f
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Fri Jan 21 22:53:22 2022 +0800
+
+    add owc
+
+commit bc99d8ef3d73130e74bf26f5d913842a6133d86f
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Fri Jan 21 08:27:44 2022 +0800
+
+    1212022-1
+
+commit fc1121a912d6a713329c3253dd4cd0ad0ad411f2
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Jan 20 03:26:00 2022 +0000
+
+    update git
+
+commit f3af881ce2660bfad7485d3d687fe16bc1fa2353
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Jan 20 07:33:36 2022 +0800
+
+    1-20-2022-2
+
+commit 5d7711f14098a847e17c6f42df10673d42fb8a14
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Jan 20 06:43:22 2022 +0800
+
+    1-20-2022 commit
+
+commit 68c6e20ee3363e9f21fd28798028b5c6bc4e2095
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Wed Jan 19 07:51:08 2022 +0800
+
+    Add more 119-2022
+
+commit 2107f98190e9e9a9fa609fe9f6bdde6a0c5c3ade
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Jan 18 23:14:07 2022 +0800
+
+    add math
+
+commit 607c75a7db17038983ca4c6072f56e09483fb689
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Jan 18 14:59:36 2022 +0000
+
+    add 01-18-2022-2
+
+commit 6706de2902feb2a88e2b3ffc8f85d4f0cefad2df
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Jan 18 14:51:40 2022 +0000
+
+    commit for 01-18-2022
+
+commit 6e054a103d4487e162cf340d2496a59ad8676884
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Jan 18 16:19:39 2022 +0800
+
+    add osram chip led
+
+commit f5ec0b2d4833524f087134f288919e613e104d9e
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Jan 18 07:54:19 2022 +0800
+
+    add spice models
+
+commit ee58dee9ab86eac7e813bb701fdeb057d9dc4730
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Jan 13 01:59:04 2022 -0100
+
+    commit 113
+
+commit 6281f355e296f917a70e08e39fe066efe0ece552
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Jan 11 22:59:12 2022 +0800
+
+    2022-01-11 commit
+
+commit 7beb83a949f63d29e0799849ef578c9fbecd205d
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Jan 11 22:20:40 2022 +0800
+
+    add hidden
+
+commit c9bdc296dc1296fdd5258029f99d3ab1b9d7223e
+Author: Derick Chou <derick@jubo.health>
+Date:   Sun Jan 9 09:25:48 2022 -0100
+
+    update mac os note
+
+commit eba6a0d59d18f7bd484c4bd815af21794a439833
+Author: Derick Chou <derick@jubo.health>
+Date:   Sun Jan 2 01:31:47 2022 -0100
+
+    add 01-02-2022
+
+commit 4b436bae9f50137b1e9ff501d7992fb8fa3d95d9
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Dec 16 01:02:56 2021 -0100
+
+    commit 12-16-2021
+
+commit 30152d54baec15ecd4db120d1a3c92a3ca1dbda9
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Dec 3 07:24:56 2021 -0100
+
+    12-3-2021 commit
+
+commit 349bd51f74db8f9989ed5eac77463faf4988b084
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Dec 1 11:00:57 2021 -0100
+
+    dec.1 2021 commit
+
+commit d5b63aae0258501520bc7639aba3aefb9c92222f
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Nov 29 02:40:57 2021 -0100
+
+    11-29-2021 commit
+
+commit 6f13fd922d968da482ee5cb8c3561110e90b3977
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Nov 25 11:32:25 2021 -0100
+
+    11252021
+
+commit ed2b0110bc616c3eb4f6c0c2caaa1a2da3fb5138
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Nov 25 02:24:58 2021 -0100
+
+    update 11-25
+
+commit baa6f1b2facff8dbecc938903c3e68e3dcabdaa1
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Nov 16 23:11:39 2021 +0800
+
+    update gorm
+
+commit 7df12a5f447caa2ee82ab135fa7dc94ceecdfd1a
+Merge: e88b3d2 3c15c84
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Nov 16 21:23:35 2021 +0800
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md
+
+commit 3c15c844cde6c510e32d8e196fd3dbb94dcbd5a2
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Nov 16 12:16:53 2021 -0100
+
+    commit for 11-16-2021
+
+commit d8cc7f5fb01ecf2c54b2d35a18273f38530ef4ef
+Author: Derick Chou <derick@jubo.health>
+Date:   Sun Nov 14 11:03:07 2021 -0100
+
+    11-14-2021
+
+commit 1926af607d9f3ccd1c99f805df00d3a0a91e6286
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Nov 14 08:28:19 2021 +0800
+
+    1114-2021
+
+commit 31a1bf1f3f3b2b0e488a478a020afba17c1f1f3b
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Nov 5 10:32:49 2021 -0100
+
+    update
+
+commit c79d64ac2f8280b02df8066f57350548f1f32541
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Nov 5 10:10:12 2021 -0100
+
+    11-05-2021 update
+
+commit e88b3d2b9b2cd7a2bda94e8affb7608e38999276
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Oct 28 03:34:11 2021 +0800
+
+    commit cmsis-zone for m2351
+
+commit c29655f534e3e132791bb620fe6552686019f6ba
+Merge: da531a2 f24fba3
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Oct 28 01:24:53 2021 +0800
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md
+
+commit da531a22cda74a2e3c53305a2e3c3b25a001ee15
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Oct 28 01:24:51 2021 +0800
+
+    commit locally
+
+commit f24fba3fde5b3bea5e3195e80e2d8caf03fd278d
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Oct 21 10:31:58 2021 +0000
+
+    commit for oct21
+
+commit c3a21bbdccd3133c6db1170c47e38e24951e194c
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Oct 21 10:06:05 2021 +0000
+
+    commit oct 21
+
+commit 422a7956cfb943eb7d0cd782bad3cd86fb03a945
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Oct 7 10:29:06 2021 +0000
+
+    10-07-2021 commit
+
+commit 65edbf68051fa170ff0c5665821303e3b6675790
+Author: Derick Chou <derick@jubo.health>
+Date:   Sat Sep 25 11:49:19 2021 +0000
+
+    mac push
+
+commit 86dc131e40dddc309bfb504e1a8ca981fe9c5784
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Sep 16 09:55:26 2021 +0000
+
+    09-16-2021 commit
+
+commit 1695554295d9ee9a28122ad7b8b502532c37872d
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Sep 13 01:34:32 2021 +0000
+
+    commit work mac
+
+commit 9b16499617234716bba3975293ed6ebbc8e46a89
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Sep 12 23:20:18 2021 +0800
+
+    09/12/2021 commit
+
+commit e097e2d3d908131611242e2602824ff7392a8abf
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Sep 10 07:16:59 2021 +0000
+
+    09-09-2021 commit
+
+commit 3a8ba6c8b4aa10bf1743423437937caf01dc982f
+Merge: 56b989a 094bc09
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Aug 30 02:03:30 2021 +0000
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md into main
+
+commit 56b989a646d0ad7a0fb3840324864fe7864d6fb7
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Aug 30 01:49:26 2021 +0000
+
+    add ARM
+
+commit 094bc09ffdb6f22c1c97f544b529d725cfe2561c
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Aug 26 22:23:53 2021 +0800
+
+    08-26-2021 commit
+
+commit 253685d94e6aa64ec42a75ad557c14403e711913
+Author: Derick Chou <derick@jubo.health>
+Date:   Sat Aug 21 04:46:28 2021 +0000
+
+    08-21-2021 commit
+
+commit 299e634f778c77a707921378f734139560b2932a
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Aug 17 07:05:32 2021 +0000
+
+    08-17-2021 commit
+
+commit e803e4e381c751b9f8d5140325f392c261946e1c
+Author: Derick Chou <derick@jubo.health>
+Date:   Sat Aug 14 14:09:44 2021 +0000
+
+    08/14/2021 commit
+
+commit aa44d6e55ded0f67d2810df5f1da57114c31b739
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Aug 12 13:55:18 2021 +0000
+
+    add ble study
+
+commit 5fc473b721e235d8e6f0a29ba092f0503d9340ff
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Jul 23 05:54:25 2021 +0000
+
+    add typescript: Extend Express Request Object using Typescript
+
+commit 392157475ee80c35f2d0da177a9786d4c3df1b59
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Jul 22 18:17:56 2021 +0800
+
+    update vayyar terminal provision cloud type instruction
+
+commit fd0ab793bbf16c4868be265246f9355a6c21c95f
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Jul 20 01:52:56 2021 +0000
+
+    add 07-20-2021
+
+commit fb1053cc96d0cf573d7ea60bb09c4175a41f0f09
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Mon Jul 19 15:58:28 2021 +0800
+
+    commit for 07-19-2021
+
+commit 4f53cb51a96bbfd3b1f55e6e7b5d4825fb184583
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Jul 18 00:12:03 2021 +0800
+
+    07-18-2021
+
+commit c397889a1517d6a0f92cc21a3d7c60c3346c1fa3
+Author: Derick Chou <derick@jubo.health>
+Date:   Sat Jul 17 09:25:41 2021 +0000
+
+    07-17-2021 commit
+
+commit c37a3f14a98290d57fe65ec75fd332d8c70078a3
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Jul 5 10:00:47 2021 +0000
+
+    commit on 07-05-2021
+
+commit 396ba7537f7549ed85bf1a73bf21c61c093e8412
+Author: Derick Chou <derick@jubo.health>
+Date:   Fri Jul 2 06:22:15 2021 +0000
+
+    commit mac 07-02-2021
+
+commit ee4e5aba7bd8b2c811c937150f86423581ac4deb
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Jun 22 06:50:44 2021 +0000
+
+    commit 06-22-2021
+
+commit 6f814bb31f1f5fdf62732948f926ae25732eb1e3
+Merge: 88d5884 5d9369c
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Jun 16 02:16:11 2021 +0000
+
+    write your message Merge branch 'main' of https://github.com/chouchiate/learning-notes-md into main
+
+commit 88d5884c7760069031672a2cf2e9b59626ae3c29
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Jun 16 01:59:38 2021 +0000
+
+    Revert "commit for 0626"
+    
+    This reverts commit f5e103f1c7a30a07d84a8ebe87a17745dc1967b1.
+
+commit f5e103f1c7a30a07d84a8ebe87a17745dc1967b1
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Jun 16 01:56:18 2021 +0000
+
+    commit for 0626
+
+commit 5d9369c8921012f890a4d4dbd817b5e99087e3d9
+Author: chouchiate <chouchiate@gmail.com>
+Date:   Wed Jun 16 09:41:43 2021 +0800
+
+    commit 0616
+
+commit 2e0919851bcf8fc6b250c1776ef7992dc4b21fe5
+Author: chouchiate <chouchiate@gmail.com>
+Date:   Tue Jun 15 11:15:45 2021 +0800
+
+    .DS_Store banished
+
+commit 05ce77e67258c76210c18364484ce0488ff8db2b
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun Jun 13 16:46:13 2021 +0800
+
+    update 06-13
+
+commit 4e2a898d4b6b98e797657cc54a8c105af6a6fd94
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Mon May 31 22:48:15 2021 +0800
+
+    commit local before merge
+
+commit 236b8163cd7d151936d5dbe6e55b41630ffd8da5
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon May 31 13:20:21 2021 +0000
+
+    add azure and threax
+
+commit 2216c59ba087edbe60b40e6233b8d8e5a7c6e9bd
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon May 31 11:16:40 2021 +0000
+
+    commit osx version
+
+commit da86efd4e7de7a91bd4359b7dec7fbbc7e5e8c57
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon May 31 08:26:08 2021 +0000
+
+    commit locally
+
+commit 954ad8b02571f96a489ab2f93a1b3d479ad7791e
+Merge: 7a11be1 9066fcd
+Author: chouchiate <chouchiate@gmail.com>
+Date:   Mon May 31 16:21:56 2021 +0800
+
+    Merge branch 'main' of https://github.com/chouchiate/learning-notes-md into main
+
+commit 7a11be19b6d83f1d435085791df914f946d3aa1f
+Author: chouchiate <chouchiate@gmail.com>
+Date:   Mon May 31 16:21:22 2021 +0800
+
+    again
+
+commit 3f7b93b8fa15309d972a5781d50dbb991db1589c
+Author: chouchiate <chouchiate@gmail.com>
+Date:   Mon May 31 16:18:44 2021 +0800
+
+    commit before merge
+
+commit 9066fcd9aff257594ce274bf46de3a49899915af
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu May 27 22:37:06 2021 +0800
+
+    05-27-2021 end commit
+
+commit a289e10f0eb30d357d51b50b5248c5e8008f8da4
+Author: chouchiate <chouchiate@gmail.com>
+Date:   Thu May 27 12:51:54 2021 +0800
+
+    little commit
+
+commit f1580c00748c9c676e63aab18eee9b4362df5ffa
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu May 27 12:22:59 2021 +0800
+
+    test commit
+
+commit 4aac1e8fe318bc948599502f4ceccf779dd2e239
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu May 27 02:28:19 2021 +0000
+
+    commit for 05-26-2021 end
+
+commit 817663c0eed6d45a2e3d5d4b560769cbddf653c4
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue May 25 08:56:15 2021 +0000
+
+    commit for 03-25-2021 after work
+
+commit bb58182b8404c3eeb52113df50ced68cffe42169
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue May 25 03:09:29 2021 +0000
+
+    add nginx learning note
+
+commit 2c5f2b6062bfcc993c7d04b6bbd42122954ff7f1
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon May 24 11:08:09 2021 +0000
+
+    update 05-24-2021
+
+commit 91ee8cd41b939c548af15c959fa83199805cb51e
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon May 24 07:58:53 2021 +0000
+
+     add docker
+
+commit b9b27e9904e3ed6b7347162830ed12100c70b306
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon May 24 07:58:38 2021 +0000
+
+    add all mac note
+
+commit 945899e1a35353c0f2d41b2013ffea13c320fcb0
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon May 24 07:50:54 2021 +0000
+
+    commit for macbook
+
+commit 9db5f22b9e9f1d923b056b52df19c62b363e333b
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun May 23 20:54:40 2021 +0800
+
+    add actix-rs notes
+
+commit 2f540976a0009518172335671ba9990618a4574f
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun May 23 10:30:23 2021 +0800
+
+    add clang docker flutter git golang folder
+
+commit 1bf35fcf264cd4ff702486b66b23b577b4c39c36
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Sun May 23 10:26:54 2021 +0800
+
+    add rust study folder
+
+commit 5b0bb565ea16eec51b369fd13283302c45c96380
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed May 12 10:31:40 2021 +0000
+
+    update 05-12-2021
+
+commit 7b2349acc2201a0d45e2cd8eff4e020a6e9f2d21
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Tue Mar 30 21:53:55 2021 +0800
+
+    Add 2021-03-30
+
+commit d2557c1cc5cf05a900f0c374bce85c0e6adf11d4
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Mar 15 16:55:06 2021 +0800
+
+    03-15-2021-2 commit
+
+commit 51f93cf44fc751fd2afa6d6bcde613aba5679154
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Mar 15 16:49:03 2021 +0800
+
+    Revert "03-15-2021 commit"
+    
+    This reverts commit cfe3ea569e4c2bee81a96e6510caa0c14dadae20.
+
+commit cfe3ea569e4c2bee81a96e6510caa0c14dadae20
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Mar 15 16:47:43 2021 +0800
+
+    03-15-2021 commit
+
+commit 5ae30af90b5bc9d23f05cdecbad68f5de6a29475
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Mar 10 15:18:43 2021 +0800
+
+    03-10-2021 commit
+
+commit 519efc2ba97e4978e2c12174ccc420e540d0562e
+Author: Derick Chou <derick@jubo.health>
+Date:   Tue Mar 2 13:49:52 2021 +0800
+
+    03-02-2021
+
+commit 11cb516bb0361a9782974e6d4f83f59f91c15f76
+Author: Derick Chou <derick@jubo.health>
+Date:   Wed Feb 24 18:01:45 2021 +0800
+
+    update 02-24-2021
+
+commit ddc8504336b4366b75a5da7a0728e3e9da96279a
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Feb 22 09:21:31 2021 +0800
+
+    commit before push
+
+commit 4568c3dffd6eb90dbb21a6beb64fa950345bb68b
+Author: Derick Chou <derick@jubo.health>
+Date:   Mon Feb 22 09:06:49 2021 +0800
+
+    modify mongodb/couchdb docker
+
+commit d838c5fbfcb93b5e3bc6bb9c02b6ea5ad25e1193
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Feb 18 16:33:47 2021 +0800
+
+    2021-02-18 new notes update
+
+commit b88980e9d488fa03eef720697f2b73059d61ae8c
+Author: Derick Chou <derick.chou@fluxconn.com>
+Date:   Thu Feb 4 22:27:42 2021 +0800
+
+    02-04-2021-1
+
+commit 51e86b5fc27492626b71ff61f2fc6d046b74e179
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Feb 4 17:30:39 2021 +0800
+
+    02-04-2021
+
+commit 3e66a4bb95b1018765efece8ea9e41de5452ab1b
+Author: Derick Chou <derick@jubo.health>
+Date:   Sat Jan 23 09:38:22 2021 +0800
+
+    01-23-2021
+
+commit 95d062e4969f1f598a13ea3780407ec88eb45d08
+Author: Derick Chou <derick@jubo.health>
+Date:   Thu Jan 21 15:26:21 2021 +0800
+
+    01-21-2021
+
+commit b747e013fa00b7a853268844978bfde9ff118ae6
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 12:57:34 2021 +0800
+
+    Add files via upload
+
+commit 8509d89678faee11f8b1a4d3deb42f1874ee55a3
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 12:52:49 2021 +0800
+
+    Delete Grpc_protobuf_ts.md
+
+commit 20cd7a5a2216e8f0ab03d0fc1dbcdd8ee824957a
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 10:08:38 2021 +0800
+
+    Delete README_jubox.md
+
+commit d081baed9115d18b854157b5f2ce86824a027b5e
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 10:08:20 2021 +0800
+
+    Delete Jubox Protobuf API.md
+
+commit 5923c03238a61b9ff73cc6aae21af843b8b9f8b3
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 10:08:05 2021 +0800
+
+    Delete Typescript x @grpcgrpc-js  Grpc 使用心得.md
+
+commit f634ec0a7dc49ed53a4c9d969b99cb68c463272a
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 10:07:08 2021 +0800
+
+    Delete PJCHEN_note.md
+
+commit 0090e82ef57473eea1eadef9694347bc58fc9469
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 10:06:53 2021 +0800
+
+    Delete vayyar_terminal_upgrade.md
+
+commit 016326cf131d5c4fb986be100ab8e5a0cb5ff69b
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 10:06:24 2021 +0800
+
+    Delete 迴路.md
+
+commit 8a690b34cef97a598025ec76cd17c5541d15dfab
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Thu Jan 21 10:05:18 2021 +0800
+
+    Add files via upload
+
+commit 95cba530f56601068053e040b7e31801506bf5a9
+Author: chouchiate <72811262+chouchiate@users.noreply.github.com>
+Date:   Tue Jan 19 22:11:28 2021 +0800
+
+    Initial commit

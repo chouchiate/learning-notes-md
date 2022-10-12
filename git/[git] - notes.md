@@ -142,6 +142,11 @@ git diff c65a929..e2b7108 ./firmware/Program/main.c > ./tmp/diff_main.log
 $ git log --all --oneline | grep "slack"
 ```
 
+#### git log save to file
+```bash
+$ git --no-pager log > ./tmp/log.txt
+```
+
 #### git blame - 檢視
 
 

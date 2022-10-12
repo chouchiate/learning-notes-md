@@ -1,5 +1,12 @@
 ## [log] - my_work_log
 
+### 10-12-2022
+* [JUSPACE_403] - Fix sleep summation arbitrary missing sleep end
+* P5 LED 顯示器規格確認 會議準備
+
+### 10-11-2022
+* [JUSPACE_403] - Find cause and solution for incorrect sleep duration calculation
+* P5 LED 顯示器規格確認
 ### 08-05-2022
 
 #### [Y]
