@@ -1,5 +1,12 @@
 ## [log] - my_work_log
 
+
+
+### 10-18-2022
+* [JUSPACE_413] - Implement start and end hour query parameters for statistics API
+* Jubospace Hardware General Information Diagram for AC
+
+
 ### 10-12-2022
 * [JUSPACE_403] - Fix sleep summation arbitrary missing sleep end
 * P5 LED 顯示器規格確認 會議準備
