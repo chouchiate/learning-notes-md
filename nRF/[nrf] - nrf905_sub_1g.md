@@ -1,6 +1,26 @@
 ## [nrf] - NRF905
 
- *
+### block diagram
+![](./img/nrf905_block_diagram.png)
+
+### Current Consumption
+
+![](./img/nrf905_current_consumption.png)
+
+
+### Pin assignment
+
+![](./img/nrf905_pin_assignment.png)
+### Pin Definitions
+![](./img/nrf905_pin_function.png)
+
+
+### Operating Frequencies
+![](./img/nrf905_operating_frequencies.png)
+
+### operating frequency equation
+![](./img/nrf905_frequency_HFREQ_PLL_equation.png)
+
 ### external
 [datasheet](https://www.mouser.tw/datasheet/2/297/NRSAS00107_1-2559891.pdf)
 [source](https://shop.cpu.com.tw/product/55262/info/)
