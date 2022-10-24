@@ -21,6 +21,12 @@
 ### operating frequency equation
 ![](./img/nrf905_frequency_HFREQ_PLL_equation.png)
 
+### SPI Timing Diagram
+![](./img/nrf905_spi_timing_diagram.png)
+
+### SPI Read Write Operation
+![](./img/nrf905_spi_read_write_diagram.png)
+
 ### external
 [datasheet](https://www.mouser.tw/datasheet/2/297/NRSAS00107_1-2559891.pdf)
 [source](https://shop.cpu.com.tw/product/55262/info/)
