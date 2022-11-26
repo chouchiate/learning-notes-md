@@ -5,6 +5,11 @@
     "usbserial"
   ],
   "trailing-spaces.trimOnSave": true,
+<<<<<<< HEAD
   "nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.0.2}",
   "nrf-connect.topdir": "${nrf-connect.sdk:2.0.2}"
+=======
+  "nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.1.2}",
+  "nrf-connect.topdir": "c:\\ncs\\v2.1.2"
+>>>>>>> 352a79ec (11-26-2022-1)
 }
