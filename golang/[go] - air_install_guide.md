@@ -19,9 +19,13 @@ $ air -v
 # open .zshrc with vscode
 $ code ~/.zshrc
 ## add this line
-alias air='$(go env GOPATH)/bin/air'
+$ alias air='$(go env GOPATH)/bin/air'
 # update to env
 $ source ~/.zshrc
+```
+
+```bash
+$ sail up
 ```
 
 #### First Program
