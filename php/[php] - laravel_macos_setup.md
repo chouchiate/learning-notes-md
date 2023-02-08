@@ -54,9 +54,6 @@ $ sail stop
 ```
 
 
-
-
-
 ## external info
 * [multiple php version](https://getgrav.org/blog/macos-ventura-apache-multiple-php-versions)
 * [version update](https://wpbeaches.com/updating-to-php-versions-7-4-and-8-on-macos-11-big-sur-and-catalina/)
