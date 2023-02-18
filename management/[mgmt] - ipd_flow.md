@@ -117,3 +117,19 @@
   - ISC (Integrated supply chain)
   - LTC (lead to cash) 銷售線索到回款
   - CRM (Customer relationship management)
+
+  ### IPD 核心思想
+  1. 研發是投資行為
+  2. 基於需求的研發
+  3. 平台化開發
+  4. 跨部門協作
+  5. 結構化流程
+  6. 業務能力均衡
+  7. 靈活發展與時俱進
+    
+    
+    
+  
+  
+
+
