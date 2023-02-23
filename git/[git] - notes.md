@@ -119,6 +119,7 @@ $ git push origin <branch>
 #
 git diff			#
 git diff --staged	 #
+git diff --cached
 git diff [first-branch] [second-branch]		#
 # check difference: current and stash
 git diff stash@{0} master
@@ -140,6 +141,15 @@ git diff c65a929..e2b7108 ./firmware/Program/main.c > ./tmp/diff_main.log
 > 搜尋 local git log commit message with "keyword"
 ```bash
 $ git log --all --oneline | grep "slack"
+```
+
+#### git log prettify 
+* author
+* commit date
+* change
+
+```bash
+$ git log --pretty=format:"%h%x09%an%x09%ad%x09%s"
 ```
 
 #### git log save to file
