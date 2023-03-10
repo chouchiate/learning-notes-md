@@ -272,45 +272,6 @@ typedef struct
 
 ```
 
-#### 21.4.29 oversampler
-
-
-```c
-/* Configuration of Oversampler:                                      */
-/*  - Oversampling Ratio                                              */
-/*  - Right bit shift                                                 */
-/*  - Triggered mode                                                  */
-/*  - Oversampling mode (continued/resumed)                           */
-// oversampling configuration 
-HAL_StatusTypeDef HAL_ADC_Init(ADC_HandleTypeDef *hadc)
-  ...
-      if (hadc->Init.OversamplingMode == ENABLE)
-      {
-        assert_param(IS_ADC_OVERSAMPLING_RATIO(hadc->Init.Oversampling.Ratio));
-        assert_param(IS_ADC_RIGHT_BIT_SHIFT(hadc->Init.Oversampling.RightBitShift));
-        assert_param(IS_ADC_TRIGGERED_OVERSAMPLING_MODE(hadc->Init.Oversampling.TriggeredMode));
-        assert_param(IS_ADC_REGOVERSAMPLING_MODE(hadc->Init.Oversampling.OversamplingStopReset));
-
-        /* Configuration of Oversampler:                                      */
-        /*  - Oversampling Ratio                                              */
-        /*  - Right bit shift                                                 */
-        /*  - Triggered mode                                                  */
-        /*  - Oversampling mode (continued/resumed)                           */
-        MODIFY_REG(hadc->Instance->CFGR2,
-                   ADC_CFGR2_OVSR  |
-                   ADC_CFGR2_OVSS  |
-                   ADC_CFGR2_TROVS |
-                   ADC_CFGR2_ROVSM,
-                   ADC_CFGR2_ROVSE                       |
-                   hadc->Init.Oversampling.Ratio         |
-                   hadc->Init.Oversampling.RightBitShift |
-                   hadc->Init.Oversampling.TriggeredMode |
-                   hadc->Init.Oversampling.OversamplingStopReset
-                  );
-      }
-  ...
-```
-
 
 ### ADC with DMA Section
 
