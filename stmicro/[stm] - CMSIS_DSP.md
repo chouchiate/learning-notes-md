@@ -10,3 +10,44 @@
 
 
 
+### Basic math functions
+
+
+### Fast math functions
+
+
+### Complex math functions
+
+
+### Filtering functions
+
+
+### Matrix functions
+
+
+### Transform functions
+
+
+### Motor control functions
+
+
+### Statistical functions
+
+
+### Support functions
+
+
+### Interpolation functions
+
+
+### Support Vector Machine functions (SVM)
+
+
+### Bayes classifier functions
+
+
+### Distance functions
+
+
+### Quaternion functions
+
