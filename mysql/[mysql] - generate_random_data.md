@@ -195,6 +195,7 @@ DROP TABLE IF EXISTS `Allis_digitalPower`.`batterydata`;
 CREATE TABLE `Allis_digitalPower`.`batterydata` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `battery_id` VARCHAR(10) NOT NULL,
+  `gateway_id` VARCHAR(10) NOT NULL,
   `written_at` INT NULL,
   `tv` DECIMAL(5,1) NULL,
   `tc` DECIMAL(5,1) NULL,
@@ -211,6 +212,7 @@ CREATE TABLE `Allis_digitalPower`.`batterydata` (
 INSERT INTO batterydata (
   written_at,
   battery_id, 
+  gateway_id,
   tv, 
   tc,
   batt1,
@@ -227,7 +229,10 @@ SELECT
     DATE_ADD('2023-03-22', INTERVAL ROUND(RAND() * DATEDIFF('2023-03-22', '2023-02-22')) DAY) 
     + INTERVAL ROUND(RAND() * 86399) SECOND
   ) AS random_unix_timestamps,
-  CAST(ROUND(RAND() * (344150 - 344100 + 1) + 344100) AS CHAR) AS random_integer_strings,
+  CAST(ROUND(RAND() * (344150 - 344100 + 1) + 344100) AS CHAR) AS random_battery_id,
+  CONCAT(
+	"GW-", 
+	CAST(ROUND(RAND() * (3000 - 2000 + 1) + 2000) AS CHAR)) AS random_gateway_id,
   FLOOR(RAND() * (130 - 100 + 1)) + 100 AS random_tv,
 	ROUND(RAND()*50) AS random_tc,
   ROUND(RAND()*100) AS random_batt1,
