@@ -5,6 +5,12 @@
 $ git clone --recursive https://github.com/espressif/esp-idf.git
 ```
 
+### Check current esp-idf version
+```bash
+$IDF_PATH git describe
+v5.0-dev-3290-g01d014c42d
+```
+
 ### Run Install.sh
 ```bash
 # goto ~/.esp/esp-idf
