@@ -526,9 +526,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
-	"jubo.health/jubo-space-backend/backend/deviceconfig/configkeys"
-	"jubo.health/jubo-space-backend/backend/envconfig"
-	"jubo.health/jubo-space-backend/pb"
+	"waka.health/waka-space-backend/backend/deviceconfig/configkeys"
+	"waka.health/waka-space-backend/backend/envconfig"
+	"waka.health/waka-space-backend/pb"
 )
 
 type mockSmartbed struct {

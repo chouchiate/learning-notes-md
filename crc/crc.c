@@ -70,10 +70,19 @@ static const uint8_t aucCRCLo[] = {
 
 uint16_t usMBCRC16( uint8_t * pucFrame, uint16_t usLen );
 
+#define HI_NIBBLE(x) ((x & 0xf0) > 4)
+#define LO_NIBBLE(x) ((x & 0x0f)
+#define HI_BYTE(x) ((x & 0xff00) > 8)
+#define LO_BYTE(x) ((x & 0x00ff))
+#define HI_WORD(x) ((x) & 0xffffffff00000000) > 16)
+#define LO_WORD(x) ((x) & 0x00000000ffffffff)
+
 #define _GW_MSG_GWID_LOC_ 0
 #define _GW_MSG_DEVID_LOC_ 1
 #define _GW_MSG_DATE_LOC_ 2
 #define _GW_MSG_CRC_LOC_ 3
+
+#define _FIRMWAWRE_VER 1
 
 int main()
 {
@@ -83,17 +92,17 @@ int main()
 
 
     /* strings */
-    uint8_t rcv_head [] = "+RCV=219,26";
-    uint8_t msg_head [] = "$$$";
-    uint8_t msg_tail [] = "###";
+    const uint8_t rcv_head [] = "+RCV=219,26";
+    const uint8_t msg_head [] = "$$$";
+    const uint8_t msg_tail [] = "###";
     uint8_t rssi [] = "-11";
     uint8_t snr [] = "12";
 
     const uint8_t s[] = "|";
     const uint8_t d[] = ",";
 
-    uint8_t gw_head [] = "GW";
-    uint8_t date_time [] = "2023-04-10 17:00:00";
+    const uint8_t gw_head [] = "GW";
+    const uint8_t date_time [] = "2023-04-10 17:00:00";
 
     uint8_t time_yy = 23;
     uint8_t time_MM = 4; 
@@ -102,12 +111,14 @@ int main()
     uint8_t time_mm = 13;
     uint8_t time_ss = 28;
     
-    uint8_t msg_from_gw [60] = {0};
-    uint8_t msg_from_mi [120] = {0};
+    uint16_t firm_ver = _FIRMWAWRE_VER;
+    
+    static uint8_t msg_from_gw [60] = {0};
+    static uint8_t msg_from_mi [120] = {0};
     
     /* ids */
-    uint8_t gw_id [4] = { 'G', 'W', 0x54, 0x53 };
-    uint8_t dev_id [4] = { 0x01, 0xE1, 0x24, 0xA4};
+    const uint8_t gw_id [4] = { 'G', 'W', 0x54, 0x53 };
+    const uint8_t dev_id [4] = { 0x01, 0xE1, 0x24, 0xA4};
     uint16_t crc_res = 0;
 
     /* data */
@@ -267,7 +278,87 @@ int main()
     /**
      * mi form device message
      */
-
+     
+    for (i = 0; i < 120; i++) {
+        msg_from_mi[i] = 0;
+    }
+     
+    strcpy(msg_from_mi, msg_head);
+    
+    memcpy(msg_from_mi + strlen(msg_from_mi), dev_id, 4);
+    i = strlen(msg_from_mi);
+    printf("len %d \r\n", i);
+    msg_from_mi[i++] = "|";
+    msg_from_mi[i++] = HI_BYTE(firm_ver);
+    msg_from_mi[i++] = LO_BYTE(firm_ver);
+    msg_from_mi[i++] = "|";
+    msg_from_mi[i++] = time_yy;
+    msg_from_mi[i++] = time_MM;
+    msg_from_mi[i++] = "|";
+    msg_from_mi[i++] = time_yy;
+    msg_from_mi[i++] = time_MM;
+    msg_from_mi[i++] = time_dd;
+    msg_from_mi[i++] = time_hh;
+    msg_from_mi[i++] = time_mm;
+    msg_from_mi[i++] = time_ss;    
+    msg_from_mi[i++] = "|";
+    msg_from_mi[i++] = HI_BYTE(input_volt_1);
+    msg_from_mi[i++] = LO_BYTE(input_volt_1);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(input_curr_1);
+    msg_from_mi[i++] = LO_BYTE(input_curr_1);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(input_power_1);
+    msg_from_mi[i++] = LO_BYTE(input_power_1);    
+    msg_from_mi[i++] = "|";
+    msg_from_mi[i++] = HI_BYTE(input_volt_2);
+    msg_from_mi[i++] = LO_BYTE(input_volt_2);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(input_curr_2);
+    msg_from_mi[i++] = LO_BYTE(input_curr_2);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(input_power_2);
+    msg_from_mi[i++] = LO_BYTE(input_power_2);    
+    msg_from_mi[i++] = "|";
+    msg_from_mi[i++] = HI_BYTE(input_volt_3);
+    msg_from_mi[i++] = LO_BYTE(input_volt_3);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(input_curr_3);
+    msg_from_mi[i++] = LO_BYTE(input_curr_3);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(input_power_3);
+    msg_from_mi[i++] = LO_BYTE(input_power_3);    
+    msg_from_mi[i++] = "|";
+    msg_from_mi[i++] = HI_BYTE(angle);
+    msg_from_mi[i++] = LO_BYTE(angle);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(temp);
+    msg_from_mi[i++] = LO_BYTE(temp);
+    msg_from_mi[i++] = "|";    
+    
+    j=10;
+    while(j>0) {
+        j--;
+        msg_from_mi[i++] = "-";
+    }
+    j=3;
+    while(j>0) {
+        j--;
+        msg_from_mi[i++] = "#";
+    }
+    printf("mi msg len: %d \r\n", i);
+    crc_res = 0;
+    crc_res = usMBCRC16(msg_from_mi, i);
+    printf("crc: %d \r\n", crc_res);
+    msg_from_mi[i++] = "|";    
+    msg_from_mi[i++] = HI_BYTE(crc_res);
+    msg_from_mi[i++] = LO_BYTE(crc_res);    
+    msg_from_mi[i++] = "|";    
+    printf("\r\nmi msg hex: ");
+    n = i;
+    for (j = 0; j < i; j++) {
+        printf("%x,", msg_from_mi[j]);
+    }        
 
     /**
      * gw parse mi message
