@@ -127,6 +127,15 @@ git diff stash@{0} master
 # Window Power shell need to add quote
 git diff "stash@{0}" main > ./tmp/diff_adc.txt
 
+# Window git bash diff single file peripherals.h save to file diff_peripherals_h.log
+```bash
+git diff "stash@{0}" master board/peripherals.h > ./tmp/diff_peripherals_h.log
+git diff "stash@{0}" master board/pin_mux.c > ./tmp/diff_pin_mux_c.log
+git diff "stash@{0}" master source/main.c > ./tmp/main_c.log
+git diff "stash@{0}" master source/Controller/DCDC_Controller.c > ./tmp/dcdc_controller_c.log
+```
+
+
 # 輸出差異到檔案 diff.txt
 git diff master..branch1 > diff.txt
 
@@ -143,7 +152,7 @@ git diff c65a929..e2b7108 ./firmware/Program/main.c > ./tmp/diff_main.log
 $ git log --all --oneline | grep "slack"
 ```
 
-#### git log prettify 
+#### git log prettify
 * author
 * commit date
 * change
