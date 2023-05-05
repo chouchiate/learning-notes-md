@@ -39,6 +39,14 @@ id_ed25519_sk
 id_xmss
 ```
 
+### start ssh-agent (windows)
+```sh
+# start the ssh-agent in the background
+$ eval "$(ssh-agent -s)"
+> Agent pid xxyyzz
+```
+
+
 ### Copy Key to Clipboard
 ```bash
   tr -d '\n' < ~/.ssh/id_ed25519.pub | pbcopy
@@ -57,6 +65,19 @@ ssh -Tvvv git@gitlab.xxx-yyy.zzzz
 ```bash
 # 重新加 ssh key
   ssh-add ~/.ssh/id_rsa
+```
+
+### List key by fingerprint
+```bash
+$ ssh-add -l
+2048 72:...:eb /home/gert/.ssh/mykey (RSA)
+
+```
+
+### get the full key in OpenSSH format
+```bash
+$ ssh-add -L
+ssh-rsa AAAAB3NzaC1yc[...]B63SQ== /home/gert/.ssh/id_rsa
 ```
 
 ### Debug message
