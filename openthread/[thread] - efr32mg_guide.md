@@ -84,3 +84,16 @@
 		- The Client will print "Joined network "client/server"" and "Bound to {SERVER_IP_ADDRESS}".
 	3. Client will begin to send reporting data to Server.
 	4. Server will print out the received data from Client.
+
+
+### Software
+#### ot-cli-ftd (Full Thread Device with simple CLI interface to test openthread stack)
+
+
+
+#### Set up the Serial console for ot-cli-ftd devices
+![](../assets/img/efr_setup_serial_console.png)
+
+
+
+#### Set up the Raspberry Pi as a Border Router
