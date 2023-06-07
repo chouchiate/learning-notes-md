@@ -62,6 +62,18 @@ npm run vscode:package
 ```
 ![](https://mermaid-js.github.io/mermaid/img/gantt.png)
 
+```mermaid
+gantt
+	title Chart of worker tasks
+	dateFormat YYYYMMDD
+	section Worker 1
+	First Worker1 task: 20221101, 10d
+	Second Worker1 task: 20d
+	section Worker 2
+	First Worker2 task: 20221111, 12d
+	Second Worker2 task: 24d
+```
+
 ### sequence diagram
 ```mermaid
 sequenceDiagram

@@ -43,6 +43,25 @@ $ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.
 $ sudo EXTERNAL_URL="https://gitlab-server.example.com" apt-get install gitlab-ee
 ```
 
+## Official Guide
+[ubuntu guide](https://about.gitlab.com/install/#ubuntu)
+
+### Install Dependencies
+```bash
+
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates tzdata perl
+
+
+```
+
+### Install Postfix
+```bash
+# to send notification email
+ sudo apt-get install -y postfix
+
+```
+
 
 ### Resource
 
