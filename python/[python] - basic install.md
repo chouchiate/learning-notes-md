@@ -59,3 +59,19 @@ pip install nrfutil
   $ sudo pip3 install esptool
   ```
 
+### Build from Gzipped Tarball (Linux)
+```bash
+$ wget https://www.python.org/ftp/python/3.7.18/Python-3.7.18.tgz
+
+$ tar -zxvf Python-3.7.18.tgz
+
+$ cd Python-3.7.18
+
+$ ./configure --with-ssl
+
+$ sudo make install
+
+$ which python3
+  /usr/bin/python3
+```
+```
