@@ -408,10 +408,117 @@ Authenticates a message
 | Temp. Sensor | Temp. Display | Watch | Mobile phone |
 
 
+### Adaptive Frequency Hopping
+- AFH is a requirement for using TX power over +10 dBm.
+- Bluetooth stack runs a periodic background task that sweeps all channels once every afh_scan_interval (measures received power on each channel)
+-  If the measured power is beyond limit (-71 dBm) on a channel, the channel is blocked for at least 8 afh_scan_intervals
+- unblocking of a channel needs 8 consecutive measurements with no interference detected
+- a new channel map is created based on the interference measurements after every sweep
+- the channel map is updated in the controller and the new map is sent to the remote device
+- The AFH sweep has the highest priority among all Bluetooth operations.
+- If there are multiple operations within 10 ms, sweeping cannot be fitted between them and they may be blocked.
+- ah_scan_interval is set to 1 second by default and the sweep of the 40 channels takes around 10 ms
+
+Silab Bluetooth stack AFH configuration:
+```clike=
+#define AFH_SCAN_INTERVAL_CONFIG_KEY 7
+
+uint8_t afh_scan_interval = 10; // set afh scan interval to 100ms
+
+gecko_cmd_system_linklayer_configure(AFH_SCAN_INTERVAL_CONFIG_KEY,sizeof(uint8_t),&afh_scan_interval);
+```
 
 
 
-### **Application**
+### ETSI (European Telecommunications Standards Institute) Compilant
+- slave devices need to be adaptive, too
+- The master might be non-adaptive, so the slave cannot blindly follow the transmissions of the master.
+- ETSI allows using control transfer on blocked channels with +10 dBm or lower (no data transfer)
+- if the slave detects that a blocked channel is used, it will only send a single empty/control packet on that channel to prevent supervision timeout.
+
+### Adaptive Frequency Hopping Algorithm
+Two selection algorithms
+- Algorithm #1:
+  - original and mandatory.
+  - channels are sequentially selected using fixed hop interval while establishing connection.
+- Alogirthm #2:
+  - with Bluetooth 5.0.
+  - chosen by master at connection time.
+  - slave can reject the selection and use algorithm #1 instead.
+  - algorithm #2 is not mandatory for Bluetooth 5.0 certification.
+  - semi random channel selection
+  - it should be always used unless connecting to a legacy device.
+  - The channel to be used is calculated from the current event counter and access address.
+
+#### Non-Adaptive Frequency Hopping
+- Channel map update procedure is part of the Bluetooth 4.0 specification.
+
+### Multi-Role BLE (TI)
+[Texas-Instrument-cc2640r2-sdk](https://software-dl.ti.com/lprf/simplelink_cc2640r2_sdk/1.35.00.33/exports/examples/rtos/CC2640R2_LAUNCHXL/blestack/multi_role/README.html)
+
+- multiple simultaneous GATT discoveries and/or pairings/bondings.
+- capable of functioning as a master and a slave simultaneously
+- maintaining up to 8 connections
+- capable of connecting to any central/peripheral device
+- the **master/central** devices are **GATT clients** and **slave/peripheral** devices are **GATT servers**.
+- RAM-constrained for too many connections (via the MAX_NUM_BLE_CONNS preprocessor define) and also security, possible for heap allocation failures to occur which will break the stack.
+- use cache as RAM guide [use-cache-as-RAM](https://software-dl.ti.com/simplelink/esd/simplelink_cc13x2_26x2_sdk/4.20.00.35/exports/docs/proprietary-rf/proprietary-rf-users-guide/proprietary-rf-guide/cache-as-ram.html)
+- tradeoff of using cache as RAM is potential increased processing time and thus higher power consumption
+
+### Using Cache as RAM
+
+#### Configure the cache as GPRAM
+1. in the ccfg file (ccfg.c) include the following line:
+```clike=
+#ifdef CACHE_AS_RAM
+  #define SET_CCFG_SIZE_AND_DIS_FLAGS_DIS_GPRAM  0x0 /* Enable GPRAM */
+#endif //CACHE_AS_RAM
+
+#include <startup_files/ccfg.c>
+``````
+
+2. in main(), add the following code:
+
+```clike=
+#ifdef CACHE_AS_RAM
+  // retain cache during standby
+  Power_setConstraint(PowerCC26XX_SB_VIMS_CACHE_RETAIN);
+  Power_setConstraint(PowerCC26XX_NEED_FLASH_IN_IDLE);
+#else
+  // Enable iCache pre-fetching
+  VIMSConfigure(VIMS_BASE, TRUE, TRUE);
+  // Enable cache
+  VIMSModeSet(VIMS_BASE, VIMS_MODE_ENABLED);
+#endif //CACHE_AS_RAM
+```
+
+in the same file, include following
+
+```clike=
+/* Power Driver */
+#include <ti/drivers/Power.h>
+#include <ti/drivers/power/PowerCC26XX.h>
+/* Header files required to enable instruction fetch cache */
+#include <ti/devices/cc26x0r2/inc/hw_memmap.h>
+#include <ti/devices/cc26x0r2/driverlib/vims.h>
+```
+
+3. go to the compiler predefines and add CACHE_AS_RAM, Add the following to the override list:
+```clike=
+// Override list for the fast synth settings:
+// Overrides for CMD_RADIO_SETUP
+uint32_t pOverrides[] =
+{
+ ...
+ ...
+ ...
+#ifdef CACHE_AS_RAM
+    0x00018063,
+#endif //CACHE_AS_RAM
+    0xFFFFFFFF,
+}
+
+```
 
 ### **BLE 5.x Features**
 * Latest Core Spec. v5.3
@@ -424,6 +531,7 @@ Authenticates a message
   - 8x advertising capacity of BLE4
     * Primary Adv. Channel: Legacy Advertisement
     * Secondary Adv. Channel: Extended Advertisement
+
 
 ---
 ### **BLE 5.0 簡介**
