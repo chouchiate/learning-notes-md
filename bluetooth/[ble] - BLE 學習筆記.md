@@ -594,9 +594,26 @@ uint32_t pOverrides[] =
       - 公共輔助聽力
       - 公共空間
 
+### Low Complexity Communication Codec (LC3)
 
   * The new Low Complexity Communication Codec (LC3) is set to replace SBC in Bluetooth 5.2, and it will be capable of scaling between 345kbps to 160kbps both at a bit depth of 16.
   * LC3Plus will boast a latency time of around 5ms, much quicker than SBC's 100ms.
+
+
+> Bluetooth LE uses the LC3 codec compared to Bluetooth Classic's SBC. LC3 is the superior codec and is meant to succeed SBC as the default Bluetooth codec. Bluetooth Classic's SBC codec usually encodes a 1.5Mbps audio stream to a 345Kbps stream.
+
+> Bluetooth LE Audio and, by extension, LC3, can compress the same stream at 160Kbps, claiming better audio quality. LC3 also has a lower latency of 5ms compared to SBC's 100ms.
+
+> Bluetooth LE Audio is a feature called Auracast. Auracast gives audio source devices the ability to send multiple streams to an unlimited number of audio receiver devices. This means that you can send audio to multiple headphones, speakers, or other devices at the same time. This is similar to how Bluetooth Classic can send audio to multiple devices at the same time, but Bluetooth LE Audio can send to an unlimited number of devices.
+
+>  Bluetooth audio that would qualify as Hi-Res audio, that is, greater than 48kHz with a bit depth greater than 16 bit.
+
+> Bluetooth LE Audio gives manufacturers access to up to 48kHz, 32-bit audio at bit rates ranging between 16 to 425Kbps without paying licensing fees.
+
+### 低功耗藍芽等時通道 (Isochronous Channels)
+
+允許將有時間限制的數據傳輸到一個或多個裝置以進行時間同步處理
+
 ---
 ### **BLE 5.3 簡介**
 
